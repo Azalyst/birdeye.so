@@ -14,7 +14,7 @@ from tools import execute_tool, TOOLS
 
 # Configuration
 NIM_API_KEY = os.environ.get("NIM_API_KEY")
-MODEL = "qwen/qwen-2-72b-instruct"
+MODEL = "qwen/qwen2.5-coder-32b-instruct"
 BASE_URL = "https://integrate.api.nvidia.com/v1"
 
 client = OpenAI(api_key=NIM_API_KEY, base_url=BASE_URL)
