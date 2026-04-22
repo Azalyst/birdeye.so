@@ -1,7 +1,6 @@
 import os
 import sys
 import json
-import time
 from openai import OpenAI
 from dotenv import load_dotenv
 
@@ -11,18 +10,20 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tools import execute_tool, TOOLS
 
 NIM_API_KEY = os.environ.get("NIM_API_KEY")
-MODEL = "qwen/qwen2.5-coder-32b-instruct"
+MODEL = "qwen/qwen2.5-coder-7b-instruct"   # 7B — 4x faster than 32B on NIM
 BASE_URL = "https://integrate.api.nvidia.com/v1"
 
 client = OpenAI(api_key=NIM_API_KEY, base_url=BASE_URL)
 
 
 def get_system_prompt():
-    try:
-        with open("AGENTS.md", "r", encoding="utf-8") as f:
-            return f.read()
-    except FileNotFoundError:
-        return "You are an AI assistant with access to tools."
+    for path in ["AGENTS.md", "../AGENTS.md"]:
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                return f.read()
+        except FileNotFoundError:
+            continue
+    return "You are an AI assistant with access to tools."
 
 
 def extract_output_path(task: str, default: str = "agent_output.txt") -> str:
@@ -51,13 +52,11 @@ def save_output(path: str, content: str):
 
 
 def parse_tool_call(content: str):
-    """Extract tool name and args from agent response. Returns (tool_name, args) or (None, None)."""
+    """Extract tool name and args. Returns (tool_name, args) or (None, None)."""
     start_marker = "```tool_call"
     end_marker = "```"
-
     if start_marker not in content:
         return None, None
-
     try:
         part = content.split(start_marker)[1].split(end_marker)[0].strip()
         tool_data = json.loads(part)
@@ -69,14 +68,13 @@ def parse_tool_call(content: str):
 
 def run_agent(task: str) -> str:
     print(f"Task: {task}")
-
     system_prompt = get_system_prompt()
     messages = [
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": task},
     ]
 
-    max_iterations = 15
+    max_iterations = 5   # whale scans need 2-3 tool calls max; 5 gives headroom
 
     for i in range(max_iterations):
         print(f"\n--- Iteration {i + 1} ---")
@@ -89,29 +87,29 @@ def run_agent(task: str) -> str:
 
         content = response.choices[0].message.content
         messages.append({"role": "assistant", "content": content})
-        print(f"Agent: {content}")
+        print(f"Agent: {content[:300]}...")
 
-        # Priority 1: execute tool call if present
+        # ── PRIORITY 1: execute tool call if present ──────────────────────────
         tool_name, args = parse_tool_call(content)
         if tool_name:
-            print(f"Executing tool: {tool_name} with args: {args}")
+            print(f"Executing tool: {tool_name}  args: {args}")
             try:
                 observation = execute_tool(tool_name, args)
             except Exception as e:
                 observation = f"Tool execution error: {e}"
             print(f"Observation: {str(observation)[:300]}...")
             messages.append({"role": "user", "content": f"Observation: {observation}"})
-            continue
+            continue   # go back to top — check for next tool call or final answer
 
-        # Priority 2: final answer — task complete
+        # ── PRIORITY 2: final answer — task complete ──────────────────────────
         if "Final Answer:" in content:
             output_path = extract_output_path(task)
             save_output(output_path, content)
             return content
 
-        # No tool call and no final answer — agent is thinking or stuck
-        if i > 5:
-            msg = "Agent produced no tool call or final answer after 5+ iterations. Aborting."
+        # ── Neither tool call nor final answer ───────────────────────────────
+        if i >= 3:
+            msg = "Agent produced no tool call or final answer after 3+ iterations. Aborting."
             print(msg)
             return msg
 

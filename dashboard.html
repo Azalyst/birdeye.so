@@ -3,199 +3,275 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AZALYST — Intelligence Monitor</title>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>AZALYST — Live Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg:      #06080a;
-    --surface: #0c1016;
-    --panel:   #0f1520;
-    --border:  #1a2233;
-    --border2: #1f2d40;
-    --text:    #b8c5d6;
-    --muted:   #4a5568;
-    --dim:     #2d3748;
-    --accent:  #d4a843;
-    --green:   #38a169;
-    --green2:  #48bb78;
-    --red:     #e53e3e;
-    --red2:    #fc8181;
-    --blue:    #4299e1;
-    --orange:  #dd6b20;
-    --white:   #e8f0fe;
-    --mono:    'IBM Plex Mono', monospace;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 12px; line-height: 1.5; min-height: 100vh; }
-  body::after { content:''; position:fixed; inset:0; background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.03) 3px,rgba(0,0,0,0.03) 4px); pointer-events:none; z-index:9999; }
+:root {
+  --bg: #04060a;
+  --s1: #080d14;
+  --s2: #0b1220;
+  --border: #131e2e;
+  --border2: #1a2840;
+  --text: #8faabf;
+  --bright: #c8dff0;
+  --muted: #3a5470;
+  --dim: #1e2f42;
+  --accent: #f0b429;
+  --accent2: #e07b00;
+  --green: #00e5a0;
+  --green2: #00b87a;
+  --red: #ff4d6a;
+  --red2: #cc2244;
+  --blue: #3b9eff;
+  --purple: #9b6dff;
+  --mono: 'Space Mono', monospace;
+  --sans: 'DM Sans', sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:13px;line-height:1.5;min-height:100vh;overflow-x:hidden}
 
-  header { background:var(--surface); border-bottom:1px solid var(--border); padding:0 24px; height:48px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
-  .logo { display:flex; align-items:baseline; gap:14px; }
-  .logo-name { font-size:13px; font-weight:600; letter-spacing:0.25em; color:var(--accent); }
-  .logo-sub { font-size:9px; letter-spacing:0.18em; color:var(--muted); text-transform:uppercase; }
-  .header-right { display:flex; align-items:center; gap:14px; }
-  .status-pill { display:flex; align-items:center; gap:6px; font-size:10px; color:var(--muted); letter-spacing:0.08em; padding:4px 10px; border:1px solid var(--border); }
-  .dot { width:5px; height:5px; border-radius:50%; background:var(--green2); animation:blink 2s infinite; }
-  .dot.off { background:var(--muted); animation:none; }
-  .dot.err { background:var(--red2); animation:none; }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
-  .repo-input { background:var(--bg); border:1px solid var(--border2); color:var(--text); font-family:var(--mono); font-size:11px; padding:5px 10px; outline:none; width:200px; }
-  .repo-input:focus { border-color:var(--accent); }
-  .btn { background:transparent; border:1px solid var(--border2); color:var(--muted); font-family:var(--mono); font-size:10px; padding:5px 14px; cursor:pointer; letter-spacing:0.1em; transition:all 0.15s; text-transform:uppercase; }
-  .btn:hover { border-color:var(--accent); color:var(--accent); }
-  .btn.primary { border-color:var(--accent); color:var(--accent); }
-  .btn.primary:hover { background:var(--accent); color:var(--bg); }
+/* scanline overlay */
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.06) 2px,rgba(0,0,0,0.06) 4px);pointer-events:none;z-index:9998}
 
-  .tabbar { background:var(--surface); border-bottom:1px solid var(--border); display:flex; align-items:center; padding:0 24px; }
-  .tab { font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); padding:12px 18px; cursor:pointer; border-bottom:2px solid transparent; transition:all 0.15s; }
-  .tab:hover { color:var(--text); }
-  .tab.active { color:var(--accent); border-bottom-color:var(--accent); }
-  .tab-badge { display:inline-block; font-size:9px; padding:1px 5px; border-radius:2px; margin-left:6px; background:var(--dim); color:var(--muted); }
-  .tab-badge.hot { background:rgba(56,161,105,0.2); color:var(--green2); }
+/* top glow */
+body::after{content:'';position:fixed;top:0;left:50%;transform:translateX(-50%);width:600px;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);z-index:100}
 
-  .page { display:none; padding:20px 24px; }
-  .page.active { display:block; }
+/* ── HEADER ── */
+header{background:var(--s1);border-bottom:1px solid var(--border);padding:0 24px;height:52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200}
+.logo{font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.3em;color:var(--accent);display:flex;align-items:center;gap:12px}
+.logo-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(240,180,41,.4)}50%{opacity:.6;box-shadow:0 0 0 6px rgba(240,180,41,0)}}
+.logo-sub{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.15em;color:var(--muted);text-transform:uppercase}
+.header-center{display:flex;align-items:center;gap:8px}
+.live-badge{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:9px;letter-spacing:.15em;padding:4px 10px;border:1px solid var(--border2);color:var(--muted)}
+.live-dot{width:5px;height:5px;border-radius:50%;background:var(--muted)}
+.live-dot.active{background:var(--green);animation:blink 1.5s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.header-right{display:flex;align-items:center;gap:10px}
+input.repo-in{background:var(--bg);border:1px solid var(--border2);color:var(--bright);font-family:var(--mono);font-size:11px;padding:6px 12px;outline:none;width:220px;transition:.15s}
+input.repo-in:focus{border-color:var(--accent);box-shadow:0 0 0 2px rgba(240,180,41,.1)}
+.btn{background:transparent;border:1px solid var(--border2);color:var(--muted);font-family:var(--mono);font-size:9px;letter-spacing:.12em;padding:6px 16px;cursor:pointer;text-transform:uppercase;transition:.15s}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.go{border-color:var(--accent);color:var(--accent)}
+.btn.go:hover{background:var(--accent);color:var(--bg)}
+#countdown{font-family:var(--mono);font-size:10px;color:var(--muted);min-width:60px;text-align:right}
 
-  .section { margin-bottom:22px; }
-  .section-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
-  .section-label { font-size:9px; letter-spacing:0.2em; color:var(--muted); text-transform:uppercase; display:flex; align-items:center; gap:8px; }
-  .section-label::before { content:''; width:2px; height:10px; background:var(--accent); display:inline-block; }
-  .section-meta { font-size:9px; color:var(--muted); }
+/* ── TICKER ── */
+.ticker{background:var(--s1);border-bottom:1px solid var(--border);height:28px;overflow:hidden;display:flex;align-items:center}
+.ticker-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:var(--accent);padding:0 16px;border-right:1px solid var(--border);white-space:nowrap;height:100%;display:flex;align-items:center}
+.ticker-track{flex:1;overflow:hidden;position:relative;height:100%}
+.ticker-inner{display:flex;gap:40px;white-space:nowrap;animation:ticker 40s linear infinite;height:100%;align-items:center}
+.ticker-inner:hover{animation-play-state:paused}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.tick-item{font-family:var(--mono);font-size:9px;letter-spacing:.06em;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.tick-pump{color:var(--green)}
+.tick-dump{color:var(--red)}
+.tick-sep{color:var(--muted)}
 
-  .summary-bar { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin-bottom:22px; }
-  .sum-card { background:var(--surface); padding:14px 16px; position:relative; }
-  .sum-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; }
-  .sum-card.pump::before { background:var(--green); }
-  .sum-card.dump::before { background:var(--red); }
-  .sum-card.whale::before { background:var(--blue); }
-  .sum-card.gem::before { background:var(--accent); }
-  .sum-card.ops::before { background:var(--muted); }
-  .sum-label { font-size:9px; color:var(--muted); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:6px; }
-  .sum-value { font-size:28px; font-weight:300; color:var(--white); letter-spacing:-0.03em; line-height:1; }
-  .sum-sub { font-size:9px; color:var(--muted); margin-top:4px; }
+/* ── TABS ── */
+.tabbar{background:var(--s1);border-bottom:1px solid var(--border);display:flex;padding:0 24px;gap:2px}
+.tab{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);padding:13px 18px;cursor:pointer;border-bottom:2px solid transparent;transition:.15s;white-space:nowrap}
+.tab:hover{color:var(--text)}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.badge{display:inline-flex;align-items:center;justify-content:center;min-width:16px;height:16px;padding:0 4px;font-size:8px;border-radius:2px;margin-left:7px;background:var(--dim);color:var(--muted)}
+.badge.live{background:rgba(0,229,160,.15);color:var(--green)}
+.badge.warn{background:rgba(255,77,106,.15);color:var(--red)}
 
-  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-  .grid2wide { display:grid; grid-template-columns:2fr 1fr; gap:20px; }
-  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+/* ── PAGES ── */
+.page{display:none;padding:20px 24px;animation:fadein .2s ease}
+.page.active{display:block}
+@keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
 
-  .panel { border:1px solid var(--border); background:var(--panel); overflow:hidden; }
-  .panel-head { background:var(--surface); padding:9px 14px; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--muted); }
+/* ── STAT BAR ── */
+.statbar{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:22px}
+.stat{background:var(--s1);padding:14px 16px;position:relative;overflow:hidden}
+.stat::after{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.stat.pump::after{background:linear-gradient(90deg,var(--green2),var(--green))}
+.stat.dump::after{background:linear-gradient(90deg,var(--red2),var(--red))}
+.stat.whale::after{background:linear-gradient(90deg,#2266cc,var(--blue))}
+.stat.gem::after{background:linear-gradient(90deg,var(--accent2),var(--accent))}
+.stat.chain::after{background:linear-gradient(90deg,var(--purple),#c0a0ff)}
+.stat.ops::after{background:var(--dim)}
+.stat-lbl{font-family:var(--mono);font-size:8px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-bottom:7px}
+.stat-val{font-family:var(--mono);font-size:26px;font-weight:700;color:var(--bright);letter-spacing:-.03em;line-height:1}
+.stat-sub{font-size:10px;color:var(--muted);margin-top:4px}
 
-  .row { padding:10px 14px; border-bottom:1px solid var(--border); display:grid; align-items:center; gap:10px; transition:background 0.1s; }
-  .row:last-child { border-bottom:none; }
-  .row:hover { background:rgba(255,255,255,0.02); }
-  .row-signal { grid-template-columns:55px 80px 1fr 55px 60px; }
-  .row-whale  { grid-template-columns:55px 80px 70px 1fr 70px; }
-  .row-gem    { grid-template-columns:55px 90px 55px 1fr 60px; }
+/* ── GRID LAYOUTS ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.g2w{display:grid;grid-template-columns:3fr 2fr;gap:20px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
 
-  .chain-tag { font-size:9px; padding:2px 5px; border-radius:1px; letter-spacing:0.06em; font-weight:500; text-align:center; }
-  .chain-solana    { background:rgba(153,69,255,0.15); color:#b57bff; }
-  .chain-ethereum  { background:rgba(98,126,234,0.15); color:#8fa8f8; }
-  .chain-base      { background:rgba(0,82,255,0.12);   color:#6699ff; }
-  .chain-arbitrum  { background:rgba(40,160,240,0.12); color:#5ab4f0; }
-  .chain-bnb       { background:rgba(240,185,11,0.12); color:#e8c53a; }
-  .chain-avalanche { background:rgba(232,65,66,0.12);  color:#f07070; }
-  .chain-polygon   { background:rgba(130,71,229,0.12); color:#a97cf5; }
-  .chain-optimism  { background:rgba(255,4,32,0.12);   color:#ff6b7a; }
-  .chain-zksync    { background:rgba(54,103,246,0.12); color:#7a9ffa; }
-  .chain-unknown   { background:rgba(74,85,104,0.2);   color:var(--muted); }
+/* ── PANEL ── */
+.panel{border:1px solid var(--border);background:var(--s2)}
+.ph{background:var(--s1);padding:9px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-family:var(--mono);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.ph-count{font-size:10px;color:var(--accent)}
+.empty{padding:28px;text-align:center;color:var(--muted);font-family:var(--mono);font-size:10px}
 
-  .sig-pump { color:var(--green2); font-weight:500; font-size:10px; }
-  .sig-dump { color:var(--red2);   font-weight:500; font-size:10px; }
-  .tok      { color:var(--white); font-weight:500; font-size:11px; }
-  .ind      { color:var(--muted); font-size:10px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-  .addr     { color:var(--muted); font-size:10px; }
-  .score    { color:var(--accent); font-size:10px; font-weight:500; text-align:right; }
+/* ── SIGNAL ROWS ── */
+.row{padding:10px 14px;border-bottom:1px solid var(--border);display:grid;align-items:center;gap:10px;transition:background .1s;cursor:default}
+.row:last-child{border-bottom:none}
+.row:hover{background:rgba(255,255,255,.025)}
+.r-sig{grid-template-columns:60px 90px 1fr 60px 55px}
+.r-whale{grid-template-columns:60px 90px 60px 1fr 80px}
+.r-gem{grid-template-columns:60px 90px 48px 1fr 60px}
+.r-run{grid-template-columns:1fr 80px 70px 60px}
 
-  .conf-wrap { text-align:right; }
-  .conf-val  { font-size:11px; color:var(--text); }
-  .conf-bar  { height:2px; background:var(--dim); margin-top:3px; border-radius:1px; overflow:hidden; }
-  .conf-fill { height:100%; border-radius:1px; }
-  .fp { background:var(--green); }
-  .fd { background:var(--red); }
+.chain-tag{font-family:var(--mono);font-size:8px;padding:2px 5px;letter-spacing:.05em;font-weight:700;text-align:center;text-transform:uppercase}
+.c-solana{background:rgba(153,69,255,.15);color:#c09aff}
+.c-ethereum{background:rgba(98,126,234,.15);color:#9aaeff}
+.c-base{background:rgba(0,82,255,.12);color:#6699ff}
+.c-arbitrum{background:rgba(40,160,240,.12);color:#60c0f0}
+.c-bnb{background:rgba(240,185,11,.12);color:#f0d060}
+.c-avalanche{background:rgba(232,65,66,.12);color:#f07070}
+.c-polygon{background:rgba(130,71,229,.12);color:#b090f0}
+.c-optimism{background:rgba(255,4,32,.12);color:#ff7080}
+.c-zksync{background:rgba(54,103,246,.12);color:#80a0ff}
+.c-unknown{background:rgba(50,80,100,.2);color:var(--muted)}
 
-  .chain-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); }
-  .cc { background:var(--panel); padding:12px 14px; position:relative; }
-  .cc::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; }
-  .cc.has-pump::after { background:var(--green); }
-  .cc.has-dump::after { background:var(--red); }
-  .cc.has-both::after { background:linear-gradient(90deg,var(--green) 50%,var(--red) 50%); }
-  .cc.no-data::after  { background:var(--dim); }
-  .cc-name { font-size:10px; color:var(--text); font-weight:500; letter-spacing:0.06em; margin-bottom:6px; }
-  .cc-nums { display:flex; gap:14px; margin-top:4px; }
-  .cc-pump { font-size:11px; color:var(--green2); }
-  .cc-dump { font-size:11px; color:var(--red2); }
-  .cc-lbl  { font-size:9px; color:var(--muted); margin-top:1px; }
+.tok{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--bright);letter-spacing:.04em}
+.ind{font-size:11px;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.addr{font-family:var(--mono);font-size:10px;color:var(--muted)}
+.sig-p{font-family:var(--mono);font-size:9px;font-weight:700;color:var(--green);letter-spacing:.1em}
+.sig-d{font-family:var(--mono);font-size:9px;font-weight:700;color:var(--red);letter-spacing:.1em}
+.val{font-family:var(--mono);font-size:11px;color:var(--accent);text-align:right}
 
-  .report-list { border:1px solid var(--border); }
-  .report-file { padding:9px 14px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; cursor:pointer; transition:background 0.1s; font-size:11px; }
-  .report-file:last-child { border-bottom:none; }
-  .report-file:hover { background:rgba(255,255,255,0.02); }
-  .report-file.selected { background:rgba(212,168,67,0.06); border-left:2px solid var(--accent); }
-  .report-content { border:1px solid var(--border); background:var(--bg); padding:16px; font-size:11px; line-height:1.8; white-space:pre-wrap; max-height:500px; overflow-y:auto; color:var(--text); }
+.conf{text-align:right}
+.conf-n{font-family:var(--mono);font-size:11px;color:var(--bright)}
+.conf-bar{height:2px;background:var(--dim);margin-top:3px;border-radius:1px;overflow:hidden}
+.cf-p{height:100%;background:linear-gradient(90deg,var(--green2),var(--green));border-radius:1px}
+.cf-d{height:100%;background:linear-gradient(90deg,var(--red2),var(--red));border-radius:1px}
 
-  .ops-row { padding:9px 14px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; font-size:11px; }
-  .ops-row:last-child { border-bottom:none; }
-  .ops-lbl { color:var(--muted); font-size:10px; }
+/* ── LIVE FEED ── */
+.feed{max-height:380px;overflow-y:auto}
+.feed-item{padding:9px 14px;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:flex-start}
+.feed-item.new{animation:flash .6s ease}
+@keyframes flash{0%{background:rgba(240,180,41,.1)}100%{background:transparent}}
+.feed-time{font-family:var(--mono);font-size:9px;color:var(--muted);white-space:nowrap;padding-top:1px}
+.feed-body{flex:1;font-size:11px;line-height:1.5}
+.feed-tag{font-family:var(--mono);font-size:8px;padding:2px 6px;letter-spacing:.08em;text-transform:uppercase;margin-right:6px}
+.ft-pump{background:rgba(0,229,160,.15);color:var(--green)}
+.ft-dump{background:rgba(255,77,106,.15);color:var(--red)}
+.ft-whale{background:rgba(59,158,255,.15);color:var(--blue)}
+.ft-gem{background:rgba(240,180,41,.15);color:var(--accent)}
+.ft-scan{background:rgba(50,80,100,.2);color:var(--muted)}
 
-  .pill { font-size:9px; padding:2px 7px; letter-spacing:0.06em; text-transform:uppercase; border-radius:1px; }
-  .pill-ok   { background:rgba(56,161,105,0.15); color:var(--green2); }
-  .pill-fail { background:rgba(229,62,62,0.15);  color:var(--red2); }
-  .pill-run  { background:rgba(66,153,225,0.15); color:var(--blue); }
+/* ── CHAIN HEATMAP ── */
+.heatmap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.hm-cell{background:var(--s2);padding:14px 16px;position:relative;transition:background .2s}
+.hm-cell:hover{background:var(--s1)}
+.hm-cell::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--dim);transition:all .3s}
+.hm-cell.hot-pump::before{background:linear-gradient(90deg,var(--green2),var(--green))}
+.hm-cell.hot-dump::before{background:linear-gradient(90deg,var(--red2),var(--red))}
+.hm-cell.hot-both::before{background:linear-gradient(90deg,var(--green) 40%,var(--red) 60%)}
+.hm-name{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--bright);letter-spacing:.08em;margin-bottom:8px}
+.hm-nums{display:flex;gap:16px}
+.hm-p{font-size:18px;font-family:var(--mono);font-weight:700;color:var(--green);line-height:1}
+.hm-d{font-size:18px;font-family:var(--mono);font-weight:700;color:var(--red);line-height:1}
+.hm-sub{font-size:9px;color:var(--muted);margin-top:2px}
+.hm-bar{margin-top:8px;height:3px;background:var(--dim);border-radius:2px;overflow:hidden;display:flex;gap:1px}
+.hm-bp{height:100%;background:var(--green2);border-radius:2px;transition:width .5s}
+.hm-bd{height:100%;background:var(--red2);border-radius:2px;transition:width .5s}
 
-  .empty { padding:28px; text-align:center; color:var(--muted); font-size:11px; }
+/* ── REPORTS ── */
+.rpt-list{border:1px solid var(--border);max-height:420px;overflow-y:auto}
+.rpt-row{padding:9px 16px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:background .1s;font-size:11px}
+.rpt-row:hover{background:rgba(255,255,255,.02)}
+.rpt-row.sel{background:rgba(240,180,41,.06);border-left:2px solid var(--accent)}
+.rpt-row:last-child{border-bottom:none}
+.rpt-name{font-family:var(--mono);font-size:10px;color:var(--text)}
+.rpt-meta{font-family:var(--mono);font-size:9px;color:var(--muted)}
+.rpt-content{border:1px solid var(--border);background:var(--bg);padding:16px;font-family:var(--mono);font-size:10px;line-height:1.8;white-space:pre-wrap;max-height:500px;overflow-y:auto;color:var(--text)}
 
-  ::-webkit-scrollbar { width:3px; height:3px; }
-  ::-webkit-scrollbar-thumb { background:var(--dim); border-radius:2px; }
+/* ── PILLS ── */
+.pill{font-family:var(--mono);font-size:8px;padding:2px 7px;letter-spacing:.08em;text-transform:uppercase;border-radius:1px}
+.p-ok{background:rgba(0,229,160,.15);color:var(--green)}
+.p-fail{background:rgba(255,77,106,.15);color:var(--red)}
+.p-run{background:rgba(59,158,255,.15);color:var(--blue)}
+
+/* ── SECTION HEADS ── */
+.sh{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.sl{font-family:var(--mono);font-size:8px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.sl::before{content:'';width:2px;height:10px;background:var(--accent);display:inline-block}
+.sm{font-family:var(--mono);font-size:9px;color:var(--muted)}
+.mb{margin-bottom:20px}
+
+/* ── SCORE RING ── */
+.score-ring{width:36px;height:36px;position:relative;display:flex;align-items:center;justify-content:center}
+.score-ring svg{position:absolute;top:0;left:0;transform:rotate(-90deg)}
+.score-n{font-family:var(--mono);font-size:9px;font-weight:700;color:var(--accent)}
+
+/* scrollbar */
+::-webkit-scrollbar{width:3px;height:3px}
+::-webkit-scrollbar-thumb{background:var(--dim);border-radius:2px}
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="logo">
-    <span class="logo-name">AZALYST</span>
-    <span class="logo-sub">Intelligence Monitor</span>
+    <div class="logo-dot" id="liveDot"></div>
+    AZALYST
+    <span class="logo-sub">Live Intelligence</span>
+  </div>
+  <div class="header-center">
+    <div class="live-badge">
+      <div class="live-dot" id="streamDot"></div>
+      <span id="streamLabel">OFFLINE</span>
+    </div>
+    <span id="countdown" title="Next auto-refresh">—</span>
   </div>
   <div class="header-right">
-    <div class="status-pill">
-      <div class="dot off" id="dot"></div>
-      <span id="statusLabel">DISCONNECTED</span>
-    </div>
-    <input class="repo-input" id="repoInput" placeholder="owner/repository" value="Azalyst/birdeye.so" />
-    <button class="btn primary" onclick="init()">LOAD</button>
+    <input class="repo-in" id="repoIn" placeholder="owner/repository" value="Azalyst/birdeye.so"/>
+    <input class="repo-in" id="tokenIn" placeholder="GitHub PAT (private repos)" style="width:180px" type="password"/>
+    <button class="btn go" onclick="init()">LOAD</button>
   </div>
 </header>
 
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-label">SIGNALS</div>
+  <div class="ticker-track">
+    <div class="ticker-inner" id="tickerInner">
+      <span class="tick-item tick-sep">· awaiting scan data ·</span>
+    </div>
+  </div>
+</div>
+
+<!-- TABS -->
 <div class="tabbar">
-  <div class="tab active" onclick="switchTab('intelligence',this)">Intelligence <span class="tab-badge hot" id="badgeIntel">—</span></div>
-  <div class="tab" onclick="switchTab('whales',this)">Whale Moves <span class="tab-badge" id="badgeWhales">—</span></div>
-  <div class="tab" onclick="switchTab('gems',this)">Hidden Gems <span class="tab-badge" id="badgeGems">—</span></div>
-  <div class="tab" onclick="switchTab('chains',this)">Chain Activity</div>
-  <div class="tab" onclick="switchTab('reports',this)">Reports <span class="tab-badge" id="badgeReports">—</span></div>
-  <div class="tab" onclick="switchTab('ops',this)">System</div>
+  <div class="tab active" onclick="tab('intel',this)">Intelligence <span class="badge live" id="bIntel">—</span></div>
+  <div class="tab" onclick="tab('whales',this)">Whales <span class="badge" id="bWhale">—</span></div>
+  <div class="tab" onclick="tab('gems',this)">Gems <span class="badge" id="bGem">—</span></div>
+  <div class="tab" onclick="tab('chains',this)">Chain Map</div>
+  <div class="tab" onclick="tab('feed',this)">Live Feed <span class="badge live" id="bFeed">—</span></div>
+  <div class="tab" onclick="tab('reports',this)">Reports <span class="badge" id="bReports">—</span></div>
+  <div class="tab" onclick="tab('ops',this)">System</div>
 </div>
 
 <!-- INTELLIGENCE -->
-<div class="page active" id="tab-intelligence">
-  <div class="summary-bar">
-    <div class="sum-card pump"><div class="sum-label">Pump Signals</div><div class="sum-value" id="sPump">—</div><div class="sum-sub">this scan</div></div>
-    <div class="sum-card dump"><div class="sum-label">Dump Warnings</div><div class="sum-value" id="sDump">—</div><div class="sum-sub">this scan</div></div>
-    <div class="sum-card whale"><div class="sum-label">Whale Moves</div><div class="sum-value" id="sWhale">—</div><div class="sum-sub">above $10K</div></div>
-    <div class="sum-card gem"><div class="sum-label">Hidden Gems</div><div class="sum-value" id="sGem">—</div><div class="sum-sub">score &gt;50</div></div>
-    <div class="sum-card ops"><div class="sum-label">Last Scan</div><div class="sum-value" id="sLast" style="font-size:15px;padding-top:8px;">—</div><div class="sum-sub" id="sNext">next: —</div></div>
+<div class="page active" id="tab-intel">
+  <div class="statbar">
+    <div class="stat pump"><div class="stat-lbl">Pump Signals</div><div class="stat-val" id="sPump">—</div><div class="stat-sub">this scan</div></div>
+    <div class="stat dump"><div class="stat-lbl">Dump Warnings</div><div class="stat-val" id="sDump">—</div><div class="stat-sub">this scan</div></div>
+    <div class="stat whale"><div class="stat-lbl">Whale Moves</div><div class="stat-val" id="sWhale">—</div><div class="stat-sub">&gt;$10K</div></div>
+    <div class="stat gem"><div class="stat-lbl">Gems Found</div><div class="stat-val" id="sGem">—</div><div class="stat-sub">score&gt;50</div></div>
+    <div class="stat chain"><div class="stat-lbl">Chains Active</div><div class="stat-val" id="sChain">—</div><div class="stat-sub">this scan</div></div>
+    <div class="stat ops"><div class="stat-lbl">Last Scan</div><div class="stat-val" id="sLast" style="font-size:14px;padding-top:8px">—</div><div class="stat-sub" id="sNext">next: —</div></div>
   </div>
-  <div class="grid2wide">
-    <div class="section">
-      <div class="section-head"><div class="section-label">Pump Signals — Check These</div><span class="section-meta">sorted by confidence</span></div>
+  <div class="g2w">
+    <div>
+      <div class="sh mb"><div class="sl">🚀 Pump Signals</div><span class="sm" id="pumpMeta">sorted by confidence</span></div>
       <div class="panel">
-        <div class="panel-head"><span>Chain — Token — Indicators — Conf — Signal</span></div>
-        <div id="pumpList"><div class="empty">Load a repository to view signals.</div></div>
+        <div class="ph"><span>Chain — Token — Indicators — Conf — Signal</span><span class="ph-count" id="pumpCount">0</span></div>
+        <div id="pumpList"><div class="empty">Load a repository to see signals.</div></div>
       </div>
     </div>
-    <div class="section">
-      <div class="section-head"><div class="section-label">Dump Warnings</div></div>
+    <div>
+      <div class="sh mb"><div class="sl">⚠️ Dump Warnings</div></div>
       <div class="panel">
-        <div class="panel-head"><span>Chain — Token — Conf</span></div>
+        <div class="ph"><span>Chain — Token — Conf — Signal</span><span class="ph-count" id="dumpCount">0</span></div>
         <div id="dumpList"><div class="empty">—</div></div>
       </div>
     </div>
@@ -204,337 +280,439 @@
 
 <!-- WHALES -->
 <div class="page" id="tab-whales">
-  <div class="section">
-    <div class="section-head"><div class="section-label">Whale Trades — Latest Scan</div><span class="section-meta">transactions above $10,000</span></div>
-    <div class="panel">
-      <div class="panel-head"><span>Chain — Token — Type — Wallet — Value</span></div>
-      <div id="whaleList"><div class="empty">No data. Load a repository first.</div></div>
-    </div>
+  <div class="sh mb"><div class="sl">🐋 Whale Transactions</div><span class="sm">above $10,000 — latest scan</span></div>
+  <div class="panel">
+    <div class="ph"><span>Chain — Token — Type — Wallet — Value</span><span class="ph-count" id="whaleCount">0</span></div>
+    <div id="whaleList"><div class="empty">No data yet.</div></div>
   </div>
 </div>
 
 <!-- GEMS -->
 <div class="page" id="tab-gems">
-  <div class="section">
-    <div class="section-head"><div class="section-label">Hidden Gems — Scored Candidates</div><span class="section-meta">age &lt;24h · LP &gt;$2K · vol1H &gt;$10K · not mintable</span></div>
-    <div class="panel">
-      <div class="panel-head"><span>Chain — Token — Score — Metrics — Rating</span></div>
-      <div id="gemList"><div class="empty">No data. Load a repository first.</div></div>
-    </div>
+  <div class="sh mb"><div class="sl">💎 Hidden Gems</div><span class="sm">age &lt;24h · LP &gt;$2K · vol1H &gt;$10K · not mintable</span></div>
+  <div class="panel">
+    <div class="ph"><span>Chain — Token — Score — Metrics — Rating</span><span class="ph-count" id="gemCount">0</span></div>
+    <div id="gemList"><div class="empty">No data yet.</div></div>
   </div>
 </div>
 
-<!-- CHAINS -->
+<!-- CHAIN MAP -->
 <div class="page" id="tab-chains">
-  <div class="section">
-    <div class="section-head"><div class="section-label">Signal Activity by Chain</div><span class="section-meta">from latest scan</span></div>
-    <div class="panel">
-      <div class="panel-head"><span>Pump / Dump counts per chain</span></div>
-      <div class="chain-grid" id="chainGrid"><div class="empty" style="grid-column:1/-1">Load a repository first.</div></div>
+  <div class="sh mb"><div class="sl">Chain Activity Heatmap</div><span class="sm">pump/dump distribution per chain</span></div>
+  <div class="panel">
+    <div class="ph"><span>Signal activity across all scanned chains</span></div>
+    <div class="heatmap" id="chainMap"><div class="empty" style="grid-column:1/-1">Load a repository first.</div></div>
+  </div>
+</div>
+
+<!-- LIVE FEED -->
+<div class="page" id="tab-feed">
+  <div class="g2">
+    <div>
+      <div class="sh mb"><div class="sl">Signal Feed</div><span class="sm" id="feedMeta">—</span></div>
+      <div class="panel">
+        <div class="ph"><span>Type — Time — Event</span></div>
+        <div class="feed" id="liveFeed"><div class="empty">No events yet.</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="sh mb"><div class="sl">Scan History</div></div>
+      <div class="panel">
+        <div class="ph"><span>Run — Status — Duration</span></div>
+        <div id="runList"><div class="empty">—</div></div>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- REPORTS -->
 <div class="page" id="tab-reports">
-  <div class="grid2wide">
-    <div class="section">
-      <div class="section-head"><div class="section-label">Scan Reports</div><span class="section-meta" id="rptCount">—</span></div>
-      <div class="report-list" id="reportList"><div class="empty">No reports.</div></div>
+  <div class="g2w">
+    <div>
+      <div class="sh mb"><div class="sl">Scan Reports</div><span class="sm" id="rptMeta">—</span></div>
+      <div class="rpt-list" id="rptList"><div class="empty">—</div></div>
     </div>
-    <div class="section">
-      <div class="section-head"><div class="section-label">Report Content</div></div>
-      <div class="report-content" id="reportContent">Select a report to view.</div>
+    <div>
+      <div class="sh mb"><div class="sl">Content</div></div>
+      <div class="rpt-content" id="rptContent">Select a report.</div>
     </div>
   </div>
 </div>
 
 <!-- OPS -->
 <div class="page" id="tab-ops">
-  <div class="grid2">
-    <div class="section">
-      <div class="section-head"><div class="section-label">Recent Workflow Runs</div></div>
-      <div class="panel"><div id="opsList"><div class="empty">No data.</div></div></div>
+  <div class="g2">
+    <div>
+      <div class="sh mb"><div class="sl">Workflow Runs</div></div>
+      <div class="panel"><div id="opsList"><div class="empty">—</div></div></div>
     </div>
-    <div class="section">
-      <div class="section-head"><div class="section-label">Configuration</div></div>
+    <div>
+      <div class="sh mb"><div class="sl">Configuration</div></div>
       <div class="panel">
-        <div class="ops-row"><span class="ops-lbl">Whale Tracker Schedule</span><span>Every 4 hours</span></div>
-        <div class="ops-row"><span class="ops-lbl">Next Run</span><span id="opsNext">—</span></div>
-        <div class="ops-row"><span class="ops-lbl">Success Rate</span><span id="opsRate">—</span></div>
-        <div class="ops-row"><span class="ops-lbl">Agent Trigger</span><span>workflow_dispatch · /agent comment</span></div>
-        <div class="ops-row"><span class="ops-lbl">Chains</span><span>9 chains via Birdeye</span></div>
-        <div class="ops-row"><span class="ops-lbl">Maintained by</span><span><a href="https://github.com/gitdhirajsv" target="_blank" style="color:var(--accent);text-decoration:none;">@gitdhirajsv</a></span></div>
+        <div style="padding:12px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center"><span style="font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.1em">SCAN SCHEDULE</span><span style="font-family:var(--mono);font-size:10px;color:var(--text)">Every 1 hour</span></div>
+        <div style="padding:12px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center"><span style="font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.1em">FULL MULTI-CHAIN</span><span style="font-family:var(--mono);font-size:10px;color:var(--text)">Every 6 hours</span></div>
+        <div style="padding:12px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center"><span style="font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.1em">CHAINS</span><span style="font-family:var(--mono);font-size:10px;color:var(--text)">9 chains via Birdeye</span></div>
+        <div style="padding:12px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center"><span style="font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.1em">NEXT SCAN</span><span style="font-family:var(--mono);font-size:10px;color:var(--text)" id="opsNext">—</span></div>
+        <div style="padding:12px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center"><span style="font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.1em">SUCCESS RATE</span><span style="font-family:var(--mono);font-size:10px;color:var(--text)" id="opsRate">—</span></div>
+        <div style="padding:12px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center"><span style="font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.1em">DASHBOARD REFRESH</span><span style="font-family:var(--mono);font-size:10px;color:var(--text)">Every 60s</span></div>
+        <div style="padding:12px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.1em">MAINTAINED BY</span><a href="https://github.com/gitdhirajsv" target="_blank" style="font-family:var(--mono);font-size:10px;color:var(--accent);text-decoration:none">@gitdhirajsv</a></div>
       </div>
     </div>
   </div>
 </div>
 
 <script>
-const S = { repo:'Azalyst/birdeye.so', token:'', runs:[], reports:[], parsed:null };
+const S = {
+  repo: 'Azalyst/birdeye.so', token: '',
+  runs: [], reports: [], parsed: null,
+  feed: [], refreshTimer: null, countdown: 60
+};
 
+// ── API helpers ──────────────────────────────────────────────
 function gh(p) {
-  const h = {'Accept':'application/vnd.github+json'};
+  const h = { 'Accept': 'application/vnd.github+json' };
   if (S.token) h['Authorization'] = `Bearer ${S.token}`;
-  return fetch(`https://api.github.com/repos/${S.repo}${p}`, {headers:h});
+  return fetch(`https://api.github.com/repos/${S.repo}${p}`, { headers: h });
 }
 function ghRaw(p) {
   const h = {};
   if (S.token) h['Authorization'] = `Bearer ${S.token}`;
-  return fetch(`https://raw.githubusercontent.com/${S.repo}/main/${p}`, {headers:h});
+  return fetch(`https://raw.githubusercontent.com/${S.repo}/main/${p}`, { headers: h });
 }
 
+// ── Utilities ────────────────────────────────────────────────
 function rel(d) {
   if (!d) return '—';
-  const m = Math.floor((Date.now()-new Date(d))/60000);
-  if (m<1) return 'just now';
-  if (m<60) return `${m}m ago`;
-  const h=Math.floor(m/60);
-  if (h<24) return `${h}h ago`;
-  return `${Math.floor(h/24)}d ago`;
+  const m = Math.floor((Date.now() - new Date(d)) / 60000);
+  if (m < 1) return 'just now';
+  if (m < 60) return `${m}m ago`;
+  const h = Math.floor(m / 60);
+  if (h < 24) return `${h}h ago`;
+  return `${Math.floor(h / 24)}d ago`;
 }
-function nextCron() {
-  const now=new Date(), next=new Date(now);
-  next.setMinutes(0,0,0);
-  next.setHours((Math.floor(now.getHours()/4)+1)*4);
-  if (next<=now) next.setHours(next.getHours()+4);
-  const m=Math.round((next-now)/60000);
-  return m<60?`in ${m}m`:`in ${Math.floor(m/60)}h ${m%60}m`;
+function nextHour() {
+  const n = new Date(), nx = new Date(n);
+  nx.setMinutes(0, 0, 0); nx.setHours(nx.getHours() + 1);
+  const m = Math.round((nx - n) / 60000);
+  return m < 60 ? `in ${m}m` : `in ${Math.floor(m / 60)}h ${m % 60}m`;
 }
 function usd(v) {
-  const n=parseFloat(v);
+  const n = parseFloat(v);
   if (isNaN(n)) return '—';
-  if (n>=1e6) return `$${(n/1e6).toFixed(1)}M`;
-  if (n>=1e3) return `$${(n/1e3).toFixed(1)}K`;
+  if (n >= 1e6) return `$${(n / 1e6).toFixed(1)}M`;
+  if (n >= 1e3) return `$${(n / 1e3).toFixed(0)}K`;
   return `$${n.toFixed(0)}`;
 }
 function ctag(chain) {
-  const c=(chain||'unknown').toLowerCase();
-  return `<span class="chain-tag chain-${c}">${c.toUpperCase()}</span>`;
+  const c = (chain || 'unknown').toLowerCase().replace(/\s/g, '');
+  return `<span class="chain-tag c-${c}">${c.toUpperCase()}</span>`;
 }
 
+// ── Report parser ────────────────────────────────────────────
 function parseReport(text) {
-  const r={timestamp:'',chains:[],pumps:[],dumps:[],whales:[],gems:[]};
-  const lines=text.split('\n');
-  const tsLine=lines.find(l=>l.startsWith('Generated'));
-  if (tsLine) r.timestamp=tsLine.replace('Generated :','').trim();
-  const cLine=lines.find(l=>l.startsWith('Chains'));
-  if (cLine) r.chains=cLine.replace('Chains    :','').trim().split(',').map(c=>c.trim().toLowerCase());
+  const r = { timestamp: '', chains: [], pumps: [], dumps: [], whales: [], gems: [] };
+  const lines = text.split('\n');
+  const ts = lines.find(l => l.startsWith('Generated'));
+  if (ts) r.timestamp = ts.replace('Generated :', '').trim();
+  const cl = lines.find(l => l.startsWith('Chains'));
+  if (cl) r.chains = cl.replace('Chains    :', '').trim().split(',').map(c => c.trim().toLowerCase()).filter(Boolean);
 
-  let section='';
-  for (const line of lines) {
-    const t=line.trim();
-    if (!t||t.startsWith('=')||t.startsWith('-')) continue;
-    if (t==='TRENDING TOKEN SIGNALS') { section='signals'; continue; }
-    if (t==='TOP WHALE TRADES')       { section='whales';  continue; }
-    if (t==='HIDDEN GEMS')            { section='gems';    continue; }
+  let section = '';
+  for (const raw of lines) {
+    const t = raw.trim();
+    if (!t || t.startsWith('=') || t.startsWith('-')) continue;
+    if (t === 'TRENDING TOKEN SIGNALS') { section = 'sig'; continue; }
+    if (t === 'TOP WHALE TRADES') { section = 'whale'; continue; }
+    if (t === 'HIDDEN GEMS') { section = 'gem'; continue; }
 
-    if (section==='signals' && t.startsWith('[')) {
-      const cm=t.match(/\[([^\]]+)\]/);
-      const chain=cm?cm[1].trim().toLowerCase():'unknown';
-      const rest=t.replace(/\[[^\]]+\]\s*/,'');
-      const parts=rest.split(/\s{2,}/);
-      const token=(parts[0]||'').trim();
-      const sigType=(parts[1]||'').trim().toLowerCase();
-      const conf=parseFloat(parts[2]||0)/100||0;
-      const indicators=parts.slice(3).join(' ').split(',').map(s=>s.trim()).filter(Boolean);
+    if (section === 'sig' && t.startsWith('[')) {
+      const cm = t.match(/\[([^\]]+)\]/);
+      const chain = cm ? cm[1].trim().toLowerCase() : 'unknown';
+      const rest = t.replace(/\[[^\]]+\]\s*/, '');
+      const parts = rest.split(/\s{2,}/);
+      const token = (parts[0] || '').trim();
+      const sigType = (parts[1] || '').trim().toLowerCase();
+      const conf = parseFloat(parts[2] || 0) / 100 || 0;
+      const inds = parts.slice(3).join(' ').split(',').map(s => s.trim()).filter(Boolean);
       if (!token) continue;
-      const obj={chain,token,confidence:conf,indicators};
-      if (sigType==='pump') r.pumps.push(obj);
-      else if (sigType==='dump') r.dumps.push(obj);
+      if (sigType === 'pump') r.pumps.push({ chain, token, confidence: conf, indicators: inds });
+      else if (sigType === 'dump') r.dumps.push({ chain, token, confidence: conf, indicators: inds });
     }
-    if (section==='whales' && t.startsWith('[')) {
-      const cm=t.match(/\[([^\]]+)\]/);
-      const chain=cm?cm[1].trim().toLowerCase():'unknown';
-      const rest=t.replace(/\[[^\]]+\]\s*/,'');
-      const parts=rest.split(/\s{2,}/);
-      const value=(parts[0]||'').replace(/[$,]/g,'');
-      const type=(parts[1]||'').trim();
-      const token=(parts[2]||'').trim();
-      const wallet=(parts[3]||'').trim();
-      if (value) r.whales.push({chain,value:parseFloat(value)||0,type,token,wallet});
+    if (section === 'whale' && t.startsWith('[')) {
+      const cm = t.match(/\[([^\]]+)\]/);
+      const chain = cm ? cm[1].trim().toLowerCase() : 'unknown';
+      const rest = t.replace(/\[[^\]]+\]\s*/, '');
+      const parts = rest.split(/\s{2,}/);
+      const value = (parts[0] || '').replace(/[$,]/g, '');
+      r.whales.push({ chain, value: parseFloat(value) || 0, type: (parts[1] || '').trim(), token: (parts[2] || '').trim(), wallet: (parts[3] || '').trim() });
     }
-    if (section==='gems' && t.startsWith('[')) {
-      const cm=t.match(/\[([^\]]+)\]/);
-      const chain=cm?cm[1].trim().toLowerCase():'unknown';
-      const rest=t.replace(/\[[^\]]+\]\s*/,'');
-      const sm=rest.match(/Score\s+([\d.]+)\/100/);
-      const am=rest.match(/Age\s+([\d.]+)h/);
-      const vm=rest.match(/Vol1H\s+\$([\d,.]+)/);
-      const lm=rest.match(/LP\s+\$([\d,.]+)/);
-      const token=rest.split(/\s{2,}/)[0].trim();
-      r.gems.push({chain,token,score:sm?parseFloat(sm[1]):0,age:am?parseFloat(am[1]):0,vol1h:vm?parseFloat(vm[1].replace(/,/g,'')):0,lp:lm?parseFloat(lm[1].replace(/,/g,'')):0});
+    if (section === 'gem' && t.startsWith('[')) {
+      const cm = t.match(/\[([^\]]+)\]/);
+      const chain = cm ? cm[1].trim().toLowerCase() : 'unknown';
+      const rest = t.replace(/\[[^\]]+\]\s*/, '');
+      const sm = rest.match(/Score\s+([\d.]+)\/100/);
+      const am = rest.match(/Age\s+([\d.]+)h/);
+      const vm = rest.match(/Vol1H\s+\$([\d,.]+)/);
+      const lm = rest.match(/LP\s+\$([\d,.]+)/);
+      const token = rest.split(/\s{2,}/)[0].trim();
+      r.gems.push({ chain, token, score: sm ? parseFloat(sm[1]) : 0, age: am ? parseFloat(am[1]) : 0, vol1h: vm ? parseFloat(vm[1].replace(/,/g, '')) : 0, lp: lm ? parseFloat(lm[1].replace(/,/g, '')) : 0 });
     }
   }
-  r.pumps.sort((a,b)=>b.confidence-a.confidence);
-  r.dumps.sort((a,b)=>b.confidence-a.confidence);
-  r.whales.sort((a,b)=>b.value-a.value);
-  r.gems.sort((a,b)=>b.score-a.score);
+  r.pumps.sort((a, b) => b.confidence - a.confidence);
+  r.dumps.sort((a, b) => b.confidence - a.confidence);
+  r.whales.sort((a, b) => b.value - a.value);
+  r.gems.sort((a, b) => b.score - a.score);
   return r;
 }
 
-function renderAll(intel) {
-  // Summary
-  document.getElementById('sPump').textContent=intel.pumps.length||'0';
-  document.getElementById('sDump').textContent=intel.dumps.length||'0';
-  document.getElementById('sWhale').textContent=intel.whales.length||'0';
-  document.getElementById('sGem').textContent=intel.gems.filter(g=>g.score>50).length||'0';
-  document.getElementById('sLast').textContent=intel.timestamp?rel(intel.timestamp):rel(S.runs[0]?.created_at);
-  document.getElementById('sNext').textContent='next: '+nextCron();
-  document.getElementById('badgeIntel').textContent=intel.pumps.length+intel.dumps.length;
-  document.getElementById('badgeIntel').className='tab-badge'+(intel.pumps.length>0?' hot':'');
-  document.getElementById('badgeWhales').textContent=intel.whales.length;
-  document.getElementById('badgeGems').textContent=intel.gems.length;
+// ── Feed ─────────────────────────────────────────────────────
+function addFeed(type, text, time) {
+  const tags = { pump: 'ft-pump', dump: 'ft-dump', whale: 'ft-whale', gem: 'ft-gem', scan: 'ft-scan' };
+  const labels = { pump: 'PUMP', dump: 'DUMP', whale: 'WHALE', gem: 'GEM', scan: 'SCAN' };
+  S.feed.unshift({ type, text, time: time || new Date().toISOString() });
+  if (S.feed.length > 200) S.feed.pop();
+}
+function buildFeed(intel) {
+  if (!intel) return;
+  intel.pumps.slice(0, 5).forEach(p => addFeed('pump', `${p.token} [${p.chain}] — ${p.indicators[0] || 'signal detected'} (${Math.round(p.confidence * 100)}%)`, intel.timestamp));
+  intel.dumps.slice(0, 3).forEach(d => addFeed('dump', `${d.token} [${d.chain}] — ${d.indicators[0] || 'dump signal'} (${Math.round(d.confidence * 100)}%)`, intel.timestamp));
+  intel.whales.slice(0, 3).forEach(w => addFeed('whale', `${usd(w.value)} ${w.type} ${w.token || ''} [${w.chain}]`, intel.timestamp));
+  intel.gems.slice(0, 3).forEach(g => addFeed('gem', `${g.token} [${g.chain}] — score ${g.score.toFixed(0)}/100, age ${g.age}h`, intel.timestamp));
+  if (intel.timestamp) addFeed('scan', `Scan completed. ${intel.pumps.length}p / ${intel.dumps.length}d / ${intel.whales.length}w / ${intel.gems.length}g`, intel.timestamp);
+}
+function renderFeed() {
+  const tags = { pump: 'ft-pump', dump: 'ft-dump', whale: 'ft-whale', gem: 'ft-gem', scan: 'ft-scan' };
+  const labels = { pump: 'PUMP', dump: 'DUMP', whale: 'WHALE', gem: 'GEM', scan: 'SCAN' };
+  const el = document.getElementById('liveFeed');
+  if (!S.feed.length) { el.innerHTML = '<div class="empty">No events yet.</div>'; return; }
+  el.innerHTML = S.feed.map((f, i) => `
+    <div class="feed-item${i === 0 ? ' new' : ''}">
+      <div class="feed-time">${rel(f.time)}</div>
+      <div class="feed-body"><span class="feed-tag ${tags[f.type] || 'ft-scan'}">${labels[f.type] || f.type}</span>${f.text}</div>
+    </div>`).join('');
+  document.getElementById('bFeed').textContent = S.feed.length;
+}
 
-  // Pumps
+// ── Ticker ───────────────────────────────────────────────────
+function renderTicker(intel) {
+  if (!intel) return;
+  const items = [
+    ...intel.pumps.slice(0, 6).map(p => `<span class="tick-item tick-pump">▲ ${p.token}/${p.chain.toUpperCase()} ${Math.round(p.confidence * 100)}%</span><span class="tick-sep">·</span>`),
+    ...intel.dumps.slice(0, 4).map(d => `<span class="tick-item tick-dump">▼ ${d.token}/${d.chain.toUpperCase()} ${Math.round(d.confidence * 100)}%</span><span class="tick-sep">·</span>`),
+    ...intel.whales.slice(0, 4).map(w => `<span class="tick-item" style="color:var(--blue)">🐋 ${usd(w.value)} ${w.type} ${w.token}/${w.chain.toUpperCase()}</span><span class="tick-sep">·</span>`),
+    ...intel.gems.slice(0, 4).map(g => `<span class="tick-item" style="color:var(--accent)">💎 ${g.token}/${g.chain.toUpperCase()} ${g.score.toFixed(0)}/100</span><span class="tick-sep">·</span>`),
+  ].join('');
+  const doubled = items + items;
+  const ti = document.getElementById('tickerInner');
+  ti.innerHTML = doubled || '<span class="tick-item tick-sep">· awaiting scan data ·</span>';
+}
+
+// ── Main render ──────────────────────────────────────────────
+function renderAll(intel) {
+  if (!intel) return;
+
+  // Stats
+  document.getElementById('sPump').textContent = intel.pumps.length || '0';
+  document.getElementById('sDump').textContent = intel.dumps.length || '0';
+  document.getElementById('sWhale').textContent = intel.whales.length || '0';
+  document.getElementById('sGem').textContent = intel.gems.filter(g => g.score > 50).length || '0';
+  document.getElementById('sChain').textContent = [...new Set([...intel.pumps, ...intel.dumps, ...intel.whales, ...intel.gems].map(x => x.chain))].length || '0';
+  document.getElementById('sLast').textContent = intel.timestamp ? rel(intel.timestamp) : rel(S.runs[0]?.created_at);
+  document.getElementById('sNext').textContent = 'next: ' + nextHour();
+  document.getElementById('bIntel').textContent = intel.pumps.length + intel.dumps.length;
+  document.getElementById('bIntel').className = 'badge' + (intel.pumps.length > 0 ? ' live' : '');
+  document.getElementById('bWhale').textContent = intel.whales.length;
+  document.getElementById('bGem').textContent = intel.gems.length;
+  document.getElementById('opsNext').textContent = nextHour();
+
+  // Pump list
+  document.getElementById('pumpCount').textContent = intel.pumps.length;
   document.getElementById('pumpList').innerHTML = intel.pumps.length
-    ? intel.pumps.slice(0,12).map(p=>`
-        <div class="row row-signal">
-          ${ctag(p.chain)}
-          <span class="tok">${p.token}</span>
-          <span class="ind">${p.indicators.join(' · ')||'—'}</span>
-          <div class="conf-wrap"><div class="conf-val">${Math.round(p.confidence*100)}%</div><div class="conf-bar"><div class="conf-fill fp" style="width:${p.confidence*100}%"></div></div></div>
-          <span class="sig-pump">PUMP</span>
-        </div>`).join('')
+    ? intel.pumps.slice(0, 15).map(p => `
+      <div class="row r-sig">
+        ${ctag(p.chain)}
+        <span class="tok">${p.token}</span>
+        <span class="ind">${p.indicators.join(' · ') || '—'}</span>
+        <div class="conf"><div class="conf-n">${Math.round(p.confidence * 100)}%</div><div class="conf-bar"><div class="cf-p" style="width:${p.confidence * 100}%"></div></div></div>
+        <span class="sig-p">PUMP</span>
+      </div>`).join('')
     : '<div class="empty">No pump signals in latest scan.</div>';
 
-  // Dumps
+  // Dump list
+  document.getElementById('dumpCount').textContent = intel.dumps.length;
   document.getElementById('dumpList').innerHTML = intel.dumps.length
-    ? intel.dumps.slice(0,8).map(d=>`
-        <div class="row row-signal">
-          ${ctag(d.chain)}
-          <span class="tok">${d.token}</span>
-          <span class="ind">${d.indicators.join(' · ')||'—'}</span>
-          <div class="conf-wrap"><div class="conf-val">${Math.round(d.confidence*100)}%</div><div class="conf-bar"><div class="conf-fill fd" style="width:${d.confidence*100}%"></div></div></div>
-          <span class="sig-dump">DUMP</span>
-        </div>`).join('')
+    ? intel.dumps.slice(0, 10).map(d => `
+      <div class="row r-sig">
+        ${ctag(d.chain)}
+        <span class="tok">${d.token}</span>
+        <span class="ind">${d.indicators.join(' · ') || '—'}</span>
+        <div class="conf"><div class="conf-n">${Math.round(d.confidence * 100)}%</div><div class="conf-bar"><div class="cf-d" style="width:${d.confidence * 100}%"></div></div></div>
+        <span class="sig-d">DUMP</span>
+      </div>`).join('')
     : '<div class="empty">No dump warnings.</div>';
 
-  // Whales
+  // Whale list
+  document.getElementById('whaleCount').textContent = intel.whales.length;
   document.getElementById('whaleList').innerHTML = intel.whales.length
-    ? intel.whales.map(w=>`
-        <div class="row row-whale">
-          ${ctag(w.chain)}
-          <span class="tok">${w.token||'—'}</span>
-          <span class="${w.type==='BUY'?'sig-pump':'sig-dump'}">${w.type||'—'}</span>
-          <span class="addr">${w.wallet?w.wallet.slice(0,8)+'...'+w.wallet.slice(-6):'—'}</span>
-          <span class="score" style="text-align:right;">${usd(w.value)}</span>
-        </div>`).join('')
-    : '<div class="empty">No whale trades in latest scan.</div>';
+    ? intel.whales.map(w => `
+      <div class="row r-whale">
+        ${ctag(w.chain)}
+        <span class="tok">${w.token || '—'}</span>
+        <span class="${w.type === 'BUY' ? 'sig-p' : 'sig-d'}">${w.type || '—'}</span>
+        <span class="addr">${w.wallet ? w.wallet.slice(0, 8) + '…' + w.wallet.slice(-5) : '—'}</span>
+        <span class="val">${usd(w.value)}</span>
+      </div>`).join('')
+    : '<div class="empty">No whale trades detected.</div>';
 
-  // Gems
+  // Gem list
+  document.getElementById('gemCount').textContent = intel.gems.length;
   document.getElementById('gemList').innerHTML = intel.gems.length
-    ? intel.gems.map(g=>`
-        <div class="row row-gem">
-          ${ctag(g.chain)}
-          <span class="tok">${g.token}</span>
-          <span class="score">${g.score.toFixed(0)}/100</span>
-          <span class="ind">Age ${g.age}h · Vol ${usd(g.vol1h)} · LP ${usd(g.lp)}</span>
-          <span class="${g.score>=70?'sig-pump':g.score>=40?'':'sig-dump'}">${g.score>=70?'STRONG':g.score>=40?'WATCH':'WEAK'}</span>
-        </div>`).join('')
-    : '<div class="empty">No gems found in latest scan.</div>';
+    ? intel.gems.map(g => `
+      <div class="row r-gem">
+        ${ctag(g.chain)}
+        <span class="tok">${g.token}</span>
+        <span class="val" style="font-size:10px">${g.score.toFixed(0)}/100</span>
+        <span class="ind">Age ${g.age}h · Vol ${usd(g.vol1h)} · LP ${usd(g.lp)}</span>
+        <span class="${g.score >= 70 ? 'sig-p' : g.score >= 40 ? '' : 'sig-d'}" style="${g.score >= 40 && g.score < 70 ? 'color:var(--accent);font-family:var(--mono);font-size:9px' : ''}">${g.score >= 70 ? 'STRONG' : g.score >= 40 ? 'WATCH' : 'WEAK'}</span>
+      </div>`).join('')
+    : '<div class="empty">No gems found.</div>';
 
-  // Chain grid
-  const cm={};
-  intel.pumps.forEach(p=>{ if(!cm[p.chain]) cm[p.chain]={p:0,d:0}; cm[p.chain].p++; });
-  intel.dumps.forEach(d=>{ if(!cm[d.chain]) cm[d.chain]={p:0,d:0}; cm[d.chain].d++; });
-  const chains=['solana','ethereum','base','arbitrum','bnb','avalanche','polygon','optimism','zksync'];
-  document.getElementById('chainGrid').innerHTML=chains.map(c=>{
-    const d=cm[c]||{p:0,d:0};
-    const cls=d.p>0&&d.d>0?'has-both':d.p>0?'has-pump':d.d>0?'has-dump':'no-data';
-    return `<div class="cc ${cls}">
-      <div class="cc-name">${c.toUpperCase()}</div>
-      <div class="cc-nums">
-        <div><div class="cc-pump">${d.p}</div><div class="cc-lbl">pump</div></div>
-        <div><div class="cc-dump">${d.d}</div><div class="cc-lbl">dump</div></div>
+  // Chain heatmap
+  const cm = {};
+  intel.pumps.forEach(p => { cm[p.chain] = cm[p.chain] || { p: 0, d: 0 }; cm[p.chain].p++; });
+  intel.dumps.forEach(d => { cm[d.chain] = cm[d.chain] || { p: 0, d: 0 }; cm[d.chain].d++; });
+  const chains = ['solana', 'ethereum', 'base', 'arbitrum', 'bnb', 'avalanche', 'polygon', 'optimism', 'zksync'];
+  document.getElementById('chainMap').innerHTML = chains.map(c => {
+    const d = cm[c] || { p: 0, d: 0 };
+    const total = d.p + d.d || 1;
+    const cls = d.p > 0 && d.d > 0 ? 'hot-both' : d.p > 0 ? 'hot-pump' : d.d > 0 ? 'hot-dump' : '';
+    return `<div class="hm-cell ${cls}">
+      <div class="hm-name">${c.toUpperCase()}</div>
+      <div class="hm-nums">
+        <div><div class="hm-p">${d.p}</div><div class="hm-sub">pump</div></div>
+        <div><div class="hm-d">${d.d}</div><div class="hm-sub">dump</div></div>
+      </div>
+      <div class="hm-bar">
+        <div class="hm-bp" style="width:${(d.p / total * 100).toFixed(0)}%"></div>
+        <div class="hm-bd" style="width:${(d.d / total * 100).toFixed(0)}%"></div>
       </div>
     </div>`;
   }).join('');
 
-  // Ops
-  document.getElementById('opsNext').textContent=nextCron();
-  const l10=S.runs.slice(0,10);
-  const ok=l10.filter(r=>r.conclusion==='success').length;
-  document.getElementById('opsRate').textContent=l10.length?`${Math.round(ok/l10.length*100)}% (${ok}/${l10.length})`:'—';
-  document.getElementById('opsList').innerHTML=S.runs.slice(0,15).map(r=>{
-    const cls=r.conclusion==='success'?'pill-ok':r.conclusion==='failure'?'pill-fail':'pill-run';
-    return `<div class="ops-row"><span class="ops-lbl">${rel(r.created_at)} — ${r._wf}</span><span class="pill ${cls}">${(r.conclusion||r.status||'?').toUpperCase()}</span></div>`;
-  }).join('')||'<div class="empty">No runs.</div>';
+  // Runs
+  const l10 = S.runs.slice(0, 10);
+  const ok = l10.filter(r => r.conclusion === 'success').length;
+  document.getElementById('opsRate').textContent = l10.length ? `${Math.round(ok / l10.length * 100)}% (${ok}/${l10.length})` : '—';
+  document.getElementById('opsList').innerHTML = S.runs.slice(0, 20).map(r => {
+    const cls = r.conclusion === 'success' ? 'p-ok' : r.conclusion === 'failure' ? 'p-fail' : 'p-run';
+    const dur = r.run_started_at && r.updated_at ? Math.round((new Date(r.updated_at) - new Date(r.run_started_at)) / 1000) + 's' : '—';
+    return `<div class="row r-run"><span class="addr">${r._wf} · ${rel(r.created_at)}</span><span class="addr">${dur}</span><span class="addr">${r.event}</span><span class="pill ${cls}">${(r.conclusion || r.status || '?').toUpperCase()}</span></div>`;
+  }).join('') || '<div class="empty">No runs.</div>';
+  document.getElementById('runList').innerHTML = document.getElementById('opsList').innerHTML;
+
+  renderTicker(intel);
+  buildFeed(intel);
+  renderFeed();
 }
 
 function renderReports() {
-  document.getElementById('badgeReports').textContent=S.reports.length;
-  document.getElementById('rptCount').textContent=`${S.reports.length} files`;
-  document.getElementById('reportList').innerHTML=S.reports.length
-    ? S.reports.map((f,i)=>`<div class="report-file" onclick="loadReport('${f.path}',this)">${f.path.split('/').pop()}<span class="addr">view</span></div>`).join('')
-    : '<div class="empty">No report files in reports/</div>';
+  document.getElementById('bReports').textContent = S.reports.length;
+  document.getElementById('rptMeta').textContent = `${S.reports.length} files`;
+  document.getElementById('rptList').innerHTML = S.reports.length
+    ? S.reports.map(f => `<div class="rpt-row" onclick="loadRpt('${f.path}',this)"><span class="rpt-name">${f.path.split('/').pop()}</span><span class="rpt-meta">view →</span></div>`).join('')
+    : '<div class="empty">No reports yet.</div>';
 }
 
-async function loadReport(path, el) {
-  document.querySelectorAll('.report-file').forEach(e=>e.classList.remove('selected'));
-  el.classList.add('selected');
-  document.getElementById('reportContent').textContent='Loading...';
+async function loadRpt(path, el) {
+  document.querySelectorAll('.rpt-row').forEach(e => e.classList.remove('sel'));
+  el?.classList.add('sel');
+  document.getElementById('rptContent').textContent = 'Loading…';
   try {
-    const r=await ghRaw(path);
-    const text=await r.text();
-    document.getElementById('reportContent').textContent=text||'(empty)';
-    S.parsed=parseReport(text);
-    renderAll(S.parsed);
-  } catch(e) {
-    document.getElementById('reportContent').textContent=`Error: ${e.message}`;
+    const r = await ghRaw(path);
+    const text = await r.text();
+    document.getElementById('rptContent').textContent = text || '(empty)';
+    const parsed = parseReport(text);
+    S.parsed = parsed;
+    renderAll(parsed);
+  } catch (e) {
+    document.getElementById('rptContent').textContent = `Error: ${e.message}`;
   }
 }
 
+// ── Init & auto-refresh ──────────────────────────────────────
 async function init() {
-  const repo=document.getElementById('repoInput').value.trim();
-  if (!repo||!repo.includes('/')) { alert('Enter owner/repository'); return; }
-  S.repo=repo;
-  document.getElementById('dot').className='dot off';
-  document.getElementById('statusLabel').textContent='LOADING';
-  try {
-    const [wh,wt]=await Promise.all([
-      gh('/actions/workflows/agent.yml/runs?per_page=20').then(r=>r.json()),
-      gh('/actions/workflows/whale_tracking.yml/runs?per_page=20').then(r=>r.json()),
-    ]);
-    S.runs=[...(wh.workflow_runs||[]).map(r=>({...r,_wf:'Agent'})),
-             ...(wt.workflow_runs||[]).map(r=>({...r,_wf:'Whale Tracker'}))]
-            .sort((a,b)=>new Date(b.created_at)-new Date(a.created_at));
+  const repo = document.getElementById('repoIn').value.trim();
+  const token = document.getElementById('tokenIn').value.trim();
+  if (!repo || !repo.includes('/')) { alert('Enter owner/repository'); return; }
+  S.repo = repo; S.token = token;
 
-    const tree=await gh('/git/trees/main?recursive=1').then(r=>r.json());
-    S.reports=(tree.tree||[])
-      .filter(f=>f.path.startsWith('reports/')&&(f.path.endsWith('.txt')||f.path.endsWith('.md'))&&!f.path.endsWith('.gitkeep'))
-      .sort((a,b)=>b.path.localeCompare(a.path)).slice(0,30);
+  setStatus('loading');
+
+  try {
+    const [wh, wt] = await Promise.all([
+      gh('/actions/workflows/agent.yml/runs?per_page=20').then(r => r.json()),
+      gh('/actions/workflows/whale_tracking.yml/runs?per_page=20').then(r => r.json()),
+    ]);
+    S.runs = [
+      ...(wh.workflow_runs || []).map(r => ({ ...r, _wf: 'Agent' })),
+      ...(wt.workflow_runs || []).map(r => ({ ...r, _wf: 'Whale' }))
+    ].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
+    const tree = await gh('/git/trees/main?recursive=1').then(r => r.json());
+    S.reports = (tree.tree || [])
+      .filter(f => f.path.startsWith('reports/') && (f.path.endsWith('.txt') || f.path.endsWith('.md')) && !f.path.endsWith('.gitkeep'))
+      .sort((a, b) => b.path.localeCompare(a.path))
+      .slice(0, 50);
 
     if (S.reports.length) {
-      const r=await ghRaw(S.reports[0].path);
-      const text=await r.text();
-      S.parsed=parseReport(text);
+      const r = await ghRaw(S.reports[0].path);
+      const text = await r.text();
+      S.parsed = parseReport(text);
     } else {
-      S.parsed={pumps:[],dumps:[],whales:[],gems:[],timestamp:'',chains:[]};
+      S.parsed = { pumps: [], dumps: [], whales: [], gems: [], timestamp: '', chains: [] };
     }
 
     renderAll(S.parsed);
     renderReports();
-    document.getElementById('dot').className='dot';
-    document.getElementById('statusLabel').textContent='LIVE';
-  } catch(e) {
-    document.getElementById('dot').className='dot err';
-    document.getElementById('statusLabel').textContent='ERROR';
+    setStatus('live');
+  } catch (e) {
+    setStatus('error');
     console.error(e);
   }
 }
 
-function switchTab(name,el) {
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  document.getElementById('tab-'+name).classList.add('active');
+function setStatus(s) {
+  const dot = document.getElementById('streamDot');
+  const lbl = document.getElementById('streamLabel');
+  const ldot = document.getElementById('liveDot');
+  if (s === 'live') { dot.className = 'live-dot active'; lbl.textContent = 'LIVE'; ldot.style.animationDuration = '1.5s'; }
+  else if (s === 'loading') { dot.className = 'live-dot'; lbl.textContent = 'LOADING'; }
+  else { dot.className = 'live-dot'; lbl.textContent = 'ERROR'; ldot.style.background = 'var(--red)'; }
+}
+
+// ── Countdown + auto-refresh every 60s ──────────────────────
+function startCountdown() {
+  if (S.refreshTimer) clearInterval(S.refreshTimer);
+  S.countdown = 60;
+  S.refreshTimer = setInterval(() => {
+    S.countdown--;
+    document.getElementById('countdown').textContent = `↻ ${S.countdown}s`;
+    if (S.countdown <= 0) { S.countdown = 60; if (S.repo) init(); }
+  }, 1000);
+}
+
+function tab(name, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
   el.classList.add('active');
 }
 
-const p=new URLSearchParams(location.search);
-if (p.get('repo')) { document.getElementById('repoInput').value=p.get('repo'); S.repo=p.get('repo'); }
+// ── Boot ─────────────────────────────────────────────────────
+const p = new URLSearchParams(location.search);
+if (p.get('repo')) { document.getElementById('repoIn').value = p.get('repo'); S.repo = p.get('repo'); }
 if (S.repo) init();
-setInterval(()=>{ if(S.repo) init(); }, 300000);
+startCountdown();
 </script>
 </body>
 </html>

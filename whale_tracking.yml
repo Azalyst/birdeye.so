@@ -1,0 +1,127 @@
+name: Birdeye Whale Tracking Scan
+
+on:
+  workflow_dispatch:
+    inputs:
+      scan_type:
+        description: 'Type of scan to run'
+        required: true
+        default: 'daily'
+        type: choice
+        options:
+          - daily
+          - find_pumps
+          - analyze_token
+          - multi_chain
+          - solana_only
+          - evm_chains
+
+  # Runs every 1 hour for near-live detection
+  schedule:
+    - cron: '0 * * * *'
+
+  issue_comment:
+    types: [created]
+
+jobs:
+  whale-tracking:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' || (github.event_name == 'issue_comment' && startsWith(github.event.comment.body, '/whale'))
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Birdeye Scan
+        env:
+          NIM_API_KEY: ${{ secrets.NIM_API_KEY }}
+          BIRDEYE_API_KEY: ${{ secrets.BIRDEYE_API_KEY }}
+        run: |
+          TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+          HOUR=$(date +%H)
+
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            # Every 6 hours: full multi-chain scan
+            # Every other hour: fast Solana + ETH scan
+            if [ $((HOUR % 6)) -eq 0 ]; then
+              echo "Running full multi-chain scan..."
+              python agent/agent.py "run daily_scan with chains=['solana','ethereum','base','arbitrum','bnb'] and save results to reports/scan_multichain_${TIMESTAMP}.md"
+            elif [ $((HOUR % 2)) -eq 0 ]; then
+              echo "Running EVM scan..."
+              python agent/agent.py "run daily_scan with chains=['ethereum','base','arbitrum'] and save results to reports/scan_evm_${TIMESTAMP}.md"
+            else
+              echo "Running Solana fast scan..."
+              python agent/agent.py "run daily_scan with chains=['solana'] and save results to reports/scan_sol_${TIMESTAMP}.md"
+            fi
+
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            case "${{ inputs.scan_type }}" in
+              daily)
+                python agent/agent.py "run daily_scan and save results to reports/daily_${TIMESTAMP}.md"
+                ;;
+              find_pumps)
+                python agent/agent.py "find_pumps on solana and ethereum chains and save results to reports/pumps_${TIMESTAMP}.md"
+                ;;
+              analyze_token)
+                python agent/agent.py "analyze top trending tokens for pump/dump signals and save results to reports/analysis_${TIMESTAMP}.md"
+                ;;
+              multi_chain)
+                python agent/agent.py "run daily_scan with chains=['solana','ethereum','base','arbitrum','bnb','polygon'] and save results to reports/scan_multichain_${TIMESTAMP}.md"
+                ;;
+              solana_only)
+                python agent/agent.py "run daily_scan with chains=['solana'] and save results to reports/scan_sol_${TIMESTAMP}.md"
+                ;;
+              evm_chains)
+                python agent/agent.py "run daily_scan with chains=['ethereum','base','arbitrum','bnb','polygon','optimism'] and save results to reports/scan_evm_${TIMESTAMP}.md"
+                ;;
+            esac
+
+          elif [ "${{ github.event_name }}" = "issue_comment" ]; then
+            COMMENT="${{ github.event.comment.body }}"
+            TASK="${COMMENT#/whale }"
+            python agent/agent.py "$TASK"
+          fi
+
+      - name: Commit scan results
+        if: success()
+        run: |
+          git config user.name "Whale Tracker Bot"
+          git config user.email "bot@github.com"
+          git add reports/ || true
+          git diff --staged --quiet || git commit -m "🐋 Scan $(date +%Y-%m-%d\ %H:%M) UTC"
+          git push || true
+
+      - name: Comment on issue
+        if: github.event_name == 'issue_comment'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            let output = '(no output file found)';
+            try {
+              const fs = require('fs');
+              const files = fs.readdirSync('reports').sort().reverse();
+              if (files.length > 0) {
+                output = fs.readFileSync(`reports/${files[0]}`, 'utf8').slice(0, 3000);
+              }
+            } catch(e) {}
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## 🐋 Whale Scan Results\n\n\`\`\`\n${output}\n\`\`\``
+            });
+
+# Issue comment examples:
+# /whale daily_scan
+# /whale find_pumps chain=solana
+# /whale analyze_token token_address=<ADDRESS> chain=ethereum
+# /whale track_whale wallet_address=<ADDRESS>
+# /whale daily_scan chains=["solana","base","arbitrum"]
