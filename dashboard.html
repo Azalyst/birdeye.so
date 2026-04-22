@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AZALYST — Agent Operations Monitor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #080a0c;
+    --surface:   #0d1117;
+    --border:    #1c2333;
+    --border2:   #21262d;
+    --text:      #c9d1d9;
+    --muted:     #484f58;
+    --dim:       #30363d;
+    --accent:    #e6c87a;
+    --green:     #3fb950;
+    --red:       #f85149;
+    --blue:      #58a6ff;
+    --orange:    #d29922;
+    --white:     #f0f6fc;
+    --mono:      'IBM Plex Mono', monospace;
+    --sans:      'IBM Plex Sans', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.5;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Subtle scan-line texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.04) 2px,
+      rgba(0,0,0,0.04) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ── Header ── */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--surface);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  .brand-name {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+
+  .brand-sub {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .header-meta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  .live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s infinite;
+  }
+
+  .live-dot.stale { background: var(--orange); animation: none; }
+  .live-dot.error { background: var(--red); animation: none; }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .config-input {
+    background: var(--bg);
+    border: 1px solid var(--border2);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 5px 10px;
+    outline: none;
+    width: 220px;
+    transition: border-color 0.15s;
+  }
+
+  .config-input:focus { border-color: var(--accent); }
+
+  .btn {
+    background: transparent;
+    border: 1px solid var(--border2);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 5px 14px;
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    transition: all 0.15s;
+  }
+
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .btn.primary { border-color: var(--accent); color: var(--accent); }
+  .btn.primary:hover { background: var(--accent); color: var(--bg); }
+
+  /* ── Layout ── */
+  .layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    min-height: calc(100vh - 49px);
+  }
+
+  /* ── Sidebar ── */
+  aside {
+    border-right: 1px solid var(--border);
+    background: var(--surface);
+    padding: 20px 0;
+  }
+
+  .nav-section {
+    margin-bottom: 24px;
+  }
+
+  .nav-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+    padding: 0 16px 8px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 16px;
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 11px;
+    transition: all 0.1s;
+    border-left: 2px solid transparent;
+  }
+
+  .nav-item:hover { color: var(--text); background: rgba(255,255,255,0.03); }
+  .nav-item.active { color: var(--accent); border-left-color: var(--accent); background: rgba(230,200,122,0.05); }
+
+  .nav-badge {
+    font-size: 9px;
+    padding: 1px 6px;
+    border-radius: 2px;
+    background: var(--dim);
+    color: var(--muted);
+    font-family: var(--mono);
+  }
+
+  .nav-badge.green { background: rgba(63,185,80,0.15); color: var(--green); }
+  .nav-badge.red   { background: rgba(248,81,73,0.15);  color: var(--red); }
+  .nav-badge.amber { background: rgba(210,153,34,0.15); color: var(--orange); }
+
+  .stat-block {
+    margin: 0 12px 4px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+  }
+
+  .stat-label { font-size: 9px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+  .stat-value { font-size: 20px; font-weight: 300; color: var(--white); letter-spacing: -0.02em; }
+  .stat-sub   { font-size: 9px; color: var(--muted); margin-top: 2px; }
+
+  /* ── Main ── */
+  main {
+    overflow-y: auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* ── Section Headers ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-title::before {
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 10px;
+    background: var(--accent);
+  }
+
+  .section-ts {
+    font-size: 9px;
+    color: var(--muted);
+  }
+
+  /* ── Status Grid ── */
+  .status-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .status-card {
+    background: var(--surface);
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .status-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+  }
+
+  .status-card.ok::after    { background: var(--green); }
+  .status-card.warn::after  { background: var(--orange); }
+  .status-card.error::after { background: var(--red); }
+  .status-card.neutral::after { background: var(--dim); }
+
+  .sc-label { font-size: 9px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; }
+  .sc-value { font-size: 22px; font-weight: 300; color: var(--white); letter-spacing: -0.02em; line-height: 1; }
+  .sc-sub   { font-size: 9px; color: var(--muted); margin-top: 6px; }
+  .sc-trend { font-size: 10px; color: var(--green); margin-top: 4px; }
+  .sc-trend.down { color: var(--red); }
+
+  /* ── Run History Table ── */
+  .table-wrap {
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead th {
+    background: var(--surface);
+    padding: 8px 12px;
+    text-align: left;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    font-weight: 400;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.1s;
+  }
+
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: rgba(255,255,255,0.02); }
+
+  td {
+    padding: 9px 12px;
+    font-size: 11px;
+    color: var(--text);
+    vertical-align: middle;
+  }
+
+  .status-pill {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    padding: 2px 8px;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+
+  .pill-success  { background: rgba(63,185,80,0.12);  color: var(--green); }
+  .pill-failure  { background: rgba(248,81,73,0.12);  color: var(--red); }
+  .pill-running  { background: rgba(88,166,255,0.12); color: var(--blue); }
+  .pill-pending  { background: rgba(72,79,88,0.2);    color: var(--muted); }
+
+  .mono-dim { color: var(--muted); font-size: 10px; }
+
+  /* ── Signal Feed ── */
+  .signal-feed {
+    border: 1px solid var(--border);
+  }
+
+  .feed-header {
+    background: var(--surface);
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .feed-row {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 90px 70px 1fr 80px 80px;
+    gap: 12px;
+    align-items: center;
+    font-size: 11px;
+    transition: background 0.1s;
+    cursor: pointer;
+  }
+
+  .feed-row:last-child { border-bottom: none; }
+  .feed-row:hover { background: rgba(255,255,255,0.02); }
+
+  .signal-pump { color: var(--green); font-weight: 500; }
+  .signal-dump { color: var(--red);   font-weight: 500; }
+  .signal-watch{ color: var(--orange); font-weight: 500; }
+
+  .confidence-bar {
+    height: 3px;
+    background: var(--dim);
+    border-radius: 1px;
+    margin-top: 3px;
+    overflow: hidden;
+  }
+
+  .confidence-fill {
+    height: 100%;
+    border-radius: 1px;
+    transition: width 0.3s;
+  }
+
+  .fill-pump  { background: var(--green); }
+  .fill-dump  { background: var(--red); }
+  .fill-watch { background: var(--orange); }
+
+  /* ── Report Viewer ── */
+  .report-viewer {
+    border: 1px solid var(--border);
+  }
+
+  .report-content {
+    padding: 16px;
+    font-size: 11px;
+    line-height: 1.8;
+    color: var(--text);
+    white-space: pre-wrap;
+    font-family: var(--mono);
+    max-height: 400px;
+    overflow-y: auto;
+    background: var(--bg);
+  }
+
+  .report-content::-webkit-scrollbar { width: 4px; }
+  .report-content::-webkit-scrollbar-track { background: transparent; }
+  .report-content::-webkit-scrollbar-thumb { background: var(--dim); border-radius: 2px; }
+
+  /* ── Workflow Timeline ── */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+  }
+
+  .timeline-row {
+    display: grid;
+    grid-template-columns: 130px 16px 1fr 100px;
+    gap: 12px;
+    align-items: start;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    font-size: 11px;
+    position: relative;
+  }
+
+  .timeline-row:last-child { border-bottom: none; }
+
+  .tl-time { color: var(--muted); font-size: 10px; padding-top: 2px; }
+
+  .tl-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border2);
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  .tl-dot.success { border-color: var(--green); background: var(--green); }
+  .tl-dot.failure { border-color: var(--red);   background: var(--red); }
+  .tl-dot.running { border-color: var(--blue);  background: transparent; animation: pulse 1.5s infinite; }
+
+  .tl-label { color: var(--text); }
+  .tl-sub   { font-size: 10px; color: var(--muted); margin-top: 2px; }
+
+  .tl-duration { color: var(--muted); font-size: 10px; text-align: right; padding-top: 2px; }
+
+  /* ── Error / State messages ── */
+  .state-msg {
+    padding: 24px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 11px;
+    border: 1px solid var(--border);
+  }
+
+  .state-msg.error-msg { color: var(--red); }
+
+  /* ── Config Panel ── */
+  .config-panel {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 16px;
+    display: none;
+  }
+
+  .config-panel.open { display: block; }
+
+  .config-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .config-label {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    width: 100px;
+    flex-shrink: 0;
+  }
+
+  /* ── Two-col layout ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  /* ── Scrollbar ── */
+  main::-webkit-scrollbar { width: 4px; }
+  main::-webkit-scrollbar-track { background: transparent; }
+  main::-webkit-scrollbar-thumb { background: var(--dim); border-radius: 2px; }
+
+  /* ── Utilities ── */
+  .text-green  { color: var(--green); }
+  .text-red    { color: var(--red); }
+  .text-amber  { color: var(--orange); }
+  .text-blue   { color: var(--blue); }
+  .text-accent { color: var(--accent); }
+  .text-muted  { color: var(--muted); }
+  .text-white  { color: var(--white); }
+  .font-light  { font-weight: 300; }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 4px 0;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <span class="brand-name">Azalyst</span>
+    <span class="brand-sub">Agent Operations Monitor</span>
+  </div>
+  <div class="header-meta">
+    <div class="live-indicator">
+      <div class="live-dot" id="liveDot"></div>
+      <span id="liveLabel">CONNECTING</span>
+    </div>
+    <input class="config-input" id="repoInput" placeholder="owner/repository" value="" />
+    <button class="btn primary" onclick="loadAll()">LOAD</button>
+    <button class="btn" onclick="toggleConfig()">CONFIG</button>
+  </div>
+</header>
+
+<div class="layout">
+  <aside>
+    <div class="nav-section">
+      <div class="nav-label">Views</div>
+      <div class="nav-item active" onclick="showView('overview')">
+        Overview
+      </div>
+      <div class="nav-item" onclick="showView('runs')">
+        Workflow Runs
+        <span class="nav-badge" id="runsBadge">—</span>
+      </div>
+      <div class="nav-item" onclick="showView('signals')">
+        Signal Feed
+        <span class="nav-badge" id="signalsBadge">—</span>
+      </div>
+      <div class="nav-item" onclick="showView('reports')">
+        Reports
+        <span class="nav-badge" id="reportsBadge">—</span>
+      </div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-label">System Health</div>
+      <div class="stat-block">
+        <div class="stat-label">Last Scan</div>
+        <div class="stat-value" id="sideLastScan" style="font-size:13px; padding-top:2px;">—</div>
+      </div>
+      <div class="stat-block" style="margin-top:8px;">
+        <div class="stat-label">Next Scheduled</div>
+        <div class="stat-value" id="sideNextRun" style="font-size:13px; padding-top:2px;">—</div>
+      </div>
+      <div class="stat-block" style="margin-top:8px;">
+        <div class="stat-label">Success Rate</div>
+        <div class="stat-value" id="sideSuccessRate">—</div>
+        <div class="stat-sub">last 10 runs</div>
+      </div>
+    </div>
+  </aside>
+
+  <main id="mainArea">
+    <!-- Default prompt -->
+    <div class="state-msg" id="initMsg">
+      Enter a GitHub repository (owner/repo) and press LOAD to begin monitoring.
+    </div>
+  </main>
+</div>
+
+<!-- Config panel (toggled) -->
+<div class="config-panel" id="configPanel" style="position:fixed;bottom:0;left:221px;right:0;z-index:200;">
+  <div class="config-row">
+    <span class="config-label">Repo</span>
+    <input class="config-input" id="repoInput2" placeholder="owner/repository" style="width:280px;" />
+  </div>
+  <div class="config-row">
+    <span class="config-label">Token</span>
+    <input class="config-input" id="tokenInput" type="password" placeholder="GitHub PAT (optional — for private repos)" style="width:280px;" />
+    <span class="text-muted" style="font-size:10px;">Stored in memory only, never persisted</span>
+  </div>
+  <div class="config-row">
+    <span class="config-label">Auto-refresh</span>
+    <select class="config-input" id="refreshInterval" style="width:140px;">
+      <option value="0">Off</option>
+      <option value="60" selected>60 s</option>
+      <option value="300">5 min</option>
+    </select>
+    <button class="btn primary" onclick="applyConfig()">APPLY</button>
+  </div>
+</div>
+
+<script>
+/* ── State ── */
+const state = {
+  repo: '',
+  token: '',
+  runs: [],
+  reports: [],
+  signals: [],
+  refreshTimer: null,
+  currentView: 'overview',
+};
+
+/* ── Helpers ── */
+function gh(path) {
+  const headers = { 'Accept': 'application/vnd.github+json' };
+  if (state.token) headers['Authorization'] = `Bearer ${state.token}`;
+  return fetch(`https://api.github.com/repos/${state.repo}${path}`, { headers });
+}
+
+function ghRaw(path) {
+  const headers = {};
+  if (state.token) headers['Authorization'] = `Bearer ${state.token}`;
+  return fetch(`https://raw.githubusercontent.com/${state.repo}/main${path}`, { headers });
+}
+
+function rel(dateStr) {
+  if (!dateStr) return '—';
+  const diff = Date.now() - new Date(dateStr);
+  const m = Math.floor(diff / 60000);
+  if (m < 1)  return 'just now';
+  if (m < 60) return `${m}m ago`;
+  const h = Math.floor(m / 60);
+  if (h < 24) return `${h}h ago`;
+  return `${Math.floor(h/24)}d ago`;
+}
+
+function dur(ms) {
+  if (!ms) return '—';
+  const s = Math.round(ms / 1000);
+  if (s < 60) return `${s}s`;
+  return `${Math.floor(s/60)}m ${s%60}s`;
+}
+
+function runDur(run) {
+  if (!run.run_started_at || !run.updated_at) return '—';
+  return dur(new Date(run.updated_at) - new Date(run.run_started_at));
+}
+
+function nextCron(cronExpr) {
+  // Simple: schedule is every 4 hours
+  const now = new Date();
+  const next = new Date(now);
+  next.setMinutes(0, 0, 0);
+  const h = now.getHours();
+  const nextH = (Math.floor(h / 4) + 1) * 4;
+  next.setHours(nextH);
+  if (next <= now) next.setHours(next.getHours() + 4);
+  const diff = next - now;
+  const m = Math.round(diff / 60000);
+  if (m < 60) return `in ${m}m`;
+  return `in ${Math.floor(m/60)}h ${m%60}m`;
+}
+
+function setDot(status) {
+  const dot = document.getElementById('liveDot');
+  const lbl = document.getElementById('liveLabel');
+  dot.className = 'live-dot';
+  if (status === 'ok')    { lbl.textContent = 'LIVE';    }
+  if (status === 'stale') { dot.className += ' stale'; lbl.textContent = 'STALE'; }
+  if (status === 'error') { dot.className += ' error'; lbl.textContent = 'ERROR'; }
+}
+
+/* ── Load ── */
+async function loadAll() {
+  const repoVal = document.getElementById('repoInput').value.trim();
+  if (!repoVal || !repoVal.includes('/')) {
+    alert('Enter a valid repo as owner/repository');
+    return;
+  }
+  state.repo = repoVal;
+  document.getElementById('initMsg') && (document.getElementById('initMsg').style.display = 'none');
+
+  try {
+    await Promise.all([loadRuns(), loadReports()]);
+    updateSidebar();
+    renderView(state.currentView);
+    setDot('ok');
+  } catch(e) {
+    setDot('error');
+    showMain(`<div class="state-msg error-msg">Failed to load: ${e.message}<br><span class="text-muted">Check repo name or add a GitHub token for private repos.</span></div>`);
+  }
+}
+
+async function loadRuns() {
+  const [wh, wt] = await Promise.all([
+    gh('/actions/workflows/agent.yml/runs?per_page=20').then(r => r.json()),
+    gh('/actions/workflows/whale_tracking.yml/runs?per_page=20').then(r => r.json()),
+  ]);
+  const a = (wh.workflow_runs || []).map(r => ({ ...r, _wf: 'Agent' }));
+  const b = (wt.workflow_runs || []).map(r => ({ ...r, _wf: 'Whale Tracker' }));
+  state.runs = [...a, ...b].sort((x,y) => new Date(y.created_at) - new Date(x.created_at));
+  document.getElementById('runsBadge').textContent = state.runs.length;
+}
+
+async function loadReports() {
+  const tree = await gh('/git/trees/main?recursive=1').then(r => r.json());
+  if (!tree.tree) return;
+  const reportFiles = tree.tree
+    .filter(f => f.path.startsWith('reports/') && f.path.endsWith('.txt') || f.path.endsWith('.md'))
+    .filter(f => !f.path.endsWith('.gitkeep'))
+    .sort((a,b) => b.path.localeCompare(a.path))
+    .slice(0, 20);
+  state.reports = reportFiles;
+  document.getElementById('reportsBadge').textContent = reportFiles.length;
+
+  // Parse signals from reports
+  parseSignals();
+}
+
+function parseSignals() {
+  // Signals derived from run status + report filenames
+  state.signals = state.runs.slice(0, 30).map(r => ({
+    time: r.created_at,
+    workflow: r._wf,
+    trigger: r.event,
+    status: r.conclusion || r.status,
+    duration: runDur(r),
+    title: r.display_title || r.name,
+  }));
+  document.getElementById('signalsBadge').textContent = state.signals.length;
+}
+
+/* ── Sidebar ── */
+function updateSidebar() {
+  const lastRun = state.runs[0];
+  document.getElementById('sideLastScan').textContent = lastRun ? rel(lastRun.created_at) : '—';
+  document.getElementById('sideNextRun').textContent = nextCron('0 */4 * * *');
+
+  const last10 = state.runs.slice(0, 10);
+  const ok = last10.filter(r => r.conclusion === 'success').length;
+  const rate = last10.length ? Math.round(ok / last10.length * 100) : 0;
+  const rateEl = document.getElementById('sideSuccessRate');
+  rateEl.textContent = `${rate}%`;
+  rateEl.className = `stat-value ${rate >= 80 ? 'text-green' : rate >= 50 ? 'text-amber' : 'text-red'}`;
+}
+
+/* ── Views ── */
+function showView(v) {
+  state.currentView = v;
+  document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+  event.target.closest('.nav-item').classList.add('active');
+  if (state.repo) renderView(v);
+}
+
+function renderView(v) {
+  if (v === 'overview') renderOverview();
+  else if (v === 'runs') renderRuns();
+  else if (v === 'signals') renderSignals();
+  else if (v === 'reports') renderReports();
+}
+
+function showMain(html) {
+  document.getElementById('mainArea').innerHTML = html;
+}
+
+/* ── Overview ── */
+function renderOverview() {
+  const last = state.runs[0];
+  const last10 = state.runs.slice(0, 10);
+  const ok = last10.filter(r => r.conclusion === 'success').length;
+  const fail = last10.filter(r => r.conclusion === 'failure').length;
+  const avgMs = last10
+    .filter(r => r.run_started_at && r.updated_at)
+    .map(r => new Date(r.updated_at) - new Date(r.run_started_at));
+  const avgDur = avgMs.length ? dur(avgMs.reduce((a,b)=>a+b,0)/avgMs.length) : '—';
+
+  const statusClass = !last ? 'neutral'
+    : last.conclusion === 'success' ? 'ok'
+    : last.conclusion === 'failure' ? 'error'
+    : 'warn';
+
+  const statusLabel = !last ? 'NO DATA'
+    : last.conclusion === 'success' ? 'OPERATIONAL'
+    : last.conclusion === 'failure' ? 'LAST RUN FAILED'
+    : (last.status || 'UNKNOWN').toUpperCase();
+
+  const recentRows = state.runs.slice(0, 8).map(r => {
+    const cls = r.conclusion === 'success' ? 'success'
+              : r.conclusion === 'failure' ? 'failure'
+              : r.status === 'in_progress' ? 'running' : 'pending';
+    return `<tr>
+      <td class="mono-dim">${rel(r.created_at)}</td>
+      <td><span class="text-accent">${r._wf}</span></td>
+      <td>${r.display_title || '—'}</td>
+      <td>${r.event}</td>
+      <td><span class="status-pill pill-${cls}">${(r.conclusion || r.status || '—').toUpperCase()}</span></td>
+      <td class="mono-dim">${runDur(r)}</td>
+    </tr>`;
+  }).join('');
+
+  showMain(`
+    <div>
+      <div class="section-header">
+        <div class="section-title">System Status</div>
+        <span class="section-ts">Updated ${new Date().toLocaleTimeString()}</span>
+      </div>
+      <div class="status-grid">
+        <div class="status-card ${statusClass}">
+          <div class="sc-label">System</div>
+          <div class="sc-value" style="font-size:14px;padding-top:4px;">${statusLabel}</div>
+          <div class="sc-sub">${last ? rel(last.created_at) : '—'}</div>
+        </div>
+        <div class="status-card ${ok >= 8 ? 'ok' : ok >= 5 ? 'warn' : 'error'}">
+          <div class="sc-label">Success / 10 Runs</div>
+          <div class="sc-value">${ok}<span style="font-size:14px;color:var(--muted)">/${last10.length}</span></div>
+          <div class="sc-sub">${fail} failure${fail !== 1 ? 's' : ''}</div>
+        </div>
+        <div class="status-card neutral">
+          <div class="sc-label">Avg Duration</div>
+          <div class="sc-value" style="font-size:16px;padding-top:6px;">${avgDur}</div>
+          <div class="sc-sub">last 10 runs</div>
+        </div>
+        <div class="status-card neutral">
+          <div class="sc-label">Reports Stored</div>
+          <div class="sc-value">${state.reports.length}</div>
+          <div class="sc-sub">in reports/</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-header">
+        <div class="section-title">Recent Activity</div>
+        <a href="https://github.com/${state.repo}/actions" target="_blank" class="btn" style="font-size:9px;padding:3px 10px;">OPEN GITHUB</a>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Workflow</th>
+              <th>Title</th>
+              <th>Trigger</th>
+              <th>Status</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>${recentRows || '<tr><td colspan="6" class="text-muted" style="text-align:center;padding:20px;">No runs found</td></tr>'}</tbody>
+        </table>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-header">
+        <div class="section-title">Schedule</div>
+      </div>
+      <div style="border:1px solid var(--border);background:var(--surface);padding:14px 16px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div>
+            <div class="sc-label" style="margin-bottom:6px;">Whale Tracker (Auto)</div>
+            <div style="font-size:11px;color:var(--text);">Every 4 hours — <span class="text-accent">${nextCron('0 */4 * * *')}</span></div>
+            <div style="font-size:10px;color:var(--muted);margin-top:2px;">cron: 0 */4 * * *</div>
+          </div>
+          <div>
+            <div class="sc-label" style="margin-bottom:6px;">Agent (On Demand)</div>
+            <div style="font-size:11px;color:var(--text);">Triggered via workflow_dispatch or /agent comment</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `);
+}
+
+/* ── Runs View ── */
+function renderRuns() {
+  const rows = state.runs.map(r => {
+    const cls = r.conclusion === 'success' ? 'success'
+              : r.conclusion === 'failure' ? 'failure'
+              : r.status === 'in_progress' ? 'running' : 'pending';
+    return `<tr>
+      <td class="mono-dim">${new Date(r.created_at).toLocaleString()}</td>
+      <td><span class="text-accent">${r._wf}</span></td>
+      <td>${r.display_title || '—'}</td>
+      <td class="mono-dim">${r.event}</td>
+      <td>${r.head_branch || '—'}</td>
+      <td><span class="status-pill pill-${cls}">${(r.conclusion || r.status || '—').toUpperCase()}</span></td>
+      <td class="mono-dim">${runDur(r)}</td>
+      <td><a href="${r.html_url}" target="_blank" class="btn" style="font-size:9px;padding:2px 8px;">LOGS</a></td>
+    </tr>`;
+  }).join('');
+
+  showMain(`
+    <div>
+      <div class="section-header">
+        <div class="section-title">All Workflow Runs</div>
+        <span class="section-ts">${state.runs.length} runs loaded</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Workflow</th>
+              <th>Title</th>
+              <th>Trigger</th>
+              <th>Branch</th>
+              <th>Status</th>
+              <th>Duration</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>${rows || '<tr><td colspan="8" class="text-muted" style="text-align:center;padding:20px;">No runs found</td></tr>'}</tbody>
+        </table>
+      </div>
+    </div>
+  `);
+}
+
+/* ── Signals View ── */
+function renderSignals() {
+  const rows = state.signals.map(s => {
+    const isOk = s.status === 'success';
+    const isFail = s.status === 'failure';
+    return `<div class="feed-row">
+      <span class="mono-dim">${rel(s.time)}</span>
+      <span class="${isOk ? 'signal-pump' : isFail ? 'signal-dump' : 'signal-watch'}">${isOk ? 'OK' : isFail ? 'FAIL' : 'RUN'}</span>
+      <span>${s.workflow} — ${s.title || s.trigger}</span>
+      <span class="mono-dim">${s.trigger}</span>
+      <span class="mono-dim">${s.duration}</span>
+    </div>`;
+  }).join('');
+
+  showMain(`
+    <div>
+      <div class="section-header">
+        <div class="section-title">Agent Activity Feed</div>
+        <span class="section-ts">Derived from workflow run history</span>
+      </div>
+      <div class="signal-feed">
+        <div class="feed-header">
+          <span>Timestamp — Workflow — Event — Trigger — Duration</span>
+          <span class="text-muted">${state.signals.length} events</span>
+        </div>
+        ${rows || '<div class="state-msg">No events</div>'}
+      </div>
+    </div>
+    <div>
+      <div class="section-header">
+        <div class="section-title">Signal Legend</div>
+      </div>
+      <div style="border:1px solid var(--border);background:var(--surface);padding:14px 16px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+        <div>
+          <div class="signal-pump" style="font-size:11px;">OK</div>
+          <div class="text-muted" style="font-size:10px;margin-top:4px;">Workflow completed successfully. Check the generated report in reports/ for actual scan output.</div>
+        </div>
+        <div>
+          <div class="signal-dump" style="font-size:11px;">FAIL</div>
+          <div class="text-muted" style="font-size:10px;margin-top:4px;">Workflow failed. Open GitHub Actions logs for the specific error. Common causes: API key missing, dependency install failure.</div>
+        </div>
+        <div>
+          <div class="signal-watch" style="font-size:11px;">RUN</div>
+          <div class="text-muted" style="font-size:10px;margin-top:4px;">Workflow is queued or in progress. Refresh in a few minutes.</div>
+        </div>
+      </div>
+    </div>
+  `);
+}
+
+/* ── Reports View ── */
+function renderReports() {
+  const fileRows = state.reports.map(f => {
+    const name = f.path.split('/').pop();
+    const ts = name.match(/(\d{8}_\d{6})/)?.[1] || '—';
+    return `<tr>
+      <td class="text-accent">${name}</td>
+      <td class="mono-dim">${ts}</td>
+      <td><button class="btn" onclick="loadReport('${f.path}')" style="font-size:9px;padding:2px 8px;">VIEW</button></td>
+    </tr>`;
+  }).join('');
+
+  showMain(`
+    <div class="two-col">
+      <div>
+        <div class="section-header">
+          <div class="section-title">Report Files</div>
+          <span class="section-ts">${state.reports.length} files</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Filename</th><th>Timestamp</th><th></th></tr></thead>
+            <tbody>${fileRows || '<tr><td colspan="3" class="text-muted" style="text-align:center;padding:20px;">No reports found</td></tr>'}</tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="section-header">
+          <div class="section-title">Report Content</div>
+        </div>
+        <div class="report-viewer" id="reportViewer">
+          <div class="report-content" id="reportContent" style="color:var(--muted);">Select a report to view its contents.</div>
+        </div>
+      </div>
+    </div>
+  `);
+}
+
+async function loadReport(path) {
+  document.getElementById('reportContent').textContent = 'Loading...';
+  try {
+    const res = await ghRaw('/' + path);
+    const text = await res.text();
+    document.getElementById('reportContent').textContent = text || '(empty file)';
+  } catch(e) {
+    document.getElementById('reportContent').textContent = `Error loading report: ${e.message}`;
+  }
+}
+
+/* ── Config ── */
+function toggleConfig() {
+  document.getElementById('configPanel').classList.toggle('open');
+}
+
+function applyConfig() {
+  const repo = document.getElementById('repoInput2').value.trim();
+  const token = document.getElementById('tokenInput').value.trim();
+  const interval = parseInt(document.getElementById('refreshInterval').value);
+
+  if (repo) {
+    state.repo = repo;
+    document.getElementById('repoInput').value = repo;
+  }
+  if (token) state.token = token;
+
+  if (state.refreshTimer) clearInterval(state.refreshTimer);
+  if (interval > 0) {
+    state.refreshTimer = setInterval(loadAll, interval * 1000);
+  }
+
+  document.getElementById('configPanel').classList.remove('open');
+  if (state.repo) loadAll();
+}
+
+/* ── Init ── */
+// Try to detect repo from URL param
+const urlParams = new URLSearchParams(window.location.search);
+const repoParam = urlParams.get('repo');
+if (repoParam) {
+  document.getElementById('repoInput').value = repoParam;
+  state.repo = repoParam;
+  loadAll();
+}
+</script>
+</body>
+</html>
