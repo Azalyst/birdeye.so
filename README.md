@@ -4,7 +4,7 @@ Automated on-chain intelligence across 9 chains. Runs on GitHub Actions. Scans e
 
 **Dashboard:** [azalyst.github.io/birdeye.so/dashboard.html](https://azalyst.github.io/birdeye.so/dashboard.html?repo=Azalyst/birdeye.so)
 
-**Maintained by:** [@gitdhirajsv](https://github.com/gitdhirajsv) — also runs [Azalyst ETF Intelligence](https://github.com/gitdhirajsv) on the same infrastructure.
+**Maintained by:** [@gitdhirajsv](https://github.com/gitdhirajsv)
 
 ---
 
