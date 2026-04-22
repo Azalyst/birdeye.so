@@ -14,9 +14,9 @@ on:
           - find_pumps
           - analyze_token
   
-  # Scheduled - runs every 4 hours
+  # Scheduled - runs every 15 minutes
   schedule:
-    - cron: '0 */4 * * *'  # Every 4 hours
+    - cron: '*/15 * * * *'  # Every 15 minutes
   
   # Trigger from issue comments
   issue_comment:
