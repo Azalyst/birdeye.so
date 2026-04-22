@@ -11,7 +11,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 try:
-    from birdeye_tracker import track_whale, find_pumps, analyze_token, daily_scan, get_profitable_traders, get_wallet_pnl, get_top_traders, check_token_security
+    from birdeye_tracker import track_whale, find_pumps, analyze_token, daily_scan, get_profitable_traders, get_wallet_pnl, get_top_traders, check_token_security, get_new_listings, get_token_creation_info, get_holder_list, get_wallet_pnl_details, get_trader_txs, get_ohlcv, get_wallet_token_list, get_wallet_tx_list
     BIRDEYE_AVAILABLE = True
 except ImportError:
     BIRDEYE_AVAILABLE = False
@@ -20,7 +20,7 @@ TOOLS = ["bash", "read_file", "write_file", "list_dir", "search"]
 
 # Add Birdeye tools if module is available
 if BIRDEYE_AVAILABLE:
-    TOOLS.extend(["track_whale", "find_pumps", "analyze_token", "daily_scan", "get_profitable_traders", "get_wallet_pnl", "get_top_traders", "check_token_security"])
+    TOOLS.extend(["track_whale", "find_pumps", "analyze_token", "daily_scan", "get_profitable_traders", "get_wallet_pnl", "get_top_traders", "check_token_security", "get_new_listings", "get_token_creation_info", "get_holder_list", "get_wallet_pnl_details", "get_trader_txs", "get_ohlcv", "get_wallet_token_list", "get_wallet_tx_list"])
 
 MAX_OUTPUT = 8000  # chars
 
@@ -154,6 +154,63 @@ def execute_tool(tool_name: str, args: dict) -> str:
         chain = args.get("chain", "solana")
         api_key = args.get("api_key", os.environ.get("BIRDEYE_API_KEY"))
         return check_token_security(token_address=token, chain=chain, api_key=api_key)
+    
+    # New Birdeye tools for complete feature coverage
+    elif tool_name == "get_new_listings" and BIRDEYE_AVAILABLE:
+        chain = args.get("chain", "solana")
+        limit = args.get("limit", 50)
+        api_key = args.get("api_key", os.environ.get("BIRDEYE_API_KEY"))
+        return get_new_listings(chain=chain, limit=limit, api_key=api_key)
+    
+    elif tool_name == "get_token_creation_info" and BIRDEYE_AVAILABLE:
+        token = args.get("token_address", "")
+        chain = args.get("chain", "solana")
+        api_key = args.get("api_key", os.environ.get("BIRDEYE_API_KEY"))
+        return get_token_creation_info(token_address=token, chain=chain, api_key=api_key)
+    
+    elif tool_name == "get_holder_list" and BIRDEYE_AVAILABLE:
+        token = args.get("token_address", "")
+        chain = args.get("chain", "solana")
+        limit = args.get("limit", 100)
+        api_key = args.get("api_key", os.environ.get("BIRDEYE_API_KEY"))
+        return get_holder_list(token_address=token, chain=chain, limit=limit, api_key=api_key)
+    
+    elif tool_name == "get_wallet_pnl_details" and BIRDEYE_AVAILABLE:
+        wallet = args.get("wallet_address", "")
+        chain = args.get("chain", "solana")
+        limit = args.get("limit", 100)
+        api_key = args.get("api_key", os.environ.get("BIRDEYE_API_KEY"))
+        return get_wallet_pnl_details(wallet_address=wallet, chain=chain, limit=limit, api_key=api_key)
+    
+    elif tool_name == "get_trader_txs" and BIRDEYE_AVAILABLE:
+        wallet = args.get("wallet_address", "")
+        chain = args.get("chain", "solana")
+        start_time = args.get("start_time")
+        end_time = args.get("end_time")
+        limit = args.get("limit", 50)
+        api_key = args.get("api_key", os.environ.get("BIRDEYE_API_KEY"))
+        return get_trader_txs(wallet_address=wallet, chain=chain, start_time=start_time, end_time=end_time, limit=limit, api_key=api_key)
+    
+    elif tool_name == "get_ohlcv" and BIRDEYE_AVAILABLE:
+        token = args.get("token_address", "")
+        chain = args.get("chain", "solana")
+        timeframe = args.get("timeframe", "1h")
+        api_key = args.get("api_key", os.environ.get("BIRDEYE_API_KEY"))
+        return get_ohlcv(token_address=token, chain=chain, timeframe=timeframe, api_key=api_key)
+    
+    elif tool_name == "get_wallet_token_list" and BIRDEYE_AVAILABLE:
+        wallet = args.get("wallet_address", "")
+        chain = args.get("chain", "solana")
+        api_key = args.get("api_key", os.environ.get("BIRDEYE_API_KEY"))
+        return get_wallet_token_list(wallet_address=wallet, chain=chain, api_key=api_key)
+    
+    elif tool_name == "get_wallet_tx_list" and BIRDEYE_AVAILABLE:
+        wallet = args.get("wallet_address", "")
+        chain = args.get("chain", "solana")
+        page = args.get("page", 1)
+        page_size = args.get("page_size", 20)
+        api_key = args.get("api_key", os.environ.get("BIRDEYE_API_KEY"))
+        return get_wallet_tx_list(wallet_address=wallet, chain=chain, page=page, page_size=page_size, api_key=api_key)
     
     else:
         return f"Unknown tool: {tool_name}. Available: {TOOLS}"

@@ -191,6 +191,214 @@ class BirdeyeAPI:
             return []
         except Exception as e:
             return [{"error": str(e)}]
+    
+    def get_new_listings(self, chain: str = "solana", limit: int = 50) -> List[Dict]:
+        """Get newly listed tokens — catch before they pump"""
+        endpoint = f"{self.BASE_URL}/defi/v2/tokens/new_listing"
+        params = {"limit": limit}
+        
+        # Add chain header
+        headers = self.headers.copy()
+        headers["x-chain"] = chain
+        
+        try:
+            response = requests.get(endpoint, headers=headers, params=params, timeout=15)
+            if response.status_code == 200:
+                data = response.json().get("data", [])
+                for token in data:
+                    token["chain"] = chain
+                return data
+            return []
+        except Exception as e:
+            return [{"error": str(e)}]
+    
+    def get_token_creation_info(self, token_address: str, chain: str = "solana") -> Dict:
+        """Get token creation info: deployer wallet, creation time, initial supply"""
+        endpoint = f"{self.BASE_URL}/defi/token_creation_info"
+        params = {"address": token_address}
+        
+        # Add chain header
+        headers = self.headers.copy()
+        headers["x-chain"] = chain
+        
+        try:
+            response = requests.get(endpoint, headers=headers, params=params, timeout=15)
+            if response.status_code == 200:
+                return response.json().get("data", {})
+            return {}
+        except Exception as e:
+            return {"error": str(e)}
+    
+    def get_holder_list(self, token_address: str, chain: str = "solana", limit: int = 100) -> List[Dict]:
+        """Get all wallets holding a token, sorted by balance"""
+        endpoint = f"{self.BASE_URL}/defi/v3/token/holder"
+        params = {"address": token_address, "limit": limit}
+        
+        # Add chain header
+        headers = self.headers.copy()
+        headers["x-chain"] = chain
+        
+        try:
+            response = requests.get(endpoint, headers=headers, params=params, timeout=15)
+            if response.status_code == 200:
+                return response.json().get("data", {}).get("holders", [])
+            return []
+        except Exception as e:
+            return [{"error": str(e)}]
+    
+    def get_wallet_pnl_details(self, wallet_address: str, chain: str = "solana", limit: int = 100) -> List[Dict]:
+        """Get token-by-token PnL breakdown for a wallet (up to 100 tokens)"""
+        endpoint = f"{self.BASE_URL}/wallet/v2/pnl/details"
+        
+        headers = self.headers.copy()
+        headers["x-chain"] = chain
+        headers["Content-Type"] = "application/json"
+        
+        body = {"wallet": wallet_address, "limit": limit}
+        
+        try:
+            response = requests.post(endpoint, headers=headers, json=body, timeout=15)
+            if response.status_code == 200:
+                return response.json().get("data", [])
+            return []
+        except Exception as e:
+            return [{"error": str(e)}]
+    
+    def get_trader_txs(self, wallet_address: str, chain: str = "solana", start_time: int = None, end_time: int = None, limit: int = 50) -> List[Dict]:
+        """Get all trades by a wallet with time-bound filtering"""
+        endpoint = f"{self.BASE_URL}/trader/txs/seek_by_time"
+        params = {"wallet": wallet_address, "limit": limit}
+        
+        if start_time:
+            params["start_time"] = start_time
+        if end_time:
+            params["end_time"] = end_time
+        
+        # Add chain header
+        headers = self.headers.copy()
+        headers["x-chain"] = chain
+        
+        try:
+            response = requests.get(endpoint, headers=headers, params=params, timeout=15)
+            if response.status_code == 200:
+                return response.json().get("data", {}).get("items", [])
+            return []
+        except Exception as e:
+            return [{"error": str(e)}]
+    
+    def get_pair_overview_single(self, pair_address: str, chain: str = "solana", timeframes: List[str] = None) -> Dict:
+        """Get volume, wallets, trade history for one pair across timeframes"""
+        endpoint = f"{self.BASE_URL}/defi/v3/pair/overview/single"
+        params = {"pair_address": pair_address}
+        
+        if timeframes:
+            params["timeframes"] = ",".join(timeframes)
+        
+        # Add chain header
+        headers = self.headers.copy()
+        headers["x-chain"] = chain
+        
+        try:
+            response = requests.get(endpoint, headers=headers, params=params, timeout=15)
+            if response.status_code == 200:
+                return response.json().get("data", {})
+            return {}
+        except Exception as e:
+            return {"error": str(e)}
+    
+    def get_pair_overview_multiple(self, pair_addresses: List[str], chain: str = "solana") -> List[Dict]:
+        """Batch pair metrics — great for comparing pools"""
+        endpoint = f"{self.BASE_URL}/defi/v3/pair/overview/multiple"
+        
+        headers = self.headers.copy()
+        headers["x-chain"] = chain
+        headers["Content-Type"] = "application/json"
+        
+        body = {"pair_addresses": pair_addresses}
+        
+        try:
+            response = requests.post(endpoint, headers=headers, json=body, timeout=15)
+            if response.status_code == 200:
+                return response.json().get("data", [])
+            return []
+        except Exception as e:
+            return [{"error": str(e)}]
+    
+    def get_ohlcv(self, token_address: str, chain: str = "solana", timeframe: str = "1h", from_time: int = None, to_time: int = None) -> List[Dict]:
+        """Get OHLCV candles — 1s/15s/30s on Solana, standard intervals on all chains"""
+        endpoint = f"{self.BASE_URL}/defi/v3/ohlcv"
+        params = {"address": token_address, "timeframe": timeframe}
+        
+        if from_time:
+            params["from_time"] = from_time
+        if to_time:
+            params["to_time"] = to_time
+        
+        # Add chain header
+        headers = self.headers.copy()
+        headers["x-chain"] = chain
+        
+        try:
+            response = requests.get(endpoint, headers=headers, params=params, timeout=15)
+            if response.status_code == 200:
+                return response.json().get("data", [])
+            return []
+        except Exception as e:
+            return [{"error": str(e)}]
+    
+    def get_token_trending(self, chain: str = "solana", sort_by: str = "volume", limit: int = 50) -> List[Dict]:
+        """Get trending tokens — top movers of past 24h by price, volume, TVL"""
+        endpoint = f"{self.BASE_URL}/defi/token_trending"
+        params = {"sort_by": sort_by, "limit": limit}
+        
+        # Add chain header
+        headers = self.headers.copy()
+        headers["x-chain"] = chain
+        
+        try:
+            response = requests.get(endpoint, headers=headers, params=params, timeout=15)
+            if response.status_code == 200:
+                data = response.json().get("data", [])
+                for token in data:
+                    token["chain"] = chain
+                return data
+            return []
+        except Exception as e:
+            return [{"error": str(e)}]
+    
+    def get_wallet_token_list(self, wallet_address: str, chain: str = "solana") -> List[Dict]:
+        """Get current holdings with USD values across all supported chains"""
+        endpoint = f"{self.BASE_URL}/v1/wallet/token_list"
+        params = {"wallet": wallet_address}
+        
+        # Add chain header
+        headers = self.headers.copy()
+        headers["x-chain"] = chain
+        
+        try:
+            response = requests.get(endpoint, headers=headers, params=params, timeout=15)
+            if response.status_code == 200:
+                return response.json().get("data", {}).get("tokens", [])
+            return []
+        except Exception as e:
+            return [{"error": str(e)}]
+    
+    def get_wallet_tx_list(self, wallet_address: str, chain: str = "solana", page: int = 1, page_size: int = 20) -> List[Dict]:
+        """Get every transaction a wallet has made on a given chain"""
+        endpoint = f"{self.BASE_URL}/v1/wallet/tx_list"
+        params = {"wallet": wallet_address, "page": page, "page_size": page_size}
+        
+        # Add chain header
+        headers = self.headers.copy()
+        headers["x-chain"] = chain
+        
+        try:
+            response = requests.get(endpoint, headers=headers, params=params, timeout=15)
+            if response.status_code == 200:
+                return response.json().get("data", {}).get("txList", [])
+            return []
+        except Exception as e:
+            return [{"error": str(e)}]
 
 
 class WhaleTracker:
@@ -903,3 +1111,152 @@ def check_token_security(token_address: str, chain: str = "solana", api_key: Opt
     ]
     
     return "\n".join(result)
+
+
+# New utility functions for additional Birdeye features
+
+def get_new_listings(chain: str = "solana", limit: int = 50, api_key: Optional[str] = None) -> str:
+    """Get newly listed tokens"""
+    tracker = WhaleTracker(api_key)
+    listings = tracker.api.get_new_listings(chain=chain, limit=limit)
+    
+    if not listings or "error" in listings[0]:
+        return f"Error fetching new listings: {listings}"
+    
+    result = [f"🆕 NEW LISTINGS ({chain.upper()})\n"]
+    for i, token in enumerate(listings[:20], 1):
+        symbol = token.get("symbol", "Unknown")
+        address = token.get("address", "")[:8] + "..." + token.get("address", "")[-6:]
+        created = token.get("created_at", 0)
+        age_min = round((time.time() - created) / 60, 1) if created else "?"
+        result.append(f"{i}. {symbol} ({address}) — {age_min} min old")
+    
+    return "\n".join(result)
+
+
+def get_token_creation_info(token_address: str, chain: str = "solana", api_key: Optional[str] = None) -> str:
+    """Get token creation info"""
+    tracker = WhaleTracker(api_key)
+    info = tracker.api.get_token_creation_info(token_address, chain=chain)
+    
+    if not info or "error" in info:
+        return f"Error fetching creation info: {info}"
+    
+    deployer = info.get("deployer", "")[:8] + "..." + info.get("deployer", "")[-6:] if info.get("deployer") else "Unknown"
+    created_at = info.get("created_at", 0)
+    initial_supply = info.get("initial_supply", 0)
+    
+    return f"📜 TOKEN CREATION INFO\nToken: {token_address[:8]}...{token_address[-6:]}\nDeployer: {deployer}\nCreated: {datetime.fromtimestamp(created_at).isoformat() if created_at else 'Unknown'}\nInitial Supply: {initial_supply}"
+
+
+def get_holder_list(token_address: str, chain: str = "solana", limit: int = 100, api_key: Optional[str] = None) -> str:
+    """Get token holder list"""
+    tracker = WhaleTracker(api_key)
+    holders = tracker.api.get_holder_list(token_address, chain=chain, limit=limit)
+    
+    if not holders or "error" in holders[0]:
+        return f"Error fetching holders: {holders}"
+    
+    result = [f"💼 TOP HOLDERS ({token_address[:8]}...)\n"]
+    for i, h in enumerate(holders[:10], 1):
+        wallet = h.get("owner", "")[:8] + "..." + h.get("owner", "")[-6:]
+        balance = h.get("balance", 0)
+        pct = h.get("percent", 0)
+        result.append(f"{i}. {wallet} — {pct:.2f}% ({balance:,.0f})")
+    
+    return "\n".join(result)
+
+
+def get_wallet_pnl_details(wallet_address: str, chain: str = "solana", limit: int = 100, api_key: Optional[str] = None) -> str:
+    """Get detailed PnL breakdown per token"""
+    tracker = WhaleTracker(api_key)
+    details = tracker.api.get_wallet_pnl_details(wallet_address, chain=chain, limit=limit)
+    
+    if not details or "error" in details[0]:
+        return f"Error fetching PnL details: {details}"
+    
+    result = [f"📊 WALLET PnL DETAILS ({wallet_address[:8]}...)\n"]
+    total_pnl = 0
+    for d in details[:15]:
+        token = d.get("token_symbol", "Unknown")
+        pnl = d.get("realized_pnl", 0)
+        total_pnl += pnl
+        color = "🟢" if pnl > 0 else "🔴" if pnl < 0 else "⚪"
+        result.append(f"{color} {token}: ${pnl:,.2f}")
+    
+    result.append(f"\nTotal PnL: ${total_pnl:,.2f}")
+    return "\n".join(result)
+
+
+def get_trader_txs(wallet_address: str, chain: str = "solana", start_time: int = None, end_time: int = None, limit: int = 50, api_key: Optional[str] = None) -> str:
+    """Get trader transaction history"""
+    tracker = WhaleTracker(api_key)
+    txs = tracker.api.get_trader_txs(wallet_address, chain=chain, start_time=start_time, end_time=end_time, limit=limit)
+    
+    if not txs or "error" in txs[0]:
+        return f"Error fetching transactions: {txs}"
+    
+    result = [f"📜 TRADER TX HISTORY ({wallet_address[:8]}...)\n"]
+    for tx in txs[:10]:
+        tx_type = tx.get("type", "?").upper()
+        token = tx.get("token_symbol", "?")
+        value = tx.get("value_usd", 0)
+        result.append(f"{tx_type} {token} — ${value:,.2f}")
+    
+    return "\n".join(result)
+
+
+def get_ohlcv(token_address: str, chain: str = "solana", timeframe: str = "1h", api_key: Optional[str] = None) -> str:
+    """Get OHLCV candle data"""
+    tracker = WhaleTracker(api_key)
+    candles = tracker.api.get_ohlcv(token_address, chain=chain, timeframe=timeframe)
+    
+    if not candles or "error" in candles[0]:
+        return f"Error fetching OHLCV: {candles}"
+    
+    result = [f"📈 OHLCV ({token_address[:8]}..., {timeframe})\n"]
+    for c in candles[-5:]:
+        t = datetime.fromtimestamp(c.get("time", 0)).strftime("%m/%d %H:%M")
+        o, h, l, cl = c.get("o", 0), c.get("h", 0), c.get("l", 0), c.get("c", 0)
+        result.append(f"{t} | O:{o:.6f} H:{h:.6f} L:{l:.6f} C:{cl:.6f}")
+    
+    return "\n".join(result)
+
+
+def get_wallet_token_list(wallet_address: str, chain: str = "solana", api_key: Optional[str] = None) -> str:
+    """Get wallet token holdings"""
+    tracker = WhaleTracker(api_key)
+    tokens = tracker.api.get_wallet_token_list(wallet_address, chain=chain)
+    
+    if not tokens or "error" in tokens[0]:
+        return f"Error fetching token list: {tokens}"
+    
+    result = [f"💼 WALLET HOLDINGS ({wallet_address[:8]}...)\n"]
+    total = 0
+    for t in tokens[:15]:
+        symbol = t.get("symbol", "?")
+        value = float(t.get("value_usd", 0))
+        total += value
+        result.append(f"{symbol}: ${value:,.2f}")
+    
+    result.append(f"\nTotal: ${total:,.2f}")
+    return "\n".join(result)
+
+
+def get_wallet_tx_list(wallet_address: str, chain: str = "solana", page: int = 1, page_size: int = 20, api_key: Optional[str] = None) -> str:
+    """Get wallet transaction list"""
+    tracker = WhaleTracker(api_key)
+    txs = tracker.api.get_wallet_tx_list(wallet_address, chain=chain, page=page, page_size=page_size)
+    
+    if not txs or "error" in txs[0]:
+        return f"Error fetching tx list: {txs}"
+    
+    result = [f"📜 WALLET TRANSACTIONS ({wallet_address[:8]}...)\n"]
+    for tx in txs[:10]:
+        sig = tx.get("signature", "")[:8] + "..."
+        tx_type = tx.get("type", "?").upper()
+        time_str = datetime.fromtimestamp(tx.get("block_time", 0)).strftime("%m/%d %H:%M") if tx.get("block_time") else "?"
+        result.append(f"[{time_str}] {sig} — {tx_type}")
+    
+    return "\n".join(result)
+
