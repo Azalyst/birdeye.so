@@ -1,38 +1,18 @@
-# Compressed files
-*.tar.gz
-
-# Environment
-.env
-.env.local
-*.env.*
-
-# Logs and temp files
-*.log
-*.tmp
-agent_output.txt
-
-# Editors
-.vscode/
-.idea/
-
+```
 # Dependencies
 node_modules/
-.venv/
 venv/
-env/
-ENV/
+.venv/
 __pycache__/
 .mypy_cache/
 .pytest_cache/
-dist/
-build/
+.julia/
+zig*/
 target/
 .gradle/
 
 # Compiled files
 *.pyc
-*.py[cod]
-*$py.class
 *.class
 *.o
 *.exe
@@ -42,22 +22,53 @@ target/
 *.obj
 *.out
 
-# Reports
-reports/*.json
-reports/*.md
-reports/*.csv
-
-# Local quant database
-data/
-*.db
-*.db-shm
-*.db-wal
-
-# Coverage
+# Build artifacts
+dist/
+build/
 coverage/
 htmlcov/
-.coverage
+*.log
+*.tmp
 
-# System files
+# Environment
+.env
+.env.local
+*.env.*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System
 .DS_Store
 Thumbs.db
+
+# Coverage
+.coverage
+
+# Compressed files
+*.zip
+*.gz
+*.tar
+*.tgz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
+```
