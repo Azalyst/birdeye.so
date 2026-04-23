@@ -86,7 +86,7 @@ Optional secret:
 
 - `NIM_API_KEY` - writes a Qwen analyst brief to `reports/latest_quant_brief.md`
 
-The scheduled job runs every 15 minutes, rotates through 3 chain batches when `--chains all` is selected, filters the universe down to live Binance USDT futures symbols, commits `latest_quant_signals.json`, evaluates older signals, and updates the dashboard data.
+The scheduled job runs every 15 minutes, rotates through 3 chain batches when `--chains all` is selected, filters the universe down to Binance USDT futures symbols, and falls back to a committed futures cache if GitHub cannot reach Binance directly. It commits `latest_quant_signals.json`, evaluates older signals, and updates the dashboard data.
 
 ## Useful Modes
 

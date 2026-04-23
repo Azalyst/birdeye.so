@@ -136,7 +136,7 @@ python quant_signal_engine.py evaluate --horizon-min 60 --target-pct 10
 
 It stores every snapshot in `data/birdeye_quant.db` and writes ranked JSON/CSV reports to `reports/`.
 The main production mode now scans all supported Birdeye chains but only keeps symbols that match the live Binance USDT futures universe, with a minimum on-chain liquidity floor so the dashboard focuses on names you can actually trade instead of same-symbol dust tokens.
-GitHub Actions runs `.github/workflows/quant_signal_engine.yml` every 15 minutes when `BIRDEYE_API_KEY` is configured as a repository secret. When `chains=all`, the scheduler rotates through 3 chain batches so runtime stays fast while still covering the full universe. Optional `NIM_API_KEY` enables a Qwen analyst brief.
+GitHub Actions runs `.github/workflows/quant_signal_engine.yml` every 15 minutes when `BIRDEYE_API_KEY` is configured as a repository secret. When `chains=all`, the scheduler rotates through 3 chain batches so runtime stays fast while still covering the full universe, and it can fall back to a committed Binance futures cache if the runner cannot reach Binance directly. Optional `NIM_API_KEY` enables a Qwen analyst brief.
 See `QUANT_SIGNAL_ENGINE.md` for the full workflow.
 
 ---

@@ -29,6 +29,7 @@ BASE_URL = "https://public-api.birdeye.so"
 BINANCE_FUTURES_EXCHANGE_INFO_URL = "https://fapi.binance.com/fapi/v1/exchangeInfo"
 DEFAULT_DB = Path("data") / "birdeye_quant.db"
 DEFAULT_REPORT_DIR = Path("reports")
+DEFAULT_BINANCE_CACHE = Path("data") / "binance_usdt_futures_cache.json"
 
 SUPPORTED_CHAINS = {
     "solana": "solana",
@@ -165,22 +166,38 @@ def normalize_symbol(value: Any) -> str:
 
 
 class BinanceFuturesUniverse:
-    def __init__(self, timeout: int = 20):
+    def __init__(self, timeout: int = 20, cache_path: Optional[Path] = None):
         self.timeout = timeout
+        self.cache_path = cache_path or DEFAULT_BINANCE_CACHE
         self.session = requests.Session()
         self._lookup: Dict[str, Dict[str, Any]] = {}
+        self.last_source = "unknown"
 
     def refresh(self) -> Dict[str, Dict[str, Any]]:
-        response = self.session.get(
-            BINANCE_FUTURES_EXCHANGE_INFO_URL,
-            headers={"Accept": "application/json"},
-            timeout=self.timeout,
-        )
-        response.raise_for_status()
-        payload = response.json()
-        lookup: Dict[str, Dict[str, Any]] = {}
+        try:
+            response = self.session.get(
+                BINANCE_FUTURES_EXCHANGE_INFO_URL,
+                headers={"Accept": "application/json"},
+                timeout=self.timeout,
+            )
+            response.raise_for_status()
+            payload = response.json()
+            lookup = self._build_lookup(payload.get("symbols", []))
+            self._write_cache(payload.get("symbols", []))
+            self.last_source = "live"
+            self._lookup = lookup
+            return lookup
+        except Exception:
+            cached = self._read_cache()
+            if cached:
+                self.last_source = "cache"
+                self._lookup = cached
+                return cached
+            raise
 
-        for item in payload.get("symbols", []):
+    def _build_lookup(self, symbols: Sequence[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+        lookup: Dict[str, Dict[str, Any]] = {}
+        for item in symbols:
             if str(item.get("quoteAsset") or "").upper() != "USDT":
                 continue
             if str(item.get("status") or "").upper() != "TRADING":
@@ -205,9 +222,36 @@ class BinanceFuturesUniverse:
 
             for alias in BINANCE_BASE_ASSET_ALIASES.get(base_asset, []):
                 self._register_lookup(lookup, alias, meta, "wrapped_alias")
-
-        self._lookup = lookup
         return lookup
+
+    def _write_cache(self, symbols: Sequence[Dict[str, Any]]) -> None:
+        try:
+            self.cache_path.parent.mkdir(parents=True, exist_ok=True)
+            payload = {
+                "fetched_at": utc_now(),
+                "symbols": [
+                    {
+                        "symbol": item.get("symbol"),
+                        "baseAsset": item.get("baseAsset"),
+                        "quoteAsset": item.get("quoteAsset"),
+                        "status": item.get("status"),
+                        "contractType": item.get("contractType"),
+                    }
+                    for item in symbols
+                ],
+            }
+            self.cache_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+        except Exception:
+            pass
+
+    def _read_cache(self) -> Dict[str, Dict[str, Any]]:
+        try:
+            if not self.cache_path.exists():
+                return {}
+            payload = json.loads(self.cache_path.read_text(encoding="utf-8-sig"))
+            return self._build_lookup(payload.get("symbols", []))
+        except Exception:
+            return {}
 
     def _register_lookup(
         self,
@@ -1085,6 +1129,7 @@ class LiveScanner:
             "binance_usdt_only": bool(self.binance_usdt_only),
             "binance_symbol_count": 0,
             "binance_min_liquidity_usd": self.binance_min_liquidity_usd,
+            "binance_source": "disabled",
         }
 
         if self.binance_usdt_only:
@@ -1092,6 +1137,7 @@ class LiveScanner:
                 self.binance_universe = BinanceFuturesUniverse(timeout=max(self.client.timeout, 15))
             try:
                 metadata["binance_symbol_count"] = len(self.binance_universe.refresh())
+                metadata["binance_source"] = self.binance_universe.last_source
             except Exception as exc:
                 errors.append(f"binance futures universe fetch error: {exc}")
                 return ScanResult(snapshot_ids=snapshot_ids, signals=signals, errors=errors, metadata=metadata)
