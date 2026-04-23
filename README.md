@@ -19,7 +19,7 @@ An institutional-style on-chain signal platform for discovering and validating p
 
 </div>
 
-**Live Dashboard:** [azalyst.github.io/birdeye.so/dashboard.html]([https://azalyst.github.io/birdeye.so/dashboard.html?repo=Azalyst/birdeye.so](https://azalyst.github.io/Azalyst-Birdeye-Scanner/dashboard.html))
+**Live Dashboard:** [azalyst.github.io/Azalyst-Birdeye-Scanner/dashboard.html](https://azalyst.github.io/Azalyst-Birdeye-Scanner/dashboard.html)
 
 **Sister project (private):** *Azalyst Alpha Quant Research* — the private futures-grade quantitative research engine this project feeds into.
 
