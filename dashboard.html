@@ -735,8 +735,9 @@ function renderAll(intel) {
     </div>`;
   }).join('');
 
-  // Runs
-  const l10 = S.runs.slice(0, 10);
+  // Runs — exclude SKIPPED from health rate (a skipped cron is not a failure)
+  const runsForHealth = S.runs.filter(r => r.conclusion !== 'skipped');
+  const l10 = runsForHealth.slice(0, 10);
   const ok = l10.filter(r => r.conclusion === 'success').length;
   document.getElementById('opsRate').textContent = l10.length ? `${Math.round(ok / l10.length * 100)}% (${ok}/${l10.length})` : '—';
   document.getElementById('opsList').innerHTML = S.runs.slice(0, 20).map(r => {

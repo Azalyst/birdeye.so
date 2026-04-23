@@ -10,55 +10,85 @@ on:
         required: true
         type: string
         default: 'run daily_scan and save results to reports/daily_scan.md'
-  
+
   issue_comment:
     types: [created]
+
+concurrency:
+  group: nim-qwen-agent
+  cancel-in-progress: false
 
 jobs:
   run-agent:
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'issue_comment' && startsWith(github.event.comment.body, '/agent'))
-    
+    if: >-
+      github.event_name == 'schedule'
+      || github.event_name == 'workflow_dispatch'
+      || (github.event_name == 'issue_comment' && startsWith(github.event.comment.body, '/agent'))
+
     permissions:
       contents: write
       issues: write
       pull-requests: write
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+        with:
+          fetch-depth: 0
+
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      
+
       - name: Install dependencies
         run: pip install -r requirements.txt
-      
+
+      - name: Verify required secrets
+        env:
+          NIM_API_KEY: ${{ secrets.NIM_API_KEY }}
+          BIRDEYE_API_KEY: ${{ secrets.BIRDEYE_API_KEY }}
+        run: |
+          missing=0
+          if [ -z "$NIM_API_KEY" ]; then
+            echo "::error::NIM_API_KEY secret is not set"
+            missing=1
+          fi
+          if [ -z "$BIRDEYE_API_KEY" ]; then
+            echo "::error::BIRDEYE_API_KEY secret is not set"
+            missing=1
+          fi
+          if [ "$missing" -eq 1 ]; then exit 1; fi
+
       - name: Run agent
         env:
           NIM_API_KEY: ${{ secrets.NIM_API_KEY }}
           BIRDEYE_API_KEY: ${{ secrets.BIRDEYE_API_KEY }}
         run: |
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            python agent/agent.py "run daily_scan and save results to reports/daily_scan.md"
+            python agent.py "run daily_scan and save results to reports/daily_scan.md"
           elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            python agent/agent.py "${{ inputs.task }}"
+            python agent.py "${{ inputs.task }}"
           elif [ "${{ github.event_name }}" = "issue_comment" ]; then
             COMMENT="${{ github.event.comment.body }}"
             TASK="${COMMENT#/agent }"
-            python agent/agent.py "$TASK"
+            python agent.py "$TASK"
           fi
-      
+
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git diff --quiet && git diff --staged --quiet || git commit -m "Agent changes from workflow"
-          git push || true
-      
+          git add -f reports/ agent_output.txt 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "No agent output changes to commit"
+            exit 0
+          fi
+          git commit -m "Agent scheduled scan update"
+          git pull --rebase origin main
+          git push
+
       - name: Comment on issue
         if: github.event_name == 'issue_comment'
         uses: actions/github-script@v7
@@ -68,5 +98,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '✅ Agent task completed. Check the workflow run for details.'
+              body: 'Agent task completed. Check the workflow run for details.'
             });

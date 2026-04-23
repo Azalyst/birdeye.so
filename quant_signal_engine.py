@@ -318,25 +318,35 @@ class BirdeyeClient:
 
         for attempt in range(retries + 1):
             self.last_call_at = time.time()
-            response = self.session.request(
-                method,
-                url,
-                headers=headers,
-                params=params,
-                json=json_body,
-                timeout=self.timeout,
-            )
-            if response.status_code == 429 and attempt < retries:
-                time.sleep(1.0 + attempt)
+            try:
+                response = self.session.request(
+                    method,
+                    url,
+                    headers=headers,
+                    params=params,
+                    json=json_body,
+                    timeout=self.timeout,
+                )
+            except requests.RequestException as exc:
+                if attempt < retries:
+                    time.sleep(1.0 + attempt)
+                    continue
+                return {"error": "network", "message": str(exc)[:500], "path": path}
+            status = response.status_code
+            if status == 429 and attempt < retries:
+                time.sleep(1.5 + attempt * 2)
                 continue
-            if response.status_code >= 400:
-                return {"error": response.status_code, "message": response.text[:500], "path": path}
+            if 500 <= status < 600 and attempt < retries:
+                time.sleep(1.0 + attempt * 1.5)
+                continue
+            if status >= 400:
+                return {"error": status, "message": response.text[:500], "path": path}
             try:
                 body = response.json()
             except ValueError:
                 return {"error": "bad_json", "message": response.text[:500], "path": path}
             return body.get("data", body)
-        return {"error": "rate_limited", "path": path}
+        return {"error": "exhausted_retries", "path": path}
 
     def token_trending(self, chain: str, limit: int = 50, sort_by: str = "volume") -> List[Dict[str, Any]]:
         data = self._request(
