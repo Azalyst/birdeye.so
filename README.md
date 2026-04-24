@@ -98,7 +98,7 @@ All write workflows share the `birdeye-quant-signal-engine` concurrency group so
 1. Fork this repository.
 2. Add two repository secrets: `BIRDEYE_API_KEY` (required) and `NIM_API_KEY` (required for the LLM agent — free tier available at [build.nvidia.com](https://build.nvidia.com)).
 3. Enable GitHub Actions on the fork. Workflows will begin firing within 15 minutes.
-4. Open `https://<your-handle>.github.io/birdeye.so/dashboard.html?repo=<your-handle>/birdeye.so` — the dashboard reads your fork's data.
+4. Open `https://<your-handle>.github.io/Azalyst-Birdeye-Scanner/dashboard.html?repo=<your-handle>/Azalyst-Birdeye-Scanner` — the dashboard reads your fork's data.
 
 No cloud servers, no cron box, no database to manage. Runners have 7GB RAM / 2 CPU / 14GB disk — ample for LightGBM + PrefixSpan on the committed SQLite database.
 
@@ -300,7 +300,7 @@ Static single-page app at `dashboard.html`, deployed via GitHub Pages. Uses the 
 ## Repository Structure
 
 ```
-birdeye.so/
+Azalyst-Birdeye-Scanner/
 │
 ├── quant_signal_engine.py        # Rule + anomaly scoring, outcome evaluation
 ├── agent.py                      # NIM Qwen ReAct loop (canonical — repo root)
