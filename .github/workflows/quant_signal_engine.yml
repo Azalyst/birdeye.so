@@ -63,7 +63,7 @@ jobs:
 
           RESOLVED_CHAINS="$CHAINS"
           if [ "$CHAINS" = "all" ]; then
-            SLOT=$(( ($(date -u +%M) / 15) % 3 ))
+            SLOT=$(( (10#$(date -u +%M) / 15) % 3 ))
             case "$SLOT" in
               0) RESOLVED_CHAINS="solana,ethereum,base" ;;
               1) RESOLVED_CHAINS="arbitrum,bnb,avalanche" ;;
