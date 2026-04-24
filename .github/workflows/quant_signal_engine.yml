@@ -100,5 +100,5 @@ jobs:
 
           git diff --staged --quiet && exit 0
           git commit -m "Update Birdeye quant signals"
-          git pull --rebase origin main || true
-          git push
+          git pull --rebase -X theirs origin main || git rebase --abort
+          git push origin HEAD:main
