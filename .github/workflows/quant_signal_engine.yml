@@ -71,7 +71,7 @@ jobs:
           python quant_signal_engine.py scan \
             --chains "$RESOLVED_CHAINS" \
             --limit "$LIMIT" \
-            --trade-limit 20 \
+            --trade-limit 0 \
             --top-trader-limit 0 \
             --min-delay 0.05 \
             --evaluate \
@@ -94,6 +94,7 @@ jobs:
           git add -f reports/quant_brief_*.md || true
 
           git diff --staged --quiet && exit 0
-          git commit -m "Update Azalyst quant signals"
+          SNAP=$(python -c "import json; d=json.load(open('reports/latest_quant_signals.json')); print(d.get('snapshot_count',0))" 2>/dev/null || echo 0)
+          git commit -m "Azalyst scan: ${SNAP} snapshots — $(date -u +%H:%M UTC)"
           git pull --rebase -X theirs origin main || git rebase --abort
           git push origin HEAD:main
