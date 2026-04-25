@@ -1,70 +1,70 @@
 {
   "status": "ok",
   "model": "lightgbm",
-  "trained_ts": "2026-04-24T05:42:41.387151+00:00",
-  "labeled_rows": 30,
-  "positive_rate": 0.2,
+  "trained_ts": "2026-04-25T05:21:22.765611+00:00",
+  "labeled_rows": 47,
+  "positive_rate": 0.14893617021276595,
   "roc_auc": 1.0,
-  "precision": 0.0,
-  "recall": 0.0,
-  "f1": 0.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
   "feature_count": 70,
   "top_features": [
     {
-      "name": "price_change_24h_pct",
-      "importance": 253.0
-    },
-    {
-      "name": "volume_5m_usd",
-      "importance": 177.0
-    },
-    {
-      "name": "price_change_5m_pct",
-      "importance": 167.0
+      "name": "liquidity_usd",
+      "importance": 136.0
     },
     {
       "name": "holder_count",
-      "importance": 32.0
-    },
-    {
-      "name": "volume_1h_usd",
-      "importance": 21.0
-    },
-    {
-      "name": "anomaly_score",
-      "importance": 20.0
-    },
-    {
-      "name": "price",
-      "importance": 19.0
-    },
-    {
-      "name": "sell_count",
-      "importance": 19.0
-    },
-    {
-      "name": "smart_money_score",
-      "importance": 13.0
-    },
-    {
-      "name": "price_change_1h_pct",
-      "importance": 8.0
-    },
-    {
-      "name": "win_anonymous_sell",
-      "importance": 4.0
+      "importance": 133.0
     },
     {
       "name": "buy_count",
-      "importance": 1.0
+      "importance": 126.0
     },
     {
-      "name": "liquidity_usd",
-      "importance": 0.0
+      "name": "volume_1h_usd",
+      "importance": 100.0
+    },
+    {
+      "name": "unique_wallets",
+      "importance": 97.0
+    },
+    {
+      "name": "dump_score",
+      "importance": 96.0
     },
     {
       "name": "market_cap",
-      "importance": 0.0
+      "importance": 95.0
+    },
+    {
+      "name": "sell_count",
+      "importance": 73.0
+    },
+    {
+      "name": "risk_score",
+      "importance": 57.0
+    },
+    {
+      "name": "price_change_24h_pct",
+      "importance": 30.0
+    },
+    {
+      "name": "price_change_5m_pct",
+      "importance": 12.0
+    },
+    {
+      "name": "price",
+      "importance": 10.0
+    },
+    {
+      "name": "price_change_1h_pct",
+      "importance": 9.0
+    },
+    {
+      "name": "volume_5m_usd",
+      "importance": 3.0
     },
     {
       "name": "volume_24h_usd",
