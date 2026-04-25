@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T17:03:58.275707+00:00",
+  "generated_at": "2026-04-25T17:04:27.184389+00:00",
   "model_metrics": {
     "status": "ok",
     "model": "lightgbm",
@@ -473,7 +473,48 @@
   ],
   "top_patterns": [
     {
-      "pattern_id": 593,
+      "pattern_id": 597,
+      "length": 4,
+      "support": 15,
+      "lift": 1.2,
+      "positive_rate": 1.0,
+      "horizon_min": 60,
+      "prefix": [
+        "anonymous_buy",
+        "anonymous_buy",
+        "anonymous_buy",
+        "anonymous_buy"
+      ]
+    },
+    {
+      "pattern_id": 598,
+      "length": 4,
+      "support": 13,
+      "lift": 1.2,
+      "positive_rate": 1.0,
+      "horizon_min": 60,
+      "prefix": [
+        "anonymous_buy",
+        "anonymous_buy",
+        "anonymous_sell",
+        "anonymous_buy"
+      ]
+    },
+    {
+      "pattern_id": 599,
+      "length": 3,
+      "support": 13,
+      "lift": 1.2,
+      "positive_rate": 1.0,
+      "horizon_min": 60,
+      "prefix": [
+        "anonymous_buy",
+        "anonymous_sell",
+        "anonymous_buy"
+      ]
+    },
+    {
+      "pattern_id": 600,
       "length": 2,
       "support": 13,
       "lift": 1.2,
@@ -485,37 +526,151 @@
       ]
     },
     {
-      "pattern_id": 594,
-      "length": 2,
-      "support": 20,
-      "lift": 1.0,
-      "positive_rate": 0.8333333333333334,
+      "pattern_id": 601,
+      "length": 4,
+      "support": 12,
+      "lift": 1.2,
+      "positive_rate": 1.0,
       "horizon_min": 60,
       "prefix": [
+        "anonymous_buy",
+        "anonymous_sell",
+        "anonymous_sell",
+        "anonymous_buy"
+      ]
+    },
+    {
+      "pattern_id": 602,
+      "length": 4,
+      "support": 12,
+      "lift": 1.2,
+      "positive_rate": 1.0,
+      "horizon_min": 60,
+      "prefix": [
+        "anonymous_buy",
+        "anonymous_sell",
+        "anonymous_sell",
+        "anonymous_sell"
+      ]
+    },
+    {
+      "pattern_id": 603,
+      "length": 4,
+      "support": 12,
+      "lift": 1.2,
+      "positive_rate": 1.0,
+      "horizon_min": 60,
+      "prefix": [
+        "anonymous_buy",
+        "anonymous_sell",
         "anonymous_buy",
         "anonymous_buy"
       ]
     },
     {
-      "pattern_id": 595,
-      "length": 2,
-      "support": 17,
-      "lift": 1.0,
-      "positive_rate": 0.8333333333333334,
+      "pattern_id": 604,
+      "length": 4,
+      "support": 12,
+      "lift": 1.2,
+      "positive_rate": 1.0,
       "horizon_min": 60,
       "prefix": [
+        "anonymous_buy",
+        "anonymous_sell",
         "anonymous_buy",
         "anonymous_sell"
       ]
     },
     {
-      "pattern_id": 596,
-      "length": 2,
+      "pattern_id": 605,
+      "length": 3,
       "support": 12,
-      "lift": 1.0,
-      "positive_rate": 0.8333333333333334,
+      "lift": 1.2,
+      "positive_rate": 1.0,
       "horizon_min": 60,
       "prefix": [
+        "anonymous_sell",
+        "anonymous_sell",
+        "anonymous_buy"
+      ]
+    },
+    {
+      "pattern_id": 606,
+      "length": 4,
+      "support": 12,
+      "lift": 1.2,
+      "positive_rate": 1.0,
+      "horizon_min": 60,
+      "prefix": [
+        "anonymous_sell",
+        "anonymous_sell",
+        "anonymous_buy",
+        "anonymous_sell"
+      ]
+    },
+    {
+      "pattern_id": 607,
+      "length": 3,
+      "support": 12,
+      "lift": 1.2,
+      "positive_rate": 1.0,
+      "horizon_min": 60,
+      "prefix": [
+        "anonymous_sell",
+        "anonymous_sell",
+        "anonymous_sell"
+      ]
+    },
+    {
+      "pattern_id": 608,
+      "length": 4,
+      "support": 12,
+      "lift": 1.2,
+      "positive_rate": 1.0,
+      "horizon_min": 60,
+      "prefix": [
+        "anonymous_sell",
+        "anonymous_sell",
+        "anonymous_sell",
+        "anonymous_sell"
+      ]
+    },
+    {
+      "pattern_id": 609,
+      "length": 3,
+      "support": 12,
+      "lift": 1.2,
+      "positive_rate": 1.0,
+      "horizon_min": 60,
+      "prefix": [
+        "anonymous_sell",
+        "anonymous_buy",
+        "anonymous_buy"
+      ]
+    },
+    {
+      "pattern_id": 610,
+      "length": 3,
+      "support": 12,
+      "lift": 1.2,
+      "positive_rate": 1.0,
+      "horizon_min": 60,
+      "prefix": [
+        "anonymous_sell",
+        "anonymous_buy",
+        "anonymous_sell"
+      ]
+    },
+    {
+      "pattern_id": 611,
+      "length": 4,
+      "support": 12,
+      "lift": 1.2,
+      "positive_rate": 1.0,
+      "horizon_min": 60,
+      "prefix": [
+        "anonymous_sell",
+        "anonymous_buy",
         "anonymous_sell",
         "anonymous_sell"
       ]
