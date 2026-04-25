@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T09:12:22.770828+00:00",
+  "generated_at": "2026-04-25T11:05:57.357660+00:00",
   "model_metrics": {
     "status": "ok",
     "model": "lightgbm",
@@ -98,9 +98,9 @@
     "anonymous": 71
   },
   "totals": {
-    "snapshots": 403,
+    "snapshots": 419,
     "wallet_events": 377,
-    "labeled_outcomes": 55
+    "labeled_outcomes": 59
   },
   "top_signals": [
     {
@@ -431,7 +431,7 @@
   ],
   "top_patterns": [
     {
-      "pattern_id": 473,
+      "pattern_id": 501,
       "length": 4,
       "support": 15,
       "lift": 1.2,
@@ -445,7 +445,7 @@
       ]
     },
     {
-      "pattern_id": 474,
+      "pattern_id": 502,
       "length": 4,
       "support": 13,
       "lift": 1.2,
@@ -459,7 +459,7 @@
       ]
     },
     {
-      "pattern_id": 475,
+      "pattern_id": 503,
       "length": 3,
       "support": 13,
       "lift": 1.2,
@@ -472,7 +472,7 @@
       ]
     },
     {
-      "pattern_id": 476,
+      "pattern_id": 504,
       "length": 2,
       "support": 13,
       "lift": 1.2,
@@ -484,7 +484,7 @@
       ]
     },
     {
-      "pattern_id": 477,
+      "pattern_id": 505,
       "length": 4,
       "support": 12,
       "lift": 1.2,
@@ -498,7 +498,7 @@
       ]
     },
     {
-      "pattern_id": 478,
+      "pattern_id": 506,
       "length": 4,
       "support": 12,
       "lift": 1.2,
@@ -512,7 +512,7 @@
       ]
     },
     {
-      "pattern_id": 479,
+      "pattern_id": 507,
       "length": 4,
       "support": 12,
       "lift": 1.2,
@@ -526,7 +526,7 @@
       ]
     },
     {
-      "pattern_id": 480,
+      "pattern_id": 508,
       "length": 4,
       "support": 12,
       "lift": 1.2,
@@ -540,7 +540,7 @@
       ]
     },
     {
-      "pattern_id": 481,
+      "pattern_id": 509,
       "length": 3,
       "support": 12,
       "lift": 1.2,
@@ -553,7 +553,7 @@
       ]
     },
     {
-      "pattern_id": 482,
+      "pattern_id": 510,
       "length": 4,
       "support": 12,
       "lift": 1.2,
@@ -567,7 +567,7 @@
       ]
     },
     {
-      "pattern_id": 483,
+      "pattern_id": 511,
       "length": 3,
       "support": 12,
       "lift": 1.2,
@@ -580,7 +580,7 @@
       ]
     },
     {
-      "pattern_id": 484,
+      "pattern_id": 512,
       "length": 4,
       "support": 12,
       "lift": 1.2,
@@ -594,7 +594,7 @@
       ]
     },
     {
-      "pattern_id": 485,
+      "pattern_id": 513,
       "length": 3,
       "support": 12,
       "lift": 1.2,
@@ -607,7 +607,7 @@
       ]
     },
     {
-      "pattern_id": 486,
+      "pattern_id": 514,
       "length": 3,
       "support": 12,
       "lift": 1.2,
@@ -620,7 +620,7 @@
       ]
     },
     {
-      "pattern_id": 487,
+      "pattern_id": 515,
       "length": 4,
       "support": 12,
       "lift": 1.2,
