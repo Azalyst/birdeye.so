@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T11:05:57.357660+00:00",
+  "generated_at": "2026-04-25T13:40:05.987169+00:00",
   "model_metrics": {
     "status": "ok",
     "model": "lightgbm",
@@ -98,9 +98,9 @@
     "anonymous": 71
   },
   "totals": {
-    "snapshots": 419,
+    "snapshots": 463,
     "wallet_events": 377,
-    "labeled_outcomes": 59
+    "labeled_outcomes": 62
   },
   "top_signals": [
     {
@@ -390,6 +390,32 @@
       "label": "watch"
     },
     {
+      "snapshot_id": 453,
+      "ts": "2026-04-25T11:52:42+00:00",
+      "chain": "ethereum",
+      "address": "0x69e516fffc889afe5ab019f047a767955baca885",
+      "symbol": "ADL",
+      "ml_prob": 0.04807986041769068,
+      "ml_direction": "down",
+      "pump_score": 21.25,
+      "dump_score": 13.73,
+      "anomaly_score": 41.63,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 456,
+      "ts": "2026-04-25T11:52:42+00:00",
+      "chain": "ethereum",
+      "address": "0xbd013e03bd18f845bab0bd179f094769697aac6e",
+      "symbol": "ADL",
+      "ml_prob": 0.04807986041769068,
+      "ml_direction": "down",
+      "pump_score": 21.25,
+      "dump_score": 21.34,
+      "anomaly_score": 53.48,
+      "label": "watch"
+    },
+    {
       "snapshot_id": 274,
       "ts": "2026-04-24T22:04:57+00:00",
       "chain": "ethereum",
@@ -401,37 +427,11 @@
       "dump_score": 6.25,
       "anomaly_score": 30.0,
       "label": "watch"
-    },
-    {
-      "snapshot_id": 275,
-      "ts": "2026-04-24T22:04:57+00:00",
-      "chain": "ethereum",
-      "address": "0x7db9193021385ff129e08525bd5cd25f63439f5a",
-      "symbol": "testte",
-      "ml_prob": 0.040578515204878006,
-      "ml_direction": "down",
-      "pump_score": 21.25,
-      "dump_score": 6.25,
-      "anomaly_score": 30.0,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 276,
-      "ts": "2026-04-24T22:04:57+00:00",
-      "chain": "ethereum",
-      "address": "0xe059fc72338cafa5645075700677fcff647987e2",
-      "symbol": "Emi",
-      "ml_prob": 0.040578515204878006,
-      "ml_direction": "down",
-      "pump_score": 21.25,
-      "dump_score": 7.96,
-      "anomaly_score": 32.66,
-      "label": "watch"
     }
   ],
   "top_patterns": [
     {
-      "pattern_id": 501,
+      "pattern_id": 529,
       "length": 4,
       "support": 15,
       "lift": 1.2,
@@ -445,7 +445,7 @@
       ]
     },
     {
-      "pattern_id": 502,
+      "pattern_id": 530,
       "length": 4,
       "support": 13,
       "lift": 1.2,
@@ -459,7 +459,7 @@
       ]
     },
     {
-      "pattern_id": 503,
+      "pattern_id": 531,
       "length": 3,
       "support": 13,
       "lift": 1.2,
@@ -472,7 +472,7 @@
       ]
     },
     {
-      "pattern_id": 504,
+      "pattern_id": 532,
       "length": 2,
       "support": 13,
       "lift": 1.2,
@@ -484,7 +484,7 @@
       ]
     },
     {
-      "pattern_id": 505,
+      "pattern_id": 533,
       "length": 4,
       "support": 12,
       "lift": 1.2,
@@ -498,7 +498,7 @@
       ]
     },
     {
-      "pattern_id": 506,
+      "pattern_id": 534,
       "length": 4,
       "support": 12,
       "lift": 1.2,
@@ -512,7 +512,7 @@
       ]
     },
     {
-      "pattern_id": 507,
+      "pattern_id": 535,
       "length": 4,
       "support": 12,
       "lift": 1.2,
@@ -526,7 +526,7 @@
       ]
     },
     {
-      "pattern_id": 508,
+      "pattern_id": 536,
       "length": 4,
       "support": 12,
       "lift": 1.2,
@@ -540,7 +540,7 @@
       ]
     },
     {
-      "pattern_id": 509,
+      "pattern_id": 537,
       "length": 3,
       "support": 12,
       "lift": 1.2,
@@ -553,7 +553,7 @@
       ]
     },
     {
-      "pattern_id": 510,
+      "pattern_id": 538,
       "length": 4,
       "support": 12,
       "lift": 1.2,
@@ -567,7 +567,7 @@
       ]
     },
     {
-      "pattern_id": 511,
+      "pattern_id": 539,
       "length": 3,
       "support": 12,
       "lift": 1.2,
@@ -580,7 +580,7 @@
       ]
     },
     {
-      "pattern_id": 512,
+      "pattern_id": 540,
       "length": 4,
       "support": 12,
       "lift": 1.2,
@@ -594,7 +594,7 @@
       ]
     },
     {
-      "pattern_id": 513,
+      "pattern_id": 541,
       "length": 3,
       "support": 12,
       "lift": 1.2,
@@ -607,7 +607,7 @@
       ]
     },
     {
-      "pattern_id": 514,
+      "pattern_id": 542,
       "length": 3,
       "support": 12,
       "lift": 1.2,
@@ -620,7 +620,7 @@
       ]
     },
     {
-      "pattern_id": 515,
+      "pattern_id": 543,
       "length": 4,
       "support": 12,
       "lift": 1.2,
