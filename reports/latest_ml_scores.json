@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T17:40:14.701118+00:00",
+  "generated_at": "2026-04-25T18:46:07.430004+00:00",
   "model_metrics": {
     "status": "ok",
     "model": "lightgbm",
@@ -115,7 +115,7 @@
     "anonymous": 71
   },
   "totals": {
-    "snapshots": 593,
+    "snapshots": 610,
     "wallet_events": 377,
     "labeled_outcomes": 101
   },
@@ -258,6 +258,62 @@
       "pump_score": 0.0,
       "dump_score": 9.51,
       "anomaly_score": 20.34,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 600,
+      "ts": "2026-04-25T18:25:57+00:00",
+      "chain": "arbitrum",
+      "address": "0xaf88d065e77c8cc2239327c5edb3a432268e5831",
+      "symbol": "USDC",
+      "ml_prob": 0.0010729026938836282,
+      "ml_direction": "down",
+      "ml_edge": 0.9978541946122328,
+      "pump_score": 8.0,
+      "dump_score": 0.15,
+      "anomaly_score": 9.15,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 606,
+      "ts": "2026-04-25T18:25:57+00:00",
+      "chain": "avalanche",
+      "address": "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7",
+      "symbol": "WAVAX",
+      "ml_prob": 0.0010729026938836282,
+      "ml_direction": "down",
+      "ml_edge": 0.9978541946122328,
+      "pump_score": 8.08,
+      "dump_score": 0.1,
+      "anomaly_score": 9.24,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 607,
+      "ts": "2026-04-25T18:25:57+00:00",
+      "chain": "avalanche",
+      "address": "0x152b9d0fdc40c096757f570a51e494bd4b943e50",
+      "symbol": "BTC.b",
+      "ml_prob": 0.0010729026938836282,
+      "ml_direction": "down",
+      "ml_edge": 0.9978541946122328,
+      "pump_score": 8.59,
+      "dump_score": 0.23,
+      "anomaly_score": 10.01,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 609,
+      "ts": "2026-04-25T18:25:57+00:00",
+      "chain": "avalanche",
+      "address": "0x49d5c2bdffac6ce2bfdb6640f4f80f226bc10bab",
+      "symbol": "WETH.e",
+      "ml_prob": 0.0010729026938836282,
+      "ml_direction": "down",
+      "ml_edge": 0.9978541946122328,
+      "pump_score": 6.91,
+      "dump_score": 0.17,
+      "anomaly_score": 8.05,
       "label": "watch"
     },
     {
@@ -412,62 +468,6 @@
       "pump_score": 0.02,
       "dump_score": 6.25,
       "anomaly_score": 39.76,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 348,
-      "ts": "2026-04-25T06:45:11+00:00",
-      "chain": "ethereum",
-      "address": "0xaff2565091e7207191dbe340b8528d02fa78d044",
-      "symbol": "ASTEROID",
-      "ml_prob": 0.0010729026938836282,
-      "ml_direction": "down",
-      "ml_edge": 0.9978541946122328,
-      "pump_score": 14.44,
-      "dump_score": 6.25,
-      "anomaly_score": 73.66,
-      "label": "anomaly_watch"
-    },
-    {
-      "snapshot_id": 353,
-      "ts": "2026-04-25T06:45:11+00:00",
-      "chain": "ethereum",
-      "address": "0xce82213c4bae42e1c04880ea64a53eef73e195de",
-      "symbol": "FLORK",
-      "ml_prob": 0.0010729026938836282,
-      "ml_direction": "down",
-      "ml_edge": 0.9978541946122328,
-      "pump_score": 0.0,
-      "dump_score": 6.25,
-      "anomaly_score": 12.52,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 329,
-      "ts": "2026-04-25T05:01:15+00:00",
-      "chain": "ethereum",
-      "address": "0xf280b16ef293d8e534e370794ef26bf312694126",
-      "symbol": "ASTEROID",
-      "ml_prob": 0.0010729026938836282,
-      "ml_direction": "down",
-      "ml_edge": 0.9978541946122328,
-      "pump_score": 0.0,
-      "dump_score": 11.87,
-      "anomaly_score": 56.38,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 333,
-      "ts": "2026-04-25T05:01:15+00:00",
-      "chain": "ethereum",
-      "address": "0xce82213c4bae42e1c04880ea64a53eef73e195de",
-      "symbol": "FLORK",
-      "ml_prob": 0.0010729026938836282,
-      "ml_direction": "down",
-      "ml_edge": 0.9978541946122328,
-      "pump_score": 0.0,
-      "dump_score": 10.25,
-      "anomaly_score": 47.76,
       "label": "watch"
     }
   ],
