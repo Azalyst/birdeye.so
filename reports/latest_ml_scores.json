@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T18:46:07.430004+00:00",
+  "generated_at": "2026-04-25T22:35:38.863545+00:00",
   "model_metrics": {
     "status": "ok",
     "model": "lightgbm",
@@ -115,9 +115,9 @@
     "anonymous": 71
   },
   "totals": {
-    "snapshots": 610,
+    "snapshots": 630,
     "wallet_events": 377,
-    "labeled_outcomes": 101
+    "labeled_outcomes": 102
   },
   "top_signals": [
     {
