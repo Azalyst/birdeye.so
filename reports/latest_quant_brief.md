@@ -1,98 +1,100 @@
 # Quant Signal Brief
 
-Generated: 2026-04-26T18:12:46+00:00
+Generated: 2026-04-26T18:44:31+00:00
 
 ### Azalyst Alpha Scanner Token Signals Brief
 
 **Date:** 2026-04-26  
-**Chain:** Solana
+**Chain:** Optimism
 
 ---
 
-#### Token: LASTMAN
-- **Symbol:** LASTMAN
-- **Snapshot ID:** 751
-- **Anomaly Score:** 100.0
-- **Pump Score:** 36.0
+#### Token: WETH (Address: 0x4200000000000000000000000000000000000006)
+
+- **Pump Score:** 30.66
 - **Dump Score:** 0.0
+- **Anomaly Score:** 31.69
 - **Smart Money Score:** 0.0
 - **Risk Score:** 0.0
 
-**Classification:** Anomaly Watch
+**Classification:** Low-conviction Watch
 
 **Metrics:**
-- Price: $0.1543
-- Liquidity (USD): $24,872,290.51
-- Price Change (1h): +4752.20%
-- Volume (1h USD): $0.0
-- Hourly Volume Ratio: 0.0
+- Price: $2,362.76
+- Liquidity (USD): $124,597,190.13
+- 1H Price Change (%): 0.73
+- Derived Price Change (%): 2.09
+- 1H Volume (USD): $5,391,276.84
+- Hourly Volume Ratio: 7.44
 - Buy Imbalance: 0.0
-- Whale Net (USD): $0.0
-- Liquidity Change (%): +42976.58%
-- Top Trader PnL (USD): $0.0
-
-**Reasons:**
-- Normal Watch
-- ML Isolation Forest Anomaly
-
-**Analysis:**
-- **Anomaly:** The token shows an extremely high anomaly score, indicating unusual activity that may not be fully understood or explained by typical market behavior.
-- **Pump:** Despite a high pump score, the smart money score is very low, suggesting that institutional or smart money is not involved in the pump.
-- **Liquidity:** The liquidity has increased significantly, which could be a sign of manipulation or a genuine surge in interest.
-- **Volume:** No volume in the last hour, which is unusual given the price movement.
+- Whale Net (USD): 0.0
+- Liquidity Change (%): 0.96
+- Top Trader PNL (USD): 0
 
 **Biggest Risks:**
-- **False-Positive Risk:** The high anomaly score may indicate a false positive, where the token's behavior is not indicative of a genuine opportunity.
-- **Market Manipulation:** The sudden price movement and liquidity increase could be a sign of market manipulation.
+- None identified.
+
+**False-Positive Risk:**
+- Moderate due to low pump and smart money scores.
 
 **Next Steps:**
-- Confirm the source of the pump and liquidity increase.
-- Monitor for any news or events that might explain the sudden price movement.
-- Evaluate the token's fundamentals and project viability.
+- Confirm price action over the next 24 hours.
+- Monitor liquidity and volume changes.
 
 ---
 
-#### Token: HENRY
-- **Symbol:** HENRY
-- **Snapshot ID:** 744
-- **Anomaly Score:** 69.11
-- **Pump Score:** 35.76
-- **Dump Score:** 28.94
-- **Smart Money Score:** 3.29
+#### Token: USDC (Address: 0x0b2c639c533813f4aa9d7837caf62653d097ff85)
+
+- **Pump Score:** 30.0
+- **Dump Score:** 0.11
+- **Anomaly Score:** 30.81
+- **Smart Money Score:** 0.0
 - **Risk Score:** 0.0
 
-**Classification:** Watch
+**Classification:** Low-conviction Watch
 
 **Metrics:**
-- Price: $0.002089
-- Liquidity (USD): $156,655.73
-- Price Change (1h): -32.16%
-- Volume (1h USD): $304,709.41
-- Hourly Volume Ratio: 6.05
-- Buy Imbalance: 0.1645
-- Whale Net (USD): $0.0
-- Liquidity Change (%): 0.0%
-- Top Trader PnL (USD): $0.0
-
-**Reasons:**
-- Normal Watch
-
-**Analysis:**
-- **Anomaly:** The token shows a high anomaly score, indicating unusual activity.
-- **Pump/Dump:** The token has a high pump score but also a significant dump score, suggesting volatility.
-- **Smart Money:** There is a slight smart money involvement, but it is not substantial.
-- **Volume:** High volume relative to liquidity, indicating strong trading activity.
+- Price: $0.9986
+- Liquidity (USD): $3,924,169.20
+- 1H Price Change (%): -0.12
+- Derived Price Change (%): -0.14
+- 1H Volume (USD): $148,737.42
+- Hourly Volume Ratio: 7.55
+- Buy Imbalance: 0.0
+- Whale Net (USD): 0.0
+- Liquidity Change (%): 0.92
+- Top Trader PNL (USD): 0
 
 **Biggest Risks:**
-- **False-Positive Risk:** The high anomaly score may indicate a false positive.
-- **Volatility:** The token is highly volatile, which can lead to significant losses.
+- None identified.
+
+**False-Positive Risk:**
+- Moderate due to low pump and smart money scores.
 
 **Next Steps:**
-- Confirm the cause of the price movement.
-- Monitor for any news or events that might explain the price volatility.
-- Evaluate the token's fundamentals and project viability.
+- Confirm price action over the next 24 hours.
+- Monitor liquidity and volume changes.
 
 ---
 
-#### Token: Trump (CvhtnWAE8j72e4TJ7h5uEq4MYJTimEKKdSvif9uq)
-- **
+#### Token: WETH (Address: 0x94b008aa00579c1307b0ef2c499ad98a8ce58e58)
+
+- **Pump Score:** 8.57
+- **Dump Score:** 12.5
+- **Anomaly Score:** 30.14
+- **Smart Money Score:** 0.0
+- **Risk Score:** 50.0
+
+**Classification:** Low-conviction Watch
+
+**Metrics:**
+- Price: $2,359.44
+- Liquidity (USD): $445,375.14
+- 1H Price Change (%): 0.60
+- Derived Price Change (%): 1.28
+- 1H Volume (USD): $7,843.77
+- Hourly Volume Ratio: 3.19
+- Buy Imbalance: 0.0
+- Whale Net (USD): 0.0
+- Liquidity Change (%): 0.83
+- Top Trader PNL (USD): 
