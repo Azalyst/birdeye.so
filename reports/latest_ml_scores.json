@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-26T23:08:42.552706+00:00",
+  "generated_at": "2026-04-26T23:43:36.865969+00:00",
   "model_metrics": {
     "status": "ok",
     "model": "lightgbm",
@@ -115,7 +115,7 @@
     "anonymous": 71
   },
   "totals": {
-    "snapshots": 823,
+    "snapshots": 829,
     "wallet_events": 377,
     "labeled_outcomes": 133
   },
@@ -146,6 +146,20 @@
       "pump_score": 11.38,
       "dump_score": 0.07,
       "anomaly_score": 12.98,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 826,
+      "ts": "2026-04-26T23:34:45+00:00",
+      "chain": "optimism",
+      "address": "0x4200000000000000000000000000000000000006",
+      "symbol": "WETH",
+      "ml_prob": 0.0007977200424904544,
+      "ml_direction": "down",
+      "ml_edge": 0.9984045599150191,
+      "pump_score": 1.44,
+      "dump_score": 0.0,
+      "anomaly_score": 1.66,
       "label": "watch"
     },
     {
@@ -303,6 +317,20 @@
       "label": "watch"
     },
     {
+      "snapshot_id": 827,
+      "ts": "2026-04-26T23:34:45+00:00",
+      "chain": "optimism",
+      "address": "0x0b2c639c533813f4aa9d7837caf62653d097ff85",
+      "symbol": "USDC",
+      "ml_prob": 0.0010038943923272772,
+      "ml_direction": "down",
+      "ml_edge": 0.9979922112153454,
+      "pump_score": 1.76,
+      "dump_score": 0.0,
+      "anomaly_score": 2.42,
+      "label": "watch"
+    },
+    {
       "snapshot_id": 819,
       "ts": "2026-04-26T21:42:36+00:00",
       "chain": "optimism",
@@ -415,6 +443,20 @@
       "label": "watch"
     },
     {
+      "snapshot_id": 825,
+      "ts": "2026-04-26T23:34:45+00:00",
+      "chain": "optimism",
+      "address": "0x9560e827af36c94d2ac33a39bce1fe78631088db",
+      "symbol": "VELO",
+      "ml_prob": 0.0012187255263760685,
+      "ml_direction": "down",
+      "ml_edge": 0.9975625489472478,
+      "pump_score": 0.0,
+      "dump_score": 6.3,
+      "anomaly_score": 0.11,
+      "label": "watch"
+    },
+    {
       "snapshot_id": 783,
       "ts": "2026-04-26T19:34:08+00:00",
       "chain": "optimism",
@@ -426,48 +468,6 @@
       "pump_score": 0.0,
       "dump_score": 6.25,
       "anomaly_score": 0.29,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 775,
-      "ts": "2026-04-26T18:40:32+00:00",
-      "chain": "optimism",
-      "address": "0x9560e827af36c94d2ac33a39bce1fe78631088db",
-      "symbol": "VELO",
-      "ml_prob": 0.0012187255263760685,
-      "ml_direction": "down",
-      "ml_edge": 0.9975625489472478,
-      "pump_score": 0.0,
-      "dump_score": 6.25,
-      "anomaly_score": 3.31,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 778,
-      "ts": "2026-04-26T18:40:32+00:00",
-      "chain": "optimism",
-      "address": "0xedf38688b27036816a50185caa430d5479e1c63e",
-      "symbol": "OVER",
-      "ml_prob": 0.0012187255263760685,
-      "ml_direction": "down",
-      "ml_edge": 0.9975625489472478,
-      "pump_score": 0.0,
-      "dump_score": 6.25,
-      "anomaly_score": 2.8,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 686,
-      "ts": "2026-04-26T06:38:51+00:00",
-      "chain": "optimism",
-      "address": "0x0b2c639c533813f4aa9d7837caf62653d097ff85",
-      "symbol": "USDC",
-      "ml_prob": 0.0012187255263760685,
-      "ml_direction": "down",
-      "ml_edge": 0.9975625489472478,
-      "pump_score": 0.0,
-      "dump_score": 0.17,
-      "anomaly_score": 0.78,
       "label": "watch"
     }
   ],
