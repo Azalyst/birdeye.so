@@ -23,8 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     if: >-
       github.event_name == 'schedule'
-      || github.event_name == 'workflow_dispatch'
-      || (github.event_name == 'issue_comment' && startsWith(github.event.comment.body, '/agent'))
+      || (github.event_name == 'workflow_dispatch' && github.actor == github.repository_owner)
+      || (github.event_name == 'issue_comment' && startsWith(github.event.comment.body, '/agent ') && github.event.comment.author_association == 'OWNER')
 
     permissions:
       contents: write
@@ -58,14 +58,15 @@ jobs:
         env:
           NIM_API_KEY: ${{ secrets.NIM_API_KEY }}
           HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
+          TASK_INPUT: ${{ inputs.task }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
         run: |
           if [ "${{ github.event_name }}" = "schedule" ]; then
             python agent.py "run daily_scan and save results to reports/daily_scan.md"
           elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            python agent.py "${{ inputs.task }}"
+            python agent.py "$TASK_INPUT"
           elif [ "${{ github.event_name }}" = "issue_comment" ]; then
-            COMMENT="${{ github.event.comment.body }}"
-            TASK="${COMMENT#/agent }"
+            TASK="${COMMENT_BODY#/agent }"
             python agent.py "$TASK"
           fi
 

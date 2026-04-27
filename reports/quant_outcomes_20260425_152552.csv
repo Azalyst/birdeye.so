@@ -1,2 +1,0 @@
-evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-25T15:25:52+00:00,ethereum,0x52a453a4977db9d677023aabdebc75c5ff431110,KITTENGER,watch,up,0.0002141,0.0002135,-0.2802,10.0,60,False,predicted_up;return_-0.28pct;target_10.00pct;label_watch;not_confirmed

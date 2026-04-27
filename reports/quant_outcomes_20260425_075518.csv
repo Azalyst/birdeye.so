@@ -1,5 +1,0 @@
-evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-25T07:55:18+00:00,ethereum,0x66df1964d55f3ee29654fe0d23ee269118d5ea13,FAFIFU,anomaly_watch,up,2.317e-05,2.317e-05,0.0,10.0,60,False,predicted_up;return_0.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-25T07:55:18+00:00,ethereum,0x411c794c65b3fccfb6f32e2f9daead960e297507,fukuyama,anomaly_watch,down,4.425e-10,4.425e-10,0.0,10.0,60,False,predicted_down;return_0.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-25T07:55:18+00:00,ethereum,0xb268104d863b31ec2700b9df0b2aaa93bd5b98b8,FAFIFU,anomaly_watch,down,1.222e-08,1.222e-08,0.0,10.0,60,False,predicted_down;return_0.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-25T07:55:18+00:00,ethereum,0xaff2565091e7207191dbe340b8528d02fa78d044,ASTEROID,anomaly_watch,up,0.01184,0.01088,-8.1081,10.0,60,False,predicted_up;return_-8.11pct;target_10.00pct;label_anomaly_watch;not_confirmed

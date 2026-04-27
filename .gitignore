@@ -1,9 +1,10 @@
-```
 # Database files
 *.db
 
-# ML model artifacts
-*.json
+# Generated outputs only — keep config/metrics JSON tracked
+reports/**/*.json
+data/**/*.json
+*.cache.json
 
 # Compiled Python files
 *.pyc
@@ -27,4 +28,3 @@ node_modules/
 # Editors
 .vscode/
 .idea/
-```

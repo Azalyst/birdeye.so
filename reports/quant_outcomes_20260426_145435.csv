@@ -1,5 +1,0 @@
-evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-26T14:54:34+00:00,arbitrum,0xdc6576e635f9a5ea134a069b74aebe3cdc0d548b,MEKA,watch,up,0.04364,0.06783,55.4308,10.0,60,True,predicted_up;return_55.43pct;target_10.00pct;label_watch;pump_confirmed
-2026-04-26T14:54:35+00:00,arbitrum,0xb36edc1cb45d9e9383ff0235e1a502a5421d37b6,MNFLAB,watch,up,0.0006765,0.001123,66.0015,10.0,60,True,predicted_up;return_66.00pct;target_10.00pct;label_watch;pump_confirmed
-2026-04-26T14:54:35+00:00,arbitrum,0x912ce59144191c1204e64559fe8253a0e49e6548,ARB,watch,down,0.1303,0.1304,0.0767,10.0,60,False,predicted_down;return_0.08pct;target_10.00pct;label_watch;not_confirmed
-2026-04-26T14:54:35+00:00,arbitrum,0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f,WBTC,dump_risk,down,77663.062,77897.36,0.3017,10.0,60,False,predicted_down;return_0.30pct;target_10.00pct;label_dump_risk;not_confirmed

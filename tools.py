@@ -6,6 +6,7 @@ Full Azalyst Alpha Scanner tool set with multi-chain support.
 import subprocess
 import os
 import sys
+import shlex
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -43,13 +44,42 @@ def _truncate(text: str) -> str:
     return text
 
 
-def bash(cmd: str) -> str:
-    result = subprocess.run(
-        cmd, shell=True, capture_output=True, text=True, timeout=120,
-        cwd=os.environ.get("GITHUB_WORKSPACE", "."),
-    )
-    out = result.stdout + result.stderr
-    return _truncate(out) if out.strip() else "(no output)"
+ALLOWED_BASH_PREFIXES = (
+    "ls", "cat", "head", "tail", "wc", "grep", "find",
+    "python", "pytest", "pip list", "git status", "git diff", "git log",
+)
+DENIED_PATTERNS = ("rm ", "rm\t", " rm", ";rm", "&&rm", "|rm",
+                   "git push", "git reset --hard", "curl ", "wget ",
+                   "chmod ", "chown ", "sudo ", "/dev/", ":(){", "dd if=")
+
+def _is_allowed(cmd: str) -> bool:
+    c = cmd.strip()
+    if any(bad in c for bad in DENIED_PATTERNS):
+        return False
+    return any(c.startswith(prefix) for prefix in ALLOWED_BASH_PREFIXES)
+
+def bash(cmd: str, timeout: int = 120) -> str:
+    """Run a whitelisted shell command. NEVER pass shell=True."""
+    if not isinstance(cmd, str) or not cmd.strip():
+        return "ERROR: empty command"
+    if not _is_allowed(cmd):
+        return f"ERROR: command not allowed by safety policy: {cmd!r}"
+    try:
+        result = subprocess.run(
+            shlex.split(cmd),
+            shell=False,                # critical
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+            check=False,
+            cwd=os.environ.get("GITHUB_WORKSPACE", "."),
+        )
+        out = (result.stdout or "") + (result.stderr or "")
+        return _truncate(out[:4000])               # hard truncate
+    except subprocess.TimeoutExpired:
+        return f"ERROR: timeout after {timeout}s"
+    except Exception as e:
+        return f"ERROR: {type(e).__name__}: {e}"
 
 
 def read_file(path: str) -> str:
@@ -91,6 +121,7 @@ def list_dir(path: str = ".") -> str:
 def search(pattern: str, path: str = ".") -> str:
     result = subprocess.run(
         ["grep", "-rn", "--include=*", pattern, path],
+        shell=False,
         capture_output=True, text=True, timeout=30,
     )
     out = result.stdout + result.stderr

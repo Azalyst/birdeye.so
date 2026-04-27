@@ -1,6 +1,0 @@
-evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-26T13:26:37+00:00,ethereum,0xf280b16ef293d8e534e370794ef26bf312694126,ASTEROID,anomaly_watch,up,0.0003645,0.0003426,-6.0082,10.0,60,False,predicted_up;return_-6.01pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-26T13:26:37+00:00,solana,7uUEX55KKMyiJDfoTaT3K2ZHmEWVwwxoqpXPxDTXtzQo,BitCoin,anomaly_watch,up,0.001383,0.001608,16.269,10.0,60,True,predicted_up;return_16.27pct;target_10.00pct;label_anomaly_watch;pump_confirmed
-2026-04-26T13:26:37+00:00,solana,6QSmayjFkfXpNJJ4rM44PTvgdMS2PfkVrp9EwgGXpump,Trump,anomaly_watch,down,6.149e-07,6.831e-07,11.0912,10.0,60,False,predicted_down;return_11.09pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-26T13:26:37+00:00,solana,27NdPJMkbCuQy4BuQhtgsVrvhVKr4tfKZVNZrFqEFTpw,Korat,watch,up,2.114e-05,4.559e-05,115.6575,10.0,60,True,predicted_up;return_115.66pct;target_10.00pct;label_watch;pump_confirmed
-2026-04-26T13:26:37+00:00,solana,AmSYbLUcwYmBZc8G9GTenSn2dsLjsZiVeMxMQvcUpump,LASTMAN,anomaly_watch,down,0.00318,0.00318,0.0,10.0,60,False,predicted_down;return_0.00pct;target_10.00pct;label_anomaly_watch;not_confirmed

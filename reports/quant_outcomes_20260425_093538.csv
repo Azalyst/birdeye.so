@@ -1,5 +1,0 @@
-evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-25T09:35:38+00:00,base,0x4200000000000000000000000000000000000006,WETH,anomaly_watch,down,2315.33,2315.33,0.0,10.0,60,False,predicted_down;return_0.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-25T09:35:38+00:00,ethereum,0xae1b8d2b296e1e1f5c73eff0c83d850033eb21dd,PEACE,anomaly_watch,up,1.639e-05,0.0003393,1970.1647,10.0,60,True,predicted_up;return_1970.16pct;target_10.00pct;label_anomaly_watch;pump_confirmed
-2026-04-25T09:35:38+00:00,ethereum,0x3f49681d83d07e4adc900045a8a9f980fd5f5329,Imagine,watch,up,2.116e-06,1.41e-16,-100.0,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_watch;not_confirmed
-2026-04-25T09:35:38+00:00,ethereum,0x14eab8e496a92c3f091629fbd7a58c9cc0a47265,DARKP,watch,up,3.395e-07,8.575e-11,-99.9747,10.0,60,False,predicted_up;return_-99.97pct;target_10.00pct;label_watch;not_confirmed

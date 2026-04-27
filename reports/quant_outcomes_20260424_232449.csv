@@ -1,8 +1,0 @@
-evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-24T23:24:48+00:00,ethereum,0x1b68e447f75dc5ca7bec7e0c33be2277f2d44c64,KISHU,anomaly_watch,up,7.252e-06,7.252e-06,0.0,10.0,60,False,predicted_up;return_0.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-24T23:24:48+00:00,ethereum,0x69320646c368089ed533b584045ba662841c4922,KKK,anomaly_watch,down,1.623e-06,1.623e-06,0.0,10.0,60,False,predicted_down;return_0.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-24T23:24:48+00:00,ethereum,0x7bb5d04a2081bcd0cadac5849542294f2928c3c5,🐺JLK,watch,up,7.773e-07,2.583e-13,-100.0,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_watch;not_confirmed
-2026-04-24T23:24:49+00:00,ethereum,0xbd0fa5b877f7f1fa473382ff21cd661c18f2c56d,KISHU,watch,up,8.255e-06,8.255e-06,0.0,10.0,60,False,predicted_up;return_0.00pct;target_10.00pct;label_watch;not_confirmed
-2026-04-24T23:24:49+00:00,ethereum,0xdfa208bb0b811cfbb5fa3ea98ec37aa86180e668,w🍖,anomaly_watch,up,0.05498,0.03681,-33.0484,10.0,60,False,predicted_up;return_-33.05pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-24T23:24:49+00:00,ethereum,0x8de39b057cc6522230ab19c0205080a8663331ef,wojak,anomaly_watch,up,8.237e-08,8.917e-08,8.2554,10.0,60,False,predicted_up;return_8.26pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-24T23:24:49+00:00,solana,AY7H91EyQUtpgDBj6v2dikqmq63vAfzJ3jicxRKPpump,CATCOIN,anomaly_watch,down,1.127e-06,3.106e-07,-72.4401,10.0,60,True,predicted_down;return_-72.44pct;target_10.00pct;label_anomaly_watch;dump_confirmed

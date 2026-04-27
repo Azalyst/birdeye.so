@@ -9,17 +9,35 @@ Runs in two modes:
 """
 from __future__ import annotations
 
+import hashlib
+import hmac
 import json
-import pickle
+import os
 import sqlite3
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Dict
 
+import joblib
+
 from ml.features import build_matrix
 from ml.train import METRICS_PATH, MODEL_PATH
 
 DEFAULT_RECENT_HOURS = 24
+MODEL_HMAC_KEY = os.environ.get("MODEL_HMAC_KEY", "").encode()
+
+
+def load_model_safely(model_path: Path):
+    if not MODEL_HMAC_KEY:
+        raise RuntimeError("MODEL_HMAC_KEY env var not set; refuse to load untrusted model")
+    sig_path = model_path.with_suffix(model_path.suffix + ".sig")
+    if not sig_path.exists():
+        raise RuntimeError(f"Missing signature file: {sig_path}")
+    expected = sig_path.read_text().strip()
+    actual = hmac.new(MODEL_HMAC_KEY, model_path.read_bytes(), hashlib.sha256).hexdigest()
+    if not hmac.compare_digest(expected, actual):
+        raise RuntimeError("Model signature mismatch — refusing to load")
+    return joblib.load(model_path)
 
 
 def score(db_path: Path | str, mode: str = "recent", hours: int = DEFAULT_RECENT_HOURS) -> Dict[str, int]:
@@ -34,8 +52,7 @@ def score(db_path: Path | str, mode: str = "recent", hours: int = DEFAULT_RECENT
     if not MODEL_PATH.exists():
         return {"status": "no_model", "scored": 0}
 
-    with MODEL_PATH.open("rb") as f:
-        bundle = pickle.load(f)
+    bundle = load_model_safely(MODEL_PATH)
     model = bundle["model"]
     feature_names = bundle["feature_names"]
     model_version = bundle.get("trained_ts", "unknown")

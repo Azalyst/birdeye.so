@@ -1,9 +1,0 @@
-ts,chain,address,symbol,binance_symbol,binance_base_asset,binance_match_type,label,pump_score,dump_score,anomaly_score,smart_money_score,risk_score,reasons
-2026-04-27T12:40:03+00:00,optimism,0x4200000000000000000000000000000000000042,OP,,,,watch,2.38,6.46,13.81,0.0,25.0,risk:mintable
-2026-04-27T12:40:03+00:00,optimism,0x94b008aa00579c1307b0ef2c499ad98a8ce58e58,WETH,,,,watch,0.0,13.68,3.45,0.0,50.0,risk:mintable;risk:freeze_authority
-2026-04-27T12:40:03+00:00,optimism,0xd0f83c85c1afd3343de680c49b2550daedea190b,PK,,,,watch,0.0,9.25,0.0,0.0,37.0,risk:mintable;risk:thin_liquidity
-2026-04-27T12:40:03+00:00,optimism,0x0b2c639c533813f4aa9d7837caf62653d097ff85,USDC,,,,watch,8.06,0.12,5.92,4.55,0.0,normal_watch
-2026-04-27T12:40:03+00:00,optimism,0x9560e827af36c94d2ac33a39bce1fe78631088db,VELO,,,,watch,0.0,6.91,0.84,0.0,25.0,risk:mintable
-2026-04-27T12:40:03+00:00,optimism,0x4200000000000000000000000000000000000006,WETH,,,,watch,0.01,1.67,2.78,0.0,0.0,normal_watch
-2026-04-27T12:40:03+00:00,optimism,0x8700daec35af8ff88c16bdf0418774cb3d7599b4,SNX,,,,watch,1.6,0.0,1.92,0.0,0.0,normal_watch
-2026-04-27T12:40:03+00:00,optimism,0x13e98ec3a4c12f1ff6d884d6ac56ce7eed498516,MGW,,,,watch,0.0,0.0,0.0,0.0,0.0,normal_watch

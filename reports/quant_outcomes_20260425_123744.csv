@@ -1,4 +1,0 @@
-evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-25T12:37:44+00:00,ethereum,0xbb771f1ee8afc1a41cce7ac868bbd619ec57421c,KITTENGER,watch,up,4.63e-05,5.477e-05,18.2937,10.0,60,True,predicted_up;return_18.29pct;target_10.00pct;label_watch;pump_confirmed
-2026-04-25T12:37:44+00:00,ethereum,0x710c4afe4582b821fe07e2687b04a8b51489df94,RORY,watch,up,1.036e-05,1.206e-05,16.4093,10.0,60,True,predicted_up;return_16.41pct;target_10.00pct;label_watch;pump_confirmed
-2026-04-25T12:37:44+00:00,ethereum,0x6688223d5be192e6b4752b56be3c45aadd2e41ad,🌸THOME,watch,up,5.035e-07,5.089e-11,-99.9899,10.0,60,False,predicted_up;return_-99.99pct;target_10.00pct;label_watch;not_confirmed

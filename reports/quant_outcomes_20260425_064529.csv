@@ -1,5 +1,0 @@
-evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-25T06:45:29+00:00,ethereum,0x8dd8ff77a726fd259cecec86b29a74781b73e163,IF,anomaly_watch,down,2.406e-11,2.406e-11,0.0,10.0,60,False,predicted_down;return_0.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-25T06:45:29+00:00,ethereum,0x24580100f405fda637295f63e910ea0027631241,💎PXDM,anomaly_watch,down,5.996e-11,5.996e-11,0.0,10.0,60,False,predicted_down;return_0.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-25T06:45:29+00:00,ethereum,0xd8f241fdb438f4981caae5635e51fea9d3b1480f,IF,watch,up,3.794e-05,4.953e-10,-99.9987,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_watch;not_confirmed
-2026-04-25T06:45:29+00:00,ethereum,0xf5cca7aa80cd13fa1fac11e7f19e5b073633df1f,🐆FJG,anomaly_watch,up,1.374e-05,3.203e-10,-99.9977,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
