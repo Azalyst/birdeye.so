@@ -1,68 +1,84 @@
 # Quant Signal Brief
 
-Generated: 2026-04-27T13:14:02+00:00
+Generated: 2026-04-27T15:17:18+00:00
 
 ### Azalyst Alpha Scanner Token Signals Brief
 
-**Date:** 2026-04-27
+**Date:** 2026-04-27  
+**Chain:** Solana  
+**Evaluated Tokens:** 9  
+**Hit Rate:** 22.22%
 
-#### Overview
-This brief summarizes the top signals from the Azalyst Alpha Scanner, focusing on pump, dump, anomaly, and smart money scores. The signals are evaluated based on conservative thresholds to ensure high confidence in the recommendations.
+---
 
-#### Signal Analysis
+#### RCSC
+- **Symbol:** RCSC
+- **Anomaly Score:** 100.0
+- **Pump Score:** 25.8
+- **Dump Score:** 39.0
+- **Smart Money Score:** 0.0
+- **Risk Score:** 12.0
+- **Label:** Anomaly Watch
+- **Reasons:** Risk: Thin Liquidity, ML Isolation Forest Anomaly
+- **Metrics:** Price: $0.000041, Liquidity: $2.62, Price Change 1h: -83.78%, Volume 1h: $131,472.44
 
-1. **GLDL (Solana)**
-   - **Anomaly Score:** 100.0
-   - **Risk Score:** 25.0
-   - **Reasons:** Risk of freeze authority, ML isolation forest anomaly.
-   - **Metrics:** Price: $0.009531, Liquidity: $13,942.97, 1H Price Change: 4.52%.
-   - **Classification:** Anomaly Watch
-   - **Biggest Risks:** Freeze authority risk.
-   - **False-Positive Risk:** High due to freeze authority risk.
-   - **Next Steps:** Confirm the legitimacy of the freeze authority risk and monitor for any regulatory actions.
+**Analysis:**  
+- **Anomaly:** High anomaly score indicates unusual activity.
+- **Risk:** Thin liquidity poses a significant risk for large trades.
+- **Next Steps:** Confirm if the anomaly is due to a genuine breakout or a false signal. Monitor for any institutional involvement.
 
-2. **pPEG (Ethereum)**
-   - **Pump Score:** 66.0
-   - **Anomaly Score:** 92.91
-   - **Reasons:** Sudden rise in price and volume, ML isolation forest anomaly.
-   - **Metrics:** Price: $3.74, Liquidity: $17,563.4, 1H Price Change: 1617%.
-   - **Classification:** Anomaly Watch
-   - **Biggest Risks:** Extreme price volatility, potential market manipulation.
-   - **False-Positive Risk:** Moderate due to high pump score.
-   - **Next Steps:** Monitor for further price action and volume trends.
+#### CONDOM
+- **Symbol:** CONDOM
+- **Anomaly Score:** 70.02
+- **Pump Score:** 48.81
+- **Dump Score:** 15.07
+- **Smart Money Score:** 0.0
+- **Risk Score:** 0.0
+- **Label:** Anomaly Watch
+- **Reasons:** Sudden Rise in Price Plus Volume, ML Isolation Forest Anomaly
+- **Metrics:** Price: $0.00000368, Liquidity: $0.0, Price Change 1h: 20.9%, Volume 1h: $2,520.57
 
-3. **TIME MACHINE (Solana)**
-   - **Dump Score:** 48.52
-   - **Anomaly Score:** 84.93
-   - **Reasons:** Liquidity drop, ML isolation forest anomaly.
-   - **Metrics:** Price: $0.0000942, Liquidity: $28,976.08, 1H Price Change: -26.69%.
-   - **Classification:** Anomaly Watch
-   - **Biggest Risks:** Significant liquidity drop, potential market manipulation.
-   - **False-Positive Risk:** Moderate due to liquidity drop.
-   - **Next Steps:** Confirm the cause of liquidity drop and monitor for further price action.
+**Analysis:**  
+- **Anomaly:** High anomaly score indicates unusual activity.
+- **Pump:** Sudden price and volume increase suggests potential pump.
+- **Next Steps:** Monitor for further price action and institutional involvement to confirm validity.
 
-4. **MYB (Ethereum)**
-   - **Pump Score:** 82.36
-   - **Anomaly Score:** 76.68
-   - **Smart Money Score:** 9.35
-   - **Reasons:** Sudden rise in price and volume, buy pressure, ML isolation forest anomaly.
-   - **Metrics:** Price: $0.000005807, Liquidity: $0.0, 1H Price Change: 54.03%.
-   - **Classification:** Anomaly Watch
-   - **Biggest Risks:** Extreme price volatility, potential market manipulation.
-   - **False-Positive Risk:** Low due to high pump and smart money scores.
-   - **Next Steps:** Monitor for further price action and volume trends.
+#### Peewell
+- **Symbol:** Peewell
+- **Anomaly Score:** 67.09
+- **Pump Score:** 2.58
+- **Dump Score:** 41.29
+- **Smart Money Score:** 0.0
+- **Risk Score:** 0.0
+- **Label:** Watch
+- **Reasons:** Selloff Distribution
+- **Metrics:** Price: $0.000071, Liquidity: $21,571.37, Price Change 1h: -15.34%, Volume 1h: $4,632.29
 
-5. **Peewell (Solana)**
-   - **Dump Score:** 37.34
-   - **Anomaly Score:** 74.7
-   - **Reasons:** Normal watch, ML isolation forest anomaly.
-   - **Metrics:** Price: $0.00007582, Liquidity: $22,363.63, 1H Price Change: -19.86%.
-   - **Classification:** Anomaly Watch
-   - **Biggest Risks:** Price decline, potential market manipulation.
-   - **False-Positive Risk:** Moderate due to price decline.
-   - **Next Steps:** Monitor for further price action and volume trends.
+**Analysis:**  
+- **Anomaly:** High anomaly score indicates unusual activity.
+- **Dump:** Significant price drop suggests potential selloff.
+- **Next Steps:** Confirm if the selloff is justified or if it's a false signal. Monitor for any institutional selling.
 
-6. **patched? (Solana)**
-   - **Pump Score:** 30.0
-   - **Dump Score:** 40.14
-   - **
+#### MP
+- **Symbol:** MP
+- **Anomaly Score:** 65.0
+- **Pump Score:** 66.0
+- **Dump Score:** 0.0
+- **Smart Money Score:** 0.0
+- **Risk Score:** 0.0
+- **Label:** Watch
+- **Reasons:** Sudden Rise in Price Plus Volume
+- **Metrics:** Price: $0.00000591, Liquidity: $0.0, Price Change 1h: 53.39%, Volume 1h: $1,300.66
+
+**Analysis:**  
+- **Anomaly:** High anomaly score indicates unusual activity.
+- **Pump:** Significant price and volume increase suggests potential pump.
+- **Next Steps:** Monitor for further price action and institutional involvement to confirm validity.
+
+#### JEWS
+- **Symbol:** JEWS
+- **Anomaly Score:** 65.0
+- **Pump Score:** 30.0
+- **Dump Score:** 23.88
+- **Smart Money Score:** 0.0
+-
