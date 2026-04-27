@@ -1,3 +1,0 @@
-evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-23T15:13:45+00:00,base,0x1aA8fD5BCce2231C6100d55Bf8B377cff33Acfc3,RAVE,anomaly_watch,up,1.0935883926208314,1.034157752512747,-5.4345,10.0,60,False,predicted_up;return_-5.43pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-23T15:13:46+00:00,solana,So11111111111111111111111111111111111111112,SOL,anomaly_watch,down,85.92973160602321,85.90374097030626,-0.0302,10.0,60,False,predicted_down;return_-0.03pct;target_10.00pct;label_anomaly_watch;not_confirmed

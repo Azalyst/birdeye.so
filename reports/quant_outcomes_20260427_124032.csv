@@ -1,5 +1,0 @@
-evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-27T12:40:31+00:00,base,0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf,VVV,anomaly_watch,down,9.13,9.12,-0.1095,10.0,60,False,predicted_down;return_-0.11pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-27T12:40:31+00:00,solana,HqYqJ7jaWdEkcYU4jvULJVueaw4TYYY7SUgkrJQYpump,CONEKING,anomaly_watch,down,5.745e-07,5.745e-07,0.0,10.0,60,False,predicted_down;return_0.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-27T12:40:31+00:00,solana,FChmmPn1LdCTM5ZxKznxtkf7NeLZpJgoFME83vKBQpTT,FOMO,anomaly_watch,up,5.146e-05,3.264e-10,-99.9994,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-27T12:40:32+00:00,solana,3Qqu2ie5bT3uzAJ6FfpKeURVzEHzRiyo3MDfmcmaR59t,Red Bull,anomaly_watch,down,2.917e-10,2.37e-10,-18.7521,10.0,60,True,predicted_down;return_-18.75pct;target_10.00pct;label_anomaly_watch;dump_confirmed

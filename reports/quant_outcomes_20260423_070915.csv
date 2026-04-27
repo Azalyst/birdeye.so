@@ -1,5 +1,0 @@
-evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-23T07:09:12+00:00,solana,GdKt6aeiMMmCP6jpEes7Fz6kUxceLEqiKVcogQG6MGfP,YOLO,watch,up,9.271119172008699e-06,0.00011357721455917923,1125.0648,10.0,60,True,predicted_up;return_1125.06pct;target_10.00pct;label_watch;pump_confirmed
-2026-04-23T07:09:13+00:00,solana,5jJcaf3aggYy9chaRHgacAe16ZgSaDhc1GR2fukTpGKy,JACK,watch,up,3.245888201178246e-05,4.1880518706751615e-05,29.0264,10.0,60,True,predicted_up;return_29.03pct;target_10.00pct;label_watch;pump_confirmed
-2026-04-23T07:09:14+00:00,solana,GNyLDWLwHFCCfy8SkdZb4q37gGD5bHggj33UoSXLYtZV,FATGF,watch,up,4.347744172419782e-05,0.00011917481810323431,174.1072,10.0,60,True,predicted_up;return_174.11pct;target_10.00pct;label_watch;pump_confirmed
-2026-04-23T07:09:15+00:00,solana,ATYRJ32BpPdfM4169JRjGyBm2D1DFF5f71Q6UzBvpYt9,FATGF,watch,up,1.3260390713158442e-05,2.1360953648283794e-05,61.0884,10.0,60,True,predicted_up;return_61.09pct;target_10.00pct;label_watch;pump_confirmed

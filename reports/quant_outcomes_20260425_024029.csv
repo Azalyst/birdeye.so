@@ -1,7 +1,0 @@
-evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-25T02:40:29+00:00,ethereum,0xa2c8b16578a028dccdc5ab321b32c08d26f22ec6,ETH32,watch,up,1.002e-05,5.142e-24,-100.0,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_watch;not_confirmed
-2026-04-25T02:40:29+00:00,ethereum,0x1d345122a5fbd83a1d4910050c945eabe29bf2a8,🧬HLND,anomaly_watch,up,4.455e-06,2.645e-11,-99.9994,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-25T02:40:29+00:00,ethereum,0x1ebb17c510b41d75b3b94adabba473438d58525c,based,anomaly_watch,up,1.507e-05,4.114e-10,-99.9973,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-25T02:40:29+00:00,ethereum,0xdfa208bb0b811cfbb5fa3ea98ec37aa86180e668,w🍖,anomaly_watch,down,0.03553,0.03345,-5.8542,10.0,60,False,predicted_down;return_-5.85pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-25T02:40:29+00:00,ethereum,0xf280b16ef293d8e534e370794ef26bf312694126,ASTEROID,anomaly_watch,up,0.0003116,0.0002776,-10.9114,10.0,60,False,predicted_up;return_-10.91pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-25T02:40:29+00:00,ethereum,0xaff2565091e7207191dbe340b8528d02fa78d044,ASTEROID,anomaly_watch,down,0.009442,0.01134,20.1017,10.0,60,False,predicted_down;return_20.10pct;target_10.00pct;label_anomaly_watch;not_confirmed

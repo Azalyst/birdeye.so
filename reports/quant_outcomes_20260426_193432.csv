@@ -1,5 +1,0 @@
-evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-26T19:34:32+00:00,solana,7QNk38nbuLYMuPysKVQHFoe7YQekPdu9DdDiWrLYpump,Trump,watch,up,3.968e-06,2.439e-06,-38.5333,10.0,60,False,predicted_up;return_-38.53pct;target_10.00pct;label_watch;not_confirmed
-2026-04-26T19:34:32+00:00,solana,4NEcvcY7xNDRvQ9N2xyMEpcsBW8SZSUGMgV1PFjDpump,SPITTING,watch,up,2.427e-06,2.423e-06,-0.1648,10.0,60,False,predicted_up;return_-0.16pct;target_10.00pct;label_watch;not_confirmed
-2026-04-26T19:34:32+00:00,solana,CvhtnWAE8j72e4TJ7h5uEq4MYJTimEKKdSvif9uqpump,Trump,watch,up,1.367e-05,1.099e-05,-19.605,10.0,60,False,predicted_up;return_-19.60pct;target_10.00pct;label_watch;not_confirmed
-2026-04-26T19:34:32+00:00,solana,AmSYbLUcwYmBZc8G9GTenSn2dsLjsZiVeMxMQvcUpump,LASTMAN,anomaly_watch,up,0.1543,0.1543,0.0,10.0,60,False,predicted_up;return_0.00pct;target_10.00pct;label_anomaly_watch;not_confirmed

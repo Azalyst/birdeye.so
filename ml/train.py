@@ -9,8 +9,11 @@ is expected for the first few days and should not fail the workflow.
 """
 from __future__ import annotations
 
+import hashlib
+import hmac
+import joblib
 import json
-import pickle
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict
@@ -23,6 +26,7 @@ MIN_VALIDATION_ROWS = 10
 VALIDATION_FRACTION = 0.2
 MODEL_PATH = Path("ml/model.pkl")
 METRICS_PATH = Path("ml/metrics.json")
+MODEL_HMAC_KEY = os.environ.get("MODEL_HMAC_KEY", "").encode()
 
 
 def train(db_path: Path | str) -> Dict[str, Any]:
@@ -127,9 +131,21 @@ def train(db_path: Path | str) -> Dict[str, Any]:
     }
 
     MODEL_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with MODEL_PATH.open("wb") as f:
-        pickle.dump({"model": final_model, "feature_names": feature_names,
-                     "model_kind": final_model_kind, "trained_ts": metrics["trained_ts"]}, f)
+    bundle = {
+        "model": final_model,
+        "feature_names": feature_names,
+        "model_kind": final_model_kind,
+        "trained_ts": metrics["trained_ts"]
+    }
+    joblib.dump(bundle, MODEL_PATH)
+
+    # Sign the model
+    if MODEL_HMAC_KEY:
+        sig = hmac.new(MODEL_HMAC_KEY, MODEL_PATH.read_bytes(), hashlib.sha256).hexdigest()
+        MODEL_PATH.with_suffix(MODEL_PATH.suffix + ".sig").write_text(sig)
+    
+    _write_metrics(metrics)
+    return metrics
     _write_metrics(metrics)
     return metrics
 

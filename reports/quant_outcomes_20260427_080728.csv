@@ -1,4 +1,0 @@
-evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-27T08:07:28+00:00,solana,7ETecDpZgyDNRPxTmnWgdoXtt5j7h8DpnJS9kk2pYSJJ,PORNHUB,anomaly_watch,up,0.001812,0.001812,0.0,10.0,60,False,predicted_up;return_0.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-27T08:07:28+00:00,solana,9jnuFkiahGy5q6TUHGTW23h9G5aPEjyih6MKecMizfw4,NiggaCoin,watch,up,4.018e-05,0.000108,168.7904,10.0,60,True,predicted_up;return_168.79pct;target_10.00pct;label_watch;pump_confirmed
-2026-04-27T08:07:28+00:00,solana,281vSRPmHWc7xQMTahCRdxTnSqBBt7GuhPtFp66wioMm,Elon,anomaly_watch,up,3.883e-05,6.248e-05,60.9065,10.0,60,True,predicted_up;return_60.91pct;target_10.00pct;label_anomaly_watch;pump_confirmed

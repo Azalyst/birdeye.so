@@ -55,6 +55,8 @@ jobs:
           fi
 
       - name: Run ML pipeline (${{ steps.mode.outputs.mode }})
+        env:
+          MODEL_HMAC_KEY: ${{ secrets.MODEL_HMAC_KEY || 'default-audit-fix-key-2026' }}
         run: |
           if [ ! -f data/birdeye_quant.db ]; then
             echo "No quant DB yet — skipping."

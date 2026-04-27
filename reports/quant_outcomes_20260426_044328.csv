@@ -1,7 +1,0 @@
-evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-26T04:43:27+00:00,base,0x0c517a57a7834a9a746ce27b50c80dbc8c905b75,Donatify,anomaly_watch,up,1.806e-06,1.813e-06,0.3876,10.0,60,False,predicted_up;return_0.39pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-26T04:43:27+00:00,base,0x3b3413a24f7653f3fcbedc174c44a87400c0556b,SPWAN,watch,up,7.149e-07,5.013e-06,601.217,10.0,60,True,predicted_up;return_601.22pct;target_10.00pct;label_watch;pump_confirmed
-2026-04-26T04:43:27+00:00,base,0xf54940cc274dbc6f0e5eaee22a70b41d1deab408,SPCX,watch,up,1.406e-06,7.227e-14,-100.0,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_watch;not_confirmed
-2026-04-26T04:43:28+00:00,base,0xfc87cddb73c638c9d15e28cbc173caecebc9233e,MOLTID,anomaly_watch,up,0.0002489,2.26e-14,-100.0,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-26T04:43:28+00:00,base,0xed710e00a91a16fe5c3e9db0d6b563f4fc280b68,SPX,watch,up,1.213e-06,1.354e-12,-99.9999,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_watch;not_confirmed
-2026-04-26T04:43:28+00:00,solana,CDzxLfgz3wMbQJgQhkTTQ8sMeG4mowqyMoK1ncRnagK8,FIGHT,watch,up,7.335e-06,1.024e-05,39.6046,10.0,60,True,predicted_up;return_39.60pct;target_10.00pct;label_watch;pump_confirmed

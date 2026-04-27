@@ -1,9 +1,0 @@
-evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-27T19:26:26+00:00,base,0xda649ab4614276e8509a672b01b0ec9ff5128ba3,LODE,watch,up,4.107e-07,2.061e-07,-49.8174,10.0,60,False,predicted_up;return_-49.82pct;target_10.00pct;label_watch;not_confirmed
-2026-04-27T19:26:26+00:00,base,0x238d48b04f007917d0d71c84e463deb032bd4c9c,Canva,anomaly_watch,up,7.743e-07,1.725e-06,122.7819,10.0,60,True,predicted_up;return_122.78pct;target_10.00pct;label_anomaly_watch;pump_confirmed
-2026-04-27T19:26:26+00:00,solana,2svpYkhz4xav4GHAnVS8PP7CPdy5atsjdY6CtVeAACZy,DeepSeekV4,anomaly_watch,up,0.0002277,0.0001706,-25.0769,10.0,60,False,predicted_up;return_-25.08pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-27T19:26:26+00:00,solana,D1oZTrHCY34Wyf9oPRGA5cZFUCazprvxvn22BnRogXCM,Elon,watch,up,0.03272,7.086e-10,-100.0,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_watch;not_confirmed
-2026-04-27T19:26:26+00:00,solana,7EV9ShfBB5NGtGcFVBQPVUVVtW3D6Emr3dPmh8rBpump,Peewell,watch,up,6.985e-05,7.179e-05,2.7774,10.0,60,False,predicted_up;return_2.78pct;target_10.00pct;label_watch;not_confirmed
-2026-04-27T19:26:26+00:00,solana,CnH6dN26468EN7DkWBBdagNGXoMioHTQMwSwgmr7pump,PUMPDAN,anomaly_watch,down,6.479e-07,6.364e-07,-1.775,10.0,60,False,predicted_down;return_-1.77pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-27T19:26:27+00:00,solana,8PyKLQo2bYFdpXsDoCTrscZ7NpAwmkdwPtS2k7C2pump,alt-coin,anomaly_watch,up,8.624e-06,8.624e-06,0.0,10.0,60,False,predicted_up;return_0.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-27T19:26:27+00:00,solana,2uaoVwaQVSgqTKio5ExeXeD9oofdnYbhcFv5MChopump,STFU,anomaly_watch,down,1.463e-05,1.786e-05,22.0779,10.0,60,False,predicted_down;return_22.08pct;target_10.00pct;label_anomaly_watch;not_confirmed

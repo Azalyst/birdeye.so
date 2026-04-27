@@ -1,8 +1,0 @@
-evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-26T02:03:03+00:00,base,0x78a087d713be963bf307b18f2ff8122ef9a63ae9,BSWAP,anomaly_watch,down,0.005249,0.005249,0.0,10.0,60,False,predicted_down;return_0.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-26T02:03:03+00:00,base,0xb1e2a5cf47717f884b991e598a42606938340e39,BDAG,watch,up,8.06e-05,6.787e-15,-100.0,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_watch;not_confirmed
-2026-04-26T02:03:03+00:00,base,0xf1c20c1c6b78f61a5734f0b3cb76af4ea4961a94,1KTO100M,anomaly_watch,up,4.998e-16,4.998e-16,0.0,10.0,60,False,predicted_up;return_0.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-26T02:03:03+00:00,base,0x0fd7a301b51d0a83fcaf6718628174d527b373b6,LUM,watch,up,0.3316,0.3334,0.5428,10.0,60,False,predicted_up;return_0.54pct;target_10.00pct;label_watch;not_confirmed
-2026-04-26T02:03:04+00:00,solana,5YMFU9Hwcx3jxu6ktFb3DvZqFMsWR9rLWXnB5rwpump,Skin,watch,up,4.74e-06,2.408e-06,-49.1983,10.0,60,False,predicted_up;return_-49.20pct;target_10.00pct;label_watch;not_confirmed
-2026-04-26T02:03:04+00:00,solana,6MhsyZVgYh6bpZuwW3AhpZTikTKnDwKFzNoTwHnpump,TUSLA,watch,up,5.187e-06,2.407e-06,-53.5955,10.0,60,False,predicted_up;return_-53.60pct;target_10.00pct;label_watch;not_confirmed
-2026-04-26T02:03:04+00:00,solana,HGxYWHhDNGFh7FpoJTuwgNuB7VAHtpeBVBo1u73Tpump,mexicanunc,anomaly_watch,down,2.895e-05,2.925e-05,1.0363,10.0,60,False,predicted_down;return_1.04pct;target_10.00pct;label_anomaly_watch;not_confirmed

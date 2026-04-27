@@ -1,4 +1,0 @@
-evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-23T10:46:48+00:00,base,0xFbC2051AE2265686a469421b2C5A2D5462FbF5eB,OPG,anomaly_watch,up,0.41796673343684354,0.38454953579575013,-7.9952,10.0,60,False,predicted_up;return_-8.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-23T10:46:50+00:00,base,0x1aA8fD5BCce2231C6100d55Bf8B377cff33Acfc3,RAVE,anomaly_watch,up,1.0939801835723801,1.112583019434842,1.7005,10.0,60,False,predicted_up;return_1.70pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-23T10:46:51+00:00,base,0x311935Cd80B76769bF2ecC9D8Ab7635b2139cf82,SOL,anomaly_watch,up,85.58649890376083,85.50492565403256,-0.0953,10.0,60,False,predicted_up;return_-0.10pct;target_10.00pct;label_anomaly_watch;not_confirmed
