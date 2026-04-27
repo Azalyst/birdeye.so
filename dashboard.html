@@ -292,7 +292,15 @@ function updateClock(){const n=new Date(),ist=new Date(n.getTime()+(5.5*3600000)
 setInterval(updateClock,1000);updateClock();
 
 function gh(p){const h={'Accept':'application/vnd.github+json'};if(S.token)h['Authorization']=`Bearer ${S.token}`;return fetch(`https://api.github.com/repos/${S.repo}${p}`,{headers:h});}
-function ghRaw(p){const h={};if(S.token)h['Authorization']=`Bearer ${S.token}`;return fetch(`https://raw.githubusercontent.com/${S.repo}/main/${p}`,{headers:h});}
+function ghRaw(path) {
+  if (typeof path !== 'string' || path.indexOf('..') !== -1) return null;
+  if (!path.startsWith('reports/')) return null;
+  if (!/^[A-Za-z0-9_./-]+$/.test(path)) return null;
+  if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(S.repo || '')) return null;
+  const h = {};
+  if (S.token) h['Authorization'] = `Bearer ${S.token}`;
+  return fetch(`https://raw.githubusercontent.com/${S.repo}/main/${path}`, {headers: h});
+}
 
 function rel(d){if(!d)return'—';const m=Math.floor((Date.now()-new Date(d))/60000);if(m<1)return'just now';if(m<60)return`${m}m ago`;const h=Math.floor(m/60);if(h<24)return`${h}h ago`;return`${Math.floor(h/24)}d ago`;}
 function nextHour(){const n=new Date(),nx=new Date(n);const nm=Math.ceil((n.getMinutes()+1)/15)*15;nx.setMinutes(nm,0,0);if(nm>=60){nx.setHours(nx.getHours()+1);nx.setMinutes(0,0,0);}const m=Math.round((nx-n)/60000);return m<60?`in ${m}m`:`in ${Math.floor(m/60)}h ${m%60}m`;}
