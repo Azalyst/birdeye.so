@@ -1,0 +1,31 @@
+ts,chain,address,symbol,binance_symbol,binance_base_asset,binance_match_type,label,pump_score,dump_score,anomaly_score,smart_money_score,risk_score,reasons
+2026-04-28T13:08:36+00:00,ethereum,0xfd256da0b4f864ef37c925b40d04af27ed090315,ELIEN,,,,anomaly_watch,55.0,36.0,100.0,15.0,0.0,buy_pressure;ml_isolation_forest_anomaly
+2026-04-28T13:08:36+00:00,solana,orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE,ORCA,,,,anomaly_watch,0.0,7.2,99.12,0.0,25.0,risk:mintable;ml_isolation_forest_anomaly
+2026-04-28T13:08:36+00:00,solana,DXcwhg1MwrResr1CoaBuhnnHmcx222ntZAgRd28Jpump,SCAM,,,,anomaly_watch,3.14,28.57,79.82,0.0,0.0,liquidity_drop;ml_isolation_forest_anomaly
+2026-04-28T13:08:36+00:00,solana,8GxLxKA8tf3h8JUkXFfP4dNyn6D2vvwyGif5wanRpump,MASCOTS,,,,anomaly_watch,11.37,4.72,72.82,0.0,0.0,normal_watch;ml_isolation_forest_anomaly
+2026-04-28T13:08:36+00:00,solana,8Xh4Qb5KHqD3bsiR22YNRi4aZw89e3AgZKMWXzQEo8oF,DORA,,,,anomaly_watch,25.8,39.0,71.38,0.0,12.0,risk:thin_liquidity;ml_isolation_forest_anomaly
+2026-04-28T13:08:36+00:00,ethereum,0x47ea863839bed88fe4da3e057a2551cc464ddd0f,SHIBA,,,,anomaly_watch,66.0,0.0,70.73,0.0,0.0,sudden_rise_price_plus_volume;ml_isolation_forest_anomaly
+2026-04-28T13:08:36+00:00,solana,EC5S5FkXuCq9TuQMexqphUQMkUDYZAHaoGNTP8UbsUM5,FUTURE,,,,watch,28.02,3.0,65.04,0.0,12.0,risk:thin_liquidity
+2026-04-28T13:08:36+00:00,solana,2VB9ituAKi7LWMEVb26y3rppFFzmFYWCjfa6FR6Kpump,Noah Noah,,,,watch,30.0,36.0,65.0,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,solana,3hdKi78jbnY1y7KCuKCEqwEQw5D9kyfZ7xbc3dt5LNck,FMML,,,,watch,30.0,36.0,65.0,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,ethereum,0x6093f9ea65e70f9d4920b9198c33a7a354cfc103,CLAW,,,,watch,30.0,25.36,65.0,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,ethereum,0x4d1ca862815c8937b2dacc1207c2b8a820a50e61,SPARK,,,,watch,30.0,21.03,62.72,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,solana,6AVAUKa9uxQpruHZUinFECpXEh1usRVtzQWK8N2wpump,SCAM,,,,watch,6.63,14.04,56.11,2.3,0.0,normal_watch
+2026-04-28T13:08:36+00:00,ethereum,0x6975ab8223833fa1aee6f758a0c547084088cfd7,SS,,,,watch,30.0,15.71,54.44,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,solana,ABiCiKWsTARyw5waUannCtMMr6K43912Yv5RjwX3pump,トゥトゥ,,,,watch,30.0,13.55,51.07,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,solana,H1Jk7Y3VV63ArJyWYUr5WH6kfH6nfaA6PtwxZCUs2hz3,People,,,,watch,30.0,13.32,50.72,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,solana,5nrLD7JDem6LiJNRP43NjLAkE8WFc2WZYZafBW42smqf,STOCKMAN,,,,watch,1.76,31.22,45.59,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,solana,EgESzdDa54jqTy7HZVCqwneLDFCPffggHAYiJWBFRfjj,FUTURE,,,,watch,32.17,8.04,44.2,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,solana,CJUrENDAuSm4FxxziUgftnUJqqXjm4VL1zhJgwXupump,HENRY,,,,watch,4.13,8.19,43.86,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,solana,4df1wZoygsynEZ6XmpcoabrVwv7nBgjHLyCns5xApump,BELKA,,,,watch,4.7,24.48,43.8,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,solana,6MzrKFrhsXRHmyms9nNT9ssJjnTp1KxaF2LHJzkY4Ww6,Froggie,,,,watch,30.0,8.35,42.99,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,ethereum,0xe0d5995509528616c0ad5d4ecc6589316795a473,BOLZ,,,,watch,30.01,8.28,42.88,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,ethereum,0xfbda06414181cc29363aabcffe8eac7faeead831,SCAM,,,,watch,35.3,0.0,38.25,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,solana,8tX83HeXWBi6UYm5c2QThvBNfhZTyhhZG9uZsizBt62V,THPR,,,,watch,32.86,0.0,34.45,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,ethereum,0x8eaaad1b3dd2a99adb5a5a0ed724886e943542ac,PEPESITO,,,,watch,30.0,2.02,33.14,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,solana,Hon2rHAiqkcDtUzL5gA2vjXPr7T1MPCK2UT2AHKCpump,MAGA,,,,watch,1.5,6.51,30.0,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,solana,4391rrM7VHeXByEPgWnsmAHbNt7g52c7ZYgU7kQ89ray,CV,,,,watch,30.0,0.0,30.0,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,ethereum,0x9de45ea92bdbe71c514dfcfecf376d7b341df182,People,,,,watch,30.0,0.0,30.0,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,ethereum,0xd3c62acb9f52a7b7b14e122bfa55fc38e018dae9,skamuzon,,,,watch,30.0,0.0,30.0,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,solana,CGEDT9QZDvvH5GmVkWJH2BXiMJqMJySC9ihWyr7Spump,BURNIE,,,,watch,6.5,0.0,27.02,0.0,0.0,normal_watch
+2026-04-28T13:08:36+00:00,solana,DCNEi1eFWEFA7MQYkh8kSDeZ3bgja453j1sQ3Rn1pump,ANNIE ,,,,watch,4.58,0.0,22.22,0.0,0.0,normal_watch
