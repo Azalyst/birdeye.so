@@ -1,0 +1,20 @@
+ts,chain,address,symbol,binance_symbol,binance_base_asset,binance_match_type,label,pump_score,dump_score,anomaly_score,smart_money_score,risk_score,reasons
+2026-04-28T01:21:38+00:00,arbitrum,0xb934beb34966fc73a624ecc71f4e8fe77498c5fc,NERMIN,,,,anomaly_watch,56.92,0.0,73.54,0.0,0.0,normal_watch
+2026-04-28T01:21:38+00:00,bnb,0x87acfa3fd7a6e0d48677d070644d76905c2bdc00,SPACE,,,,watch,39.0,6.25,46.21,10.0,25.0,buy_pressure;risk:mintable
+2026-04-28T01:21:38+00:00,bnb,0x3af004d4f591eafe1b0a7b16539fda7b6bc64444,SCAM,,,,watch,30.0,4.85,37.55,0.0,0.0,normal_watch
+2026-04-28T01:21:38+00:00,arbitrum,0x912ce59144191c1204e64559fe8253a0e49e6548,ARB,,,,watch,31.57,0.0,26.89,14.72,0.0,buy_pressure
+2026-04-28T01:21:38+00:00,arbitrum,0xaf88d065e77c8cc2239327c5edb3a432268e5831,USDC,,,,watch,28.94,0.0,24.83,15.0,0.0,buy_pressure
+2026-04-28T01:21:38+00:00,bnb,0xd20fb09a49a8e75fef536a2dbc68222900287bac,PRL,,,,watch,17.39,0.0,23.46,2.16,0.0,normal_watch
+2026-04-28T01:21:38+00:00,bnb,0x97693439ea2f0ecdeb9135881e49f354656a911c,RAVE,,,,watch,11.07,1.23,14.37,0.0,0.0,normal_watch
+2026-04-28T01:21:38+00:00,arbitrum,0x25118290e6a5f4139381d072181157035864099d,RAIN,,,,watch,10.96,1.06,13.54,0.0,0.0,normal_watch
+2026-04-28T01:21:38+00:00,bnb,0x6ec90334d89dbdc89e08a133271be3d104128edb,WKC,,,,watch,10.08,1.1,13.05,0.0,0.0,normal_watch
+2026-04-28T01:21:38+00:00,arbitrum,0x0c1c1c109fe34733fca54b82d7b46b75cfb71f6e,CHIP,,,,watch,8.95,0.53,11.7,0.0,0.0,normal_watch
+2026-04-28T01:21:38+00:00,arbitrum,0x97e66d3c4d5bcd7c64e3e55af28544c9addf9281,CAPX,,,,watch,9.52,0.0,11.09,0.0,0.0,normal_watch
+2026-04-28T01:21:38+00:00,bnb,0x5dbde81fce337ff4bcaaee4ca3466c00aecae274,AGT,,,,watch,7.66,0.0,10.26,0.0,0.0,normal_watch
+2026-04-28T01:21:38+00:00,bnb,0xf9ca3fe094212ffa705742d3626a8ab96aababf8,DAM,,,,watch,4.02,2.87,8.98,0.0,0.0,normal_watch
+2026-04-28T01:21:38+00:00,bnb,0x55ad16bd573b3365f43a9daeb0cc66a73821b4a5,AIOT,,,,watch,6.56,0.0,8.86,0.0,0.0,normal_watch
+2026-04-28T01:21:38+00:00,bnb,0x5feccd17c393caf1001d18164236a37e731fcb9d,OPG,,,,watch,5.93,1.33,8.75,0.0,0.0,normal_watch
+2026-04-28T01:21:38+00:00,arbitrum,0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f,WBTC,,,,watch,4.25,0.0,5.21,0.0,0.0,normal_watch
+2026-04-28T01:21:38+00:00,bnb,0x621efb83227f29657389724f877494f4dc8b4444,America is Back,,,,watch,3.64,0.0,5.19,0.0,0.0,normal_watch
+2026-04-28T01:21:38+00:00,arbitrum,0x82af49447d8a07e3bd95bd0d56f35241523fbab1,WETH,,,,watch,3.97,0.0,4.97,0.0,0.0,normal_watch
+2026-04-28T01:21:38+00:00,arbitrum,0xed4ea5f08a27a7ac1b38aba14196932f05c15a89,BIG,,,,watch,0.0,3.0,0.0,0.0,12.0,risk:thin_liquidity

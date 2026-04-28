@@ -1,64 +1,46 @@
 # Quant Signal Brief
 
-Generated: 2026-04-27T23:56:00+00:00
+Generated: 2026-04-28T01:26:46+00:00
 
-### Azalyst Alpha Scanner Token Signals Brief
+### Quant Analyst Brief: Azalyst Alpha Scanner Token Signals
 
 #### Overview
-This brief evaluates the top signals from the Azalyst Alpha Scanner, focusing on pump, dump, anomaly, and smart money scores. The criteria for strong longs, strong shorts, and anomalies are strictly applied to ensure conservative and score-calibrated assessments.
+This brief evaluates token signals from the Azalyst Alpha Scanner as of 2026-04-28T01:21:38+00:00. The scanner provides scores for pump, dump, anomaly, smart money, and risk, which are used to classify signals into strong longs, strong shorts, anomalies, and low-conviction or tentative watches.
 
-#### Top Signals Analysis
+#### Signal Analysis
 
-1. **SCAM (Solana)**
-   - **Anomaly Score:** 100.0
-   - **Pump Score:** 49.26
-   - **Smart Money Score:** 0.0
-   - **Risk Score:** 0.0
-   - **Label:** Anomaly Watch
-   - **Metrics:** Price = $0.009496, Liquidity = $311,154.85, Price Change (1h) = 46.43%
-   - **Reasons:** Normal watch, ML Isolation Forest Anomaly
-   - **Biggest Risks:** False-positive risk due to high anomaly score but low pump and smart money scores.
-   - **Next Steps:** Confirm with additional data points and further analysis.
+1. **NERMIN (ARB)**
+   - **Classification:** Anomaly Watch
+   - **Scores:** Pump Score: 56.92, Dump Score: 0.0, Anomaly Score: 73.54, Smart Money Score: 0.0, Risk Score: 0.0
+   - **Metrics:** Price: $0.0311, Liquidity: $104,582.67, 1h Price Change: 86.45%
+   - **Description:** NERMIN shows a significant price pump and a high anomaly score, indicating unusual activity. However, it lacks smart money involvement and does not meet the criteria for a strong long.
+   - **Risks:** High false-positive risk due to the absence of smart money activity. Requires confirmation of the underlying cause of the pump.
+   - **Next Steps:** Monitor for further smart money involvement or additional price movement.
 
-2. **ENE (Ethereum)**
-   - **Anomaly Score:** 97.64
-   - **Pump Score:** 91.0
-   - **Smart Money Score:** 15.0
-   - **Risk Score:** 0.0
-   - **Label:** Anomaly Watch
-   - **Metrics:** Price = $3.995e-06, Liquidity = $10,508.67, Price Change (1h) = 415.0%
-   - **Reasons:** Sudden rise in price and volume, buy pressure, ML Isolation Forest Anomaly
-   - **Biggest Risks:** False-positive risk due to high anomaly score but low smart money score.
-   - **Next Steps:** Monitor for sustained price action and smart money inflow.
+2. **SPACE (BNB)**
+   - **Classification:** Watch
+   - **Scores:** Pump Score: 39.0, Dump Score: 6.25, Anomaly Score: 46.21, Smart Money Score: 10.0, Risk Score: 25.0
+   - **Metrics:** Price: $0.00677, Liquidity: $9,754.25, 1h Price Change: 1.58%
+   - **Description:** SPACE has moderate pump and anomaly scores, with some smart money involvement. However, it does not meet the criteria for a strong long or short.
+   - **Risks:** Mintable token risk. False-positive risk due to low smart money involvement.
+   - **Next Steps:** Confirm the legitimacy of the token and monitor for further smart money activity.
 
-3. **ORCA (Solana)**
-   - **Anomaly Score:** 96.28
-   - **Pump Score:** 1.92
-   - **Smart Money Score:** 0.0
-   - **Risk Score:** 25.0
-   - **Label:** Anomaly Watch
-   - **Metrics:** Price = $1.55, Liquidity = $956,301.49, Price Change (1h) = 7.04%
-   - **Reasons:** Risk: Mintable, ML Isolation Forest Anomaly
-   - **Biggest Risks:** Mintable token risk, false-positive risk.
-   - **Next Steps:** Evaluate minting activity and confirm liquidity stability.
+3. **SCAM (BNB)**
+   - **Classification:** Watch
+   - **Scores:** Pump Score: 30.0, Dump Score: 4.85, Anomaly Score: 37.55, Smart Money Score: 0.0, Risk Score: 0.0
+   - **Metrics:** Price: $0.0001105, Liquidity: $32,524.15, 1h Price Change: -5.39%
+   - **Description:** SCAM has a moderate pump score but lacks smart money involvement and does not meet the criteria for a strong long or short.
+   - **Risks:** High volume with low price change suggests potential manipulation. False-positive risk.
+   - **Next Steps:** Monitor for smart money activity and further price movement.
 
-4. **TikTok (Solana)**
-   - **Anomaly Score:** 95.52
-   - **Pump Score:** 51.46
-   - **Smart Money Score:** 12.6
-   - **Risk Score:** 12.0
-   - **Label:** Anomaly Watch
-   - **Metrics:** Price = $9.389e-05, Liquidity = $1,867.37, Price Change (1h) = 0.73%
-   - **Reasons:** Buy pressure, Risk: Thin Liquidity, ML Isolation Forest Anomaly
-   - **Biggest Risks:** Thin liquidity, false-positive risk.
-   - **Next Steps:** Confirm liquidity depth and trading activity.
+4. **ARB (ARB)**
+   - **Classification:** Watch
+   - **Scores:** Pump Score: 31.57, Dump Score: 0.0, Anomaly Score: 26.89, Smart Money Score: 14.72, Risk Score: 0.0
+   - **Metrics:** Price: $0.1269, Liquidity: $4,082,718.12, 1h Price Change: 0.29%
+   - **Description:** ARB has a moderate pump score and some smart money involvement but does not meet the criteria for a strong long.
+   - **Risks:** False-positive risk due to low anomaly score.
+   - **Next Steps:** Monitor for further smart money activity and price movement.
 
-5. **STFU (Solana)**
-   - **Anomaly Score:** 83.27
-   - **Pump Score:** 0.08
-   - **Smart Money Score:** 0.0
-   - **Risk Score:** 0.0
-   - **Label:** Anomaly Watch
-   - **Metrics:** Price = $4.568e-06, Liquidity = $5,684.92, Price Change (1h) = -25.78%
-   - **Reasons:** Normal watch, ML Isolation Forest Anomaly
-   - **Biggest Risks:** False-positive risk due to high anomaly score but low pump and smart money scores
+5. **USDC (ARB)**
+   - **Classification:** Watch
+   - **Scores:** Pump Score: 28.94, Dump Score: 0.0, Anomaly Score: 24.83, Smart Money Score: 15.0, Risk Score: 
