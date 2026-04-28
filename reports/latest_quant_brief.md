@@ -1,51 +1,62 @@
 # Quant Signal Brief
 
-Generated: 2026-04-28T22:38:11+00:00
+Generated: 2026-04-28T23:35:41+00:00
 
 ### Azalyst Alpha Scanner Token Signals Brief
 
-#### Overview
-This brief evaluates the top signals from the Azalyst Alpha Scanner for tokens on the Optimism chain as of 2026-04-28T22:37:30+00:00. The evaluation is based on specific thresholds for pump_score, dump_score, anomaly_score, and smart_money_score to determine the strength of long or short positions and to identify anomalies. Signals not meeting these thresholds are categorized as low-conviction or tentative watches.
+**Date:** 2026-04-28  
+**Chain:** Optimism
 
-#### Signal Analysis
+---
 
-1. **WLD**
-   - **Scores**: pump_score = 0.0, dump_score = 12.5, anomaly_score = 0.0, smart_money_score = 0.0
-   - **Classification**: Low-conviction watch
-   - **Reasons**: dump_score is above 10, indicating a potential short opportunity, but it does not meet the dump_score threshold of 65 for a strong short call. Risks include mintable tokens and freeze authority.
-   - **Next Steps**: Monitor for any changes in dump_score and smart_money_score. Confirm if the current price movement is a trend or a short-term anomaly.
+#### Token Signals Overview
 
-2. **VELO**
-   - **Scores**: pump_score = 1.35, dump_score = 6.39, anomaly_score = 7.77, smart_money_score = 0.27
-   - **Classification**: Low-conviction watch
-   - **Reasons**: No scores meet the thresholds for strong long or short positions. An anomaly_score above 7 would classify it as an anomaly, but it does not meet this threshold. Risk includes mintable tokens.
-   - **Next Steps**: Monitor for changes in pump_score and smart_money_score. Confirm if the current price movement is a trend or a short-term anomaly.
+- **VELO (Snapshot ID: 1312)**
+  - **Scores:** Pump: 2.44, Dump: 24.55, Anomaly: 26.74, Smart Money: 0.0
+  - **Label:** Watch
+  - **Metrics:** Price: $0.01803, Liquidity: $677,593.04, 1H Price Change: -1.27%
+  - **Risks:** Mintable
+  - **False-Positive Risk:** High due to mintable risk.
+  - **Next Steps:** Confirm if the price drop is due to minting activities or other factors.
 
-3. **OP**
-   - **Scores**: pump_score = 0.0, dump_score = 6.25, anomaly_score = 6.69, smart_money_score = 0.0
-   - **Classification**: Low-conviction watch
-   - **Reasons**: Similar to VELO, no scores meet the thresholds for strong long or short positions. Risk includes mintable tokens.
-   - **Next Steps**: Monitor for changes in pump_score and smart_money_score. Confirm if the current price movement is a trend or a short-term anomaly.
+- **WLD (Snapshot ID: 1317)**
+  - **Scores:** Pump: 0.0, Dump: 13.24, Anomaly: 1.1, Smart Money: 0.0
+  - **Label:** Watch
+  - **Metrics:** Price: $0.2507, Liquidity: $42,684.08, 1H Price Change: -0.46%
+  - **Risks:** Mintable, Freeze Authority
+  - **False-Positive Risk:** High due to mintable and freeze authority risks.
+  - **Next Steps:** Monitor for any unusual minting or freezing activities.
 
-4. **WETH**
-   - **Scores**: pump_score = 3.22, dump_score = 0.12, anomaly_score = 3.79, smart_money_score = 0.0
-   - **Classification**: Low-conviction watch
-   - **Reasons**: No scores meet the thresholds for strong long or short positions. No specific risks noted.
-   - **Next Steps**: Monitor for changes in pump_score and smart_money_score. Confirm if the current price movement is a trend or a short-term anomaly.
+- **OP (Snapshot ID: 1314)**
+  - **Scores:** Pump: 0.0, Dump: 6.83, Anomaly: 3.59, Smart Money: 0.0
+  - **Label:** Watch
+  - **Metrics:** Price: $0.1209, Liquidity: $520,487.13, 1H Price Change: -0.42%
+  - **Risks:** Mintable
+  - **False-Positive Risk:** Moderate due to mintable risk.
+  - **Next Steps:** Assess if the price drop is justified by recent developments or market sentiment.
 
-5. **wstETH**
-   - **Scores**: pump_score = 2.42, dump_score = 0.0, anomaly_score = 2.74, smart_money_score = 0.0
-   - **Classification**: Low-conviction watch
-   - **Reasons**: No scores meet the thresholds for strong long or short positions. No specific risks noted.
-   - **Next Steps**: Monitor for changes in pump_score and smart_money_score. Confirm if the current price movement is a trend or a short-term anomaly.
+- **USDC (Snapshot ID: 1315)**
+  - **Scores:** Pump: 3.03, Dump: 0.27, Anomaly: 3.76, Smart Money: 0.0
+  - **Label:** Watch
+  - **Metrics:** Price: $0.9974, Liquidity: $3,923,362.05, 1H Price Change: -0.15%
+  - **Risks:** None
+  - **False-Positive Risk:** Low
+  - **Next Steps:** Monitor for any unusual price movements or liquidity changes.
 
-6. **USDC**
-   - **Scores**: pump_score = 2.0, dump_score = 0.0, anomaly_score = 2.38, smart_money_score = 0.0
-   - **Classification**: Low-conviction watch
-   - **Reasons**: No scores meet the thresholds for strong long or short positions. No specific risks noted.
-   - **Next Steps**: Monitor for changes in pump_score and smart_money_score. Confirm if the current price movement is a trend or a short-term anomaly.
+- **wstETH (Snapshot ID: 1313)**
+  - **Scores:** Pump: 2.65, Dump: 0.26, Anomaly: 3.32, Smart Money: 0.0
+  - **Label:** Watch
+  - **Metrics:** Price: $2810.29, Liquidity: $709,235.97, 1H Price Change: -0.16%
+  - **Risks:** None
+  - **False-Positive Risk:** Low
+  - **Next Steps:** Confirm if the price drop is due to market sentiment or underlying ETH price movements.
 
-7. **MESSA**
-   - **Scores**: pump_score = 0.0, dump_score = 0.0, anomaly_score = 0.0, smart_money_score = 0.0
-   - **Classification**: Low-conviction watch
-  
+- **WETH (Snapshot ID: 1316)**
+  - **Scores:** Pump: 1.86, Dump: 0.09, Anomaly: 2.21, Smart Money: 0.0
+  - **Label:** Watch
+  - **Metrics:** Price: $2291.086, Liquidity: $125,209,977.07, 1H Price Change: -0.06%
+  - **Risks:** None
+  - **False-Positive Risk:** Low
+  - **Next Steps:** Monitor for any unusual price movements or liquidity changes.
+
+
