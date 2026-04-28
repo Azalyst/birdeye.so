@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T06:46:18.504737+00:00",
+  "generated_at": "2026-04-28T07:27:53.337583+00:00",
   "model_metrics": {
     "status": "ok",
     "model": "lightgbm",
@@ -115,9 +115,9 @@
     "anonymous": 71
   },
   "totals": {
-    "snapshots": 1134,
+    "snapshots": 1154,
     "wallet_events": 377,
-    "labeled_outcomes": 179
+    "labeled_outcomes": 180
   },
   "top_signals": [
     {
@@ -160,6 +160,20 @@
       "pump_score": 32.6,
       "dump_score": 0.0,
       "anomaly_score": 36.08,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 1154,
+      "ts": "2026-04-28T07:26:36+00:00",
+      "chain": "bnb",
+      "address": "0x55ad16bd573b3365f43a9daeb0cc66a73821b4a5",
+      "symbol": "AIOT",
+      "ml_prob": 0.0010622435990291694,
+      "ml_direction": "down",
+      "ml_edge": 0.9978755128019416,
+      "pump_score": 9.95,
+      "dump_score": 18.05,
+      "anomaly_score": 58.73,
       "label": "watch"
     },
     {
@@ -359,6 +373,20 @@
       "label": "anomaly_watch"
     },
     {
+      "snapshot_id": 1141,
+      "ts": "2026-04-28T07:26:36+00:00",
+      "chain": "arbitrum",
+      "address": "0x97e66d3c4d5bcd7c64e3e55af28544c9addf9281",
+      "symbol": "CAPX",
+      "ml_prob": 0.001576957799215411,
+      "ml_direction": "down",
+      "ml_edge": 0.9968460844015692,
+      "pump_score": 3.83,
+      "dump_score": 0.25,
+      "anomaly_score": 4.61,
+      "label": "watch"
+    },
+    {
       "snapshot_id": 931,
       "ts": "2026-04-27T12:59:33+00:00",
       "chain": "solana",
@@ -440,34 +468,6 @@
       "pump_score": 11.06,
       "dump_score": 3.11,
       "anomaly_score": 15.57,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 928,
-      "ts": "2026-04-27T12:59:33+00:00",
-      "chain": "solana",
-      "address": "HKv7zo7tT2EieSLjy8yk7ehjiCwbbUjY9ooKnnoZuaD9",
-      "symbol": "Unibot",
-      "ml_prob": 0.0018423329665908591,
-      "ml_direction": "down",
-      "ml_edge": 0.9963153340668183,
-      "pump_score": 48.1,
-      "dump_score": 0.0,
-      "anomaly_score": 58.15,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 1099,
-      "ts": "2026-04-28T01:21:38+00:00",
-      "chain": "arbitrum",
-      "address": "0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f",
-      "symbol": "WBTC",
-      "ml_prob": 0.0018439884772691634,
-      "ml_direction": "down",
-      "ml_edge": 0.9963120230454616,
-      "pump_score": 4.25,
-      "dump_score": 0.0,
-      "anomaly_score": 5.21,
       "label": "watch"
     }
   ],

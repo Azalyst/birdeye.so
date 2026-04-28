@@ -1,30 +1,30 @@
 {
   "kind": "quant_outcomes",
-  "generated_at": "2026-04-28T04:51:12+00:00",
+  "generated_at": "2026-04-28T07:27:36+00:00",
   "evaluated_count": 1,
-  "hit_count": 1,
-  "hit_rate": 1.0,
+  "hit_count": 0,
+  "hit_rate": 0.0,
   "outcomes": [
     {
-      "snapshot_id": 1104,
+      "snapshot_id": 1115,
       "horizon_min": 60,
       "target_pct": 10.0,
-      "evaluated_ts": "2026-04-28T04:51:12+00:00",
-      "chain": "arbitrum",
-      "address": "0xb934beb34966fc73a624ecc71f4e8fe77498c5fc",
-      "symbol": "NERMIN",
+      "evaluated_ts": "2026-04-28T07:27:36+00:00",
+      "chain": "solana",
+      "address": "6AVAUKa9uxQpruHZUinFECpXEh1usRVtzQWK8N2wpump",
+      "symbol": "SCAM",
       "label": "anomaly_watch",
       "predicted_direction": "up",
-      "entry_price": 0.0311,
-      "current_price": 0.04339,
-      "return_pct": 39.5177,
-      "is_true": true,
+      "entry_price": 0.01219,
+      "current_price": 0.01104,
+      "return_pct": -9.434,
+      "is_true": false,
       "reasons": [
         "predicted_up",
-        "return_39.52pct",
+        "return_-9.43pct",
         "target_10.00pct",
         "label_anomaly_watch",
-        "pump_confirmed"
+        "not_confirmed"
       ]
     }
   ]

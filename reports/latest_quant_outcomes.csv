@@ -1,2 +1,2 @@
 evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-28T04:51:12+00:00,arbitrum,0xb934beb34966fc73a624ecc71f4e8fe77498c5fc,NERMIN,anomaly_watch,up,0.0311,0.04339,39.5177,10.0,60,True,predicted_up;return_39.52pct;target_10.00pct;label_anomaly_watch;pump_confirmed
+2026-04-28T07:27:36+00:00,solana,6AVAUKa9uxQpruHZUinFECpXEh1usRVtzQWK8N2wpump,SCAM,anomaly_watch,up,0.01219,0.01104,-9.434,10.0,60,False,predicted_up;return_-9.43pct;target_10.00pct;label_anomaly_watch;not_confirmed
