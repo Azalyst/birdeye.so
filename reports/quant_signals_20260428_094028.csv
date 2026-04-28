@@ -1,0 +1,12 @@
+ts,chain,address,symbol,binance_symbol,binance_base_asset,binance_match_type,label,pump_score,dump_score,anomaly_score,smart_money_score,risk_score,reasons
+2026-04-28T09:39:54+00:00,optimism,0x4200000000000000000000000000000000000042,OP,,,,watch,0.0,32.03,27.25,0.0,25.0,risk:mintable
+2026-04-28T09:39:54+00:00,zksync,0x5a7d6b2f92c77fad6ccabd7ee0624e64907eaf3e,ZKX,,,,watch,31.19,0.0,31.85,0.0,0.0,normal_watch
+2026-04-28T09:39:54+00:00,zksync,0x31c2c031fdc9d33e974f327ab0d9883eae06ca4a,ZF,,,,watch,21.51,6.25,30.41,0.0,25.0,risk:mintable
+2026-04-28T09:39:54+00:00,optimism,0x0b2c639c533813f4aa9d7837caf62653d097ff85,USDC,,,,watch,0.0,25.11,21.21,0.0,0.0,normal_watch
+2026-04-28T09:39:54+00:00,zksync,0x5aea5775959fbc2557cc8789bc1bf90a239d9a91,WETH,,,,watch,17.97,0.0,20.31,0.0,0.0,normal_watch
+2026-04-28T09:39:54+00:00,zksync,0x3355df6d4c9c3035724fd0e3914de96a5a83aaf4,WETH,,,,watch,17.97,0.0,20.31,0.0,0.0,normal_watch
+2026-04-28T09:39:54+00:00,optimism,0xdc6ff44d5d932cbd77b52e5612ba0529dc6226f1,WLD,,,,watch,0.0,12.54,4.19,0.0,50.0,risk:mintable;risk:freeze_authority
+2026-04-28T09:39:54+00:00,zksync,0xbd4372e44c5ee654dd838304006e1f0f69983154,NODL,,,,watch,0.0,6.25,1.11,0.0,25.0,risk:mintable
+2026-04-28T09:39:54+00:00,optimism,0x1f32b1c2345538c0c6f582fcb022739c4a194ebb,wstETH,,,,watch,1.35,0.19,1.81,0.0,0.0,normal_watch
+2026-04-28T09:39:54+00:00,optimism,0x4200000000000000000000000000000000000006,WETH,,,,watch,0.02,0.18,0.39,0.0,0.0,normal_watch
+2026-04-28T09:39:54+00:00,optimism,0x8700daec35af8ff88c16bdf0418774cb3d7599b4,SNX,,,,watch,0.0,0.07,0.29,0.0,0.0,normal_watch

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T07:27:53.337583+00:00",
+  "generated_at": "2026-04-28T09:40:47.103455+00:00",
   "model_metrics": {
     "status": "ok",
     "model": "lightgbm",
@@ -115,9 +115,9 @@
     "anonymous": 71
   },
   "totals": {
-    "snapshots": 1154,
+    "snapshots": 1165,
     "wallet_events": 377,
-    "labeled_outcomes": 180
+    "labeled_outcomes": 183
   },
   "top_signals": [
     {
@@ -188,20 +188,6 @@
       "pump_score": 30.38,
       "dump_score": 0.0,
       "anomaly_score": 30.59,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 904,
-      "ts": "2026-04-27T08:06:15+00:00",
-      "chain": "base",
-      "address": "0x0c03ce270b4826ec62e7dd007f0b716068639f7b",
-      "symbol": "TIG",
-      "ml_prob": 0.0010875690659729032,
-      "ml_direction": "down",
-      "ml_edge": 0.9978248618680542,
-      "pump_score": 8.07,
-      "dump_score": 11.24,
-      "anomaly_score": 53.05,
       "label": "watch"
     },
     {
@@ -468,6 +454,20 @@
       "pump_score": 11.06,
       "dump_score": 3.11,
       "anomaly_score": 15.57,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 1138,
+      "ts": "2026-04-28T07:26:36+00:00",
+      "chain": "arbitrum",
+      "address": "0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f",
+      "symbol": "WBTC",
+      "ml_prob": 0.0018185978160766359,
+      "ml_direction": "down",
+      "ml_edge": 0.9963628043678467,
+      "pump_score": 14.52,
+      "dump_score": 1.19,
+      "anomaly_score": 32.25,
       "label": "watch"
     }
   ],
