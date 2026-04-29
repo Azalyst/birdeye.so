@@ -1,0 +1,31 @@
+ts,chain,address,symbol,binance_symbol,binance_base_asset,binance_match_type,label,pump_score,dump_score,anomaly_score,smart_money_score,risk_score,reasons
+2026-04-29T15:02:37+00:00,ethereum,0x68a47fe1cf42eba4a030a10cd4d6a1031ca3ca0a,TET,,,,anomaly_watch,0.0,22.49,100.0,0.0,25.0,risk:mintable;ml_isolation_forest_anomaly
+2026-04-29T15:02:37+00:00,solana,CnBvQ1U87ErUZReRq8drVwS7RUjpStvLaCNJKL8he2dV,ROKO,,,,anomaly_watch,66.0,0.0,83.64,0.0,0.0,sudden_rise_price_plus_volume;ml_isolation_forest_anomaly
+2026-04-29T15:02:37+00:00,solana,oaRKHieYA4taPE2ShccYLvygn4MxNwYxRuHC6Hfpump,ALL IN,,,,anomaly_watch,66.0,0.0,83.38,0.0,0.0,sudden_rise_price_plus_volume;ml_isolation_forest_anomaly
+2026-04-29T15:02:37+00:00,solana,AT3m8U9hVXGPknoFUGAVnQ1rz3Z9aWygp2q8zcAHpump,Goblin,,,,anomaly_watch,30.0,35.7,82.63,0.0,0.0,selloff_distribution;ml_isolation_forest_anomaly
+2026-04-29T15:02:37+00:00,solana,3KHMZhpthXuiCcgfTv7vVu9PpEz64KAEURFwi6Lopump,Goblin,,,,anomaly_watch,66.0,0.0,77.82,0.0,0.0,sudden_rise_price_plus_volume;ml_isolation_forest_anomaly
+2026-04-29T15:02:37+00:00,solana,GtvjezsNqyy9HZdDPSpW97e4NGtoMhb9H9hWuFYodKsh,Mr. Nice Guy,,,,anomaly_watch,66.0,15.84,76.31,0.0,0.0,sudden_rise_price_plus_volume;ml_isolation_forest_anomaly
+2026-04-29T15:02:37+00:00,solana,4iEFEp8H9BTzsUHs4aP4BFXhXYj6VyQvdESpKpWwQPCf,RIAL,,,,watch,30.16,36.0,65.11,0.09,0.0,normal_watch
+2026-04-29T15:02:37+00:00,solana,8LJmz2eqJ3PjqrHmMpQzQK68zhMEeAxWE36jfTdWpump,EXPERT,,,,watch,30.0,23.73,65.0,0.0,0.0,normal_watch
+2026-04-29T15:02:37+00:00,solana,3BbFSht4ZxQivrVXMhHDJjK5ez32K5ZkwDKv2Hj1pump,TUTOR,,,,watch,30.0,23.88,65.0,0.0,0.0,normal_watch
+2026-04-29T15:02:37+00:00,solana,JmgEXPh346whnW4qxqDxsKisHx3hjkFt6ai6kwoio57,xAI,,,,watch,30.0,23.64,65.0,0.0,0.0,normal_watch
+2026-04-29T15:02:37+00:00,solana,4Hx8g835BWv9bDxsQ8RzsSUZvagUsMJ8jR7uy3fqFGMZ,AI Tutor,,,,watch,30.0,23.0,65.0,0.0,0.0,normal_watch
+2026-04-29T15:02:37+00:00,solana,GUfyGEF62BUUqj5f5PveZknhBQMWWFSXm2jqAdikpump,musk,,,,watch,9.32,59.52,60.49,0.0,0.0,liquidity_drop
+2026-04-29T15:02:37+00:00,solana,58tFDzZ8kFyzkUScXw8sXHKy4misUZXzDSYqwdsfpump,VETERAN,,,,watch,31.07,3.16,52.69,0.61,0.0,normal_watch
+2026-04-29T15:02:37+00:00,ethereum,0xc7e4254a72169fdf7a2e080462724f2f642daf7e,ELIEN,,,,watch,15.68,24.5,50.0,0.0,0.0,liquidity_drop
+2026-04-29T15:02:37+00:00,ethereum,0x4d7078ddd6ccfed2f85db5b7d3ff16828d378d48,AI,,,,watch,35.67,1.91,47.23,0.0,0.0,normal_watch
+2026-04-29T15:02:37+00:00,solana,12eM87tTACWpgnwuapFUHDVDXFaZSxJqxBNj1AHB56sy,ewon,,,,watch,20.61,18.82,46.32,9.57,0.0,buy_pressure
+2026-04-29T15:02:37+00:00,solana,6GeaDVMo9syVMzNqc2Etp9LNfDMBro7MWk1aQV7pump,GOBLIN,,,,watch,42.65,0.0,42.48,0.0,0.0,normal_watch
+2026-04-29T15:02:37+00:00,ethereum,0xaff2565091e7207191dbe340b8528d02fa78d044,ASTEROID,,,,watch,2.29,0.0,39.42,0.0,0.0,normal_watch
+2026-04-29T15:02:37+00:00,solana,4df1wZoygsynEZ6XmpcoabrVwv7nBgjHLyCns5xApump,BELKA,,,,watch,25.27,0.0,37.96,0.0,0.0,normal_watch
+2026-04-29T15:02:37+00:00,ethereum,0x3e76dd57e649a263a532cc9bcc58b32a065fb2a4,ACN,,,,watch,30.0,3.19,34.97,0.0,0.0,normal_watch
+2026-04-29T15:02:37+00:00,solana,6AVAUKa9uxQpruHZUinFECpXEh1usRVtzQWK8N2wpump,SCAM,,,,watch,15.17,8.71,33.31,0.0,0.0,normal_watch
+2026-04-29T15:02:37+00:00,solana,3TYgKwkE2Y3rxdw9osLRSpxpXmSC1C1oo19W9KHspump,BULL,,,,watch,13.92,17.15,31.13,0.0,0.0,normal_watch
+2026-04-29T15:02:37+00:00,ethereum,0x8de39b057cc6522230ab19c0205080a8663331ef,wojak,,,,watch,1.26,6.08,29.07,0.0,0.0,normal_watch
+2026-04-29T15:02:37+00:00,solana,CGEDT9QZDvvH5GmVkWJH2BXiMJqMJySC9ihWyr7Spump,BURNIE,,,,watch,9.11,2.77,16.37,0.0,0.0,normal_watch
+2026-04-29T15:02:37+00:00,ethereum,0x45547ab0100f5e8b158258b6d94d7586de69fc21,MYSTERY,,,,watch,6.69,0.0,15.94,0.0,0.0,normal_watch
+2026-04-29T15:02:37+00:00,ethereum,0xd8a271974e8edae9d7b58e3370dc1669427503f4,BLEND,,,,watch,6.72,5.09,15.47,0.0,0.0,normal_watch
+2026-04-29T15:02:37+00:00,solana,VNo7EjR3XVzvbjUgQrFAXNwSms34fHwHBt1Xoaopump,chudhouse,,,,watch,2.64,8.0,13.5,0.0,0.0,normal_watch
+2026-04-29T15:02:37+00:00,solana,HmBdm8vbisABUjkxms6ZUnoaXbfwFM6ymxShWfAENaoi,EITHER,,,,watch,3.8,5.65,11.93,0.0,0.0,normal_watch
+2026-04-29T15:02:37+00:00,ethereum,0x44b28991b167582f18ba0259e0173176ca125505,uPEG,,,,watch,2.98,1.55,6.4,0.0,0.0,normal_watch
+2026-04-29T15:02:37+00:00,ethereum,0xf280b16ef293d8e534e370794ef26bf312694126,ASTEROID,,,,watch,3.59,0.0,5.62,0.0,0.0,normal_watch

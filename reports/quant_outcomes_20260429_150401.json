@@ -1,0 +1,119 @@
+{
+  "kind": "quant_outcomes",
+  "generated_at": "2026-04-29T15:04:01+00:00",
+  "evaluated_count": 5,
+  "hit_count": 1,
+  "hit_rate": 0.2,
+  "outcomes": [
+    {
+      "snapshot_id": 1448,
+      "horizon_min": 60,
+      "target_pct": 10.0,
+      "evaluated_ts": "2026-04-29T15:04:01+00:00",
+      "chain": "base",
+      "address": "0x40b988797c482734557260989f9ff6d0aea7e588",
+      "symbol": "MASK",
+      "label": "anomaly_watch",
+      "predicted_direction": "up",
+      "entry_price": 1.257e-06,
+      "current_price": 1.704e-12,
+      "return_pct": -99.9999,
+      "is_true": false,
+      "reasons": [
+        "predicted_up",
+        "return_-100.00pct",
+        "target_10.00pct",
+        "label_anomaly_watch",
+        "not_confirmed"
+      ]
+    },
+    {
+      "snapshot_id": 1439,
+      "horizon_min": 60,
+      "target_pct": 10.0,
+      "evaluated_ts": "2026-04-29T15:04:01+00:00",
+      "chain": "solana",
+      "address": "Bd51WrQLG7Wt6CsypSKu67y4mhVZAXSZEu6it4vkpump",
+      "symbol": "HIPPO",
+      "label": "anomaly_watch",
+      "predicted_direction": "up",
+      "entry_price": 2.36e-06,
+      "current_price": 2.36e-06,
+      "return_pct": 0.0,
+      "is_true": false,
+      "reasons": [
+        "predicted_up",
+        "return_0.00pct",
+        "target_10.00pct",
+        "label_anomaly_watch",
+        "not_confirmed"
+      ]
+    },
+    {
+      "snapshot_id": 1436,
+      "horizon_min": 60,
+      "target_pct": 10.0,
+      "evaluated_ts": "2026-04-29T15:04:01+00:00",
+      "chain": "solana",
+      "address": "9CfMGuRUb2Z3txyQfAAWzZydHz37qNsadSS7b3j5pump",
+      "symbol": "022",
+      "label": "watch",
+      "predicted_direction": "up",
+      "entry_price": 3.565e-06,
+      "current_price": 3.565e-06,
+      "return_pct": 0.0,
+      "is_true": false,
+      "reasons": [
+        "predicted_up",
+        "return_0.00pct",
+        "target_10.00pct",
+        "label_watch",
+        "not_confirmed"
+      ]
+    },
+    {
+      "snapshot_id": 1431,
+      "horizon_min": 60,
+      "target_pct": 10.0,
+      "evaluated_ts": "2026-04-29T15:04:01+00:00",
+      "chain": "solana",
+      "address": "BFiGUxnidogqcZAPVPDZRCfhx3nXnFLYqpQUaUGpump",
+      "symbol": "SPIKE",
+      "label": "anomaly_watch",
+      "predicted_direction": "down",
+      "entry_price": 0.005968,
+      "current_price": 0.005253,
+      "return_pct": -11.9806,
+      "is_true": true,
+      "reasons": [
+        "predicted_down",
+        "return_-11.98pct",
+        "target_10.00pct",
+        "label_anomaly_watch",
+        "dump_confirmed"
+      ]
+    },
+    {
+      "snapshot_id": 1430,
+      "horizon_min": 60,
+      "target_pct": 10.0,
+      "evaluated_ts": "2026-04-29T15:04:01+00:00",
+      "chain": "solana",
+      "address": "orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE",
+      "symbol": "ORCA",
+      "label": "anomaly_watch",
+      "predicted_direction": "up",
+      "entry_price": 1.7,
+      "current_price": 1.69,
+      "return_pct": -0.5882,
+      "is_true": false,
+      "reasons": [
+        "predicted_up",
+        "return_-0.59pct",
+        "target_10.00pct",
+        "label_anomaly_watch",
+        "not_confirmed"
+      ]
+    }
+  ]
+}
