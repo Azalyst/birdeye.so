@@ -1,113 +1,113 @@
 {
-  "generated_at": "2026-04-29T04:46:18.217018+00:00",
+  "generated_at": "2026-04-29T06:07:15.842745+00:00",
   "model_metrics": {
     "status": "ok",
     "model": "lightgbm",
-    "trained_ts": "2026-04-28T06:12:55.529996+00:00",
-    "labeled_rows": 179,
-    "train_rows": 143,
-    "validation_rows": 36,
-    "positive_rate": 0.22905027932960895,
-    "train_positive_rate": 0.23776223776223776,
-    "validation_positive_rate": 0.19444444444444445,
-    "accuracy": 0.7222222222222222,
-    "majority_baseline_accuracy": 0.8055555555555556,
-    "roc_auc": 0.8522167487684729,
-    "precision": 0.38461538461538464,
-    "recall": 0.7142857142857143,
-    "f1": 0.5,
+    "trained_ts": "2026-04-29T06:07:15.747566+00:00",
+    "labeled_rows": 207,
+    "train_rows": 165,
+    "validation_rows": 42,
+    "positive_rate": 0.20772946859903382,
+    "train_positive_rate": 0.22424242424242424,
+    "validation_positive_rate": 0.14285714285714285,
+    "accuracy": 0.7619047619047619,
+    "majority_baseline_accuracy": 0.8571428571428571,
+    "roc_auc": 0.8194444444444444,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
     "feature_count": 42,
     "top_features": [
       {
-        "name": "price",
-        "importance": 672.0
-      },
-      {
-        "name": "price_change_24h_pct",
-        "importance": 430.0
-      },
-      {
         "name": "price_change_5m_pct",
-        "importance": 406.0
-      },
-      {
-        "name": "liquidity_usd",
-        "importance": 388.0
-      },
-      {
-        "name": "market_cap",
-        "importance": 388.0
+        "importance": 580.0
       },
       {
         "name": "volume_5m_usd",
-        "importance": 378.0
+        "importance": 537.0
+      },
+      {
+        "name": "market_cap",
+        "importance": 495.0
+      },
+      {
+        "name": "price",
+        "importance": 465.0
+      },
+      {
+        "name": "liquidity_usd",
+        "importance": 459.0
       },
       {
         "name": "volume_1h_usd",
-        "importance": 333.0
+        "importance": 365.0
       },
       {
         "name": "price_change_1h_pct",
-        "importance": 315.0
+        "importance": 363.0
       },
       {
         "name": "volume_24h_usd",
-        "importance": 313.0
+        "importance": 360.0
+      },
+      {
+        "name": "price_change_24h_pct",
+        "importance": 360.0
       },
       {
         "name": "anomaly_score",
-        "importance": 261.0
+        "importance": 220.0
       },
       {
         "name": "pump_score",
-        "importance": 141.0
-      },
-      {
-        "name": "unique_wallets",
-        "importance": 128.0
-      },
-      {
-        "name": "holder_count",
-        "importance": 94.0
-      },
-      {
-        "name": "buy_count",
-        "importance": 79.0
+        "importance": 187.0
       },
       {
         "name": "dump_score",
-        "importance": 79.0
+        "importance": 129.0
       },
       {
-        "name": "buy_volume_usd",
-        "importance": 69.0
+        "name": "buy_count",
+        "importance": 113.0
       },
       {
-        "name": "sell_volume_usd",
-        "importance": 69.0
+        "name": "holder_count",
+        "importance": 97.0
       },
       {
-        "name": "sell_count",
-        "importance": 60.0
+        "name": "unique_wallets",
+        "importance": 97.0
       },
       {
         "name": "largest_trade_usd",
-        "importance": 59.0
+        "importance": 65.0
       },
       {
-        "name": "risk_score",
-        "importance": 53.0
+        "name": "sell_volume_usd",
+        "importance": 46.0
+      },
+      {
+        "name": "buy_volume_usd",
+        "importance": 45.0
+      },
+      {
+        "name": "smart_money_score",
+        "importance": 43.0
+      },
+      {
+        "name": "buy_sell_ratio",
+        "importance": 41.0
       }
     ],
     "validation_mode": "time_holdout",
     "pattern_features_used": false,
     "class_counts": {
-      "positive": 41,
-      "negative": 138
+      "positive": 43,
+      "negative": 164
     }
   },
   "scoring": {
-    "active_model_version": "2026-04-28T06:12:55.529996+00:00",
+    "active_model_version": "2026-04-29T06:07:15.747566+00:00",
     "window_hours": 24,
     "top_signal_sort": "confidence_distance_from_0.5"
   },
@@ -121,87 +121,87 @@
   },
   "top_signals": [
     {
-      "snapshot_id": 1340,
-      "ts": "2026-04-29T04:45:07+00:00",
-      "chain": "solana",
-      "address": "orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE",
-      "symbol": "ORCA",
-      "ml_prob": 0.0008536712043664104,
-      "ml_direction": "down",
-      "ml_edge": 0.9982926575912672,
-      "pump_score": 0.0,
-      "dump_score": 9.88,
-      "anomaly_score": 10.77,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 1314,
-      "ts": "2026-04-28T23:35:02+00:00",
-      "chain": "optimism",
-      "address": "0x4200000000000000000000000000000000000042",
-      "symbol": "OP",
-      "ml_prob": 0.0009570091087582022,
-      "ml_direction": "down",
-      "ml_edge": 0.9980859817824836,
-      "pump_score": 0.0,
-      "dump_score": 6.83,
-      "anomaly_score": 3.59,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 1246,
-      "ts": "2026-04-28T18:59:30+00:00",
-      "chain": "solana",
-      "address": "orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE",
-      "symbol": "ORCA",
-      "ml_prob": 0.0009624516872805123,
-      "ml_direction": "down",
-      "ml_edge": 0.998075096625439,
-      "pump_score": 0.0,
-      "dump_score": 6.63,
-      "anomaly_score": 70.73,
-      "label": "anomaly_watch"
-    },
-    {
-      "snapshot_id": 1134,
-      "ts": "2026-04-28T04:50:15+00:00",
-      "chain": "solana",
-      "address": "41JXBpndjHGL3rMwjoJ5r7gTMbZ9JvhakPt8ZaoRpump",
-      "symbol": "AFC",
-      "ml_prob": 0.000992663853399879,
-      "ml_direction": "down",
-      "ml_edge": 0.9980146722932003,
-      "pump_score": 32.6,
-      "dump_score": 0.0,
-      "anomaly_score": 36.08,
-      "label": "watch"
-    },
-    {
       "snapshot_id": 1268,
       "ts": "2026-04-28T18:59:30+00:00",
       "chain": "ethereum",
       "address": "0xb122620050e5b6e97472b9eb04466f2a13073616",
       "symbol": "Eve",
-      "ml_prob": 0.0010144720423926833,
+      "ml_prob": 0.0007315216590156144,
       "ml_direction": "down",
-      "ml_edge": 0.9979710559152146,
+      "ml_edge": 0.9985369566819687,
       "pump_score": 30.0,
       "dump_score": 6.27,
       "anomaly_score": 39.76,
       "label": "watch"
     },
     {
-      "snapshot_id": 1154,
-      "ts": "2026-04-28T07:26:36+00:00",
-      "chain": "bnb",
-      "address": "0x55ad16bd573b3365f43a9daeb0cc66a73821b4a5",
-      "symbol": "AIOT",
-      "ml_prob": 0.0010622435990291694,
+      "snapshot_id": 1209,
+      "ts": "2026-04-28T13:08:36+00:00",
+      "chain": "ethereum",
+      "address": "0x47ea863839bed88fe4da3e057a2551cc464ddd0f",
+      "symbol": "SHIBA",
+      "ml_prob": 0.0008996531005649655,
       "ml_direction": "down",
-      "ml_edge": 0.9978755128019416,
-      "pump_score": 9.95,
-      "dump_score": 18.05,
-      "anomaly_score": 58.73,
+      "ml_edge": 0.9982006937988701,
+      "pump_score": 66.0,
+      "dump_score": 0.0,
+      "anomaly_score": 70.73,
+      "label": "anomaly_watch"
+    },
+    {
+      "snapshot_id": 1216,
+      "ts": "2026-04-28T13:08:36+00:00",
+      "chain": "ethereum",
+      "address": "0xe0d5995509528616c0ad5d4ecc6589316795a473",
+      "symbol": "BOLZ",
+      "ml_prob": 0.000979802259498576,
+      "ml_direction": "down",
+      "ml_edge": 0.9980403954810029,
+      "pump_score": 30.01,
+      "dump_score": 8.28,
+      "anomaly_score": 42.88,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 1214,
+      "ts": "2026-04-28T13:08:36+00:00",
+      "chain": "ethereum",
+      "address": "0x6093f9ea65e70f9d4920b9198c33a7a354cfc103",
+      "symbol": "CLAW",
+      "ml_prob": 0.001000926016891386,
+      "ml_direction": "down",
+      "ml_edge": 0.9979981479662172,
+      "pump_score": 30.0,
+      "dump_score": 25.36,
+      "anomaly_score": 65.0,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 1135,
+      "ts": "2026-04-28T07:26:36+00:00",
+      "chain": "arbitrum",
+      "address": "0xaf88d065e77c8cc2239327c5edb3a432268e5831",
+      "symbol": "USDC",
+      "ml_prob": 0.0010916638466673442,
+      "ml_direction": "down",
+      "ml_edge": 0.9978166723066653,
+      "pump_score": 9.13,
+      "dump_score": 67.97,
+      "anomaly_score": 100.0,
+      "label": "dump_risk"
+    },
+    {
+      "snapshot_id": 1181,
+      "ts": "2026-04-28T11:25:47+00:00",
+      "chain": "bnb",
+      "address": "0x6ec90334d89dbdc89e08a133271be3d104128edb",
+      "symbol": "WKC",
+      "ml_prob": 0.0011648741990607082,
+      "ml_direction": "down",
+      "ml_edge": 0.9976702516018786,
+      "pump_score": 27.47,
+      "dump_score": 7.84,
+      "anomaly_score": 40.91,
       "label": "watch"
     },
     {
@@ -210,12 +210,26 @@
       "chain": "solana",
       "address": "Ay3whb6eR4EKytbVuBX2RqGhZXdoJyZ1pq2GmsJnpump",
       "symbol": "Cryptovillain",
-      "ml_prob": 0.0010674862826042463,
+      "ml_prob": 0.0012298408703179315,
       "ml_direction": "down",
-      "ml_edge": 0.9978650274347916,
+      "ml_edge": 0.9975403182593642,
       "pump_score": 30.0,
       "dump_score": 0.0,
       "anomaly_score": 30.0,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 1308,
+      "ts": "2026-04-28T22:37:30+00:00",
+      "chain": "optimism",
+      "address": "0x4200000000000000000000000000000000000006",
+      "symbol": "WETH",
+      "ml_prob": 0.001248308700031767,
+      "ml_direction": "down",
+      "ml_edge": 0.9975033825999364,
+      "pump_score": 3.22,
+      "dump_score": 0.12,
+      "anomaly_score": 3.79,
       "label": "watch"
     },
     {
@@ -224,9 +238,9 @@
       "chain": "base",
       "address": "0x940181a94a35a4569e4529a3cdfb74e38fd98631",
       "symbol": "AERO",
-      "ml_prob": 0.001102570011502275,
+      "ml_prob": 0.001248308700031767,
       "ml_direction": "down",
-      "ml_edge": 0.9977948599769955,
+      "ml_edge": 0.9975033825999364,
       "pump_score": 1.42,
       "dump_score": 0.08,
       "anomaly_score": 6.79,
@@ -238,180 +252,26 @@
       "chain": "arbitrum",
       "address": "0x0c1c1c109fe34733fca54b82d7b46b75cfb71f6e",
       "symbol": "CHIP",
-      "ml_prob": 0.001102570011502275,
+      "ml_prob": 0.001248308700031767,
       "ml_direction": "down",
-      "ml_edge": 0.9977948599769955,
+      "ml_edge": 0.9975033825999364,
       "pump_score": 3.83,
       "dump_score": 0.22,
       "anomaly_score": 4.6,
       "label": "watch"
     },
     {
-      "snapshot_id": 1262,
-      "ts": "2026-04-28T18:59:30+00:00",
-      "chain": "ethereum",
-      "address": "0x9fe6e591380ce50d5326d4b05ac35b64044d25fd",
-      "symbol": "GEMINI",
-      "ml_prob": 0.0011238322369617648,
-      "ml_direction": "down",
-      "ml_edge": 0.9977523355260765,
-      "pump_score": 37.55,
-      "dump_score": 0.0,
-      "anomaly_score": 41.75,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 1253,
-      "ts": "2026-04-28T18:59:30+00:00",
-      "chain": "solana",
-      "address": "TK4nMPUXJc1fgTd3nfzBK3h42MxdwVHs8frcjUDpump",
-      "symbol": "WASB",
-      "ml_prob": 0.001261909543814197,
-      "ml_direction": "down",
-      "ml_edge": 0.9974761809123716,
-      "pump_score": 30.0,
-      "dump_score": 4.52,
-      "anomaly_score": 37.03,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 1128,
-      "ts": "2026-04-28T04:50:15+00:00",
-      "chain": "solana",
-      "address": "4Uk9WCUK3ZdyZXqUQxUvgRcD5LKzSWZziD1nJYTxpump",
-      "symbol": "despair",
-      "ml_prob": 0.0012899629782095188,
-      "ml_direction": "down",
-      "ml_edge": 0.997420074043581,
-      "pump_score": 30.0,
-      "dump_score": 0.0,
-      "anomaly_score": 30.0,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 1298,
-      "ts": "2026-04-28T21:34:39+00:00",
-      "chain": "optimism",
-      "address": "0x4200000000000000000000000000000000000042",
-      "symbol": "OP",
-      "ml_prob": 0.0014308752292412589,
-      "ml_direction": "down",
-      "ml_edge": 0.9971382495415175,
-      "pump_score": 0.0,
-      "dump_score": 6.28,
-      "anomaly_score": 8.87,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 1351,
-      "ts": "2026-04-29T04:45:07+00:00",
-      "chain": "solana",
-      "address": "DYMC8tjXyZRYhgsUUGopVLd3TyZkYF97W96BTDEVpump",
-      "symbol": "dragoly",
-      "ml_prob": 0.001438565206909273,
-      "ml_direction": "down",
-      "ml_edge": 0.9971228695861815,
-      "pump_score": 30.0,
-      "dump_score": 9.72,
-      "anomaly_score": 45.12,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 1309,
-      "ts": "2026-04-28T22:37:30+00:00",
-      "chain": "optimism",
-      "address": "0x4200000000000000000000000000000000000042",
-      "symbol": "OP",
-      "ml_prob": 0.0014901117881928952,
-      "ml_direction": "down",
-      "ml_edge": 0.9970197764236142,
-      "pump_score": 0.0,
-      "dump_score": 6.25,
-      "anomaly_score": 6.69,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 1201,
-      "ts": "2026-04-28T13:08:36+00:00",
-      "chain": "solana",
-      "address": "6MzrKFrhsXRHmyms9nNT9ssJjnTp1KxaF2LHJzkY4Ww6",
-      "symbol": "Froggie",
-      "ml_prob": 0.0014934781880939132,
-      "ml_direction": "down",
-      "ml_edge": 0.9970130436238122,
-      "pump_score": 30.0,
-      "dump_score": 8.35,
-      "anomaly_score": 42.99,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 1127,
-      "ts": "2026-04-28T04:50:15+00:00",
-      "chain": "solana",
-      "address": "7E8UGgwJpBFaqMWCQuaA3sUUM1DsMbqbDriyZS5vpump",
-      "symbol": "AFC",
-      "ml_prob": 0.0014934781880939132,
-      "ml_direction": "down",
-      "ml_edge": 0.9970130436238122,
-      "pump_score": 30.0,
-      "dump_score": 8.9,
-      "anomaly_score": 43.85,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 1141,
-      "ts": "2026-04-28T07:26:36+00:00",
+      "snapshot_id": 1173,
+      "ts": "2026-04-28T11:25:47+00:00",
       "chain": "arbitrum",
-      "address": "0x97e66d3c4d5bcd7c64e3e55af28544c9addf9281",
-      "symbol": "CAPX",
-      "ml_prob": 0.001576957799215411,
+      "address": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "symbol": "WETH",
+      "ml_prob": 0.001248308700031767,
       "ml_direction": "down",
-      "ml_edge": 0.9968460844015692,
-      "pump_score": 3.83,
-      "dump_score": 0.25,
-      "anomaly_score": 4.61,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 1207,
-      "ts": "2026-04-28T13:08:36+00:00",
-      "chain": "ethereum",
-      "address": "0x9de45ea92bdbe71c514dfcfecf376d7b341df182",
-      "symbol": "People",
-      "ml_prob": 0.0016281718694086042,
-      "ml_direction": "down",
-      "ml_edge": 0.9967436562611828,
-      "pump_score": 30.0,
-      "dump_score": 0.0,
-      "anomaly_score": 30.0,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 1216,
-      "ts": "2026-04-28T13:08:36+00:00",
-      "chain": "ethereum",
-      "address": "0xe0d5995509528616c0ad5d4ecc6589316795a473",
-      "symbol": "BOLZ",
-      "ml_prob": 0.0016487913848493637,
-      "ml_direction": "down",
-      "ml_edge": 0.9967024172303013,
-      "pump_score": 30.01,
-      "dump_score": 8.28,
-      "anomaly_score": 42.88,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 1319,
-      "ts": "2026-04-29T01:22:48+00:00",
-      "chain": "arbitrum",
-      "address": "0x0c1c1c109fe34733fca54b82d7b46b75cfb71f6e",
-      "symbol": "CHIP",
-      "ml_prob": 0.0017121824407217135,
-      "ml_direction": "down",
-      "ml_edge": 0.9965756351185566,
-      "pump_score": 4.23,
-      "dump_score": 10.13,
-      "anomaly_score": 12.52,
+      "ml_edge": 0.9975033825999364,
+      "pump_score": 4.97,
+      "dump_score": 0.21,
+      "anomaly_score": 5.91,
       "label": "watch"
     },
     {
@@ -420,40 +280,180 @@
       "chain": "ethereum",
       "address": "0x477256656e910202a98811b7286f3e23caee63f6",
       "symbol": "Eve",
-      "ml_prob": 0.0018142142377148695,
+      "ml_prob": 0.0012691071973326752,
       "ml_direction": "down",
-      "ml_edge": 0.9963715715245702,
+      "ml_edge": 0.9974617856053346,
       "pump_score": 30.0,
       "dump_score": 20.87,
       "anomaly_score": 62.47,
       "label": "watch"
     },
     {
-      "snapshot_id": 1214,
-      "ts": "2026-04-28T13:08:36+00:00",
-      "chain": "ethereum",
-      "address": "0x6093f9ea65e70f9d4920b9198c33a7a354cfc103",
-      "symbol": "CLAW",
-      "ml_prob": 0.0018142142377148695,
+      "snapshot_id": 1316,
+      "ts": "2026-04-28T23:35:02+00:00",
+      "chain": "optimism",
+      "address": "0x4200000000000000000000000000000000000006",
+      "symbol": "WETH",
+      "ml_prob": 0.0012759970025444764,
       "ml_direction": "down",
-      "ml_edge": 0.9963715715245702,
-      "pump_score": 30.0,
-      "dump_score": 25.36,
-      "anomaly_score": 65.0,
+      "ml_edge": 0.997448005994911,
+      "pump_score": 1.86,
+      "dump_score": 0.09,
+      "anomaly_score": 2.21,
       "label": "watch"
     },
     {
-      "snapshot_id": 1220,
+      "snapshot_id": 1295,
+      "ts": "2026-04-28T21:34:39+00:00",
+      "chain": "optimism",
+      "address": "0x4200000000000000000000000000000000000006",
+      "symbol": "WETH",
+      "ml_prob": 0.0012759970025444764,
+      "ml_direction": "down",
+      "ml_edge": 0.997448005994911,
+      "pump_score": 6.08,
+      "dump_score": 0.16,
+      "anomaly_score": 7.76,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 1297,
+      "ts": "2026-04-28T21:34:39+00:00",
+      "chain": "optimism",
+      "address": "0x0b2c639c533813f4aa9d7837caf62653d097ff85",
+      "symbol": "USDC",
+      "ml_prob": 0.0012759970025444764,
+      "ml_direction": "down",
+      "ml_edge": 0.997448005994911,
+      "pump_score": 6.49,
+      "dump_score": 0.35,
+      "anomaly_score": 8.03,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 1219,
       "ts": "2026-04-28T15:35:07+00:00",
+      "chain": "optimism",
+      "address": "0x4200000000000000000000000000000000000006",
+      "symbol": "WETH",
+      "ml_prob": 0.0012759970025444764,
+      "ml_direction": "down",
+      "ml_edge": 0.997448005994911,
+      "pump_score": 9.27,
+      "dump_score": 0.0,
+      "anomaly_score": 10.46,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 1186,
+      "ts": "2026-04-28T11:25:47+00:00",
+      "chain": "bnb",
+      "address": "0x1d28d989f9e3ccb8b15d0cec601734514f958e4d",
+      "symbol": "BASED",
+      "ml_prob": 0.0012759970025444764,
+      "ml_direction": "down",
+      "ml_edge": 0.997448005994911,
+      "pump_score": 5.93,
+      "dump_score": 1.47,
+      "anomaly_score": 8.69,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 1158,
+      "ts": "2026-04-28T09:39:54+00:00",
+      "chain": "optimism",
+      "address": "0x4200000000000000000000000000000000000006",
+      "symbol": "WETH",
+      "ml_prob": 0.0012759970025444764,
+      "ml_direction": "down",
+      "ml_edge": 0.997448005994911,
+      "pump_score": 0.02,
+      "dump_score": 0.18,
+      "anomaly_score": 0.39,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 1314,
+      "ts": "2026-04-28T23:35:02+00:00",
       "chain": "optimism",
       "address": "0x4200000000000000000000000000000000000042",
       "symbol": "OP",
-      "ml_prob": 0.0018166413168182384,
+      "ml_prob": 0.0012768456450358893,
       "ml_direction": "down",
-      "ml_edge": 0.9963667173663635,
-      "pump_score": 1.23,
-      "dump_score": 6.44,
-      "anomaly_score": 11.73,
+      "ml_edge": 0.9974463087099282,
+      "pump_score": 0.0,
+      "dump_score": 6.83,
+      "anomaly_score": 3.59,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 1152,
+      "ts": "2026-04-28T07:26:36+00:00",
+      "chain": "bnb",
+      "address": "0xcae117ca6bc8a341d2e7207f30e180f0e5618b9d",
+      "symbol": "ARK",
+      "ml_prob": 0.0012768456450358893,
+      "ml_direction": "down",
+      "ml_edge": 0.9974463087099282,
+      "pump_score": 0.0,
+      "dump_score": 6.25,
+      "anomaly_score": 40.47,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 1183,
+      "ts": "2026-04-28T11:25:47+00:00",
+      "chain": "bnb",
+      "address": "0xcae117ca6bc8a341d2e7207f30e180f0e5618b9d",
+      "symbol": "ARK",
+      "ml_prob": 0.0012860079706710935,
+      "ml_direction": "down",
+      "ml_edge": 0.9974279840586578,
+      "pump_score": 8.92,
+      "dump_score": 0.0,
+      "anomaly_score": 11.42,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 1351,
+      "ts": "2026-04-29T04:45:07+00:00",
+      "chain": "solana",
+      "address": "DYMC8tjXyZRYhgsUUGopVLd3TyZkYF97W96BTDEVpump",
+      "symbol": "dragoly",
+      "ml_prob": 0.0012930836960853862,
+      "ml_direction": "down",
+      "ml_edge": 0.9974138326078292,
+      "pump_score": 30.0,
+      "dump_score": 9.72,
+      "anomaly_score": 45.12,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 1150,
+      "ts": "2026-04-28T07:26:36+00:00",
+      "chain": "bnb",
+      "address": "0x6ec90334d89dbdc89e08a133271be3d104128edb",
+      "symbol": "WKC",
+      "ml_prob": 0.0012936476339979867,
+      "ml_direction": "down",
+      "ml_edge": 0.997412704732004,
+      "pump_score": 5.84,
+      "dump_score": 2.44,
+      "anomaly_score": 9.44,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 1170,
+      "ts": "2026-04-28T11:25:47+00:00",
+      "chain": "arbitrum",
+      "address": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "symbol": "WETH",
+      "ml_prob": 0.0012946663623570652,
+      "ml_direction": "down",
+      "ml_edge": 0.9974106672752858,
+      "pump_score": 5.32,
+      "dump_score": 0.39,
+      "anomaly_score": 6.47,
       "label": "watch"
     },
     {
@@ -462,9 +462,9 @@
       "chain": "arbitrum",
       "address": "0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f",
       "symbol": "WBTC",
-      "ml_prob": 0.0018185978160766359,
+      "ml_prob": 0.0012995846467563994,
       "ml_direction": "down",
-      "ml_edge": 0.9963628043678467,
+      "ml_edge": 0.9974008307064872,
       "pump_score": 14.52,
       "dump_score": 1.19,
       "anomaly_score": 32.25,
@@ -473,7 +473,7 @@
   ],
   "top_patterns": [
     {
-      "pattern_id": 1241,
+      "pattern_id": 1269,
       "length": 4,
       "support": 15,
       "lift": 1.2,
@@ -487,7 +487,7 @@
       ]
     },
     {
-      "pattern_id": 1242,
+      "pattern_id": 1270,
       "length": 4,
       "support": 13,
       "lift": 1.2,
@@ -501,7 +501,7 @@
       ]
     },
     {
-      "pattern_id": 1243,
+      "pattern_id": 1271,
       "length": 3,
       "support": 13,
       "lift": 1.2,
@@ -514,7 +514,7 @@
       ]
     },
     {
-      "pattern_id": 1244,
+      "pattern_id": 1272,
       "length": 2,
       "support": 13,
       "lift": 1.2,
@@ -526,7 +526,7 @@
       ]
     },
     {
-      "pattern_id": 1245,
+      "pattern_id": 1273,
       "length": 4,
       "support": 12,
       "lift": 1.2,
@@ -540,7 +540,7 @@
       ]
     },
     {
-      "pattern_id": 1246,
+      "pattern_id": 1274,
       "length": 4,
       "support": 12,
       "lift": 1.2,
@@ -554,7 +554,7 @@
       ]
     },
     {
-      "pattern_id": 1247,
+      "pattern_id": 1275,
       "length": 4,
       "support": 12,
       "lift": 1.2,
@@ -568,7 +568,7 @@
       ]
     },
     {
-      "pattern_id": 1248,
+      "pattern_id": 1276,
       "length": 4,
       "support": 12,
       "lift": 1.2,
@@ -582,7 +582,7 @@
       ]
     },
     {
-      "pattern_id": 1249,
+      "pattern_id": 1277,
       "length": 3,
       "support": 12,
       "lift": 1.2,
@@ -595,7 +595,7 @@
       ]
     },
     {
-      "pattern_id": 1250,
+      "pattern_id": 1278,
       "length": 4,
       "support": 12,
       "lift": 1.2,
@@ -609,7 +609,7 @@
       ]
     },
     {
-      "pattern_id": 1251,
+      "pattern_id": 1279,
       "length": 3,
       "support": 12,
       "lift": 1.2,
@@ -622,7 +622,7 @@
       ]
     },
     {
-      "pattern_id": 1252,
+      "pattern_id": 1280,
       "length": 4,
       "support": 12,
       "lift": 1.2,
@@ -636,7 +636,7 @@
       ]
     },
     {
-      "pattern_id": 1253,
+      "pattern_id": 1281,
       "length": 3,
       "support": 12,
       "lift": 1.2,
@@ -649,7 +649,7 @@
       ]
     },
     {
-      "pattern_id": 1254,
+      "pattern_id": 1282,
       "length": 3,
       "support": 12,
       "lift": 1.2,
@@ -662,7 +662,7 @@
       ]
     },
     {
-      "pattern_id": 1255,
+      "pattern_id": 1283,
       "length": 4,
       "support": 12,
       "lift": 1.2,

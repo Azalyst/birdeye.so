@@ -1,106 +1,106 @@
 {
   "status": "ok",
   "model": "lightgbm",
-  "trained_ts": "2026-04-28T06:12:55.529996+00:00",
-  "labeled_rows": 179,
-  "train_rows": 143,
-  "validation_rows": 36,
-  "positive_rate": 0.22905027932960895,
-  "train_positive_rate": 0.23776223776223776,
-  "validation_positive_rate": 0.19444444444444445,
-  "accuracy": 0.7222222222222222,
-  "majority_baseline_accuracy": 0.8055555555555556,
-  "roc_auc": 0.8522167487684729,
-  "precision": 0.38461538461538464,
-  "recall": 0.7142857142857143,
-  "f1": 0.5,
+  "trained_ts": "2026-04-29T06:07:15.747566+00:00",
+  "labeled_rows": 207,
+  "train_rows": 165,
+  "validation_rows": 42,
+  "positive_rate": 0.20772946859903382,
+  "train_positive_rate": 0.22424242424242424,
+  "validation_positive_rate": 0.14285714285714285,
+  "accuracy": 0.7619047619047619,
+  "majority_baseline_accuracy": 0.8571428571428571,
+  "roc_auc": 0.8194444444444444,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0,
   "feature_count": 42,
   "top_features": [
     {
-      "name": "price",
-      "importance": 672.0
-    },
-    {
-      "name": "price_change_24h_pct",
-      "importance": 430.0
-    },
-    {
       "name": "price_change_5m_pct",
-      "importance": 406.0
-    },
-    {
-      "name": "liquidity_usd",
-      "importance": 388.0
-    },
-    {
-      "name": "market_cap",
-      "importance": 388.0
+      "importance": 580.0
     },
     {
       "name": "volume_5m_usd",
-      "importance": 378.0
+      "importance": 537.0
+    },
+    {
+      "name": "market_cap",
+      "importance": 495.0
+    },
+    {
+      "name": "price",
+      "importance": 465.0
+    },
+    {
+      "name": "liquidity_usd",
+      "importance": 459.0
     },
     {
       "name": "volume_1h_usd",
-      "importance": 333.0
+      "importance": 365.0
     },
     {
       "name": "price_change_1h_pct",
-      "importance": 315.0
+      "importance": 363.0
     },
     {
       "name": "volume_24h_usd",
-      "importance": 313.0
+      "importance": 360.0
+    },
+    {
+      "name": "price_change_24h_pct",
+      "importance": 360.0
     },
     {
       "name": "anomaly_score",
-      "importance": 261.0
+      "importance": 220.0
     },
     {
       "name": "pump_score",
-      "importance": 141.0
-    },
-    {
-      "name": "unique_wallets",
-      "importance": 128.0
-    },
-    {
-      "name": "holder_count",
-      "importance": 94.0
-    },
-    {
-      "name": "buy_count",
-      "importance": 79.0
+      "importance": 187.0
     },
     {
       "name": "dump_score",
-      "importance": 79.0
+      "importance": 129.0
     },
     {
-      "name": "buy_volume_usd",
-      "importance": 69.0
+      "name": "buy_count",
+      "importance": 113.0
     },
     {
-      "name": "sell_volume_usd",
-      "importance": 69.0
+      "name": "holder_count",
+      "importance": 97.0
     },
     {
-      "name": "sell_count",
-      "importance": 60.0
+      "name": "unique_wallets",
+      "importance": 97.0
     },
     {
       "name": "largest_trade_usd",
-      "importance": 59.0
+      "importance": 65.0
     },
     {
-      "name": "risk_score",
-      "importance": 53.0
+      "name": "sell_volume_usd",
+      "importance": 46.0
+    },
+    {
+      "name": "buy_volume_usd",
+      "importance": 45.0
+    },
+    {
+      "name": "smart_money_score",
+      "importance": 43.0
+    },
+    {
+      "name": "buy_sell_ratio",
+      "importance": 41.0
     }
   ],
   "validation_mode": "time_holdout",
   "pattern_features_used": false,
   "class_counts": {
-    "positive": 41,
-    "negative": 138
+    "positive": 43,
+    "negative": 164
   }
 }
