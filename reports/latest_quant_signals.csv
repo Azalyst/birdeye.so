@@ -1,21 +1,6 @@
 ts,chain,address,symbol,binance_symbol,binance_base_asset,binance_match_type,label,pump_score,dump_score,anomaly_score,smart_money_score,risk_score,reasons
-2026-04-29T16:52:09+00:00,solana,9Jn6f4hL1pba9y5rNMDZje2YyUAnWemYwY7naZkx5LF2,SpaceX,,,,anomaly_watch,28.06,3.0,100.0,0.0,12.0,risk:thin_liquidity;ml_isolation_forest_anomaly
-2026-04-29T16:52:09+00:00,solana,GSwgDsKxXgy1G9hbNWF5WiS4y1A2uLEHquRUpFaFpump,200x coin ,,,,anomaly_watch,66.0,0.0,88.85,0.0,0.0,sudden_rise_price_plus_volume;ml_isolation_forest_anomaly
-2026-04-29T16:52:09+00:00,solana,CGEDT9QZDvvH5GmVkWJH2BXiMJqMJySC9ihWyr7Spump,BURNIE,,,,anomaly_watch,56.14,4.43,83.61,12.36,0.0,buy_pressure;ml_isolation_forest_anomaly
-2026-04-29T16:52:09+00:00,solana,GUfyGEF62BUUqj5f5PveZknhBQMWWFSXm2jqAdikpump,musk,,,,anomaly_watch,35.18,0.0,72.96,0.0,0.0,normal_watch;ml_isolation_forest_anomaly
-2026-04-29T16:52:09+00:00,solana,5nxY15thsnH3hsrksDLvsATRLG6boaUxLxCbyLCd1dxB,pedomaxxing,,,,watch,30.0,22.77,65.0,0.0,0.0,normal_watch
-2026-04-29T16:52:09+00:00,solana,FT4rxeB1spQ8ef1QmyvP6ZrTaMeLTFJdcBqWcA2jpump,PEDOMAXXING,,,,watch,30.0,23.88,65.0,0.0,0.0,normal_watch
-2026-04-29T16:52:09+00:00,solana,3KHMZhpthXuiCcgfTv7vVu9PpEz64KAEURFwi6Lopump,Goblin,,,,watch,23.62,26.37,62.27,2.66,0.0,normal_watch
-2026-04-29T16:52:09+00:00,solana,6AVAUKa9uxQpruHZUinFECpXEh1usRVtzQWK8N2wpump,SCAM,,,,watch,7.89,47.03,60.04,1.74,0.0,liquidity_drop
-2026-04-29T16:52:09+00:00,solana,DpeUYciZDWTHfrJ8xEiPDzZHER7LNeT6VX9ZXtV2vhHL,Fin,,,,watch,30.0,17.32,56.94,0.0,0.0,normal_watch
-2026-04-29T16:52:09+00:00,solana,7hv4mnvqQfxxiFMdrkuRzmhcjtAkgyx3A5fC2p2Upump,s/acc,,,,watch,31.1,14.5,53.34,0.63,0.0,normal_watch
-2026-04-29T16:52:09+00:00,solana,BFiGUxnidogqcZAPVPDZRCfhx3nXnFLYqpQUaUGpump,SPIKE,,,,watch,14.02,32.2,53.09,0.0,0.0,liquidity_drop
-2026-04-29T16:52:09+00:00,solana,BPH1H7NeT19QcHJTwnQG7n2BExZT6krcqnwhTU4vFpwz,boob,,,,watch,30.0,14.62,52.75,0.0,0.0,normal_watch
-2026-04-29T16:52:09+00:00,solana,FK3m18oLU77frmnbv6m4HEkjzCnDhEfUz2qVvn4Epump,Sketch,,,,watch,30.0,8.83,43.73,0.0,0.0,normal_watch
-2026-04-29T16:52:09+00:00,solana,12eM87tTACWpgnwuapFUHDVDXFaZSxJqxBNj1AHB56sy,ewon,,,,watch,9.28,25.88,43.2,4.01,0.0,normal_watch
-2026-04-29T16:52:09+00:00,solana,93Cd4DakfxqmXKYjUa2kYsT93EGxUqRD8ieWuKq3Q42X,SPC,,,,watch,38.37,0.0,43.02,0.0,0.0,normal_watch
-2026-04-29T16:52:09+00:00,solana,DdKjw8NYh9PNrGAFFEqmT5d7pqfqUoSgi1azyPGMpump,Brainer,,,,watch,30.0,0.3,33.19,0.0,0.0,normal_watch
-2026-04-29T16:52:09+00:00,solana,3TYgKwkE2Y3rxdw9osLRSpxpXmSC1C1oo19W9KHspump,BULL,,,,watch,22.58,0.0,29.23,3.31,0.0,normal_watch
-2026-04-29T16:52:09+00:00,solana,VNo7EjR3XVzvbjUgQrFAXNwSms34fHwHBt1Xoaopump,chudhouse,,,,watch,1.91,6.87,23.97,0.0,0.0,normal_watch
-2026-04-29T16:52:09+00:00,solana,4df1wZoygsynEZ6XmpcoabrVwv7nBgjHLyCns5xApump,BELKA,,,,watch,7.23,5.46,23.76,0.0,0.0,normal_watch
-2026-04-29T16:52:09+00:00,solana,HmBdm8vbisABUjkxms6ZUnoaXbfwFM6ymxShWfAENaoi,EITHER,,,,watch,9.62,0.0,16.9,0.0,0.0,normal_watch
+2026-04-29T18:32:10+00:00,optimism,0x4200000000000000000000000000000000000042,OP,,,,watch,12.27,20.8,37.01,0.0,25.0,risk:mintable
+2026-04-29T18:32:10+00:00,optimism,0x9560e827af36c94d2ac33a39bce1fe78631088db,VELO,,,,watch,21.25,10.77,36.29,0.0,25.0,risk:mintable
+2026-04-29T18:32:10+00:00,optimism,0x4200000000000000000000000000000000000006,WETH,,,,watch,30.0,2.56,33.49,0.0,0.0,normal_watch
+2026-04-29T18:32:10+00:00,optimism,0x0b2c639c533813f4aa9d7837caf62653d097ff85,USDC,,,,watch,30.0,1.1,31.22,0.0,0.0,normal_watch
+2026-04-29T18:32:10+00:00,optimism,0x6b0dcd77199786ffbf3dd6f4a2540cd666ce13ff,MESSA,,,,watch,0.0,0.0,0.0,0.0,0.0,normal_watch

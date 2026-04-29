@@ -1,0 +1,5 @@
+evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
+2026-04-29T18:32:30+00:00,solana,GSwgDsKxXgy1G9hbNWF5WiS4y1A2uLEHquRUpFaFpump,200x coin ,anomaly_watch,up,6.916e-06,2.088e-05,201.9086,10.0,60,True,predicted_up;return_201.91pct;target_10.00pct;label_anomaly_watch;pump_confirmed
+2026-04-29T18:32:30+00:00,solana,9Jn6f4hL1pba9y5rNMDZje2YyUAnWemYwY7naZkx5LF2,SpaceX,anomaly_watch,up,5.108e-05,3.168e-10,-99.9994,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
+2026-04-29T18:32:31+00:00,solana,CGEDT9QZDvvH5GmVkWJH2BXiMJqMJySC9ihWyr7Spump,BURNIE,anomaly_watch,up,0.01519,0.01284,-15.4707,10.0,60,False,predicted_up;return_-15.47pct;target_10.00pct;label_anomaly_watch;not_confirmed
+2026-04-29T18:32:31+00:00,solana,GUfyGEF62BUUqj5f5PveZknhBQMWWFSXm2jqAdikpump,musk,anomaly_watch,up,0.000141,0.0001315,-6.7376,10.0,60,False,predicted_up;return_-6.74pct;target_10.00pct;label_anomaly_watch;not_confirmed

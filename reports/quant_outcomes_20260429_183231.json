@@ -1,0 +1,97 @@
+{
+  "kind": "quant_outcomes",
+  "generated_at": "2026-04-29T18:32:31+00:00",
+  "evaluated_count": 4,
+  "hit_count": 1,
+  "hit_rate": 0.25,
+  "outcomes": [
+    {
+      "snapshot_id": 1500,
+      "horizon_min": 60,
+      "target_pct": 10.0,
+      "evaluated_ts": "2026-04-29T18:32:30+00:00",
+      "chain": "solana",
+      "address": "GSwgDsKxXgy1G9hbNWF5WiS4y1A2uLEHquRUpFaFpump",
+      "symbol": "200x coin ",
+      "label": "anomaly_watch",
+      "predicted_direction": "up",
+      "entry_price": 6.916e-06,
+      "current_price": 2.088e-05,
+      "return_pct": 201.9086,
+      "is_true": true,
+      "reasons": [
+        "predicted_up",
+        "return_201.91pct",
+        "target_10.00pct",
+        "label_anomaly_watch",
+        "pump_confirmed"
+      ]
+    },
+    {
+      "snapshot_id": 1495,
+      "horizon_min": 60,
+      "target_pct": 10.0,
+      "evaluated_ts": "2026-04-29T18:32:30+00:00",
+      "chain": "solana",
+      "address": "9Jn6f4hL1pba9y5rNMDZje2YyUAnWemYwY7naZkx5LF2",
+      "symbol": "SpaceX",
+      "label": "anomaly_watch",
+      "predicted_direction": "up",
+      "entry_price": 5.108e-05,
+      "current_price": 3.168e-10,
+      "return_pct": -99.9994,
+      "is_true": false,
+      "reasons": [
+        "predicted_up",
+        "return_-100.00pct",
+        "target_10.00pct",
+        "label_anomaly_watch",
+        "not_confirmed"
+      ]
+    },
+    {
+      "snapshot_id": 1491,
+      "horizon_min": 60,
+      "target_pct": 10.0,
+      "evaluated_ts": "2026-04-29T18:32:31+00:00",
+      "chain": "solana",
+      "address": "CGEDT9QZDvvH5GmVkWJH2BXiMJqMJySC9ihWyr7Spump",
+      "symbol": "BURNIE",
+      "label": "anomaly_watch",
+      "predicted_direction": "up",
+      "entry_price": 0.01519,
+      "current_price": 0.01284,
+      "return_pct": -15.4707,
+      "is_true": false,
+      "reasons": [
+        "predicted_up",
+        "return_-15.47pct",
+        "target_10.00pct",
+        "label_anomaly_watch",
+        "not_confirmed"
+      ]
+    },
+    {
+      "snapshot_id": 1486,
+      "horizon_min": 60,
+      "target_pct": 10.0,
+      "evaluated_ts": "2026-04-29T18:32:31+00:00",
+      "chain": "solana",
+      "address": "GUfyGEF62BUUqj5f5PveZknhBQMWWFSXm2jqAdikpump",
+      "symbol": "musk",
+      "label": "anomaly_watch",
+      "predicted_direction": "up",
+      "entry_price": 0.000141,
+      "current_price": 0.0001315,
+      "return_pct": -6.7376,
+      "is_true": false,
+      "reasons": [
+        "predicted_up",
+        "return_-6.74pct",
+        "target_10.00pct",
+        "label_anomaly_watch",
+        "not_confirmed"
+      ]
+    }
+  ]
+}
