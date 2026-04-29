@@ -1,64 +1,49 @@
 # Quant Signal Brief
 
-Generated: 2026-04-29T01:23:52+00:00
+Generated: 2026-04-29T04:46:16+00:00
 
 ### Quant Analyst Brief: Azalyst Alpha Scanner Token Signals
 
 #### Overview
-This brief evaluates token signals from the Azalyst Alpha Scanner based on specific criteria for pump, dump, anomaly, and smart money scores. Signals are categorized as strong longs, strong shorts, anomalies, or low-conviction/tentative watches based on predefined thresholds.
+This brief evaluates token signals from the Azalyst Alpha Scanner as of 2026-04-29T04:45:07+00:00 on the Solana chain. The evaluation criteria for strong longs, strong shorts, and anomalies are strictly adhered to, ensuring conservative and score-calibrated assessments.
 
-#### Signal Analysis
+#### Top Signals Analysis
 
-1. **USDC**
-   - **Chain:** Arbitrum
-   - **Scores:** Pump Score: 74.91, Dump Score: 0.38, Anomaly Score: 46.26, Smart Money Score: 15.0
-   - **Classification:** Low-conviction Watch
-   - **Reasons:** While the pump score is high, the smart money score is below the threshold for a strong long. The anomaly score is also below the threshold for an anomaly.
-   - **Biggest Risks:** False-positive risk due to low smart money involvement.
-   - **Next Steps:** Monitor smart money flow and liquidity changes.
+1. **Noxa**
+   - **Scores**: Pump Score = 66.0, Dump Score = 0.0, Anomaly Score = 65.0, Smart Money Score = 0.0
+   - **Classification**: Low-conviction Watch
+   - **Metrics**: Price = $0.0001657, Liquidity = $62,244.99, 1h Price Change = 1076%, 1h Volume = $310,109.31
+   - **Reasons**: Sudden rise in price and volume.
+   - **Risks**: High false-positive risk due to lack of smart money involvement and low smart money score.
+   - **Next Steps**: Confirm with smart money inflow and further price stability.
 
-2. **WBTC**
-   - **Chain:** Arbitrum
-   - **Scores:** Pump Score: 41.37, Dump Score: 0.73, Anomaly Score: 31.43, Smart Money Score: 4.92
-   - **Classification:** Low-conviction Watch
-   - **Reasons:** Pump score is moderate, but smart money score is low, and anomaly score is below the threshold.
-   - **Biggest Risks:** False-positive risk due to low smart money involvement.
-   - **Next Steps:** Monitor smart money flow and price changes.
+2. **RCSC**
+   - **Scores**: Pump Score = 66.0, Dump Score = 0.0, Anomaly Score = 65.0, Smart Money Score = 0.0
+   - **Classification**: Low-conviction Watch
+   - **Metrics**: Price = $0.7535, Liquidity = $8,000.15, 1h Price Change = 1,113,631%, 1h Volume = $181,887.09
+   - **Reasons**: Sudden rise in price and volume.
+   - **Risks**: Extremely high price change suggests potential pump and dump scheme. High false-positive risk.
+   - **Next Steps**: Monitor for smart money inflow and price stability.
 
-3. **thUSD**
-   - **Chain:** Arbitrum
-   - **Scores:** Pump Score: 13.91, Dump Score: 13.6, Anomaly Score: 29.3, Smart Money Score: 0.0
-   - **Classification:** Low-conviction Watch
-   - **Reasons:** Scores are below thresholds for strong signals.
-   - **Biggest Risks:** False-positive risk due to lack of smart money involvement.
-   - **Next Steps:** Monitor price changes and volume.
+3. **Red Bull**
+   - **Scores**: Pump Score = 66.0, Dump Score = 0.0, Anomaly Score = 65.0, Smart Money Score = 0.0
+   - **Classification**: Low-conviction Watch
+   - **Metrics**: Price = $0.00008471, Liquidity = $0.0, 1h Price Change = 9,366%, 1h Volume = $894.01
+   - **Reasons**: Sudden rise in price and volume.
+   - **Risks**: High false-positive risk due to lack of liquidity and smart money involvement.
+   - **Next Steps**: Confirm with smart money inflow and price stability.
 
-4. **SCHRODI**
-   - **Chain:** Arbitrum
-   - **Scores:** Pump Score: 16.25, Dump Score: 6.63, Anomaly Score: 20.49, Smart Money Score: 10.0, Risk Score: 25.0
-   - **Classification:** Low-conviction Watch
-   - **Reasons:** Moderate pump score, but high risk score due to freeze authority risk.
-   - **Biggest Risks:** High risk score indicating potential governance issues.
-   - **Next Steps:** Evaluate governance risks and monitor price changes.
+4. **toly**
+   - **Scores**: Pump Score = 30.0, Dump Score = 20.65, Anomaly Score = 62.12, Smart Money Score = 0.0
+   - **Classification**: Low-conviction Watch
+   - **Metrics**: Price = $0.00000249, Liquidity = $0.0, 1h Price Change = -22.94%, 1h Volume = $6,933.10
+   - **Reasons**: Normal watch.
+   - **Risks**: Negative price change and lack of liquidity suggest potential downside risk.
+   - **Next Steps**: Monitor for smart money inflow and price recovery.
 
-5. **WETH (Snapshot 1330)**
-   - **Chain:** Arbitrum
-   - **Scores:** Pump Score: 9.17, Dump Score: 13.56, Anomaly Score: 20.35, Smart Money Score: 0.0
-   - **Classification:** Low-conviction Watch
-   - **Reasons:** Scores are below thresholds for strong signals.
-   - **Biggest Risks:** False-positive risk due to lack of smart money involvement.
-   - **Next Steps:** Monitor price changes and volume.
-
-6. **CHIP**
-   - **Chain:** Arbitrum
-   - **Scores:** Pump Score: 4.23, Dump Score: 10.13, Anomaly Score: 12.52, Smart Money Score: 0.0
-   - **Classification:** Low-conviction Watch
-   - **Reasons:** Scores are below thresholds for strong signals.
-   - **Biggest Risks:** False-positive risk due to lack of smart money involvement.
-   - **Next Steps:** Monitor price changes and volume.
-
-7. **GNS**
-   - **Chain:** Arbitrum
-   - **Scores:** Pump Score: 0.0, Dump Score: 12.5, Anomaly Score: 2.96, Smart Money Score: 0.0, Risk Score: 50.0
-   - **Classification:** Low-conviction Watch
-   - **
+5. **SCAM**
+   - **Scores**: Pump Score = 2.03, Dump Score = 46.88, Anomaly Score = 50.78, Smart Money Score = 0.0
+   - **Classification**: Low-conviction Watch
+   - **Metrics**: Price = $0.001286, Liquidity = $137,996.43, 1h Price Change = -23.13%, 1h Volume = $201,835.59
+   - **Reasons**: Liquidity drop.
+   - **Risks**: Significant price

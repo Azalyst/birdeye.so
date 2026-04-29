@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T04:04:28.658620+00:00",
+  "generated_at": "2026-04-29T04:46:18.217018+00:00",
   "model_metrics": {
     "status": "ok",
     "model": "lightgbm",
@@ -115,11 +115,25 @@
     "anonymous": 71
   },
   "totals": {
-    "snapshots": 1335,
+    "snapshots": 1354,
     "wallet_events": 377,
-    "labeled_outcomes": 205
+    "labeled_outcomes": 207
   },
   "top_signals": [
+    {
+      "snapshot_id": 1340,
+      "ts": "2026-04-29T04:45:07+00:00",
+      "chain": "solana",
+      "address": "orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE",
+      "symbol": "ORCA",
+      "ml_prob": 0.0008536712043664104,
+      "ml_direction": "down",
+      "ml_edge": 0.9982926575912672,
+      "pump_score": 0.0,
+      "dump_score": 9.88,
+      "anomaly_score": 10.77,
+      "label": "watch"
+    },
     {
       "snapshot_id": 1314,
       "ts": "2026-04-28T23:35:02+00:00",
@@ -289,6 +303,20 @@
       "label": "watch"
     },
     {
+      "snapshot_id": 1351,
+      "ts": "2026-04-29T04:45:07+00:00",
+      "chain": "solana",
+      "address": "DYMC8tjXyZRYhgsUUGopVLd3TyZkYF97W96BTDEVpump",
+      "symbol": "dragoly",
+      "ml_prob": 0.001438565206909273,
+      "ml_direction": "down",
+      "ml_edge": 0.9971228695861815,
+      "pump_score": 30.0,
+      "dump_score": 9.72,
+      "anomaly_score": 45.12,
+      "label": "watch"
+    },
+    {
       "snapshot_id": 1309,
       "ts": "2026-04-28T22:37:30+00:00",
       "chain": "optimism",
@@ -440,34 +468,6 @@
       "pump_score": 14.52,
       "dump_score": 1.19,
       "anomaly_score": 32.25,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 1282,
-      "ts": "2026-04-28T20:16:47+00:00",
-      "chain": "arbitrum",
-      "address": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
-      "symbol": "WETH",
-      "ml_prob": 0.0018304807368783864,
-      "ml_direction": "down",
-      "ml_edge": 0.9963390385262433,
-      "pump_score": 16.11,
-      "dump_score": 0.0,
-      "anomaly_score": 18.65,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 1323,
-      "ts": "2026-04-29T01:22:48+00:00",
-      "chain": "arbitrum",
-      "address": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
-      "symbol": "WETH",
-      "ml_prob": 0.0018439884772691634,
-      "ml_direction": "down",
-      "ml_edge": 0.9963120230454616,
-      "pump_score": 7.65,
-      "dump_score": 0.68,
-      "anomaly_score": 9.43,
       "label": "watch"
     }
   ],

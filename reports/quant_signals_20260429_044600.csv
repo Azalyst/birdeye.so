@@ -1,0 +1,20 @@
+ts,chain,address,symbol,binance_symbol,binance_base_asset,binance_match_type,label,pump_score,dump_score,anomaly_score,smart_money_score,risk_score,reasons
+2026-04-29T04:45:07+00:00,solana,2XnyiZqMQ5iZgNESVMzcHMwrVatGAW8cNvBV8CiGWcXy,Noxa,,,,watch,66.0,0.0,65.0,0.0,0.0,sudden_rise_price_plus_volume
+2026-04-29T04:45:07+00:00,solana,EXLv3SRRdMADpHXGfVCv1Rj56wbjVD6rjz5662xHq2HG,RCSC,,,,watch,66.0,0.0,65.0,0.0,0.0,sudden_rise_price_plus_volume
+2026-04-29T04:45:07+00:00,solana,BeeJfsiLyJR4arJEyxSAxVRsQGBrCM8kc84iQrcVHHHR,Red Bull,,,,watch,66.0,0.0,65.0,0.0,0.0,sudden_rise_price_plus_volume
+2026-04-29T04:45:07+00:00,solana,6uLJyiTxJL7NGPNNemA8VmgUuL5tsjVjYap1Bcb3pump,toly,,,,watch,30.0,20.65,62.12,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,6AVAUKa9uxQpruHZUinFECpXEh1usRVtzQWK8N2wpump,SCAM,,,,watch,2.03,46.88,50.78,0.0,0.0,liquidity_drop
+2026-04-29T04:45:07+00:00,solana,DYMC8tjXyZRYhgsUUGopVLd3TyZkYF97W96BTDEVpump,dragoly,,,,watch,30.0,9.72,45.12,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,DCNEi1eFWEFA7MQYkh8kSDeZ3bgja453j1sQ3Rn1pump,ANNIE ,,,,watch,0.98,21.5,40.96,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,GffoMvwZ5uwXMZhLThaTK68Kim4ZTQ8y1vEzwc2f6K65,SCAM,,,,watch,35.57,0.0,38.67,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,8QM8EBwoG5pd7oDsaQ2AxsYFjaknyVWhDEArHU3ipump,NO,,,,watch,30.0,5.0,37.77,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,4df1wZoygsynEZ6XmpcoabrVwv7nBgjHLyCns5xApump,BELKA,,,,watch,2.84,9.04,32.25,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,G99LGv8ZL15wF4dWB3bd5dsC1FD7iS3hd4oTf8iJpump,Dadi,,,,watch,30.0,0.0,30.0,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,3TYgKwkE2Y3rxdw9osLRSpxpXmSC1C1oo19W9KHspump,BULL,,,,watch,28.55,0.0,23.96,12.8,0.0,buy_pressure
+2026-04-29T04:45:07+00:00,solana,GUfyGEF62BUUqj5f5PveZknhBQMWWFSXm2jqAdikpump,musk,,,,watch,2.22,10.23,18.41,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,8GxLxKA8tf3h8JUkXFfP4dNyn6D2vvwyGif5wanRpump,MASCOTS,,,,watch,15.2,0.0,14.63,6.63,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,BZ1avfKCfJKNgsDeXHNkPku5GcWVzi2Aw2HesHcrpump,LUCA,,,,watch,2.72,10.27,14.39,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,HmBdm8vbisABUjkxms6ZUnoaXbfwFM6ymxShWfAENaoi,EITHER,,,,watch,8.86,0.0,10.79,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE,ORCA,,,,watch,0.0,9.88,10.77,0.0,25.0,risk:mintable
+2026-04-29T04:45:07+00:00,solana,CGEDT9QZDvvH5GmVkWJH2BXiMJqMJySC9ihWyr7Spump,BURNIE,,,,watch,4.42,0.0,7.44,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,Ge1hRUA2Tob5ePfVHvQez7xApYzXXaGgMR8tLiFgbrrr,Stinkr,,,,watch,0.0,3.0,0.0,0.0,12.0,risk:thin_liquidity

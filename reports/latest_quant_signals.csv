@@ -1,18 +1,20 @@
 ts,chain,address,symbol,binance_symbol,binance_base_asset,binance_match_type,label,pump_score,dump_score,anomaly_score,smart_money_score,risk_score,reasons
-2026-04-29T01:22:48+00:00,arbitrum,0xaf88d065e77c8cc2239327c5edb3a432268e5831,USDC,,,,whale_accumulation,74.91,0.38,46.26,15.0,0.0,whale_accumulation;buy_pressure
-2026-04-29T01:22:48+00:00,arbitrum,0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f,WBTC,,,,whale_accumulation,41.37,0.73,31.43,4.92,0.0,whale_accumulation
-2026-04-29T01:22:48+00:00,arbitrum,0x9aa9aa0530a6af70ee7bc47cf1240100f514b065,thUSD,,,,watch,13.91,13.6,29.3,0.0,0.0,normal_watch
-2026-04-29T01:22:48+00:00,arbitrum,0x35ca1e5a9b1c09fa542fa18d1ba4d61c8edff852,SCHRODI,,,,watch,16.25,6.63,20.49,10.0,25.0,buy_pressure;risk:freeze_authority
-2026-04-29T01:22:48+00:00,arbitrum,0xff970a61a04b1ca14834a43f5de4533ebddb5cc8,WETH,,,,watch,9.17,13.56,20.35,0.0,0.0,normal_watch
-2026-04-29T01:22:48+00:00,arbitrum,0x0c1c1c109fe34733fca54b82d7b46b75cfb71f6e,CHIP,,,,watch,4.23,10.13,12.52,0.0,0.0,normal_watch
-2026-04-29T01:22:48+00:00,arbitrum,0x18c11fd286c5ec11c3b683caa813b77f5163a122,GNS,,,,watch,0.0,12.5,2.96,0.0,50.0,risk:mintable;risk:freeze_authority
-2026-04-29T01:22:48+00:00,arbitrum,0x82af49447d8a07e3bd95bd0d56f35241523fbab1,WETH,,,,watch,7.65,0.68,9.43,0.0,0.0,normal_watch
-2026-04-29T01:22:48+00:00,arbitrum,0x0c880f6761f1af8d9aa9c466984b80dab9a8c9e8,PENDLE,,,,watch,5.05,1.19,7.03,0.0,0.0,normal_watch
-2026-04-29T01:22:48+00:00,avalanche,0x08c4b51e6ca9eb89c255f0a5ab8afd721420e447,bUSDT,,,,watch,1.23,0.0,6.65,0.0,0.0,normal_watch
-2026-04-29T01:22:48+00:00,arbitrum,0xebe06d0836df47a9676018e7cfc87ef7edc3c355,MESSA,,,,watch,0.0,6.25,0.0,0.0,25.0,risk:mintable
-2026-04-29T01:22:48+00:00,avalanche,0x420fca0121dc28039145009570975747295f2329,COQ,,,,watch,0.25,4.38,6.21,0.0,0.0,normal_watch
-2026-04-29T01:22:48+00:00,arbitrum,0x94fcd9c18f99538c0f7c61c5500ca79f0d5c4dab,KIMA,,,,watch,0.0,3.42,5.54,0.0,12.0,risk:thin_liquidity
-2026-04-29T01:22:48+00:00,arbitrum,0x912ce59144191c1204e64559fe8253a0e49e6548,ARB,,,,watch,4.12,0.51,5.22,0.0,0.0,normal_watch
-2026-04-29T01:22:48+00:00,avalanche,0x90842eb834cfd2a1db0b1512b254a18e4d396215,GB,,,,watch,0.0,3.0,0.0,0.0,12.0,risk:thin_liquidity
-2026-04-29T01:22:48+00:00,arbitrum,0x062e11295c3c301b289eb54cb5109daf7bfc9f50,PEAK,,,,watch,0.86,0.0,1.85,0.0,0.0,normal_watch
-2026-04-29T01:22:48+00:00,avalanche,0xb599c3590f42f8f995ecfa0f85d2980b76862fc1,UST,,,,watch,0.21,0.0,0.41,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,2XnyiZqMQ5iZgNESVMzcHMwrVatGAW8cNvBV8CiGWcXy,Noxa,,,,watch,66.0,0.0,65.0,0.0,0.0,sudden_rise_price_plus_volume
+2026-04-29T04:45:07+00:00,solana,EXLv3SRRdMADpHXGfVCv1Rj56wbjVD6rjz5662xHq2HG,RCSC,,,,watch,66.0,0.0,65.0,0.0,0.0,sudden_rise_price_plus_volume
+2026-04-29T04:45:07+00:00,solana,BeeJfsiLyJR4arJEyxSAxVRsQGBrCM8kc84iQrcVHHHR,Red Bull,,,,watch,66.0,0.0,65.0,0.0,0.0,sudden_rise_price_plus_volume
+2026-04-29T04:45:07+00:00,solana,6uLJyiTxJL7NGPNNemA8VmgUuL5tsjVjYap1Bcb3pump,toly,,,,watch,30.0,20.65,62.12,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,6AVAUKa9uxQpruHZUinFECpXEh1usRVtzQWK8N2wpump,SCAM,,,,watch,2.03,46.88,50.78,0.0,0.0,liquidity_drop
+2026-04-29T04:45:07+00:00,solana,DYMC8tjXyZRYhgsUUGopVLd3TyZkYF97W96BTDEVpump,dragoly,,,,watch,30.0,9.72,45.12,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,DCNEi1eFWEFA7MQYkh8kSDeZ3bgja453j1sQ3Rn1pump,ANNIE ,,,,watch,0.98,21.5,40.96,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,GffoMvwZ5uwXMZhLThaTK68Kim4ZTQ8y1vEzwc2f6K65,SCAM,,,,watch,35.57,0.0,38.67,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,8QM8EBwoG5pd7oDsaQ2AxsYFjaknyVWhDEArHU3ipump,NO,,,,watch,30.0,5.0,37.77,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,4df1wZoygsynEZ6XmpcoabrVwv7nBgjHLyCns5xApump,BELKA,,,,watch,2.84,9.04,32.25,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,G99LGv8ZL15wF4dWB3bd5dsC1FD7iS3hd4oTf8iJpump,Dadi,,,,watch,30.0,0.0,30.0,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,3TYgKwkE2Y3rxdw9osLRSpxpXmSC1C1oo19W9KHspump,BULL,,,,watch,28.55,0.0,23.96,12.8,0.0,buy_pressure
+2026-04-29T04:45:07+00:00,solana,GUfyGEF62BUUqj5f5PveZknhBQMWWFSXm2jqAdikpump,musk,,,,watch,2.22,10.23,18.41,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,8GxLxKA8tf3h8JUkXFfP4dNyn6D2vvwyGif5wanRpump,MASCOTS,,,,watch,15.2,0.0,14.63,6.63,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,BZ1avfKCfJKNgsDeXHNkPku5GcWVzi2Aw2HesHcrpump,LUCA,,,,watch,2.72,10.27,14.39,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,HmBdm8vbisABUjkxms6ZUnoaXbfwFM6ymxShWfAENaoi,EITHER,,,,watch,8.86,0.0,10.79,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE,ORCA,,,,watch,0.0,9.88,10.77,0.0,25.0,risk:mintable
+2026-04-29T04:45:07+00:00,solana,CGEDT9QZDvvH5GmVkWJH2BXiMJqMJySC9ihWyr7Spump,BURNIE,,,,watch,4.42,0.0,7.44,0.0,0.0,normal_watch
+2026-04-29T04:45:07+00:00,solana,Ge1hRUA2Tob5ePfVHvQez7xApYzXXaGgMR8tLiFgbrrr,Stinkr,,,,watch,0.0,3.0,0.0,0.0,12.0,risk:thin_liquidity
