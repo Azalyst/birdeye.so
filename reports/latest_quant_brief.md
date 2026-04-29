@@ -1,58 +1,66 @@
 # Quant Signal Brief
 
-Generated: 2026-04-29T21:52:16+00:00
+Generated: 2026-04-29T22:46:15+00:00
 
 ### Azalyst Alpha Scanner Token Signals Brief
 
-**Date:** 2026-04-29  
-**Chain:** Solana
+**Date:** 2026-04-29
+
+#### Summary:
+This brief evaluates the top signals from the Azalyst Alpha Scanner for tokens on the Solana chain. The analysis is based on pump_score, dump_score, anomaly_score, smart_money_score, and risk_score. The criteria for strong long, strong short, and anomaly signals are strictly adhered to, with lower thresholds resulting in low-conviction or tentative watch labels.
 
 ---
 
-#### **1. STJUDE (Snapshot ID: 1542)**
-- **Anomaly Score:** 100.0
-- **Pump Score:** 66.0
-- **Smart Money Score:** 0.0
-- **Label:** Anomaly Watch
-- **Reasons:** Sudden rise in price and volume, ML isolation forest anomaly.
-- **Metrics:** Price = $0.001447, Liquidity = $119,760.4, 1H Price Change = +395.0%, 1H Volume = $4,359,728.05.
-- **Biggest Risks:** False-positive risk due to sudden price movements. Confirmation needed on the sustainability of the price rise and underlying fundamentals.
-- **Next Steps:** Monitor for continued price stability and increased liquidity. Evaluate any news or developments related to the token.
+### Detailed Analysis:
 
-#### **2. SCAM (Snapshot ID: 1537)**
-- **Anomaly Score:** 99.31
-- **Pump Score:** 21.42
-- **Smart Money Score:** 10.56
-- **Label:** Anomaly Watch
-- **Reasons:** Buy pressure, ML isolation forest anomaly.
-- **Metrics:** Price = $0.0006975, Liquidity = $103,449.28, 1H Price Change = -23.19%, 1H Volume = $63,963.67.
-- **Biggest Risks:** False-positive risk due to buy pressure. Confirmation needed on the cause of the price drop.
-- **Next Steps:** Monitor for any significant price recovery or further drops. Investigate the reasons behind the buy pressure and price decline.
+1. **SpaceX**
+   - **Symbol:** SpaceX
+   - **Chain:** Solana
+   - **Scores:** Pump: 31.88, Dump: 3.0, Anomaly: 100.0, Smart Money: 0.0, Risk: 12.0
+   - **Label:** Anomaly Watch
+   - **Reasons:** High anomaly_score indicates unusual activity, but low pump_score and smart_money_score suggest caution. Thin liquidity adds to risk.
+   - **Next Steps:** Monitor liquidity changes and smart money flow. Confirm if the anomaly is due to genuine interest or manipulation.
 
-#### **3. Goblin (Snapshot ID: 1539)**
-- **Anomaly Score:** 96.98
-- **Pump Score:** 10.09
-- **Smart Money Score:** 0.0
-- **Label:** Anomaly Watch
-- **Reasons:** Normal watch, ML isolation forest anomaly.
-- **Metrics:** Price = $0.001256, Liquidity = $108,218.16, 1H Price Change = -33.81%, 1H Volume = $326,583.16.
-- **Biggest Risks:** False-positive risk due to price volatility. Confirmation needed on the underlying reasons for the price drop.
-- **Next Steps:** Monitor for price recovery or further declines. Investigate any news or developments affecting the token.
+2. **STJUDE**
+   - **Symbol:** STJUDE
+   - **Chain:** Solana
+   - **Scores:** Pump: 29.68, Dump: 50.64, Anomaly: 92.21, Smart Money: 0.0, Risk: 0.0
+   - **Label:** Anomaly Watch
+   - **Reasons:** High anomaly_score and significant price drop suggest unusual activity. Liquidity drop adds to the anomaly.
+   - **Next Steps:** Investigate the cause of the liquidity drop and price decline. Confirm if the anomaly is due to market manipulation or genuine market sentiment.
 
-#### **4. MCHOUSE (Snapshot ID: 1548)**
-- **Anomaly Score:** 80.01
-- **Pump Score:** 66.0
-- **Smart Money Score:** 0.0
-- **Label:** Anomaly Watch
-- **Reasons:** Sudden rise in price and volume, ML isolation forest anomaly.
-- **Metrics:** Price = $0.000008599, Liquidity = $0.0, 1H Price Change = +266.0%, 1H Volume = $60.7.
-- **Biggest Risks:** False-positive risk due to sudden price movements. Confirmation needed on the sustainability of the price rise and underlying fundamentals.
-- **Next Steps:** Monitor for continued price stability and increased liquidity. Evaluate any news or developments related to the token.
+3. **Hoppy**
+   - **Symbol:** Hoppy
+   - **Chain:** Solana
+   - **Scores:** Pump: 29.0, Dump: 0.0, Anomaly: 80.93, Smart Money: 0.0, Risk: 0.0
+   - **Label:** Anomaly Watch
+   - **Reasons:** High anomaly_score and price increase suggest unusual activity. No smart money involvement noted.
+   - **Next Steps:** Monitor smart money flow and liquidity changes. Confirm if the anomaly is due to genuine interest or manipulation.
 
-#### **5. FTP (Snapshot ID: 1546)**
-- **Anomaly Score:** 65.0
-- **Pump Score:** 66.0
-- **Smart Money Score:** 0.0
-- **Label:** Watch
-- **Reasons:** Sudden rise in price and volume.
-- **Metrics:** Price = $0.00002716, Liquidity = $13,464.37, 1H Price Change = +304.0
+4. **ewon**
+   - **Symbol:** ewon
+   - **Chain:** Solana
+   - **Scores:** Pump: 31.42, Dump: 0.0, Anomaly: 78.94, Smart Money: 10.88, Risk: 0.0
+   - **Label:** Anomaly Watch
+   - **Reasons:** High anomaly_score and price increase with some smart money involvement.
+   - **Next Steps:** Confirm if smart money flow is genuine and not a false positive. Monitor for further price movements and liquidity changes.
+
+5. **musk**
+   - **Symbol:** musk
+   - **Chain:** Solana
+   - **Scores:** Pump: 1.8, Dump: 46.22, Anomaly: 66.0, Smart Money: 0.0, Risk: 0.0
+   - **Label:** Watch
+   - **Reasons:** Significant price drop and liquidity drop suggest caution. No strong pump or smart money involvement.
+   - **Next Steps:** Monitor for signs of recovery or further decline. Confirm if the price drop is due to market sentiment or external factors.
+
+6. **CHARKITTY**
+   - **Symbol:** CHARKITTY
+   - **Chain:** Solana
+   - **Scores:** Pump: 30.0, Dump: 29.28, Anomaly: 65.0, Smart Money: 0.0, Risk: 0.0
+   - **Label:** Watch
+   - **Reasons:** High anomaly_score with mixed pump and dump signals. No smart money involvement.
+   - **Next Steps:** Monitor for further price movements and liquidity changes. Confirm if the anomaly is due to genuine interest or manipulation.
+
+7. **SCAM**
+   - **Symbol:** SCAM
+   - **

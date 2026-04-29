@@ -1,4 +1,1 @@
 evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-04-29T21:52:01+00:00,base,0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf,cbBTC,anomaly_watch,down,75731.31,75998.11,0.3523,10.0,60,False,predicted_down;return_0.35pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-29T21:52:01+00:00,base,0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b,VIRTUAL,anomaly_watch,up,0.6787,0.6844,0.8398,10.0,60,False,predicted_up;return_0.84pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-04-29T21:52:02+00:00,solana,BaebQyHrbt1FeUvKsZah6rHp3D2caduiLNLqJUy1k1aL,PUP,watch,up,9.332e-05,4.215e-10,-99.9995,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_watch;not_confirmed

@@ -1,75 +1,8 @@
 {
   "kind": "quant_outcomes",
-  "generated_at": "2026-04-29T21:52:02+00:00",
-  "evaluated_count": 3,
+  "generated_at": "2026-04-29T22:46:00+00:00",
+  "evaluated_count": 0,
   "hit_count": 0,
-  "hit_rate": 0.0,
-  "outcomes": [
-    {
-      "snapshot_id": 1534,
-      "horizon_min": 60,
-      "target_pct": 10.0,
-      "evaluated_ts": "2026-04-29T21:52:01+00:00",
-      "chain": "base",
-      "address": "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
-      "symbol": "cbBTC",
-      "label": "anomaly_watch",
-      "predicted_direction": "down",
-      "entry_price": 75731.31,
-      "current_price": 75998.11,
-      "return_pct": 0.3523,
-      "is_true": false,
-      "reasons": [
-        "predicted_down",
-        "return_0.35pct",
-        "target_10.00pct",
-        "label_anomaly_watch",
-        "not_confirmed"
-      ]
-    },
-    {
-      "snapshot_id": 1529,
-      "horizon_min": 60,
-      "target_pct": 10.0,
-      "evaluated_ts": "2026-04-29T21:52:01+00:00",
-      "chain": "base",
-      "address": "0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b",
-      "symbol": "VIRTUAL",
-      "label": "anomaly_watch",
-      "predicted_direction": "up",
-      "entry_price": 0.6787,
-      "current_price": 0.6844,
-      "return_pct": 0.8398,
-      "is_true": false,
-      "reasons": [
-        "predicted_up",
-        "return_0.84pct",
-        "target_10.00pct",
-        "label_anomaly_watch",
-        "not_confirmed"
-      ]
-    },
-    {
-      "snapshot_id": 1518,
-      "horizon_min": 60,
-      "target_pct": 10.0,
-      "evaluated_ts": "2026-04-29T21:52:02+00:00",
-      "chain": "solana",
-      "address": "BaebQyHrbt1FeUvKsZah6rHp3D2caduiLNLqJUy1k1aL",
-      "symbol": "PUP",
-      "label": "watch",
-      "predicted_direction": "up",
-      "entry_price": 9.332e-05,
-      "current_price": 4.215e-10,
-      "return_pct": -99.9995,
-      "is_true": false,
-      "reasons": [
-        "predicted_up",
-        "return_-100.00pct",
-        "target_10.00pct",
-        "label_watch",
-        "not_confirmed"
-      ]
-    }
-  ]
+  "hit_rate": null,
+  "outcomes": []
 }
