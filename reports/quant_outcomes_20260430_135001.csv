@@ -1,0 +1,2 @@
+evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
+2026-04-30T13:50:01+00:00,arbitrum,0x185f1c8ef21037758fd8bf3f0fade5d002c83303,AD,watch,up,0.009646,0.03137,225.2125,10.0,60,True,predicted_up;return_225.21pct;target_10.00pct;label_watch;pump_confirmed
