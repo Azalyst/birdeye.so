@@ -1,0 +1,53 @@
+{
+  "kind": "quant_outcomes",
+  "generated_at": "2026-04-30T09:33:12+00:00",
+  "evaluated_count": 2,
+  "hit_count": 0,
+  "hit_rate": 0.0,
+  "outcomes": [
+    {
+      "snapshot_id": 1618,
+      "horizon_min": 60,
+      "target_pct": 10.0,
+      "evaluated_ts": "2026-04-30T09:33:12+00:00",
+      "chain": "arbitrum",
+      "address": "0x96326f1ae207aa81968d7fae03d3121095f8262b",
+      "symbol": "ARBSI",
+      "label": "watch",
+      "predicted_direction": "up",
+      "entry_price": 0.1532,
+      "current_price": 0.1577,
+      "return_pct": 2.9373,
+      "is_true": false,
+      "reasons": [
+        "predicted_up",
+        "return_2.94pct",
+        "target_10.00pct",
+        "label_watch",
+        "not_confirmed"
+      ]
+    },
+    {
+      "snapshot_id": 1614,
+      "horizon_min": 60,
+      "target_pct": 10.0,
+      "evaluated_ts": "2026-04-30T09:33:12+00:00",
+      "chain": "arbitrum",
+      "address": "0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f",
+      "symbol": "WBTC",
+      "label": "dump_risk",
+      "predicted_direction": "down",
+      "entry_price": 75594.47,
+      "current_price": 76097.59,
+      "return_pct": 0.6656,
+      "is_true": false,
+      "reasons": [
+        "predicted_down",
+        "return_0.67pct",
+        "target_10.00pct",
+        "label_dump_risk",
+        "not_confirmed"
+      ]
+    }
+  ]
+}

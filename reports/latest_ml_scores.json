@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T07:40:00.295502+00:00",
+  "generated_at": "2026-04-30T09:58:04.396642+00:00",
   "model_metrics": {
     "status": "ok",
     "model": "lightgbm",
@@ -115,9 +115,9 @@
     "anonymous": 71
   },
   "totals": {
-    "snapshots": 1629,
+    "snapshots": 1634,
     "wallet_events": 377,
-    "labeled_outcomes": 258
+    "labeled_outcomes": 260
   },
   "top_signals": [
     {
@@ -233,17 +233,17 @@
       "label": "watch"
     },
     {
-      "snapshot_id": 1399,
-      "ts": "2026-04-29T09:22:38+00:00",
-      "chain": "avalanche",
-      "address": "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7",
-      "symbol": "WAVAX",
-      "ml_prob": 0.001368256520983316,
+      "snapshot_id": 1633,
+      "ts": "2026-04-30T09:32:53+00:00",
+      "chain": "optimism",
+      "address": "0x1f32b1c2345538c0c6f582fcb022739c4a194ebb",
+      "symbol": "wstETH",
+      "ml_prob": 0.0013532452541226557,
       "ml_direction": "down",
-      "ml_edge": 0.9972634869580334,
-      "pump_score": 6.66,
+      "ml_edge": 0.9972935094917547,
+      "pump_score": 2.03,
       "dump_score": 0.0,
-      "anomaly_score": 7.98,
+      "anomaly_score": 4.0,
       "label": "watch"
     },
     {
@@ -258,20 +258,6 @@
       "pump_score": 12.47,
       "dump_score": 5.19,
       "anomaly_score": 33.6,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 1389,
-      "ts": "2026-04-29T09:22:38+00:00",
-      "chain": "arbitrum",
-      "address": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
-      "symbol": "WETH",
-      "ml_prob": 0.0013783562001106065,
-      "ml_direction": "down",
-      "ml_edge": 0.9972432875997788,
-      "pump_score": 4.58,
-      "dump_score": 0.0,
-      "anomaly_score": 6.13,
       "label": "watch"
     },
     {
@@ -300,20 +286,6 @@
       "pump_score": 1.2,
       "dump_score": 0.0,
       "anomaly_score": 2.29,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 1401,
-      "ts": "2026-04-29T09:22:38+00:00",
-      "chain": "avalanche",
-      "address": "0x9702230a8ea53601f5cd2dc00fdbc13d4df4a8c7",
-      "symbol": "USDt",
-      "ml_prob": 0.0014117447965128272,
-      "ml_direction": "down",
-      "ml_edge": 0.9971765104069743,
-      "pump_score": 43.45,
-      "dump_score": 0.0,
-      "anomaly_score": 18.5,
       "label": "watch"
     },
     {
@@ -443,20 +415,6 @@
       "label": "watch"
     },
     {
-      "snapshot_id": 1388,
-      "ts": "2026-04-29T09:22:38+00:00",
-      "chain": "arbitrum",
-      "address": "0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f",
-      "symbol": "WBTC",
-      "ml_prob": 0.001577929922407408,
-      "ml_direction": "down",
-      "ml_edge": 0.9968441401551852,
-      "pump_score": 3.43,
-      "dump_score": 0.0,
-      "anomaly_score": 5.08,
-      "label": "watch"
-    },
-    {
       "snapshot_id": 1439,
       "ts": "2026-04-29T12:53:33+00:00",
       "chain": "solana",
@@ -469,6 +427,48 @@
       "dump_score": 0.0,
       "anomaly_score": 71.8,
       "label": "anomaly_watch"
+    },
+    {
+      "snapshot_id": 1433,
+      "ts": "2026-04-29T12:53:33+00:00",
+      "chain": "solana",
+      "address": "HaGMAz63vteVxj1vLPWGuaB1GrmntWBF6417g4S6pump",
+      "symbol": "Unknown",
+      "ml_prob": 0.0016526692795896109,
+      "ml_direction": "down",
+      "ml_edge": 0.9966946614408208,
+      "pump_score": 35.04,
+      "dump_score": 0.0,
+      "anomaly_score": 37.84,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 1535,
+      "ts": "2026-04-29T20:51:12+00:00",
+      "chain": "base",
+      "address": "0x4200000000000000000000000000000000000006",
+      "symbol": "WETH",
+      "ml_prob": 0.001657316560884448,
+      "ml_direction": "down",
+      "ml_edge": 0.9966853668782311,
+      "pump_score": 7.47,
+      "dump_score": 0.6,
+      "anomaly_score": 19.37,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 1613,
+      "ts": "2026-04-30T07:23:58+00:00",
+      "chain": "arbitrum",
+      "address": "0x0c1c1c109fe34733fca54b82d7b46b75cfb71f6e",
+      "symbol": "CHIP",
+      "ml_prob": 0.0016707705386646498,
+      "ml_direction": "down",
+      "ml_edge": 0.9966584589226707,
+      "pump_score": 19.55,
+      "dump_score": 0.0,
+      "anomaly_score": 20.24,
+      "label": "watch"
     }
   ],
   "top_patterns": [

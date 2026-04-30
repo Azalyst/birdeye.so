@@ -1,0 +1,200 @@
+{
+  "kind": "quant_signals",
+  "generated_at": "2026-04-30T09:33:12+00:00",
+  "snapshot_count": 5,
+  "errors": [
+    "polygon:pos_0x87bdfbe98ba55104701b2f2e999982a317905637: overview error No pairs found",
+    "polygon:pos_0x1bdf71ede1a4777db1eebe7232bcda20d6fc1610: overview error No pairs found",
+    "polygon:pos_0x2791bca1f2de4661ed88a30c99a7a9449aa84174: overview error No pairs found",
+    "polygon:pos_0x954a082de9f404b60edb7c4bef8afc289a5d8866: overview error No pairs found",
+    "polygon:pos_0x8f3cf7ad23cd3cadbd9735aff958023239c6a063: overview error No pairs found",
+    "polygon:pos_0x2c72d25530191ebd244eb6325e1892480b0e6e28: overview error No pairs found",
+    "polygon:pos_0xc8baeae592f1706298ef786f385d1be877142e1f: overview error No pairs found",
+    "polygon:pos_0x98965474ecbec2f532f1f780ee37b0b05f77ca55: overview error No pairs found",
+    "polygon:pos_0xe858a86e761e1fc288737358d66daed25bbbdefe: overview error No pairs found",
+    "polygon:pos_0x958f0745214e5a01de2f4d5b659e0bfdb6b5f986: overview error No pairs found",
+    "polygon:pos_0x94a2580d6e5ef0a946a906ac341d3b2ebe520fa6: overview error No pairs found",
+    "polygon:pos_0x85c7bd0740dbc0a557ea76301aedcd4f167fa397: overview error No pairs found",
+    "polygon:pos_0x387f7349116a873cc355e22559cee0e3d6709057: overview error No pairs found",
+    "polygon:pos_0x771cb15ab0e654ee4910be116a40c50acf2aacf5: overview error No pairs found",
+    "polygon:pos_0xc011a7e12a19f7b1f670d46f03b03f3342e82dfb: overview error No pairs found",
+    "optimism:0x6b0dcd77199786ffbf3dd6f4a2540cd666ce13ff: overview error No pairs found"
+  ],
+  "filters": {
+    "scan_chains": [
+      "polygon",
+      "optimism",
+      "zksync"
+    ],
+    "trade_limit": 35,
+    "top_trader_limit": 5,
+    "smart_money_enabled": true,
+    "binance_usdt_only": false,
+    "binance_symbol_count": 0,
+    "binance_min_liquidity_usd": 5000.0,
+    "binance_source": "disabled",
+    "matched_signal_count": 5
+  },
+  "signals": [
+    {
+      "snapshot_id": 1630,
+      "ts": "2026-04-30T09:32:53+00:00",
+      "chain": "optimism",
+      "address": "0x4200000000000000000000000000000000000042",
+      "symbol": "OP",
+      "binance_usdt_futures": false,
+      "binance_symbol": "",
+      "binance_base_asset": "",
+      "binance_match_type": "",
+      "pump_score": 0.0,
+      "dump_score": 31.25,
+      "anomaly_score": 25.14,
+      "smart_money_score": 0.0,
+      "risk_score": 25.0,
+      "label": "watch",
+      "reasons": [
+        "risk:mintable"
+      ],
+      "metrics": {
+        "price": 0.1215,
+        "liquidity_usd": 513361.79,
+        "price_change_1h_pct": 0.66,
+        "derived_price_change_pct": 1.5886287625418054,
+        "volume_1h_usd": 28290.35,
+        "hourly_volume_ratio": 0.592410108990123,
+        "buy_imbalance": -0.7371979381821155,
+        "whale_net_usd": 0.0,
+        "liquidity_change_pct": 0.6559475985426747,
+        "top_trader_pnl_usd": 0
+      }
+    },
+    {
+      "snapshot_id": 1632,
+      "ts": "2026-04-30T09:32:53+00:00",
+      "chain": "optimism",
+      "address": "0x0b2c639c533813f4aa9d7837caf62653d097ff85",
+      "symbol": "USDC",
+      "binance_usdt_futures": false,
+      "binance_symbol": "",
+      "binance_base_asset": "",
+      "binance_match_type": "",
+      "pump_score": 5.41,
+      "dump_score": 27.21,
+      "anomaly_score": 28.3,
+      "smart_money_score": 0.0,
+      "risk_score": 0.0,
+      "label": "watch",
+      "reasons": [
+        "normal_watch"
+      ],
+      "metrics": {
+        "price": 1.0025,
+        "liquidity_usd": 3775277.99,
+        "price_change_1h_pct": 0.02,
+        "derived_price_change_pct": 0.28008402520755366,
+        "volume_1h_usd": 79515.83,
+        "hourly_volume_ratio": 0.6735138328929237,
+        "buy_imbalance": -1.0,
+        "whale_net_usd": 0.0,
+        "liquidity_change_pct": -3.157072448705478,
+        "top_trader_pnl_usd": 0
+      }
+    },
+    {
+      "snapshot_id": 1631,
+      "ts": "2026-04-30T09:32:53+00:00",
+      "chain": "optimism",
+      "address": "0x4200000000000000000000000000000000000006",
+      "symbol": "WETH",
+      "binance_usdt_futures": false,
+      "binance_symbol": "",
+      "binance_base_asset": "",
+      "binance_match_type": "",
+      "pump_score": 6.41,
+      "dump_score": 0.0,
+      "anomaly_score": 8.09,
+      "smart_money_score": 0.0,
+      "risk_score": 0.0,
+      "label": "watch",
+      "reasons": [
+        "normal_watch"
+      ],
+      "metrics": {
+        "price": 2263.8,
+        "liquidity_usd": 125690766.65,
+        "price_change_1h_pct": 0.39,
+        "derived_price_change_pct": 0.33284728470188757,
+        "volume_1h_usd": 2924296.3,
+        "hourly_volume_ratio": 0.7577751642195799,
+        "buy_imbalance": 0.0,
+        "whale_net_usd": 0.0,
+        "liquidity_change_pct": 1.0358605258990805,
+        "top_trader_pnl_usd": 0
+      }
+    },
+    {
+      "snapshot_id": 1634,
+      "ts": "2026-04-30T09:32:53+00:00",
+      "chain": "optimism",
+      "address": "0x9560e827af36c94d2ac33a39bce1fe78631088db",
+      "symbol": "VELO",
+      "binance_usdt_futures": false,
+      "binance_symbol": "",
+      "binance_base_asset": "",
+      "binance_match_type": "",
+      "pump_score": 0.0,
+      "dump_score": 6.25,
+      "anomaly_score": 0.7,
+      "smart_money_score": 0.0,
+      "risk_score": 25.0,
+      "label": "watch",
+      "reasons": [
+        "risk:mintable"
+      ],
+      "metrics": {
+        "price": 0.01788,
+        "liquidity_usd": 674773.07,
+        "price_change_1h_pct": 0.1,
+        "derived_price_change_pct": 1.4755959137343917,
+        "volume_1h_usd": 1.25,
+        "hourly_volume_ratio": 0.0011820000307320008,
+        "buy_imbalance": 0.0,
+        "whale_net_usd": 0.0,
+        "liquidity_change_pct": 0.779550780074994,
+        "top_trader_pnl_usd": 0
+      }
+    },
+    {
+      "snapshot_id": 1633,
+      "ts": "2026-04-30T09:32:53+00:00",
+      "chain": "optimism",
+      "address": "0x1f32b1c2345538c0c6f582fcb022739c4a194ebb",
+      "symbol": "wstETH",
+      "binance_usdt_futures": false,
+      "binance_symbol": "",
+      "binance_base_asset": "",
+      "binance_match_type": "",
+      "pump_score": 2.03,
+      "dump_score": 0.0,
+      "anomaly_score": 4.0,
+      "smart_money_score": 0.0,
+      "risk_score": 0.0,
+      "label": "watch",
+      "reasons": [
+        "normal_watch"
+      ],
+      "metrics": {
+        "price": 2791.17,
+        "liquidity_usd": 721339.1,
+        "price_change_1h_pct": 0.42,
+        "derived_price_change_pct": 0.5779909409649264,
+        "volume_1h_usd": 10740.31,
+        "hourly_volume_ratio": 0.20627111550169672,
+        "buy_imbalance": 0.0,
+        "whale_net_usd": 0.0,
+        "liquidity_change_pct": 2.2162000168371923,
+        "top_trader_pnl_usd": 0
+      }
+    }
+  ]
+}
