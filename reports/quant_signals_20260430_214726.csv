@@ -1,0 +1,31 @@
+ts,chain,address,symbol,binance_symbol,binance_base_asset,binance_match_type,label,pump_score,dump_score,anomaly_score,smart_money_score,risk_score,reasons
+2026-04-30T21:45:55+00:00,base,0x805ecbeabcb3e45bc96eace0dc2ae345de89ba6b,SUBBD,,,,anomaly_watch,61.8,3.0,100.0,0.0,12.0,sudden_rise_price_plus_volume;risk:thin_liquidity;ml_isolation_forest_anomaly
+2026-04-30T21:45:55+00:00,base,0x8e6478f2f2be9801fd450f6f71b756211bb48627,LUNCHMONEY,,,,anomaly_watch,21.25,6.25,88.36,0.0,25.0,risk:mintable;ml_isolation_forest_anomaly
+2026-04-30T21:45:55+00:00,base,0xd0eaded40f2d73797bf255d1e16f505e02fc1004,LUCE,,,,anomaly_watch,74.98,3.0,75.48,5.13,12.0,sudden_rise_price_plus_volume;buy_pressure;risk:thin_liquidity;ml_isolation_forest_anomaly
+2026-04-30T21:45:55+00:00,solana,HKgyfEWk4ZgoWnvDb8iav9ts63UxzrQpni9noK2Vpump,RIGHT NAME,,,,anomaly_watch,25.0,0.0,72.12,15.0,0.0,buy_pressure;ml_isolation_forest_anomaly
+2026-04-30T21:45:55+00:00,solana,2LUZGzSprX6DJQGKGaXvGSYnuf4xHfCuJCeeKHfymoon,disbelief,,,,anomaly_watch,15.05,28.04,70.98,0.0,0.0,normal_watch;ml_isolation_forest_anomaly
+2026-04-30T21:45:55+00:00,solana,2c9A1BrLZse1hNDiUG24mi3QKEna4q1J9eVcKzzspump,bmga,,,,watch,30.0,36.0,65.0,0.0,0.0,normal_watch
+2026-04-30T21:45:55+00:00,base,0xefd2e118b76e2bdd0540feaaebb9cc199dd36800,SPACEX,,,,watch,30.0,36.0,65.0,0.0,0.0,normal_watch
+2026-04-30T21:45:55+00:00,solana,Ha5Z2DfRv6Ar2nAeBLCGWHqzwXKL3of4DqKwzzwpump,FOFAR,,,,watch,19.04,0.0,64.04,0.0,0.0,normal_watch
+2026-04-30T21:45:55+00:00,solana,E8syR4zsgQG2zo9YyiyfX4ujubByR4z6qj9stjASpump,STJUDE,,,,watch,9.62,17.56,58.67,4.61,0.0,normal_watch
+2026-04-30T21:45:55+00:00,base,0x031afdae43bc11a6540f985c67fefb8598654620,USDsui,,,,watch,48.25,0.0,58.39,0.0,0.0,sudden_rise_price_plus_volume
+2026-04-30T21:45:55+00:00,solana,7oLK5rYCW8FeZC4r1s7yHzQ5b9Ja2Lq8eH5qnt79pump,scribble,,,,watch,30.28,15.4,54.15,0.16,0.0,normal_watch
+2026-04-30T21:45:55+00:00,base,0x08fab8c8b7a25e838272890bc40c664654b9b77b,BillyPepeBurger,,,,watch,36.0,0.0,53.19,0.0,0.0,normal_watch
+2026-04-30T21:45:55+00:00,solana,HrMp2mmpyDZJ65Mspzib7NJPXeZe2cvY5stfHG9nhWTH,PUP,,,,watch,10.82,5.48,48.39,0.0,0.0,normal_watch
+2026-04-30T21:45:55+00:00,solana,6AVAUKa9uxQpruHZUinFECpXEh1usRVtzQWK8N2wpump,SCAM,,,,watch,8.23,8.84,44.74,0.0,0.0,normal_watch
+2026-04-30T21:45:55+00:00,solana,A4vBGe7o4FHQWHT4s73dyHvz7Awwexot5nHksTHvpump,SLOWCOOK,,,,watch,37.9,0.0,42.29,0.0,0.0,normal_watch
+2026-04-30T21:45:55+00:00,base,0x1f516aa4fac3f83243f19cb5f929b4c1bee93ba3,SANDCASTLE,,,,watch,42.12,0.0,38.73,6.87,0.0,normal_watch
+2026-04-30T21:45:55+00:00,solana,HS1iFxJQ8TA3JhwdGKFR5QKHigWxgRB3kWZsSRvrpump,DJ,,,,watch,30.02,7.66,41.93,0.01,0.0,normal_watch
+2026-04-30T21:45:55+00:00,solana,5kxDvCUejPiX1x2Eyx2yuJ6ESHHuWXvxvmpHJV8Gpump,RUNNER,,,,watch,35.73,1.12,39.72,0.0,0.0,normal_watch
+2026-04-30T21:45:55+00:00,solana,CWqVztDfxU5zkphuWLCFRn3bvEs845nSsyx37jZVpump,infinity,,,,watch,30.0,3.25,35.05,0.0,0.0,normal_watch
+2026-04-30T21:45:55+00:00,base,0xf7d2e9770172a5821e0f35e225929d0e602f01dc,Donatify,,,,watch,32.75,0.0,34.28,0.0,0.0,normal_watch
+2026-04-30T21:45:55+00:00,solana,DfF7LeMTF1Sj6k6bVYZJuAcMyadvzDNdh6ftnJ4npump,RIGHT NAME,,,,watch,0.0,0.0,33.45,0.0,0.0,normal_watch
+2026-04-30T21:45:55+00:00,solana,ENxyg1pZL2eduzk86jddBYJSK8Lc58pq1ckgHitapump,BOOZTORY,,,,watch,30.0,0.7,31.09,0.0,0.0,normal_watch
+2026-04-30T21:45:55+00:00,base,0x7217e0ec93cfa1ae83a2a575a188fa189f145ba3,NEX,,,,watch,30.02,0.0,30.03,0.0,0.0,normal_watch
+2026-04-30T21:45:55+00:00,solana,HbfmvxRTTV3TSkX1coKCMMTJGiG5tSZHnbyRtwP9pump,Meo,,,,watch,30.0,0.0,30.0,0.0,0.0,normal_watch
+2026-04-30T21:45:55+00:00,base,0xfaf9f025bc0c3a0a74877923a7ad8fa329582ba3,Cashback,,,,watch,30.0,0.0,30.0,0.0,0.0,normal_watch
+2026-04-30T21:45:55+00:00,solana,2CKp88BFyPzr7gEuQKXMJ9cqa24AFXUNC41FR7udpump,Walter,,,,watch,7.47,0.0,27.89,0.15,0.0,normal_watch
+2026-04-30T21:45:55+00:00,solana,2ssMotVbTUfRJev2UnibHzHsoeszPzgwbfsTZPSHpump,Wish,,,,watch,13.95,0.0,26.45,5.58,0.0,normal_watch
+2026-04-30T21:45:55+00:00,solana,3vH3NzuHafRNvwKKzoGTWNuLtg5Kc38BxsmfUwgPpump,LUNCHMONEY,,,,watch,6.1,0.35,18.24,0.0,0.0,normal_watch
+2026-04-30T21:45:55+00:00,solana,3TYgKwkE2Y3rxdw9osLRSpxpXmSC1C1oo19W9KHspump,BULL,,,,watch,6.77,0.0,17.79,0.0,0.0,normal_watch
+2026-04-30T21:45:55+00:00,solana,3KHMZhpthXuiCcgfTv7vVu9PpEz64KAEURFwi6Lopump,Goblin,,,,watch,4.96,0.0,15.86,0.0,0.0,normal_watch
