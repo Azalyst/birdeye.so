@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T04:06:18.201516+00:00",
+  "generated_at": "2026-04-30T05:03:58.878171+00:00",
   "model_metrics": {
     "status": "ok",
     "model": "lightgbm",
@@ -115,7 +115,7 @@
     "anonymous": 71
   },
   "totals": {
-    "snapshots": 1590,
+    "snapshots": 1610,
     "wallet_events": 377,
     "labeled_outcomes": 253
   },
@@ -317,20 +317,6 @@
       "label": "watch"
     },
     {
-      "snapshot_id": 1351,
-      "ts": "2026-04-29T04:45:07+00:00",
-      "chain": "solana",
-      "address": "DYMC8tjXyZRYhgsUUGopVLd3TyZkYF97W96BTDEVpump",
-      "symbol": "dragoly",
-      "ml_prob": 0.0012930836960853862,
-      "ml_direction": "down",
-      "ml_edge": 0.9974138326078292,
-      "pump_score": 30.0,
-      "dump_score": 9.72,
-      "anomaly_score": 45.12,
-      "label": "watch"
-    },
-    {
       "snapshot_id": 1585,
       "ts": "2026-04-30T01:22:25+00:00",
       "chain": "arbitrum",
@@ -468,6 +454,20 @@
       "pump_score": 43.45,
       "dump_score": 0.0,
       "anomaly_score": 18.5,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 1553,
+      "ts": "2026-04-29T21:51:03+00:00",
+      "chain": "solana",
+      "address": "9VHeFk6QmzvVdUQFoVbqyURScNuLv6FdA8qXB9HPpump",
+      "symbol": "ewonhouse",
+      "ml_prob": 0.0016711677138529014,
+      "ml_direction": "down",
+      "ml_edge": 0.9966576645722942,
+      "pump_score": 30.0,
+      "dump_score": 2.22,
+      "anomaly_score": 33.46,
       "label": "watch"
     }
   ],
