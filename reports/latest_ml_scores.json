@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T17:46:54.999204+00:00",
+  "generated_at": "2026-04-30T18:19:05.872524+00:00",
   "model_metrics": {
     "status": "ok",
     "model": "lightgbm",
@@ -113,9 +113,9 @@
   },
   "cluster_counts": {},
   "totals": {
-    "snapshots": 83,
+    "snapshots": 103,
     "wallet_events": 0,
-    "labeled_outcomes": 9
+    "labeled_outcomes": 14
   },
   "top_signals": [
     {
@@ -214,6 +214,20 @@
       "pump_score": 25.45,
       "dump_score": 0.01,
       "anomaly_score": 20.14,
+      "label": "watch"
+    },
+    {
+      "snapshot_id": 99,
+      "ts": "2026-04-30T18:02:58+00:00",
+      "chain": "solana",
+      "address": "41ZWaZaii7hFpFgHXtx5ecPQ5jtr6D8Q1bwbbrsXg6xb",
+      "symbol": "GREENHOUSE",
+      "ml_prob": 0.001959469751282097,
+      "ml_direction": "down",
+      "ml_edge": 0.9960810604974358,
+      "pump_score": 66.0,
+      "dump_score": 0.0,
+      "anomaly_score": 65.0,
       "label": "watch"
     },
     {
@@ -399,6 +413,20 @@
       "label": "watch"
     },
     {
+      "snapshot_id": 98,
+      "ts": "2026-04-30T18:02:58+00:00",
+      "chain": "solana",
+      "address": "DEtojt6XRjDSSF3YM9TkXJwXUun6zV98C51C3AkNpump",
+      "symbol": "REAAAD",
+      "ml_prob": 0.004180070493466658,
+      "ml_direction": "down",
+      "ml_edge": 0.9916398590130667,
+      "pump_score": 30.0,
+      "dump_score": 0.01,
+      "anomaly_score": 42.44,
+      "label": "watch"
+    },
+    {
       "snapshot_id": 29,
       "ts": "2026-04-30T13:49:02+00:00",
       "chain": "solana",
@@ -439,34 +467,6 @@
       "dump_score": 0.06,
       "anomaly_score": 46.66,
       "label": "watch"
-    },
-    {
-      "snapshot_id": 13,
-      "ts": "2026-04-30T11:18:02+00:00",
-      "chain": "arbitrum",
-      "address": "0x0000000000000000000000000000000000000000",
-      "symbol": "ETH",
-      "ml_prob": 0.004530066442867234,
-      "ml_direction": "down",
-      "ml_edge": 0.9909398671142655,
-      "pump_score": 1.5,
-      "dump_score": 0.0,
-      "anomaly_score": 1.7,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 57,
-      "ts": "2026-04-30T15:45:13+00:00",
-      "chain": "ethereum",
-      "address": "0xf280b16ef293d8e534e370794ef26bf312694126",
-      "symbol": "ASTEROID",
-      "ml_prob": 0.004655018357642174,
-      "ml_direction": "down",
-      "ml_edge": 0.9906899632847157,
-      "pump_score": 85.57,
-      "dump_score": 0.0,
-      "anomaly_score": 80.89,
-      "label": "whale_accumulation"
     }
   ],
   "top_patterns": []
