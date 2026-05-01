@@ -1,1 +1,9 @@
 evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
+2026-05-01T11:52:22+00:00,solana,6tQ1mgXyosU2AJLre2gW5n5yxV9awo4HvY1iX9AocYy8,MrBeast,watch,up,0.03489,2.026e-09,-100.0,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_watch;not_confirmed
+2026-05-01T11:52:22+00:00,solana,GpJXaqc2f9tJNjQ1WhYuLWyWo5dZsnfinkK9rPQp5s2x,SPERM,watch,up,2727.033,2727.033,0.0,10.0,60,False,predicted_up;return_0.00pct;target_10.00pct;label_watch;not_confirmed
+2026-05-01T11:52:23+00:00,solana,FVP6LdE6kDiy87hgstuV3EuC4MRT2Fe8mvqSEvpx2RbJ,Rabbit✨,watch,up,0.0001356,4.333e-10,-99.9997,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_watch;not_confirmed
+2026-05-01T11:52:23+00:00,solana,BzU72NjQcYsCc8jT5gf7vVqVnZGbTNazGduEEMDmpump,FitCoin,watch,up,7.242e-06,2.535e-06,-64.9959,10.0,60,False,predicted_up;return_-65.00pct;target_10.00pct;label_watch;not_confirmed
+2026-05-01T11:52:23+00:00,ethereum,0x44b28991b167582f18ba0259e0173176ca125505,uPEG,anomaly_watch,up,1606.88,1414.15,-11.9941,10.0,60,False,predicted_up;return_-11.99pct;target_10.00pct;label_anomaly_watch;not_confirmed
+2026-05-01T11:52:23+00:00,ethereum,0xf280b16ef293d8e534e370794ef26bf312694126,ASTEROID,anomaly_watch,up,0.0003728,0.0003611,-3.1384,10.0,60,False,predicted_up;return_-3.14pct;target_10.00pct;label_anomaly_watch;not_confirmed
+2026-05-01T11:52:23+00:00,solana,6F3QyK5VB22KjBXgrtHB2Cq6NHhkm7BGqSoFPNinUAKH,DERP,anomaly_watch,up,0.0001979,1.026,518343.6584,10.0,60,True,predicted_up;return_518343.66pct;target_10.00pct;label_anomaly_watch;pump_confirmed
+2026-05-01T11:52:23+00:00,solana,2LUZGzSprX6DJQGKGaXvGSYnuf4xHfCuJCeeKHfymoon,disbelief,anomaly_watch,up,0.0001424,0.0001266,-11.0955,10.0,60,False,predicted_up;return_-11.10pct;target_10.00pct;label_anomaly_watch;not_confirmed
