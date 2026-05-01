@@ -1,0 +1,7 @@
+evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
+2026-05-01T14:23:10+00:00,base,0x4200000000000000000000000000000000000006,WETH,anomaly_watch,up,2304.33,2318.18,0.601,10.0,60,False,predicted_up;return_0.60pct;target_10.00pct;label_anomaly_watch;not_confirmed
+2026-05-01T14:23:10+00:00,ethereum,0x94bcd66152ad9c86b3aa665abfda6329f53f6936,ANDY,anomaly_watch,up,1.657e-05,9.718e-18,-100.0,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
+2026-05-01T14:23:10+00:00,ethereum,0x56d06158bb8d2e42a6c5994a9a12a5c6d642f064,bENAT,watch,up,0.549,0.5793,5.5191,10.0,60,False,predicted_up;return_5.52pct;target_10.00pct;label_watch;not_confirmed
+2026-05-01T14:23:10+00:00,ethereum,0x1489c2fe7fc8c89337ff4ea5208f2251421b1110,SCRIBBLI,watch,up,0.0003931,0.0003331,-15.2633,10.0,60,False,predicted_up;return_-15.26pct;target_10.00pct;label_watch;not_confirmed
+2026-05-01T14:23:10+00:00,ethereum,0x001988455eb7745b88666d03014066a3dc3a63e9,FORGE,anomaly_watch,up,0.01557,0.003769,-75.7932,10.0,60,False,predicted_up;return_-75.79pct;target_10.00pct;label_anomaly_watch;not_confirmed
+2026-05-01T14:23:11+00:00,solana,36hqmEg2abxLy868HWmsNJFBXyMfQjjuoo3eVXS8pump,GRANNY,watch,up,3.691e-06,2.358e-06,-36.1149,10.0,60,False,predicted_up;return_-36.11pct;target_10.00pct;label_watch;not_confirmed
