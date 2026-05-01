@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T18:25:46.900617+00:00",
+  "generated_at": "2026-05-01T19:37:18.801071+00:00",
   "model_metrics": {
     "status": "insufficient_data",
     "labeled_rows": 48,
@@ -19,9 +19,9 @@
   },
   "cluster_counts": {},
   "totals": {
-    "snapshots": 487,
+    "snapshots": 491,
     "wallet_events": 0,
-    "labeled_outcomes": 69
+    "labeled_outcomes": 78
   },
   "top_signals": [],
   "top_patterns": []

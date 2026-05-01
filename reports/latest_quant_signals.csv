@@ -1,21 +1,5 @@
 ts,chain,address,symbol,binance_symbol,binance_base_asset,binance_match_type,label,pump_score,dump_score,anomaly_score,smart_money_score,risk_score,reasons
-2026-05-01T18:10:00+00:00,solana,FeJ2ZKyJrJvkunv317XschMjyunahejMPxjorPFZpump,Gob Wojak,,,,anomaly_watch,66.0,0.0,100.0,0.0,0.0,sudden_rise_price_plus_volume;ml_isolation_forest_anomaly
-2026-05-01T18:10:00+00:00,solana,F8ZVdDU2EdqYaBuJsA488Hr1QPachasWnQF6k3TDpump,CCP,,,,anomaly_watch,4.2,56.76,86.73,0.0,0.0,selloff_distribution;ml_isolation_forest_anomaly
-2026-05-01T18:10:00+00:00,solana,HDmojpFZvf1F421Gev2hh2p1ThaVbWsW5qh9C5Bipump,MSPAINTIFY,,,,anomaly_watch,49.97,0.0,76.45,0.0,0.0,normal_watch;ml_isolation_forest_anomaly
-2026-05-01T18:10:00+00:00,solana,8c3JdTcEqy9XdUJ36NAns7XVDfh356nWxvwcMYKNpump,Scribbli,,,,watch,12.44,38.16,68.02,0.0,0.0,selloff_distribution
-2026-05-01T18:10:00+00:00,solana,4pboxgEKgG75freTeqSCGj7aiQE2tGGMsLuNQNMcpump,$ZORB,,,,watch,30.0,33.0,65.0,0.0,0.0,normal_watch
-2026-05-01T18:10:00+00:00,solana,2mPdr9YTvXX6UTgQn9kYuGSpDQeuxyozV3ZaoXLbKjNw,CULTURE,,,,watch,30.0,36.0,65.0,0.0,0.0,normal_watch
-2026-05-01T18:10:00+00:00,solana,2LUZGzSprX6DJQGKGaXvGSYnuf4xHfCuJCeeKHfymoon,disbelief,,,,watch,26.23,0.0,40.64,8.23,0.0,buy_pressure
-2026-05-01T18:10:00+00:00,solana,DZS2vVP2meU4Xgj5eVCGmWQE5C9F5QM2b5mLYEBRpump,Pokemon,,,,watch,34.73,0.0,37.36,0.0,0.0,normal_watch
-2026-05-01T18:10:00+00:00,solana,8onnTrrpmRjgEYNhDV9Huny5yXUqYunQfBQnnyzUpump,$Stagporn,,,,watch,30.32,0.0,30.49,0.0,0.0,normal_watch
-2026-05-01T18:10:00+00:00,solana,FHTWKyvCkXoSNTohkKQ11G2TcF7wmxqerrViAXFkpump,LUCIDUS-7,,,,watch,30.31,0.0,30.48,0.0,0.0,normal_watch
-2026-05-01T18:10:00+00:00,solana,7q6e5oF9Ab6b5dJbm2NJpB5ABrgrDbwHisSLKcsepump,NIB,,,,watch,30.0,0.0,30.0,0.0,0.0,normal_watch
-2026-05-01T18:10:00+00:00,solana,2FTW8uJmqPzRUSQUoYQmeWswZENchF8AuYjw6Wmcpump,$FALCON9,,,,watch,30.0,0.0,30.0,0.0,0.0,normal_watch
-2026-05-01T18:10:00+00:00,solana,JtrxbCLDibVtHX1dWegZFPhjYv4FrqXGXvUtiqJpump,NIB,,,,watch,30.0,0.0,30.0,0.0,0.0,normal_watch
-2026-05-01T18:10:00+00:00,solana,GkDwwwj6h9n3U8KetkmNWKzeCgzTqhMwQRjzFYizpump,NIB,,,,watch,30.0,0.0,30.0,0.0,0.0,normal_watch
-2026-05-01T18:10:00+00:00,solana,CzHc1ugMNhim5JCJC8ebbp4k14jfrbZx1HNcMyEppump,MUSK,,,,watch,4.74,16.34,29.7,0.0,0.0,normal_watch
-2026-05-01T18:10:00+00:00,solana,2p5e3sudKx2LtM8iSefaSszMY9nCiHz6CTEASQ9Xpump,Dragon,,,,watch,15.79,0.0,27.31,0.0,0.0,normal_watch
-2026-05-01T18:10:00+00:00,solana,6AVAUKa9uxQpruHZUinFECpXEh1usRVtzQWK8N2wpump,SCAM,,,,watch,13.42,0.0,22.37,0.0,0.0,normal_watch
-2026-05-01T18:10:00+00:00,solana,CGEDT9QZDvvH5GmVkWJH2BXiMJqMJySC9ihWyr7Spump,BURNIE,,,,watch,15.91,0.0,19.4,0.0,0.0,normal_watch
-2026-05-01T18:10:00+00:00,solana,HrMp2mmpyDZJ65Mspzib7NJPXeZe2cvY5stfHG9nhWTH,PUP,,,,watch,3.54,2.74,7.87,0.0,0.0,normal_watch
-2026-05-01T18:10:00+00:00,solana,2ssMotVbTUfRJev2UnibHzHsoeszPzgwbfsTZPSHpump,Wish,,,,watch,3.75,0.0,5.97,0.0,0.0,normal_watch
+2026-05-01T19:36:44+00:00,optimism,0x4200000000000000000000000000000000000042,OP,,,,watch,0.0,31.25,30.21,0.0,25.0,risk:mintable
+2026-05-01T19:36:44+00:00,optimism,0x9560e827af36c94d2ac33a39bce1fe78631088db,VELO,,,,watch,0.0,6.25,0.49,0.0,25.0,risk:mintable
+2026-05-01T19:36:44+00:00,optimism,0x4200000000000000000000000000000000000006,WETH,,,,watch,1.19,0.0,2.79,0.0,0.0,normal_watch
+2026-05-01T19:36:44+00:00,optimism,0x0b2c639c533813f4aa9d7837caf62653d097ff85,USDC,,,,watch,0.31,0.0,1.37,0.0,0.0,normal_watch

@@ -1,1 +1,10 @@
 evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
+2026-05-01T19:37:01+00:00,solana,FeJ2ZKyJrJvkunv317XschMjyunahejMPxjorPFZpump,Gob Wojak,anomaly_watch,up,1.233e-05,2.356e-06,-80.8921,10.0,60,False,predicted_up;return_-80.89pct;target_10.00pct;label_anomaly_watch;not_confirmed
+2026-05-01T19:37:01+00:00,solana,HDmojpFZvf1F421Gev2hh2p1ThaVbWsW5qh9C5Bipump,MSPAINTIFY,anomaly_watch,up,0.0004645,0.0001827,-60.6674,10.0,60,False,predicted_up;return_-60.67pct;target_10.00pct;label_anomaly_watch;not_confirmed
+2026-05-01T19:37:02+00:00,solana,F8ZVdDU2EdqYaBuJsA488Hr1QPachasWnQF6k3TDpump,CCP,anomaly_watch,down,0.0005365,0.0004631,-13.6813,10.0,60,True,predicted_down;return_-13.68pct;target_10.00pct;label_anomaly_watch;dump_confirmed
+2026-05-01T19:37:02+00:00,solana,E1aDUPSZYknvqVg8sKfH2Aa5BH96zXmwR9isPtksQi6u,BURNIE,anomaly_watch,up,0.3371,0.1188,-64.7582,10.0,60,False,predicted_up;return_-64.76pct;target_10.00pct;label_anomaly_watch;not_confirmed
+2026-05-01T19:37:02+00:00,solana,7DtCjvj1aAj1CuFG2CZGmnCrZCUeA41WC3JCCRbppump,Pump,watch,up,7.955e-06,7.955e-06,0.0,10.0,60,False,predicted_up;return_0.00pct;target_10.00pct;label_watch;not_confirmed
+2026-05-01T19:37:02+00:00,solana,Fp4uy42aN5vfk6BhmAvqb1xnonU3MPYaGQw7z55cRUSA,USCR,anomaly_watch,down,1.685e-05,1.685e-05,0.0,10.0,60,False,predicted_down;return_0.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
+2026-05-01T19:37:02+00:00,solana,65FWdgdzbqNB4RAY6gH55xfmW19wtkMmWhALfKw1pump,SOL,watch,up,7.25e-06,2.351e-06,-67.5724,10.0,60,False,predicted_up;return_-67.57pct;target_10.00pct;label_watch;not_confirmed
+2026-05-01T19:37:02+00:00,solana,3nyFwxJsiDDoDzHrPDxY64XdE5NVxfVKfcSDmdfEZxBT,POKEDAQ,anomaly_watch,up,5.047e-05,3.314e-10,-99.9993,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_anomaly_watch;not_confirmed
+2026-05-01T19:37:03+00:00,solana,HDmojpFZvf1F421Gev2hh2p1ThaVbWsW5qh9C5Bipump,MSPAINTIFY,anomaly_watch,up,0.0003262,0.0001827,-43.9914,10.0,60,False,predicted_up;return_-43.99pct;target_10.00pct;label_anomaly_watch;not_confirmed
