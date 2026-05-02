@@ -1,0 +1,2 @@
+evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
+2026-05-02T21:58:07+00:00,arbitrum,0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f,WBTC,watch,down,78184.48,78502.79,0.4071,10.0,60,False,predicted_down;return_0.41pct;target_10.00pct;label_watch;not_confirmed
