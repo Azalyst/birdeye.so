@@ -1,2 +1,7 @@
 evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-05-02T21:58:07+00:00,arbitrum,0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f,WBTC,watch,down,78184.48,78502.79,0.4071,10.0,60,False,predicted_down;return_0.41pct;target_10.00pct;label_watch;not_confirmed
+2026-05-02T22:33:14+00:00,solana,65TtJkSXb254visPNwviX8HAtCNUFTpt5EPyqsHCpump,TOKUP14,watch,up,6.178e-06,6.178e-06,0.0,10.0,60,False,predicted_up;return_0.00pct;target_10.00pct;label_watch;not_confirmed
+2026-05-02T22:33:14+00:00,solana,DdWhBFJutypz9NtLaxrwHoeqFvgNhek2wZTQ89fWpump,Asshole,watch,up,8.33e-06,2.491e-06,-70.096,10.0,60,False,predicted_up;return_-70.10pct;target_10.00pct;label_watch;not_confirmed
+2026-05-02T22:33:14+00:00,solana,GynEuy1V1PyrXBJEvf2kJpm9Q9uZdHhJiKhz2swgpump,MAGA,watch,up,4.61e-06,4.61e-06,0.0,10.0,60,False,predicted_up;return_0.00pct;target_10.00pct;label_watch;not_confirmed
+2026-05-02T22:33:15+00:00,solana,G1fqojELGng9mkEUqhepecwSHnHcaQ459Eed8Q5qZbEm,BELEAF,anomaly_watch,down,3.44e-09,2.918e-09,-15.1744,10.0,60,True,predicted_down;return_-15.17pct;target_10.00pct;label_anomaly_watch;dump_confirmed
+2026-05-02T22:33:15+00:00,solana,BanusqnHkNxydvSzrESD8cZGVu3commdwKCJfwVzpump,Chloe,watch,up,6.219e-06,6.219e-06,0.0,10.0,60,False,predicted_up;return_0.00pct;target_10.00pct;label_watch;not_confirmed
+2026-05-02T22:33:15+00:00,solana,DJ15QJxVPFGv6kYhT6LvDGqG9b4aBFWQzavA7dGxpump,goblintown,anomaly_watch,down,4.562e-05,3.642e-05,-20.1666,10.0,60,True,predicted_down;return_-20.17pct;target_10.00pct;label_anomaly_watch;dump_confirmed
