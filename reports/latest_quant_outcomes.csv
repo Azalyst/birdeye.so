@@ -1,4 +1,1 @@
 evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-05-02T19:40:56+00:00,solana,sX4hVmCv4QAxjR6jnh24Wg9RhnXHifC228PxqJEpump,FREN404,anomaly_watch,up,1.454e-06,1.363e-06,-6.2586,10.0,60,False,predicted_up;return_-6.26pct;target_10.00pct;label_anomaly_watch;not_confirmed
-2026-05-02T19:40:56+00:00,solana,5mcZi3u8FvYepdzNwNjy3Qevfb2rtrtc3psVqJ5Rpump,LANDWOLF,watch,up,5.239e-06,8.263e-06,57.7209,10.0,60,True,predicted_up;return_57.72pct;target_10.00pct;label_watch;pump_confirmed
-2026-05-02T19:40:57+00:00,solana,3qa5FsfsWryzPoJn3wXpmuQo7ypQERFVs6FmFB28u3Eg,Pets,watch,up,0.0002202,3.236e-10,-99.9999,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_watch;not_confirmed
