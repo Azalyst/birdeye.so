@@ -10,7 +10,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tools import execute_tool, TOOLS
 
 NIM_API_KEY = os.environ.get("NIM_API_KEY")
-MODEL = "qwen/qwen2.5-coder-32b-instruct"
+PRIMARY_MODEL = "deepseek-ai/deepseek-v4-pro"
+FALLBACK_MODEL = "qwen/qwen2.5-coder-32b-instruct"
 BASE_URL = "https://integrate.api.nvidia.com/v1"
 
 client = OpenAI(api_key=NIM_API_KEY, base_url=BASE_URL)
@@ -79,13 +80,26 @@ def run_agent(task: str) -> str:
     for i in range(max_iterations):
         print(f"\n--- Iteration {i + 1} ---")
 
-        response = client.chat.completions.create(
-            model=MODEL,
-            messages=messages,
-            temperature=0.1,
-        )
+        # Try Primary, then Fallback
+        content = None
+        for model in [PRIMARY_MODEL, FALLBACK_MODEL]:
+            try:
+                print(f"  Requesting {model}...")
+                response = client.chat.completions.create(
+                    model=model,
+                    messages=messages,
+                    temperature=0.1,
+                )
+                content = response.choices[0].message.content
+                break
+            except Exception as e:
+                print(f"  Error with {model}: {e}")
+                if model == FALLBACK_MODEL:
+                    return f"Agent failed on both models. Last error: {e}"
+                print("  Retrying with fallback...")
 
-        content = response.choices[0].message.content
+        if content is None:
+            return "Agent failed to generate content."
         messages.append({"role": "assistant", "content": content})
         print(f"Agent: {content[:500]}...")
 

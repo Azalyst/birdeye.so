@@ -2041,18 +2041,36 @@ def write_qwen_brief(
             api_key=api_key,
             base_url=os.getenv("NIM_BASE_URL", "https://integrate.api.nvidia.com/v1"),
         )
-        response = client.chat.completions.create(
-            model=os.getenv("NIM_MODEL", "qwen/qwen2.5-coder-32b-instruct"),
-            messages=[
-                {"role": "system", "content": "You are a cautious quant research analyst."},
-                {"role": "user", "content": json.dumps(prompt, default=str)},
-            ],
-            temperature=0.2,
-            max_tokens=900,
-        )
-        brief = response.choices[0].message.content or ""
+        
+        models = [
+            os.getenv("NIM_PRIMARY_MODEL", "deepseek-ai/deepseek-v4-pro"),
+            os.getenv("NIM_FALLBACK_MODEL", "qwen/qwen2.5-coder-32b-instruct")
+        ]
+        
+        brief = None
+        for model in models:
+            try:
+                print(f"  Generating brief with {model}...")
+                response = client.chat.completions.create(
+                    model=model,
+                    messages=[
+                        {"role": "system", "content": "You are a cautious quant research analyst."},
+                        {"role": "user", "content": json.dumps(prompt, default=str)},
+                    ],
+                    temperature=0.2,
+                    max_tokens=900,
+                )
+                brief = response.choices[0].message.content or ""
+                break
+            except Exception as e:
+                print(f"  Error with {model}: {e}")
+                if model == models[-1]:
+                    brief = f"AI brief unavailable: {e}"
+                else:
+                    print("  Retrying with fallback model...")
+        
     except Exception as exc:
-        brief = f"Qwen brief unavailable: {exc}"
+        brief = f"AI brief unavailable: {exc}"
 
     report_dir.mkdir(parents=True, exist_ok=True)
     stamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
