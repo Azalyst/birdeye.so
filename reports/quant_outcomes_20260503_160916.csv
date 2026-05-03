@@ -1,0 +1,3 @@
+evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
+2026-05-03T16:09:16+00:00,arbitrum,0x09fd7e0d021d29106c534edfb4ea817ac0ea7f84,DMTp,anomaly_watch,up,113.99,134.68,18.1507,10.0,60,True,predicted_up;return_18.15pct;target_10.00pct;label_anomaly_watch;pump_confirmed
+2026-05-03T16:09:16+00:00,arbitrum,0xbbc97bd4d21c4d82ab66f93e22b70819442dd3ac,BGLNW,watch,up,0.004745,0.01273,168.2824,10.0,60,True,predicted_up;return_168.28pct;target_10.00pct;label_watch;pump_confirmed
