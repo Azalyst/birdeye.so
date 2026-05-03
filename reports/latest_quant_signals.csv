@@ -1,31 +1,15 @@
 ts,chain,address,symbol,binance_symbol,binance_base_asset,binance_match_type,label,pump_score,dump_score,anomaly_score,smart_money_score,risk_score,reasons
-2026-05-03T16:07:57+00:00,ethereum,0xb24be694bc8c5a915f1c8e617f7a2d74f9218bbd,DILLEY,,,,dump_risk,25.8,90.13,100.0,0.0,12.0,selloff_distribution;whale_distribution;risk:thin_liquidity;ml_isolation_forest_anomaly
-2026-05-03T16:07:57+00:00,solana,5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2,TROLL,,,,anomaly_watch,83.27,0.0,91.75,13.76,0.0,whale_accumulation;buy_pressure;ml_isolation_forest_anomaly
-2026-05-03T16:07:57+00:00,ethereum,0x32cd80c3db14ae6249d2073e382562047a77ea87,🧊CWG,,,,anomaly_watch,90.44,0.0,82.46,13.97,0.0,sudden_rise_price_plus_volume;buy_pressure;ml_isolation_forest_anomaly
-2026-05-03T16:07:57+00:00,ethereum,0x696ff953c0c00c62bb1f4060521fc1645a1c4901,TEST,,,,watch,26.12,3.0,67.86,0.0,12.0,risk:thin_liquidity
-2026-05-03T16:07:57+00:00,solana,CK7bFodA84RLXBeRparDX6j6havjGsQmcyHH2sQypump,mossbit ,,,,watch,66.0,0.0,65.0,0.0,0.0,sudden_rise_price_plus_volume
-2026-05-03T16:07:57+00:00,solana,ENfexXB1eP66WgWYt5dSwA2AKM3qhaW93AEtzfZbXtVY,Kenny,,,,watch,66.0,0.0,65.0,0.0,0.0,sudden_rise_price_plus_volume
-2026-05-03T16:07:57+00:00,ethereum,0x3b1723e90264d16102af69eac663edf60ad9ce71,Kenny,,,,watch,66.0,0.0,65.0,0.0,0.0,sudden_rise_price_plus_volume
-2026-05-03T16:07:57+00:00,ethereum,0x33838d3203512bcb4ad449caedd86bee774aa37f,Kenny,,,,watch,66.0,0.0,65.0,0.0,0.0,sudden_rise_price_plus_volume
-2026-05-03T16:07:57+00:00,ethereum,0x90b69647a91c5d59df98846330a9748e26c480c3,$PHP,,,,watch,66.0,0.0,65.0,0.0,0.0,sudden_rise_price_plus_volume
-2026-05-03T16:07:57+00:00,solana,7rp1QH7vkGFsa87pTzL3supE7SwPGV8ySHvzsNEBpump,SCAMCOIN,,,,watch,30.0,36.0,65.0,0.0,0.0,normal_watch
-2026-05-03T16:07:57+00:00,solana,GPWewStWFt95fg6bEN8FyFaKZf7hqeHoEsJqKFGTpump,SACK,,,,watch,30.0,36.0,65.0,0.0,0.0,normal_watch
-2026-05-03T16:07:57+00:00,solana,H6ErFrGXmqp9QCnXUj147rPLdvb4E4f5wZtH1Mu7pump,GOLDSTAR,,,,watch,30.0,23.63,65.0,0.0,0.0,normal_watch
-2026-05-03T16:07:57+00:00,solana,42iTkrx8zhykqsDvNtPeQ6ZcDdzs9UQ2wUFrhG5bpump,Emotions,,,,watch,30.0,23.69,65.0,0.0,0.0,normal_watch
-2026-05-03T16:07:57+00:00,ethereum,0x013a81db3fb17f7b17136aad1c71d7f6834fca4f,⚡⚡ SS,,,,watch,30.0,36.0,65.0,0.0,0.0,normal_watch
-2026-05-03T16:07:57+00:00,ethereum,0xe5a346b1659a0d70717e903e7d5d61d2a8d2d1ce,DILLEY,,,,watch,25.8,39.0,65.0,0.0,12.0,risk:thin_liquidity
-2026-05-03T16:07:57+00:00,solana,7jxwjFdtFAbBaEAuEcWh3kCdjukz6fdwt3Gh9VmRpump,GOLF,,,,watch,25.0,0.0,63.5,15.0,0.0,buy_pressure
-2026-05-03T16:07:57+00:00,solana,JAxMg5ErnK6ji37TnUh89yA2mouDkFVpiKGaEi1mpump,WINNING,,,,watch,6.86,51.24,57.72,0.0,0.0,liquidity_drop
-2026-05-03T16:07:57+00:00,solana,BRApS1oGFUbgUyB24RKzVhyErBc8QtXGnmKd5KBEpump,mossbit ,,,,watch,47.49,0.0,57.2,0.0,0.0,sudden_rise_price_plus_volume
-2026-05-03T16:07:57+00:00,solana,HXzqEEUjQ6JevbrJiMBAwoiCVikZb93XHmYtde4iCA3G,Spirit,,,,watch,41.89,0.0,52.37,0.0,0.0,normal_watch
-2026-05-03T16:07:57+00:00,solana,5zA1r2LyA9UcShFoZ4DNVJXq1V5pSD4gmibDh5Zxpump,memeoids,,,,watch,14.16,36.0,50.93,0.0,0.0,normal_watch
-2026-05-03T16:07:57+00:00,solana,9gBzMZ1oJ9wDTvzVrhaA7tKMmtWqg9SEmc1UuBPbpump,MOGMAN,,,,watch,38.47,3.68,48.69,0.0,0.0,normal_watch
-2026-05-03T16:07:57+00:00,solana,9AvytnUKsLxPxFHFqS6VLxaxt5p6BhYNr53SD2Chpump,67,,,,watch,40.24,0.0,43.33,15.0,0.0,buy_pressure
-2026-05-03T16:07:57+00:00,solana,6sZuuj4NddVFeBLpJ7xUKPxL5LPgdQkShuAy4hsepump,PSA10,,,,watch,34.15,0.0,36.45,0.0,0.0,normal_watch
-2026-05-03T16:07:57+00:00,solana,3TYgKwkE2Y3rxdw9osLRSpxpXmSC1C1oo19W9KHspump,BULL,,,,watch,30.64,0.0,35.66,3.78,0.0,normal_watch
-2026-05-03T16:07:57+00:00,solana,3wL2KuTsaDUX33VvpwCn7st7yxGhY6KKqPkZtMQzpump,TEMPO,,,,watch,5.47,16.41,31.67,0.0,0.0,normal_watch
-2026-05-03T16:07:57+00:00,solana,87kvMQnvy6hAxauH2g9pzX7m3ZRj7Hgarr67b63Qpump,mossbit ,,,,watch,30.0,0.59,30.92,0.0,0.0,normal_watch
-2026-05-03T16:07:57+00:00,ethereum,0x4362af9c79e4d0196feb2bb304ef95b2367b8fed,TRUMP,,,,watch,30.0,0.0,30.0,0.0,0.0,normal_watch
-2026-05-03T16:07:57+00:00,ethereum,0xee90c46862674f11bb20b1b1b9c17a96ad0d45e9,DILLEY,,,,watch,30.0,0.0,30.0,0.0,0.0,normal_watch
-2026-05-03T16:07:57+00:00,solana,8wXtPeU6557ETkp9WHFY1n1EcU6NxDvbAggHGsMYiHsB,GME,,,,watch,2.64,7.07,23.9,0.0,0.0,normal_watch
-2026-05-03T16:07:57+00:00,solana,DACYVx34V5aQaehN3MZGYxPfoyQYHZSnFAFw3T2Vbonk,IMOUT,,,,watch,14.91,0.0,19.72,4.28,0.0,normal_watch
+2026-05-03T18:19:27+00:00,arbitrum,0x09fd7e0d021d29106c534edfb4ea817ac0ea7f84,DMTp,,,,watch,12.14,3.0,40.41,0.0,12.0,risk:thin_liquidity
+2026-05-03T18:19:27+00:00,arbitrum,0xe002023c78d9b0f32d527dbc9be164a3d26a0a41,GRO,,,,watch,20.14,3.0,40.18,0.0,12.0,risk:thin_liquidity
+2026-05-03T18:19:27+00:00,arbitrum,0x0c880f6761f1af8d9aa9c466984b80dab9a8c9e8,PENDLE,,,,watch,34.24,0.17,29.0,14.43,0.0,buy_pressure
+2026-05-03T18:19:27+00:00,arbitrum,0x73f240504eb0feaf9d4259bcb2584dc4e95ce977,PL,,,,watch,32.01,0.0,29.48,15.0,0.0,buy_pressure
+2026-05-03T18:19:27+00:00,arbitrum,0x97e66d3c4d5bcd7c64e3e55af28544c9addf9281,CAPX,,,,watch,16.52,0.14,18.75,0.0,0.0,normal_watch
+2026-05-03T18:19:27+00:00,arbitrum,0x912ce59144191c1204e64559fe8253a0e49e6548,ARB,,,,watch,16.25,1.68,16.77,4.54,0.0,normal_watch
+2026-05-03T18:19:27+00:00,arbitrum,0xbbc97bd4d21c4d82ab66f93e22b70819442dd3ac,BGLNW,,,,watch,1.35,0.0,16.76,0.0,0.0,normal_watch
+2026-05-03T18:19:27+00:00,arbitrum,0xdadeca1167fe47499e53eb50f261103630974905,NRN,,,,watch,2.25,5.34,13.89,0.0,0.0,normal_watch
+2026-05-03T18:19:27+00:00,arbitrum,0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f,WBTC,,,,watch,8.7,0.05,9.91,0.0,0.0,normal_watch
+2026-05-03T18:19:27+00:00,arbitrum,0x82af49447d8a07e3bd95bd0d56f35241523fbab1,WETH,,,,watch,5.94,0.01,6.89,0.0,0.0,normal_watch
+2026-05-03T18:19:27+00:00,arbitrum,0x0c1c1c109fe34733fca54b82d7b46b75cfb71f6e,CHIP,,,,watch,6.88,0.0,6.62,1.94,0.0,normal_watch
+2026-05-03T18:19:27+00:00,arbitrum,0xaf88d065e77c8cc2239327c5edb3a432268e5831,USDC,,,,watch,5.67,0.0,6.57,0.0,0.0,normal_watch
+2026-05-03T18:19:27+00:00,arbitrum,0x9733b04069af22cdfd6c7477925cd73fd3b68e2b,UFPVNK,,,,watch,0.0,3.0,0.0,0.0,12.0,risk:thin_liquidity
+2026-05-03T18:19:27+00:00,arbitrum,0x35ca1e5a9b1c09fa542fa18d1ba4d61c8edff852,SCHRODI,,,,watch,0.35,0.0,0.89,0.0,0.0,normal_watch

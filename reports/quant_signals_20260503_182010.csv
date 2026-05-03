@@ -1,0 +1,15 @@
+ts,chain,address,symbol,binance_symbol,binance_base_asset,binance_match_type,label,pump_score,dump_score,anomaly_score,smart_money_score,risk_score,reasons
+2026-05-03T18:19:27+00:00,arbitrum,0x09fd7e0d021d29106c534edfb4ea817ac0ea7f84,DMTp,,,,watch,12.14,3.0,40.41,0.0,12.0,risk:thin_liquidity
+2026-05-03T18:19:27+00:00,arbitrum,0xe002023c78d9b0f32d527dbc9be164a3d26a0a41,GRO,,,,watch,20.14,3.0,40.18,0.0,12.0,risk:thin_liquidity
+2026-05-03T18:19:27+00:00,arbitrum,0x0c880f6761f1af8d9aa9c466984b80dab9a8c9e8,PENDLE,,,,watch,34.24,0.17,29.0,14.43,0.0,buy_pressure
+2026-05-03T18:19:27+00:00,arbitrum,0x73f240504eb0feaf9d4259bcb2584dc4e95ce977,PL,,,,watch,32.01,0.0,29.48,15.0,0.0,buy_pressure
+2026-05-03T18:19:27+00:00,arbitrum,0x97e66d3c4d5bcd7c64e3e55af28544c9addf9281,CAPX,,,,watch,16.52,0.14,18.75,0.0,0.0,normal_watch
+2026-05-03T18:19:27+00:00,arbitrum,0x912ce59144191c1204e64559fe8253a0e49e6548,ARB,,,,watch,16.25,1.68,16.77,4.54,0.0,normal_watch
+2026-05-03T18:19:27+00:00,arbitrum,0xbbc97bd4d21c4d82ab66f93e22b70819442dd3ac,BGLNW,,,,watch,1.35,0.0,16.76,0.0,0.0,normal_watch
+2026-05-03T18:19:27+00:00,arbitrum,0xdadeca1167fe47499e53eb50f261103630974905,NRN,,,,watch,2.25,5.34,13.89,0.0,0.0,normal_watch
+2026-05-03T18:19:27+00:00,arbitrum,0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f,WBTC,,,,watch,8.7,0.05,9.91,0.0,0.0,normal_watch
+2026-05-03T18:19:27+00:00,arbitrum,0x82af49447d8a07e3bd95bd0d56f35241523fbab1,WETH,,,,watch,5.94,0.01,6.89,0.0,0.0,normal_watch
+2026-05-03T18:19:27+00:00,arbitrum,0x0c1c1c109fe34733fca54b82d7b46b75cfb71f6e,CHIP,,,,watch,6.88,0.0,6.62,1.94,0.0,normal_watch
+2026-05-03T18:19:27+00:00,arbitrum,0xaf88d065e77c8cc2239327c5edb3a432268e5831,USDC,,,,watch,5.67,0.0,6.57,0.0,0.0,normal_watch
+2026-05-03T18:19:27+00:00,arbitrum,0x9733b04069af22cdfd6c7477925cd73fd3b68e2b,UFPVNK,,,,watch,0.0,3.0,0.0,0.0,12.0,risk:thin_liquidity
+2026-05-03T18:19:27+00:00,arbitrum,0x35ca1e5a9b1c09fa542fa18d1ba4d61c8edff852,SCHRODI,,,,watch,0.35,0.0,0.89,0.0,0.0,normal_watch

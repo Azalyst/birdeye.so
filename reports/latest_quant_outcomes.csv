@@ -1,3 +1,9 @@
 evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-05-03T16:09:16+00:00,arbitrum,0x09fd7e0d021d29106c534edfb4ea817ac0ea7f84,DMTp,anomaly_watch,up,113.99,134.68,18.1507,10.0,60,True,predicted_up;return_18.15pct;target_10.00pct;label_anomaly_watch;pump_confirmed
-2026-05-03T16:09:16+00:00,arbitrum,0xbbc97bd4d21c4d82ab66f93e22b70819442dd3ac,BGLNW,watch,up,0.004745,0.01273,168.2824,10.0,60,True,predicted_up;return_168.28pct;target_10.00pct;label_watch;pump_confirmed
+2026-05-03T18:20:10+00:00,ethereum,0xb24be694bc8c5a915f1c8e617f7a2d74f9218bbd,DILLEY,dump_risk,down,1.441e-10,1.441e-10,0.0,10.0,60,False,predicted_down;return_0.00pct;target_10.00pct;label_dump_risk;not_confirmed
+2026-05-03T18:20:10+00:00,ethereum,0x32cd80c3db14ae6249d2073e382562047a77ea87,🧊CWG,anomaly_watch,up,1.214e-07,6.881e-12,-99.9943,10.0,60,False,predicted_up;return_-99.99pct;target_10.00pct;label_anomaly_watch;not_confirmed
+2026-05-03T18:20:10+00:00,ethereum,0x90b69647a91c5d59df98846330a9748e26c480c3,$PHP,watch,up,0.0002039,3.538e-09,-99.9983,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_watch;not_confirmed
+2026-05-03T18:20:11+00:00,ethereum,0x33838d3203512bcb4ad449caedd86bee774aa37f,Kenny,watch,up,2.724e-05,1.477e-10,-99.9995,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_watch;not_confirmed
+2026-05-03T18:20:11+00:00,ethereum,0x3b1723e90264d16102af69eac663edf60ad9ce71,Kenny,watch,up,7.165e-06,7.183e-12,-99.9999,10.0,60,False,predicted_up;return_-100.00pct;target_10.00pct;label_watch;not_confirmed
+2026-05-03T18:20:11+00:00,solana,ENfexXB1eP66WgWYt5dSwA2AKM3qhaW93AEtzfZbXtVY,Kenny,watch,up,3.669e-05,3.621e-05,-1.3083,10.0,60,False,predicted_up;return_-1.31pct;target_10.00pct;label_watch;not_confirmed
+2026-05-03T18:20:11+00:00,solana,CK7bFodA84RLXBeRparDX6j6havjGsQmcyHH2sQypump,mossbit ,watch,up,3.556e-06,3.556e-06,0.0,10.0,60,False,predicted_up;return_0.00pct;target_10.00pct;label_watch;not_confirmed
+2026-05-03T18:20:11+00:00,solana,5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2,TROLL,anomaly_watch,up,0.04118,0.0478,16.0758,10.0,60,True,predicted_up;return_16.08pct;target_10.00pct;label_anomaly_watch;pump_confirmed
