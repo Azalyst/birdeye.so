@@ -1,0 +1,2 @@
+evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
+2026-05-03T04:10:18+00:00,arbitrum,0xaf88d065e77c8cc2239327c5edb3a432268e5831,USDC,whale_accumulation,up,0.9999,1.0000099,0.011,10.0,60,False,predicted_up;return_0.01pct;target_10.00pct;label_whale_accumulation;not_confirmed
