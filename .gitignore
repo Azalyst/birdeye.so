@@ -1,1 +1,27 @@
-repo_full.txt
+```gitignore
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Reports and data files that might contain sensitive or temporary information
+reports/
+data/scam_cache.json
+
+# Database files (usually contain runtime data)
+*.db
+
+# Environment variables and local configurations
+.env
+.env.local
+*.env.*
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*~
+```
