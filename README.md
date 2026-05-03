@@ -20,9 +20,6 @@ An institutional-style on-chain signal platform for discovering and validating p
 </div>
 
 **Live Dashboard:** [azalyst.github.io/Azalyst-Alpha-Scanner/dashboard.html](https://azalyst.github.io/Azalyst-Alpha-Scanner/dashboard.html)
-
-**Sister project (private):** *Azalyst Alpha Quant Research* — the private futures-grade quantitative research engine this project feeds into.
-
 **Maintained by:** [@gitdhirajsv](https://github.com/gitdhirajsv)
 
 ---
