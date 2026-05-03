@@ -1,7 +1,6 @@
 evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
-2026-05-02T22:33:14+00:00,solana,65TtJkSXb254visPNwviX8HAtCNUFTpt5EPyqsHCpump,TOKUP14,watch,up,6.178e-06,6.178e-06,0.0,10.0,60,False,predicted_up;return_0.00pct;target_10.00pct;label_watch;not_confirmed
-2026-05-02T22:33:14+00:00,solana,DdWhBFJutypz9NtLaxrwHoeqFvgNhek2wZTQ89fWpump,Asshole,watch,up,8.33e-06,2.491e-06,-70.096,10.0,60,False,predicted_up;return_-70.10pct;target_10.00pct;label_watch;not_confirmed
-2026-05-02T22:33:14+00:00,solana,GynEuy1V1PyrXBJEvf2kJpm9Q9uZdHhJiKhz2swgpump,MAGA,watch,up,4.61e-06,4.61e-06,0.0,10.0,60,False,predicted_up;return_0.00pct;target_10.00pct;label_watch;not_confirmed
-2026-05-02T22:33:15+00:00,solana,G1fqojELGng9mkEUqhepecwSHnHcaQ459Eed8Q5qZbEm,BELEAF,anomaly_watch,down,3.44e-09,2.918e-09,-15.1744,10.0,60,True,predicted_down;return_-15.17pct;target_10.00pct;label_anomaly_watch;dump_confirmed
-2026-05-02T22:33:15+00:00,solana,BanusqnHkNxydvSzrESD8cZGVu3commdwKCJfwVzpump,Chloe,watch,up,6.219e-06,6.219e-06,0.0,10.0,60,False,predicted_up;return_0.00pct;target_10.00pct;label_watch;not_confirmed
-2026-05-02T22:33:15+00:00,solana,DJ15QJxVPFGv6kYhT6LvDGqG9b4aBFWQzavA7dGxpump,goblintown,anomaly_watch,down,4.562e-05,3.642e-05,-20.1666,10.0,60,True,predicted_down;return_-20.17pct;target_10.00pct;label_anomaly_watch;dump_confirmed
+2026-05-03T01:23:10+00:00,optimism,0x0b2c639c533813f4aa9d7837caf62653d097ff85,USDC,watch,up,0.9974,0.9974,0.0,10.0,60,False,predicted_up;return_0.00pct;target_10.00pct;label_watch;not_confirmed
+2026-05-03T01:23:10+00:00,base,0x226a2fa2556c48245e57cd1cba4c6c9e67077dd2,BIO,anomaly_watch,down,0.05908,0.05655,-4.2823,10.0,60,False,predicted_down;return_-4.28pct;target_10.00pct;label_anomaly_watch;not_confirmed
+2026-05-03T01:23:10+00:00,base,0x4200000000000000000000000000000000000006,WETH,anomaly_watch,down,2331.82,2312.13,-0.8444,10.0,60,False,predicted_down;return_-0.84pct;target_10.00pct;label_anomaly_watch;not_confirmed
+2026-05-03T01:23:10+00:00,solana,24MT6LCXaiXm5RvAxcsa6L2qf3aoHPQV6zZtLnWNpump,MIDEP,anomaly_watch,up,3.45e-05,3.442e-05,-0.2319,10.0,60,False,predicted_up;return_-0.23pct;target_10.00pct;label_anomaly_watch;not_confirmed
+2026-05-03T01:23:10+00:00,solana,GPQebsJPVA8EP7RLQxNFUL5oBaKegyXcSfQQ7jeQpump,TCA,watch,up,3.59e-06,3.59e-06,0.0,10.0,60,False,predicted_up;return_0.00pct;target_10.00pct;label_watch;not_confirmed
