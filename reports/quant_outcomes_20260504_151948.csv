@@ -1,0 +1,2 @@
+evaluated_ts,chain,address,symbol,label,predicted_direction,entry_price,current_price,return_pct,target_pct,horizon_min,is_true,reasons
+2026-05-04T15:19:48+00:00,solana,5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2,TROLL,anomaly_watch,up,0.05551,0.04765,-14.1596,10.0,60,False,predicted_up;return_-14.16pct;target_10.00pct;label_anomaly_watch;not_confirmed

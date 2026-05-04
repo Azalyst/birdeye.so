@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04T14:33:08.416115+00:00",
+  "generated_at": "2026-05-04T15:44:56.086989+00:00",
   "model_metrics": {
     "status": "ok",
     "model": "lightgbm",
@@ -113,9 +113,9 @@
   },
   "cluster_counts": {},
   "totals": {
-    "snapshots": 954,
+    "snapshots": 973,
     "wallet_events": 0,
-    "labeled_outcomes": 161
+    "labeled_outcomes": 162
   },
   "top_signals": [
     {
@@ -329,6 +329,20 @@
       "label": "watch"
     },
     {
+      "snapshot_id": 968,
+      "ts": "2026-05-04T15:18:48+00:00",
+      "chain": "bnb",
+      "address": "0xfecbda1b8dbd73c4eea7843c04db816107fa6666",
+      "symbol": "BabyAsteroid",
+      "ml_prob": 0.0022781108928557905,
+      "ml_direction": "down",
+      "ml_edge": 0.9954437782142884,
+      "pump_score": 2.77,
+      "dump_score": 5.56,
+      "anomaly_score": 11.77,
+      "label": "watch"
+    },
+    {
       "snapshot_id": 874,
       "ts": "2026-05-03T16:07:57+00:00",
       "chain": "ethereum",
@@ -452,20 +466,6 @@
       "pump_score": 0.0,
       "dump_score": 3.0,
       "anomaly_score": 0.0,
-      "label": "watch"
-    },
-    {
-      "snapshot_id": 883,
-      "ts": "2026-05-03T18:19:27+00:00",
-      "chain": "arbitrum",
-      "address": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
-      "symbol": "WETH",
-      "ml_prob": 0.0030523839044536245,
-      "ml_direction": "down",
-      "ml_edge": 0.9938952321910928,
-      "pump_score": 5.94,
-      "dump_score": 0.01,
-      "anomaly_score": 6.89,
       "label": "watch"
     }
   ],
