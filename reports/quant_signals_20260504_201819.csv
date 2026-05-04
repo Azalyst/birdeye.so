@@ -1,0 +1,17 @@
+ts,chain,address,symbol,binance_symbol,binance_base_asset,binance_match_type,label,pump_score,dump_score,anomaly_score,smart_money_score,risk_score,reasons
+2026-05-04T20:17:29+00:00,arbitrum,0xaf88d065e77c8cc2239327c5edb3a432268e5831,USDC,,,,dump_risk,1.68,65.76,37.65,0.0,0.0,whale_distribution
+2026-05-04T20:17:29+00:00,arbitrum,0xbfe4322d169a435de87ce2cc241e43026aacade0,CRW,,,,watch,0.84,24.5,16.22,0.0,0.0,liquidity_drop
+2026-05-04T20:17:29+00:00,avalanche,0x60781c2586d68229fde47564546784ab3faca982,PNG,,,,watch,18.2,1.87,23.39,0.0,0.0,normal_watch
+2026-05-04T20:17:29+00:00,arbitrum,0x912ce59144191c1204e64559fe8253a0e49e6548,ARB,,,,watch,9.19,7.9,16.57,0.0,0.0,normal_watch
+2026-05-04T20:17:29+00:00,arbitrum,0x94fcd9c18f99538c0f7c61c5500ca79f0d5c4dab,KIMA,,,,watch,0.0,14.23,13.84,0.0,12.0,risk:thin_liquidity
+2026-05-04T20:17:29+00:00,arbitrum,0x13ad51ed4f1b7e9dc168d8a00cb3f4ddd85efa60,LDO,,,,watch,9.38,1.63,12.41,0.43,0.0,normal_watch
+2026-05-04T20:17:29+00:00,avalanche,0x9702230a8ea53601f5cd2dc00fdbc13d4df4a8c7,USDt,,,,watch,4.05,6.97,9.53,0.0,0.0,normal_watch
+2026-05-04T20:17:29+00:00,avalanche,0x00000000efe302beaa2b3e6e1b18d08d69a9012a,AUSD,,,,watch,7.74,0.0,8.71,0.0,0.0,normal_watch
+2026-05-04T20:17:29+00:00,avalanche,0x152b9d0fdc40c096757f570a51e494bd4b943e50,BTC.b,,,,watch,0.0,6.25,8.17,0.0,25.0,risk:mintable
+2026-05-04T20:17:29+00:00,arbitrum,0x35ca1e5a9b1c09fa542fa18d1ba4d61c8edff852,SCHRODI,,,,watch,0.0,6.52,6.67,0.0,25.0,risk:freeze_authority
+2026-05-04T20:17:29+00:00,arbitrum,0x0c880f6761f1af8d9aa9c466984b80dab9a8c9e8,PENDLE,,,,watch,2.98,0.44,5.3,0.0,0.0,normal_watch
+2026-05-04T20:17:29+00:00,arbitrum,0x0c1c1c109fe34733fca54b82d7b46b75cfb71f6e,CHIP,,,,watch,2.47,2.48,4.87,0.0,0.0,normal_watch
+2026-05-04T20:17:29+00:00,avalanche,0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7,WAVAX,,,,watch,3.19,0.14,3.8,0.0,0.0,normal_watch
+2026-05-04T20:17:29+00:00,avalanche,0x420fca0121dc28039145009570975747295f2329,COQ,,,,watch,0.94,2.27,3.46,0.0,0.0,normal_watch
+2026-05-04T20:17:29+00:00,arbitrum,0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f,WBTC,,,,watch,2.1,0.44,2.84,0.0,0.0,normal_watch
+2026-05-04T20:17:29+00:00,arbitrum,0x82af49447d8a07e3bd95bd0d56f35241523fbab1,WETH,,,,watch,1.74,0.58,2.61,0.0,0.0,normal_watch
